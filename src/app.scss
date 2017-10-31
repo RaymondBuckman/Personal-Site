@@ -1,0 +1,1651 @@
+@import url('https://fonts.googleapis.com/css?family=Akronim');
+@import url('https://fonts.googleapis.com/css?family=Orbitron');
+@import url('https://fonts.googleapis.com/css?family=Covered+By+Your+Grace|Prosto+One|Satisfy');
+
+//Variables
+$main-font: "Akronim";
+$secondary-font: "Prosto One";
+
+$subheader-font-size: 5em;
+
+$main-color: rgb(40,40,40);
+$secondary-color: white;
+$tertiary-color: rgb(200,250,0);
+
+$nrf: no-repeat fixed;
+$nrs: no-repeat scroll;
+
+$first-height: 100vw * .6665;
+$seventhParis-height: 100vw * .6645;
+$ninth-height: 100vw * .667;
+$eleventh-height: 100vw * .6655;
+
+/*List for looping background images*/
+$hobby-list: tennis gaming trance travel foreignlanguages weight-lifting running cars pingpong history health pets; 
+
+//mixins
+@mixin li-even{
+    opacity: 0;
+    color: $secondary-color;
+    display: inline-block;
+    transform: translateX(-15px);
+    transition: all 0.5s ease-in-out;
+}
+
+@mixin li-odd($odd-color: rgb(170,170,170)){
+    opacity: 0;
+    color: $odd-color;
+    display: inline-block;
+    transform: translateX(15px);
+    transition: all 0.5s ease-in-out;
+}
+
+@mixin li-mobile-even{
+    opacity: 1;
+    color: $secondary-color;
+    display: inline-block;
+    transition: all 0.5s ease-in-out;
+}
+
+@mixin li-mobile-odd($odd-color: rgb(170,170,170)){
+    opacity: 1;
+    color: $odd-color;
+    display: inline-block;
+    transition: all 0.5s ease-in-out;
+}
+
+@mixin underscore{
+    display:block;
+    content:  '';
+    border-bottom: solid 2px $tertiary-color;
+    transform: scaleX(0);
+    transition: transform 500ms ease-in-out;
+}
+
+@mixin bordersAfter($color: rgb(40,40,40)){
+    display:block;
+    content: '';
+    border-bottom: solid 3px $color;  
+    border-bottom: solid 3px $color;  
+    transform: scaleX(0);  
+    transition: transform 250ms ease-in-out;
+}
+
+@mixin sidebar-transition{
+    -webkit-transition: all 0.4s ease;
+    -moz-transition: all 0.4s ease;
+    -o-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+}
+
+/*================== Main Keyframes ==================*/
+@keyframes lightenDarken{
+		29%, 100% 	{filter:  invert(0%);}
+		30%				{filter: invert(100%);}
+}
+
+@keyframes occasionalBlur{
+	12%, 28%	{-webkit-filter: blur(0px); -moz-filter: blur(0px);}
+	20%		    {-webkit-filter: blur(2px); -moz-filter: blur(2px);}
+}
+
+@keyframes occasionalBlurOnHover{
+	20%, 52%	{-webkit-filter: blur(0px); -moz-filter: blur(0px);}
+	36%		    {-webkit-filter: blur(1px); -moz-filter: blur(1px);}
+}
+
+@keyframes updown{
+	20%, 60%, 100% {transform: translateY(0px);}
+	40% , 80%			{transform: translateY(15px);}
+}
+
+/*================== End main Keyframes ==================*/
+
+body{
+    overflow: auto;
+    height: 100%;
+	background: rgb(30,30,30); /*helps create darkening effect when sidebar is active*/
+	user-drag: none;
+	//user-select: none;
+	cursor: default;
+}
+
+//modifies text highlight color
+::selection {
+    color: $secondary-color;
+    background: $tertiary-color !important; /* WebKit/Blink Browsers */
+}
+
+.fade-in{
+    opacity: 1 !important;
+    transform: translateX(0px) translateY(0px) !important;
+    transition: 0.5s ease-in-out;
+}
+
+.fade-out{
+    opacity: 0;
+}
+
+
+/*=============== SIDEBAR ===============*/
+#sidebar-wrapper{
+	z-index: 51;
+	position: fixed;
+	width: 0;
+	height: 100%;
+	overflow-x: hidden;
+	background: $main-color;
+	@include sidebar-transition;
+}
+
+#page-content-wrapper{
+    height: 100%;
+	position: relative;
+	overflow-x: hidden;
+	@include sidebar-transition;
+}
+
+.disabled {
+    pointer-events: none;
+}
+
+
+#wrapper.menuDisplayed #sidebar-wrapper{
+	width: 170px;
+}
+
+#wrapper.menuDisplayed #page-content-wrapper{
+	padding-left:170px;
+    opacity: 0.2; /*darkens page-content-wrapper when sidebar is active*/
+}
+
+.sidebar-nav {
+    position: absolute;
+    top: 0;
+    width: 170px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: inline-block;
+    
+    li {
+        position: relative;
+        line-height: 20px;
+        display: inline-block;
+        width: 100%;
+        
+        &:nth-child(n+3):before {
+            content: '';
+            position: absolute;
+            background-color: #000;
+            top: 0;
+            left: -1px;
+            z-index: -1;
+            height: 100%;
+            width: 1px;
+            -webkit-transition: width .3s ease-in;
+            -moz-transition:  width .3s ease-in;
+            -ms-transition:  width .3s ease-in;
+            transition: width .3s ease-in;
+        }
+    }
+}
+
+/*Targets X symbol*/
+.sidebar-nav > .glyphicon{
+	position: fixed;
+	top: 10px;
+	left: 180px;
+	opacity: 1;
+	color: $secondary-color;
+	z-index:80;
+}
+
+.profile-pic{
+	background: url("images/me2.jpg") $nrs 50% 50%;
+	background-size: 155px;
+	border: transparent solid 2px;
+	border-radius: 50%;
+	width: 150px;
+	height: 150px;
+	margin-top: 35px;
+	margin-left: 9px;
+	margin-bottom: 15px;
+	transition: border 0.5s ease-in-out;
+    
+    &:hover{
+        border-color: $tertiary-color;
+    }
+}
+
+
+
+.sidebar-brand {
+    height: 65px;
+    font-size: 2em;
+    letter-spacing: 5px;
+    padding: 10px 15px 10px 25px;
+    color: $secondary-color;
+    font-family: $main-font, Arial, Helvetica, serif;
+    line-height: 44px;
+}
+
+.sidebar-nav li:hover:before,
+.sidebar-nav li.open:hover:before {
+    width: 100%;
+    -webkit-transition: width .2s ease-in;
+      -moz-transition:  width .2s ease-in;
+       -ms-transition:  width .2s ease-in;
+       transition: width .2s ease-in;
+}
+
+.sidebar-nav li a, .sidebar-nav li:first-child {
+    display: block;
+    color: $secondary-color;
+    text-decoration: none;
+    padding: 10px 15px 10px 30px;
+    transition: color .5s ease;
+}
+
+.sidebar-nav li a{
+    font-family: $secondary-font, Arial, Helvetica, serif;
+    
+    &:first-letter{
+        font-family: $main-font, Arial, Helvetica, serif;
+        font-size: 2em;
+        letter-spacing: 3px;
+    }    
+}    
+
+.sidebar-nav  li:nth-child(n+2) a:hover,
+.sidebar-nav  li:nth-child(n+2) a:active,
+.sidebar-nav  li:nth-child(n+2) a:focus,
+.sidebar-nav  li:nth-child(n+2).open a:hover,
+.sidebar-nav  li:nth-child(n+2).open a:active,
+.sidebar-nav  li:nth-child(n+2).open a:focus{
+    background-color: transparent;
+    color: $tertiary-color;
+    animation: occasionalBlurOnHover 4s infinite;
+}
+
+#github-logo, #icons8-logo{
+    filter: invert(100%);
+}
+
+
+#menu{
+	position:fixed;
+	top:6px;
+	left:15px;
+    cursor: pointer;
+	opacity: .3;
+	z-index:50;
+	transition: all 0.5s ease-in-out;
+    
+    &:hover{
+       opacity: 0.9;
+	   animation: occasionalBlurOnHover 4s infinite; 
+    }
+}
+
+/*=============== End Sidebar ===============*/
+
+/*=============== Close Symbol ===============*/
+/*"X" symbol will only be visible when menuDisplayed is true - see jQuery*/
+#close{
+	position: fixed;
+	top: 15px;
+	left: 155px;
+	font-size: 25px;
+	color: $secondary-color;
+    cursor: pointer;
+    opacity: 0;
+	z-index: 70;
+	transition: all .4s ease-in-out;
+}
+
+/*=============== Page Content Wrapper ===============*/
+.first{
+    height:100vh;
+    overflow: hidden;
+	background:url("images/subway.jpg") $nrf 80% 60%;
+	background-size: 100vw $first-height;
+    transition: filter 0.2s ease-in-out;
+}
+
+#name{
+	position: absolute;
+	top: 32vh;
+	left: 0vh;
+	display: inline-block;
+	text-align: center;
+	font-size: 10em;
+	font-family: $main-font, Arial, Helvetica, serif;
+	color: $secondary-color;
+	letter-spacing: 15px;
+	padding:20px;
+	border-bottom:4px solid $secondary-color;
+	border-top:4px solid $secondary-color;
+	z-index:4;
+	transition: border-color 0.5s ease-in-out;
+}
+
+#dArrow1{
+    position:absolute;
+    top: 90vh;
+    color: #fff;
+    font-size: 3em;
+    z-index: 1;
+    opacity:0.5;
+
+    animation: updown 2s infinite 1.1s;
+	transition: opacity 1.3s ease-in-out;
+    
+    &:hover{
+        opacity: 1;
+    }
+}
+
+#name:hover, #aboutMe:hover, #education:hover, #languages:hover, #additionalSkills:hover, #vWork:hover, #hobbies:hover{
+	border-color:  $tertiary-color;
+}
+
+.window1:hover, .window2:hover{
+	border: $tertiary-color solid 3px !important;
+}
+
+#name_y, #name_m, #name_B, #aboutMe_ut, #education_d,
+#education_on, #languages_gu, #languages_e, #additionalSkills_iti,
+#additionalSkills_ll, #vWork_unt, #vWork_rk, #hobbies_bb{
+	animation: lightenDarken 12s infinite 1.1s;
+}
+
+#courseList > *:hover,
+.carousel-control:hover,
+#languageList > *:hover,
+#skillList > *:hover,
+#vList > *:hover,
+#french:hover,
+#german:hover,
+#hobby-icons > *:hover,
+#goToTop:hover,
+#icons8:hover {
+	animation: occasionalBlurOnHover 4s infinite;
+}
+
+#page-content-wrapper > div:nth-child(1) > div.scrollmagic-pin-spacer{
+    margin-bottom: 0vh !important;
+}
+
+.Second {
+    position: relative;
+    height: auto;
+    background: $main-color;
+    font-size: large;
+    color: $tertiary-color;
+    z-index: 19;
+    
+    .flex-container {
+        position: relative;
+        padding: 20px;
+        margin: 0;
+        list-style: none;
+
+        display: -webkit-box;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+
+        -webkit-flex-flow: row wrap;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+
+    .flex-item{
+        padding: 5px;
+        width: 1000px;
+        height: auto;
+        margin: 50px 0px;
+        overflow: hidden;
+  
+        line-height: 30px;
+        color: $secondary-color;
+        font-family: $main-font, Arial, Helvetica, serif;
+        //font-size: 3em;
+        text-align: center;
+        
+        h1{
+            position: relative;
+            top: 30px;
+            //font-size: 2em;
+            //font-weight: 700;
+        } 
+        
+        &:nth-child(1){
+            .window1{
+                position: relative;
+                top: 0vh;
+                margin: 5vh auto 0vh auto;
+                height: 600px;
+                width: 600px;
+                background: url("images/road2.jpg") $nrf 55% 20%;
+                background-size: 1200px;
+                border: transparent solid 3px;
+                border-radius: 50%;
+                transition: border 0.5s ease-in-out, opacity 0.5s ease-in-out;
+            }
+        }
+        
+        &:nth-child(2){
+            #aboutMe{
+                position: relative;
+                //top: 15vh;
+                //left: 50%;
+                display: inline;
+                text-align: center;
+                width: 500px;
+                font-family: $main-font, Arial, Helvetica, serif;
+                font-size: $subheader-font-size;
+                letter-spacing: 13px;
+                text-align: center;
+                color: $secondary-color;
+                //padding: 35px 35% 35px 35px;
+                border-bottom: $secondary-color 3px solid;
+                border-top: $secondary-color 3px solid;
+                opacity: 1;
+                transition: border-color 0.5s ease-in-out, opacity 0.5s ease-in-out;
+            }
+
+            #aboutMe-paragraph{
+                font-family: $secondary-font, Arial, Helvetica, serif;
+                color: $secondary-color;
+                position: relative;
+                top: 5vh;
+                //padding: 2% 0% 5% 0%;
+                margin: 50px 0px;
+                text-align: center;
+                line-height: 200%;
+                font-size: 1.2em;
+                opacity: 0;
+
+                transition: transform 0.5s ease-in-out;
+                transform: translateY(40px);
+            }
+        }
+    }
+}
+
+.navbar-default{
+	position: relative;
+	top: 0px;
+	left: 0%;
+	height: 50px;
+    width: 100%;
+	background: $main-color;
+	border: none;
+	border-radius: 0px;
+    z-index: 99;
+    transition: all 0.2s ease-in-out;
+}
+
+.black-nav{
+    background: #000;
+}
+
+.fixedheader{
+	position: fixed;
+	top: 0px;
+    background: rgb(0,0,0);
+	z-index: 10;
+}
+
+
+.navbar-default .navbar-nav > li > a{
+	font-family: $secondary-font, Arial, Helvetica, serif;
+	color: rgb(190,190,190);
+	font-size: 0.8em;
+	letter-spacing: 2px;
+	transition: color 0.5s ease-in-out;
+    
+    &:after{
+        @include underscore;
+    }
+    
+    &:hover{
+	   color: $secondary-color;
+	   animation: occasionalBlurOnHover 4s infinite;
+        
+        &:after{
+	       transform: scaleX(1);
+        }
+    }
+}
+
+.navbar-default .navbar-nav>.active > a,
+.navbar-default .navbar-nav>.active > a:focus {
+    color: $tertiary-color;
+    background: transparent;
+}
+
+.navbar-default .navbar-nav>.active > a:hover{
+     color: $secondary-color;
+     background: transparent;
+}
+
+.third{
+	position: relative;
+	height: 110vh;
+	background: url("images/books.jpg") $nrf 20% 30%;
+	background-size: 2300px;
+	z-index: 1;
+}
+
+#education{
+	font-family: $main-font, Arial, Helvetica, serif;
+	font-size: $subheader-font-size;
+	letter-spacing: 12px;
+	color: $main-color;
+	position: relative;
+	text-align: center;
+	top: 10vh;
+	padding: 1% 4% .7% 2%;
+	margin-top: 5%;
+	border-bottom: $main-color 3px solid;
+	border-top: $main-color 3px solid;
+	z-index: 3;
+    opacity: 0;
+	transition: border-color 0.5s ease-in-out, opacity 0.5s ease-in-out;
+}
+
+/*targets university text*/
+header + header{
+	font-family: $secondary-font, Arial, Helvetica, serif;
+	font-size: 2vw;
+	letter-spacing: 5px;
+	color: $main-color;
+	position: relative;
+	text-align: left;
+	top: 14vh;
+	width: 600px;
+    opacity: 0;
+	transition: border-color 0.5s ease-in-out, opacity 0.5s ease-in-out;
+}
+
+#courseList{
+    position: relative;
+	font-family: $secondary-font, Arial, Helvetica, serif;
+	text-align: left;
+	line-height: 200%;
+	font-size: 1.2vw;
+	list-style-type: none;
+	top: 55vh;
+	left: -40vw;
+    
+    li:nth-child(odd){
+        opacity:0;
+        color: $main-color;
+        display:inline-block;
+        padding-left: 20px;
+        transform: translateX(-15px);
+        transition: all 0.5s ease-in-out;
+    }
+    
+    li:nth-child(even){
+        opacity:0;
+        color: rgb(150,150,150);
+        display: inline-block;
+        border-left: solid transparent 2px;
+        padding-left: 20px;
+        transform: translateX(15px);
+        transition: all 0.5s ease-in-out;
+    }
+    
+    *:after {
+      @include underscore;
+    }
+    
+    *:hover:after {
+	   transform: scaleX(1);
+    }
+}
+
+ #projects-button{
+     &:before{
+        content:'';
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        width: 0px;
+        height: 45px;
+        background: rgba(255,255,255,0.2);
+        border-radius: 10px;
+        transition: all 0.9s ease-in-out;
+     }
+     
+	 position: relative;
+	 top: 40vh;
+	 font-family: $secondary-font, Arial, Helvetica, serif;
+	 letter-spacing: 4px;
+	 color: $secondary-color;
+	 background-color: $main-color;
+	 border: $main-color;
+	 border-radius: 10px;
+	 opacity: 0;
+	 transition: color 1.0s ease-in-out, background 1.0s ease-in-out, border-radius 1.0s ease-in-out;
+     
+     &:hover:before, &:active:before{
+         width: 100%;
+	     border-radius:30px; 
+     }
+     
+     &:hover, &:active{
+         color: $main-color;
+	     background-color: #ddd;
+	     border-radius:30px;
+     }
+     
+     /*Hides blue border around button*/
+     &:focus{
+         outline:0;
+     }
+ }
+
+.fourth{
+	position:relative;
+	height:90vh;
+	background: $main-color;
+	z-index: 4;
+}
+
+#languages{
+	font-family: $main-font, Arial, Helvetica, serif;
+	font-size: $subheader-font-size;
+	letter-spacing: 12px;
+	color: $secondary-color;
+	position: relative;
+	text-align: center;
+	top: 8vh;
+	padding: 1% 4% 1% 2%;
+	margin-top: 7%;
+	border-bottom: $secondary-color 3px solid;
+	border-top: $secondary-color 3px solid;
+    opacity: 0;
+	transition: border-color 0.5s ease-in-out, opacity 0.5s ease-in-out;
+}
+
+#languageList{
+	font-family: $secondary-font, Arial, Helvetica, serif;
+	text-align: center;
+	line-height: 200%;
+	font-size: 1.2vw;
+	list-style-type: none;
+	position: relative;
+	top: 8vh;
+    
+    li:nth-child(odd){
+        @include li-odd;
+    }
+    
+    li:nth-child(even){
+        @include li-even;
+    } 
+    
+    *:after{
+        @include underscore;
+    }
+    
+    *:hover:after{
+	   transform: scaleX(1);
+    }
+}
+
+.fifth{
+	position: relative;
+	height: 50vh;
+	background: url("images/code.jpg") $nrf 100% 20%;
+	background-size: 2000px;
+	z-index: 4;
+    transition: filter 0.7s ease-in-out;
+}
+
+.sixth{
+	position:relative;
+	height: 95vh;
+	background: url("images/graffiti2.jpg") $nrf 41% 10%;
+	background-size:1900px;
+	z-index:1;
+}
+
+#additionalSkills{
+	font-family: $main-font, Arial, Helvetica, serif;
+	font-size: $subheader-font-size;
+	letter-spacing: 7px;
+	color: $secondary-color;
+	position: relative;
+	text-align: center;
+	top: 0.8em;
+	padding: 1% 2% 1% 4%;
+	border-bottom: $secondary-color 3px solid;
+	border-top: $secondary-color 3px solid;
+	opacity: 0;
+	transition: border-color 0.5s ease-in-out, opacity 0.5s ease-in-out;
+}
+
+#skillList{
+	font-family: $secondary-font, Arial, Helvetica, serif;
+	text-align: center;
+	line-height: 200%;
+	font-size: 1.2vw;
+	list-style-type:none;
+	position:relative;
+	top:5.5em;
+    
+    li:nth-child(even){
+        @include li-even;
+    }
+   
+    li:nth-child(odd){
+        @include li-odd(rgb(210, 210, 210));
+    }
+    
+    *:after{
+        @include underscore;
+    }
+    
+    *:hover:after{
+        transform: scaleX(1);
+    }
+}
+
+.seventhParis{    
+	height: 50vh;
+	background: url("images/eiffel.jpg") $nrf 50% 60%;
+	background-size: 100vw $seventhParis-height;
+	z-index: 11;
+}
+
+#french{
+	font-family: $secondary-font, Arial, Helvetica, serif;
+	font-size: 2em;
+	letter-spacing: 5px;
+	color: rgb(130,130,130);
+	position: relative;
+	text-align: center;
+	left: -4%;
+	margin-top: 20px;
+	opacity: 0;
+	display: inline-block;
+	transition: all .5s ease-in-out;
+}
+
+#french + .tooltip > .tooltip-inner {
+    background-color: black;
+    color: $secondary-color;
+    padding: 7px;
+    font-size: 12px;
+}
+
+.seventhBerlin{
+	height:50vh;
+	background: url("images/brandenburggate.jpg") $nrf 100% 40%;
+	background-size: 1950px;
+	z-index:11;
+}
+
+#german {
+	font-family: $secondary-font, Arial, Helvetica, serif;
+	font-size: 2em;
+	letter-spacing: 5px;
+	color: $secondary-color;
+	position: relative;
+	text-align: left;
+	margin-top: 20px;
+	opacity:  0;
+	display: inline-block;
+	transition: all .5s ease-in-out;
+}
+
+#german + .tooltip > .tooltip-inner {
+     background-color: black;
+	 color: $secondary-color;
+	 padding: 7px;
+	 font-size: 12px;
+}
+
+#french:after, #german:after {
+    @include underscore;
+}
+
+#french:hover:after,  #german:hover:after{
+	transform: scaleX(1);
+ }
+
+.eighth {
+	position: relative;
+    height: auto;
+    background: $main-color;
+    font-size: large;
+    color: $tertiary-color;
+    z-index: 19;
+    
+    .flex-container {
+        position: relative;
+        padding: 20px;
+        margin: 0;
+        list-style: none;
+
+        display: -webkit-box;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+
+        -webkit-flex-flow: row wrap;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+
+    .flex-item{
+        padding: 5px;
+        width: 1000px;
+        height: auto;
+        margin: 50px 0px;
+        overflow: hidden;
+  
+        line-height: 30px;
+        color: $secondary-color;
+        font-family: $main-font, Arial, Helvetica, serif;
+        //font-size: 3em;
+        text-align: center;
+        
+        h1{
+            position: relative;
+            top: 30px;
+            //font-size: 2em;
+            //font-weight: 700;
+        } 
+        
+        &:nth-child(1){
+            margin-bottom: 0px;
+            
+            .window2{
+                position: relative;
+                top: 0vh;
+                margin: 5vh auto 0vh auto;
+                height: 600px;
+                width: 600px;
+                background: url("images/care.jpg") $nrf 55% 20%;
+                background-size: 1200px;
+                border: transparent solid 3px;
+                border-radius: 50%;
+                transition: border 0.5s ease-in-out, opacity 0.5s ease-in-out;
+            }
+        }
+        
+        &:nth-child(2){
+            #vWork{
+                position: relative;
+                top: 7vh;
+                //left: 50%;
+                display: inline;
+                text-align: center;
+                width: 700px;
+                font-family: $main-font, Arial, Helvetica, serif;
+                font-size: $subheader-font-size;
+                letter-spacing: 13px;
+                text-align: center;
+                color: $secondary-color;
+                padding: 0px 35px;
+                border-bottom: $secondary-color 3px solid;
+                border-top: $secondary-color 3px solid;
+                opacity: 1;
+                transition: border-color 0.5s ease-in-out, opacity 0.5s ease-in-out;
+            }
+
+            #vList{
+                position:relative;
+                top:25vh;
+                font-family: $secondary-font, Arial, Helvetica, serif;
+                text-align: center;
+                line-height: 200%;
+                font-size: 20px;
+                list-style-type:none;
+                margin: 20px 0px;
+                
+                
+
+                li:nth-child(even){
+                    @include li-even;
+                }
+
+                li:nth-child(odd){
+                    @include li-odd(rgb(210, 210, 210));
+                }
+
+                *:after{
+                    @include underscore;
+                }
+
+                *:hover:after{
+                    transform: scaleX(1);
+                }
+            }
+        }
+    }
+}
+
+.ninth{
+	position: relative;
+	height: 50vh;
+	background: url("images/heartcross.jpg") $nrf 40% 60%;
+	background-size: 100vw $ninth-height;
+	z-index:1;
+}
+
+.ninth-blurred{
+	position: relative;
+	height: 50vh;
+	background: url("images/heartcross-blurred.jpg") $nrf 40% 60%;
+	background-size: 100vw $ninth-height;
+	opacity:0;
+	z-index:2;
+}
+
+.tenth{
+	position: relative;
+	height: 115vh;
+	background: url("images/breakdance.jpg") $nrf 0% 20%;
+	background-size: cover;
+	transition: background-image .3s ease-in-out;
+	-moz-transition: background-image .3s ease-in-out;
+}
+
+#hobbies{
+	font-family: $main-font, Arial, Helvetica, serif;
+	font-size: $subheader-font-size;
+	letter-spacing: 10px;
+	color: $secondary-color;
+	position:relative;
+	text-align:center;
+	top:8vh;
+	padding: 1% 3% 1% 3%;
+	margin-top: 7%;
+	border-bottom: $secondary-color 3px solid;
+	border-top: $secondary-color 3px solid;
+	opacity:1;
+    opacity: 0;
+	transition: border-color 0.5s ease-in-out, opacity 0.5s ease-in-out;
+}
+
+#hobby-icons{
+	position: relative;
+	top: 70vh;
+    
+    img{
+       opacity: .4;
+	   transition: all 0.3s ease-in-out;
+	   display: inline-block;
+	   -webkit-backface-visibility: hidden;
+    }
+    
+    *:hover{
+        transform: scale(1.3);
+        opacity: 1;
+    }
+}
+
+
+@each $hobby in $hobby-list{
+    
+    .#{$hobby}{
+        background-image: url("/images/#{$hobby}.jpg");
+    }
+}
+/*
+.tennis{
+     background-image: url("/images/tennis.jpg");
+}
+
+.gaming{
+     background-image: url("/images/gaming.jpg");
+}
+
+.trance{
+     background-image: url("/images/trance.jpg");
+}
+
+.travel{
+     background-image: url("/images/travel.jpg");
+}
+
+.foreignlanguages{
+     background-image: url("/images/foreignlanguages.jpg");
+}
+
+.weight-lifting{
+     background-image: url("/images/weight-lifting.jpg");
+}
+
+.running{
+     background-image: url("/images/running.jpg");
+}
+
+.cars{
+     background-image: url("/images/cars.jpg");
+}
+
+.pingpong{
+     background-image: url("/images/pingpong.jpg");
+}
+
+.history{
+     background-image: url("/images/history.jpg");
+}
+
+.health{
+     background-image: url("/images/health.jpg");
+}
+
+.pets{
+     background-image: url("/images/pets.jpg");
+}*/
+
+
+.eleventh{
+	position:relative;
+	height:85vh;
+	background: url("images/saxophone.jpg") $nrf 50% 20%;
+	background-size: 100vw $eleventh-height;
+	z-index:3;
+}
+
+.twelfth{
+	position:relative;
+	height: 17vh;
+	background: $secondary-color $nrf;
+	z-index:3;
+}
+
+#goToTop{
+	font-family: $secondary-font, Arial, Helvetica, serif;
+	position: relative;
+	top:0.5em;
+	font-size:25px;
+	letter-spacing: 2px;
+	padding-top: 35px;
+	color: $main-color;
+	text-align: center;
+	display: inline-block;
+	transition: all .5s ease-in-out;
+        
+    &:after{
+        @include underscore;
+    }
+    
+    &:hover:after{
+        transform: scaleX(1);
+    }
+}
+
+#end{
+	font-family: $main-font, Arial, Helvetica, serif;
+	position: relative;
+	top:0em;
+	font-size: 90px;
+	letter-spacing: 5px;
+	color: $main-color;
+	text-align: center;
+	display: inline-block;
+	transition: all .5s ease-in-out;
+}
+
+#icons8{
+	font-family: $secondary-font, Arial, Helvetica, serif;
+	position: relative;
+	top:0.5em;
+	font-size:25px;
+	letter-spacing: 2px;
+	padding-top: 35px;
+	text-decoration: none;
+	color: $main-color;
+	text-align: center;
+	display: inline-block;
+	transition: all .5s ease-in-out;
+    
+    &:after{
+        @include underscore;
+    }
+    
+    &:hover:after{
+        transform: scaleX(1);
+    }
+}
+
+/*==================== Modal ====================*/
+ /*Prevents background from shifting to the right when modal is active
+ code from: http://stackoverflow.com/questions/32862394/bootstrap-modals-keep-adding-padding-right-to-body-after-closed/41155747
+ */
+
+.modal-open {
+     overflow: auto;
+	padding-right:0 !important;
+ }
+ /*End modal fix*/
+
+ .modal-dialog {
+	 border-radius: 20px;
+	 width: 60%;
+ }
+
+.modal-header, .modal-body, .modal-footer {
+	background-color:  $main-color;
+}
+ .modal-title{
+	font-family: $secondary-font, Arial, Helvetica, serif;
+	font-size: 30px;
+	letter-spacing: 4px;
+	color: $secondary-color;
+	text-align: center;
+ }
+
+ .modal-footer > button {
+     &:before {
+        content:'';
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        width: 0px;
+        height: 45px;
+        background: rgba(255,255,255,0.2);
+        border-radius: 10px;
+        transition: all 0.9s ease-in-out;
+     }
+     
+	font-family: $secondary-font, Arial, Helvetica, serif;
+	color: $main-color;
+	letter-spacing: 2px;
+    border-color: transparent;
+    border-radius: 10px;
+    transition: all 0.9s ease-in-out;
+     
+    &:hover:before, &:active:before{
+       width: 100%;
+	   border-radius:30px;   
+    }
+     
+    &:hover, &:active{
+       color: $secondary-color;
+	   background-color: rgb(130,130,130);
+       border-color: transparent;
+	   border-radius:30px;    
+    }
+ }
+
+ @media (max-width: 991px) and (orientation: portrait) {
+    .first{
+		background: url("images/subway.jpg") $nrs 20% 0%;
+		background-size: cover;
+	}
+
+	#name{
+		font-size:4em;
+		letter-spacing:6px;
+	}
+
+     #dArrow1{
+          position:absolute;
+          top: 80vh;
+     }
+
+	.window1{
+		position: relative;
+		top: 15vh;
+		margin: auto;
+		height:250px;
+		width: 250px;
+		background: url("images/graffiti.jpg") $nrs 47% 40%;
+		background-size: 1300px;
+		border: transparent solid 3px;
+		border-radius:50%;
+		padding: 3%;
+		transition: border 0.5s ease-in-out;
+	}
+
+	#aboutMe{
+        position: relative;
+        top:20vh;
+		font-size:2.5em;
+        letter-spacing: 6px;
+	}
+
+	#aboutMe-paragraph{
+        position: relative;
+        top:25vh;
+		font-size: 13px;
+		padding: 2% 10% 5% 10%;
+	}
+
+    .third{
+     	position:relative;
+     	height:110vh;
+     	background: url("images/books.jpg") $nrs 23% 30%;
+     	background-size: cover;
+     	z-index:1;
+    }
+
+
+	#education{
+        top:0vh;
+		font-size:2.5em;
+        width: 5em;
+        letter-spacing: 6px;
+		margin-top: 40px;
+	}
+
+	header + header{
+		font-size: 0.9em;
+	}
+
+	#courseList{
+        top:10vh;
+		font-size:12px;
+		left:0vw;
+	}
+
+	#projects-button{
+	    position: relative;
+	    top: 20vh;
+	    font-family: $secondary-font, Arial, Helvetica, serif;
+	    letter-spacing: 4px;
+	    color: $secondary-color;
+	    background-color: $main-color;
+	    border:  $main-color;
+	    border-radius: 10px;
+     }
+
+     .fourth{
+        height:75vh;
+     }
+
+     #languages{
+        font-size:2.5em;
+        letter-spacing: 6px;
+     }
+
+	#languageList{
+		font-size: 1em;
+	}
+
+     .fifth{
+     	position: relative;
+     	height:50vh;
+     	background: url("images/code.jpg")  $nrs 0% 20%;
+     	background-size:50vh;
+     	z-index:4;
+     }
+
+     .sixth{
+     	position:relative;
+     	height:75vh;
+     	background: url("images/graffiti2.jpg") $nrs 25% 60%;
+     	background-size:1500px;
+     	z-index:1;
+     }
+
+     #additionalSkills{
+          position: relative;
+          top: 10vh;
+          font-size:2.5em;
+          letter-spacing: 6px;
+          text-align: center;
+     }
+
+     #skillList{
+          font-size: 1em;
+     }
+
+	.seventhParis{
+		height:50vh;
+		background: url("images/eiffel.jpg") $nrs 51% 60%;
+		background-size: 900px;
+		z-index:3;
+	}
+
+	#french {
+	   position:relative;
+	   left: 5%;
+	   font-size: 15px;
+	}
+
+	.seventhBerlin{
+		background: url("images/brandenburggate.jpg") $nrs 80% 40%;
+	}
+
+	#german{
+	     position:relative;
+	     left: -30%;
+	     font-size: 15px;
+	}
+
+     .eighth{
+          height:130vh;
+     }
+
+	.window2{
+		position: relative;
+		top: 15vh;
+		margin: auto;
+		height:250px;
+		width: 250px;
+		background: url("images/care.jpg") $nrs 70% 0%;
+		background-size: 1300px;
+		border: transparent solid 3px;
+		border-radius:50%;
+		transition: border 0.5s ease-in-out;
+     }
+
+     #vWork{
+          font-size:2.5em;
+          letter-spacing: 6px;
+     }
+
+	#vList{
+		font-size:1em;
+	}
+
+	.ninth{
+		background: url("images/heartcross.jpg") $nrs 48% 60%;
+		background-size: 3000px;
+	}
+
+
+	.tenth{
+		background: url("images/breakdance.jpg") $nrs 35% 10%;
+          height:80vh;
+		background-size: 130vh;
+	}
+
+     #hobbies{
+          font-size:2.5em;
+          letter-spacing: 6px;
+     }
+
+	#hobby-icons{
+		top: 45vh;
+        
+        *:hover{
+            transform: scale(1.2);
+        }
+	}
+
+	.hobby-icons-buffer{
+		margin-top:25px;
+	}
+
+	.eleventh{
+		background: url("images/saxophone.jpg") $nrs 60% 0%;
+		background-size: 2900px;
+		z-index:3;
+	}
+
+	#end{
+		font-size: 35px;
+		padding-top: 25px;
+	}
+
+	#goToTop{
+		font-size:15px;
+		padding-top: 30px;
+	}
+
+	#icons8{
+		font-size: 15px;
+		padding-top:18px;
+	}
+
+    .modal-dialog{
+         top:4em;
+         left:0.5em;
+    	 border-radius: 20px;
+    	 width: 90%;
+     }
+ }
+
+ @media (max-width: 991px) and (orientation: landscape) {
+      .first{
+          background: url("images/subway.jpg") $nrs 20% 60%;
+          background-size: 1000px;
+      }
+
+      #name{
+          font-size:3.7em;
+          letter-spacing:6px;
+      }
+
+      .second{
+           height: 210vh;
+      }
+
+      .window1{
+          position: relative;
+          top: 15vh;
+          margin: auto;
+          height:250px;
+          width: 250px;
+          background: url("images/graffiti.jpg") $nrs 47% 40%;
+          background-size: 1500px;
+          border: transparent solid 3px;
+          border-radius:50%;
+          padding: 3%;
+          transition: border 0.5s ease-in-out;
+      }
+
+      #aboutMe{
+          position: relative;
+          top:20vh;
+          font-size:2.3em;
+          letter-spacing: 6px;
+          padding: 0% 2% 0% 2%;
+          text-align: center;
+      }
+
+      #aboutMe-paragraph{
+          position: relative;
+          top:20vh;
+          font-size: 13px;
+          padding: 2% 10% 5% 10%;
+      }
+
+      .third{
+          position:relative;
+          height:150vh;
+          background: url("images/books.jpg") $nrs 23% 30%;
+          background-size: 2300px;
+          z-index:1;
+      }
+
+
+      #education{
+          font-size:2.5em;
+          width: 5em;
+          letter-spacing: 6px;
+          margin-top: 40px;
+      }
+
+      header + header{
+          font-size: 0.9em;
+      }
+
+      #courseList{
+          font-size:12px;
+          left:0%;
+          top:10vh;
+          width:40vw;
+      }
+
+      #projects-button{
+          position: relative;
+          top: 80vh;
+          font-family: $secondary-font, Arial, Helvetica, serif;
+          letter-spacing: 4px;
+          color: $secondary-color;
+          background-color: $main-color;
+          border:  $main-color;
+          border-radius: 10px;
+      }
+
+      .fourth{
+          height:115vh;
+      }
+
+      #languages{
+          font-size:2.5em;
+          letter-spacing: 6px;
+      }
+
+      #languageList{
+          font-size: 1em;
+          transition: opacity  0.5s ease-in-out;
+      }
+
+      .fifth{
+          position: relative;
+          height:50vh;
+          background: url("images/code.jpg")  $nrs 0% 20%;
+          background-size:3000px;
+          z-index:4;
+      }
+
+      .sixth{
+          position:relative;
+          height:130vh;
+          background: url("images/graffiti2.jpg") $nrs 25% 60%;
+          background-size:1500px;
+          z-index:1;
+      }
+
+      #additionalSkills{
+           position: relative;
+          top:15vh;
+          font-size:2.5em;
+          letter-spacing: 6px;
+          padding: 1% 2% 1% 2%;
+      }
+
+      #skillList{
+          top: 20vh;
+          font-size: 1em;
+      }
+
+      .seventhParis{
+          height:50vh;
+          background: url("images/eiffel.jpg") $nrs 51% 60%;
+          background-size: 900px;
+          z-index:3;
+      }
+
+      #french {
+        position:relative;
+        left: 5%;
+        font-size: 15px;
+      }
+
+      .seventhBerlin{
+          background: url("images/brandenburggate.jpg") $nrs 80% 40%;
+      }
+
+      #german{
+          position:relative;
+          left: -10%;
+          font-size: 15px;
+      }
+
+      .eighth{
+          height:160vh;
+      }
+
+      .window2{
+          position: relative;
+          top: 15vh;
+          margin: auto;
+          height:250px;
+          width: 250px;
+          background: url("images/care.jpg") $nrs 70% 0%;
+          background-size: 1200px;
+          border: transparent solid 3px;
+          border-radius:50%;
+          transition: border 0.5s ease-in-out;
+      }
+
+      #vWork{
+          font-size:2.5em;
+          letter-spacing: 6px;
+      }
+
+      #vList{
+          font-size:1em;
+      }
+
+      .ninth{
+          background: url("images/heartcross.jpg") $nrs 48% 50%;
+          background-size: 2900px;
+      }
+
+
+      .tenth{
+          background: url("images/breakdance.jpg") $nrs 35% 10%;
+          height:130vh;
+          background-size: 130vw;
+      }
+
+      #hobbies{
+          font-size:2.5em;
+          letter-spacing: 6px;
+      }
+
+      #hobby-icons{
+          top: 80vh;
+          
+          *:hover{
+              transform: scale(1.2);
+          }
+      }
+
+      .hobby-icons-buffer{
+          margin-top:25px;
+      }
+
+      .eleventh{
+          background: url("images/saxophone.jpg") $nrs 60% 30%;
+          background-size: 2500px;
+          z-index:3;
+      }
+
+      .twelfth{
+          position: relative;
+          height: 15vh;
+      }
+
+      #end{
+          font-size: 2.7em;
+          padding-top: 0px;
+      }
+
+      #goToTop{
+          font-size:15px;
+          padding-top: 10px;
+      }
+
+      #icons8{
+          font-size: 15px;
+          padding-top:10px;
+      }
+
+      .modal-dialog{
+          top:4em;
+          left:0.5em;
+          border-radius: 20px;
+          width: 90%;
+      }
+}
