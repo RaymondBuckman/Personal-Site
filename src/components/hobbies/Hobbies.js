@@ -18,7 +18,7 @@ class Hobbies extends Component {
     render() {
         return(
         <div>
-            <div className="tenth">
+            <div className="Hobbies-1">
                 <div className="container">
                     <div className="row">
                         <div id="divOutsideHobibes" className="col-md-4 col-md-offset-4 col-xs-6 col-xs-offset-3">
@@ -43,7 +43,7 @@ class Hobbies extends Component {
                     </div>
                 </div>
             </div>
-            <div className="eleventh"></div>
+            <div className="Hobbies-2"></div>
         </div>
         );
     }

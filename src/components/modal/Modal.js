@@ -10,8 +10,8 @@ class Modal extends Component {
     render() {
         return(
         <div className="modal fade" id="projectsModal" data-easein="slideLeftBigIn"  tabIndex="-1">
-         <div className="modal-dialog">
-               <div className="modal-content">
+            <div className="modal-dialog">
+                <div className="modal-content">
                     <div className="modal-header">
                          <header className="modal-title">Quadrocopter (Drone)</header>
                     </div>
@@ -47,8 +47,8 @@ class Modal extends Component {
                      <button type="button" className="btn btn-default" data-dismiss="modal">Close</button>
                    </div>
                </div>
+            </div>
         </div>
-         </div>
         );
     }
 }

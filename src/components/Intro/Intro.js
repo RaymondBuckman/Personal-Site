@@ -5,7 +5,7 @@ class Intro extends Component {
     render() {
         return(
         <div> 
-            <div className="first" id="top-of-page">
+            <div className="Intro-1" id="top-of-page">
                 <div className="container-fluid">
                     <div className="row">
                         <div id="name" className="col-lg-10 col-lg-offset-1 col-xs-8 col-xs-offset-2 text-center">
@@ -20,10 +20,10 @@ class Intro extends Component {
             </div>
             
             
-            <div className="Second" id="arrow-dest">
+            <div className="Intro-2" id="arrow-dest">
                 <ul className="flex-container">
                     <li className="flex-item">
-                        <div className="scrollmagicWindow window1"></div>
+                        <div className="scrollmagicWindow window1" id="window-1"></div>
                     </li>
                     <li className="flex-item">
                         <h1 id="aboutMe" className="scrollmagicFadeIn">Ab<span id="aboutMe_o">o</span><span id="aboutMe_ut">ut</span> <span id="aboutMe_M">M</span><span id="aboutMe_e">e</span>

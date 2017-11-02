@@ -27,8 +27,9 @@ class Sidebar extends Component {
                     <a href="https://icons8.com/" target="_blank">
                         <span className="sidebar-first-letter">I</span>cons8<span className="pull-right"><img id="icons8-logo" src="https://png.icons8.com/icons8-filled/ios7/100" title="Icons8 Filled" width="30" height="30"></img></span>
                     </a>
-            </li>
+                </li>
             </ul>
+            <div id="bottom-sidebar-image"></div>
         </div>
         );
     }
