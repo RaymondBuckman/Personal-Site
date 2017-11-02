@@ -5,24 +5,24 @@ class VolumteerWork extends Component {
     render() {
         return(
         <div>
-            <div className="eighth">
+            <div className="VWork-1">
                     <ul className="flex-container">
                         <li className="flex-item">
                             <div className="scrollmagicWindow window2"></div>
                         </li>
                         <li className="flex-item">
                             <header id="vWork"  className="scrollmagicFadeIn">Volunteer Work</header>
-                            <ul id="vList" className="col-md-4 col-md-offset-4 col-xs-10 col-xs-offset-1 scrollmagicFadeIn">
-                                <li>Cameraman</li>
-                                <li>Average of 2 hours/week since February 2016</li>
-                                <li>Food Packer @ San Diego Food Bank</li>
+                            <ul id="vList" className="scrollmagicFadeIn">
+                                <li>Cameraman</li><br/>
+                                <li>Average of 2 hours/week since February 2016</li><br/>
+                                <li>Food Packer @ San Diego Food Bank</li><br/>
                                 <li>4 hours/day for 2 months</li>
                             </ul>
                         </li>
                     </ul>
             </div>
-            <div className="ninth">
-                <div className="ninth-blurred"></div>
+            <div className="VWork-2">
+                <div className="VWork-2-blurred"></div>
             </div>
         </div>         
         );
