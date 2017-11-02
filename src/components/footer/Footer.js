@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 class Footer extends Component {
     render() {
         return(
-        <div className="twelfth">
+        <div className="Footer-1">
             <div className="container">
                 <div className="row">
                     <div className="col-xs-4 text-center">
