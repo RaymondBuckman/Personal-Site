@@ -42,7 +42,7 @@ ReactDOM.render(
             <div id="sidebar-wrapper">
                 <Sidebar />
             </div>
-            <img id="menu" src={menu} height="40px"></img>
+            <img id="menu" src="https://png.icons8.com/menu/androidL/73/000000" height="40px"></img>
             <span id="close" className="glyphicon glyphicon-remove"></span>
             <div id="page-content-wrapper">
                 <Intro />
@@ -62,6 +62,13 @@ ReactDOM.render(
 
 
 $(document).ready(function(){    
+    $("#dArrow1").click(function() {
+        $('html, body').animate({
+            scrollTop: $(".Intro-2").offset().top
+        }, 1200);
+    });
+    
+    
     var borderRadius = "40px 20px 40px 20px";
     var controller = new ScrollMagic.Controller();
     
@@ -98,7 +105,7 @@ $(document).ready(function(){
     });
     
     var pushNavUpScene = new ScrollMagic.Scene({
-        triggerElement: '.tenth',
+        triggerElement: '.Hobbies-1',
         triggerHook: 0.07
     })
     .setTween(pushNavUpTween)
@@ -120,22 +127,7 @@ $(document).ready(function(){
         .addTo(controller);
     })
     
-    $('.scrollmagicWindow').each(function(){
-        var headerScene = new ScrollMagic.Scene({
-            triggerElement: this,
-            triggerHook: 0.2,
-            offset: 500,
-            reverse: true
-        })
-        .setClassToggle(this, 'fade-out')
-        /*
-        .addIndicators({
-            name: 'fade scene',
-            colorTrigger: 'black',
-            colorStart: '#75C695'
-        })*/
-        .addTo(controller);
-    })
+    
     
     /*----- Border radius scenes -----*/
     var nameBorderTween = TweenMax.to("#name", 1, { 
@@ -175,6 +167,19 @@ $(document).ready(function(){
         reverse: true
     })
     .setTween(educationBorderTween)
+    .addTo(controller);
+    
+    var onlineBorderTween = TweenMax.to("#online-courses", 1, { 
+        borderRadius: borderRadius,
+        ease:Power1.easeIn
+    });
+
+	var onlineBorderscene = new ScrollMagic.Scene({
+        triggerElement: "#online-courses",
+        triggerHook: 0.25,
+        reverse: true
+    })
+    .setTween(onlineBorderTween)
     .addTo(controller);
     
     var languagesBorderTween = TweenMax.to("#languages", 1, { 
@@ -246,6 +251,22 @@ $(document).ready(function(){
     })
     .setClassToggle('#courseList li:nth-child(even)', 'fade-in')
     .addTo(controller);
+    
+    var onlineListOddScene = new ScrollMagic.Scene({
+        triggerElement: '#online-list li:nth-child(odd)',
+        triggerHook: 0.8,
+        reverse: false    
+    })
+    .setClassToggle('#online-list li:nth-child(odd)', 'fade-in')
+    .addTo(controller);
+        
+    var onlineListEvenScene = new ScrollMagic.Scene({
+        triggerElement: '#online-list li:nth-child(odd)',
+        triggerHook: 0.8,
+        reverse: false    
+    })
+    .setClassToggle('#online-list li:nth-child(even)', 'fade-in')
+    .addTo(controller);
         
     var languageListOddScene = new ScrollMagic.Scene({
         triggerElement: '#languageList li:nth-child(odd)',
@@ -294,9 +315,9 @@ $(document).ready(function(){
     })
     .setClassToggle('#vList li:nth-child(even)', 'fade-in')
     .addTo(controller);
-    
+
     /* ----Background Scroll animations -----*/    
-    var firstParallaxTween = TweenMax.to(".first", 1, {
+    var firstParallaxTween = TweenMax.to(".Intro-1", 1, {
         backgroundSize: "+=200px +=133.3px", //changes bg image size without changing proportions
         backgroundPositionX: "-=50%",
         autoRound:false, 
@@ -304,14 +325,14 @@ $(document).ready(function(){
     });
 
 	var firstParallaxscene = new ScrollMagic.Scene({
-        triggerElement: ".first", 
+        triggerElement: ".Intro-1", 
         duration: "100%",
         triggerHook:0
     })
     .setTween(firstParallaxTween)
     .addTo(controller);
      
-    var firstBrighterTween = TweenMax.to(".first", 0.01, {
+    var firstBrighterTween = TweenMax.to(".Intro-1", 0.01, {
         filter: "brightness(150%)",
         autoRound:false, 
         ease:Power0.linear
@@ -319,158 +340,158 @@ $(document).ready(function(){
 
     
     var firstBrighterScene = new ScrollMagic.Scene({
-        triggerElement: ".Second",
+        triggerElement: ".Intro-2",
         triggerHook: 0.9
     })
     .setTween(firstBrighterTween)
     .addTo(controller);
     
-    var firstEvenBrighterTween = TweenMax.to(".first", 0.01, {
+    var firstEvenBrighterTween = TweenMax.to(".Intro-1", 0.01, {
         filter: "brightness(200%)",
         autoRound:false, 
         ease:Power0.linear
     });
     
     var firstEvenBrighterScene = new ScrollMagic.Scene({
-        triggerElement: ".Second",
+        triggerElement: ".Intro-2",
         triggerHook: 0.7
     })
     .setTween(firstEvenBrighterTween)
     .addTo(controller);
     
-    var firstBrightestTween = TweenMax.to(".first", 0.01, {
+    var firstBrightestTween = TweenMax.to(".Intro-1", 0.01, {
         filter: "brightness(300%)",
         autoRound:false, 
         ease:Power0.linear
     });
 
     var firstBrightestScene = new ScrollMagic.Scene({
-        triggerElement: ".Second",
+        triggerElement: ".Intro-2",
         triggerHook: 0.5,
         
     })
     .setTween(firstBrightestTween)
     .addTo(controller);
     
-    var thirdParallaxTween = TweenMax.to(".third", 1, { 
+    var thirdParallaxTween = TweenMax.to(".Education-1", 1, { 
         backgroundPositionX: "+=80%",
         autoRound:false, 
         ease:Power1.easeIn
     });
 
 	var thirdParallaxscene = new ScrollMagic.Scene({
-        triggerElement: ".third",
+        triggerElement: ".Education-1",
         triggerHook: 1,
         duration: "200%"
     })
     .setTween(thirdParallaxTween)
     .addTo(controller);
     
-    var fifthParallaxTween = TweenMax.to(".fifth", 1, { 
+    var fifthParallaxTween = TweenMax.to(".Languages-2", 1, { 
         backgroundPositionX: "-=30%",
         autoRound:false, 
         ease:Power0.linear
     });
 
 	var fifthParallaxscene = new ScrollMagic.Scene({
-        triggerElement: ".fifth",
+        triggerElement: ".Languages-2",
         triggerHook: 1,
         duration: "250%"
     })
     .setTween(fifthParallaxTween)
     .addTo(controller);
     
-    var fifthInvertTween = TweenMax.to(".fifth", 0.01, {
+    var fifthInvertTween = TweenMax.to(".Languages-2", 0.01, {
         filter: "invert(300%)",
         autoRound:false, 
         ease:Power0.linear
     });
 
     var fifthInvertScene = new ScrollMagic.Scene({
-        triggerElement: ".fifth",
+        triggerElement: ".Languages-2",
         triggerHook: 0.25,
     })
     .setTween(fifthInvertTween)
     .addTo(controller);
     
-    var seventhParisParallaxTween = TweenMax.to(".seventhParis", 1, { 
+    var seventhParisParallaxTween = TweenMax.to(".Skills-2", 1, { 
         backgroundSize: "+=500px +=332.25px", //changes bg image size without changing proportions
         autoRound:false, 
         ease:Power0.easeOut
     });
 
 	var seventhParisParallaxscene = new ScrollMagic.Scene({
-        triggerElement: ".seventhParis",
+        triggerElement: ".Skills-2",
         triggerHook: 1,
         duration: "200%"
     })
     .setTween(seventhParisParallaxTween)
     .addTo(controller);
     
-    var seventhBerlinParallaxTween = TweenMax.to(".seventhBerlin", 1, { 
+    var seventhBerlinParallaxTween = TweenMax.to(".Skills-3", 1, { 
         backgroundPositionX: "-=100%",
         autoRound:false, 
         ease:Power0.easeOut
     });
 
 	var seventhBerlinParallaxscene = new ScrollMagic.Scene({
-        triggerElement: ".seventhBerlin",
+        triggerElement: ".Skills-3",
         triggerHook: 1,
         duration: "200%"
     })
     .setTween(seventhBerlinParallaxTween)
     .addTo(controller);
     
-    var ninthParallaxTween = TweenMax.from(".ninth", 1, { 
+    var ninthParallaxTween = TweenMax.from(".VWork-2", 1, { 
         backgroundSize: "+=400px +=266.8px", //changes bg image size without changing proportions
         autoRound:false, 
         ease:Power1.easeOut
     });
 
 	var ninthParallaxscene = new ScrollMagic.Scene({
-        triggerElement: ".ninth",
+        triggerElement: ".VWork-2",
         triggerHook: 1,
         duration: "200%"
     })
     .setTween(ninthParallaxTween)
     .addTo(controller);
     
-    var ninthBlurredParallaxTween = TweenMax.from(".ninth-blurred", 1, { 
+    var ninthBlurredParallaxTween = TweenMax.from(".VWork-2-blurred", 1, { 
         backgroundSize: "+=400px +=266.8px", //changes bg image size without changing proportions
         autoRound:false, 
         ease:Power1.easeOut
     });
 
 	var ninthBlurredParallaxscene = new ScrollMagic.Scene({
-        triggerElement: ".ninth-blurred",
+        triggerElement: ".VWork-2-blurred",
         triggerHook: 1,
         duration: "200%"
     })
     .setTween(ninthBlurredParallaxTween)
     .addTo(controller);
     
-    var ninthDisappearParallaxTween = TweenMax.to(".ninth-blurred", 1, { 
+    var ninthDisappearParallaxTween = TweenMax.to(".VWork-2-blurred", 1, { 
         opacity: "1",
         autoRound:false, 
         ease:Power1.easeOut
     });
 
 	var ninthDisappearParallaxscene = new ScrollMagic.Scene({
-        triggerElement: ".ninth-blurred",
+        triggerElement: ".VWork-2-blurred",
         triggerHook: 0.2,
         duration: "50%"
     })
     .setTween(ninthDisappearParallaxTween)
     .addTo(controller);
     
-    var eleventhParallaxTween = TweenMax.from(".eleventh", 1, { 
+    var eleventhParallaxTween = TweenMax.from(".Hobbies-2", 1, { 
         backgroundSize: "+=300px +=199.65px", //changes bg image size without changing proportions
         autoRound:false, 
         ease:Power1.easeIn
     });
 
 	var eleventhDisappearParallaxscene = new ScrollMagic.Scene({
-        triggerElement: ".eleventh",
+        triggerElement: ".Hobbies-2",
         triggerHook: 1,
         duration: "150%"
     })
@@ -479,47 +500,47 @@ $(document).ready(function(){
     
 
     /*----- Navbar highlight animations -----*/ 
-    var heightOfEducation = $('.fourth').offset().top - $('.third').offset().top;
-    var heightOfLanguages = $('.sixth').offset().top - $('.fourth').offset().top;
-    var heightOfSkills = $('.eighth').offset().top - $('.sixth').offset().top;
-    var heightOfVWork = $('.tenth').offset().top - $('.eighth').offset().top;
-    var heightOfHobbies = $('.eleventh').offset().top - $('.tenth').offset().top;
+    var heightOfEducation = $('.Languages-1').offset().top - $('.Education-1').offset().top;
+    var heightOfLanguages = $('.Skills-1').offset().top - $('.Languages-1').offset().top;
+    var heightOfSkills = $('.VWork-1').offset().top - $('.Skills-1').offset().top;
+    var heightOfVWork = $('.Hobbies-1').offset().top - $('.VWork-1').offset().top;
+    var heightOfHobbies = $('.Hobbies-2').offset().top - $('.Hobbies-1').offset().top;
     
     
-    new ScrollMagic.Scene({
-        triggerElement: ".third",
+    var nav1Tween = new ScrollMagic.Scene({
+        triggerElement: ".Education-1",
         triggerHook: 0.5,
         duration: heightOfEducation
     })
     .setClassToggle(".navbar-default .navbar-nav > li:nth-child(1)", "active") // add class toggle
     .addTo(controller);
     
-	new ScrollMagic.Scene({
-        triggerElement: ".fourth",
+	var nav2Tween = new ScrollMagic.Scene({
+        triggerElement: ".Languages-1",
         triggerHook: 0.5,
         duration: heightOfLanguages
     })
     .setClassToggle(".navbar-default .navbar-nav > li:nth-child(2)", "active") // add class toggle
     .addTo(controller);
     
-	new ScrollMagic.Scene({
-        triggerElement: ".sixth",
+	var nav3Tween = new ScrollMagic.Scene({
+        triggerElement: ".Skills-1",
         triggerHook: 0.5,
         duration: heightOfSkills
     })
     .setClassToggle(".navbar-default .navbar-nav > li:nth-child(3)", "active") // add class toggle
     .addTo(controller);
     
-	new ScrollMagic.Scene({
-        triggerElement: ".eighth",
+	var nav4Tween = new ScrollMagic.Scene({
+        triggerElement: ".VWork-1",
         triggerHook: 0.5,
         duration: heightOfVWork
     })
     .setClassToggle(".navbar-default .navbar-nav > li:nth-child(4)", "active") // add class toggle
     .addTo(controller);
     
-    new ScrollMagic.Scene({
-        triggerElement: ".tenth",
+    var nav5Tween = new ScrollMagic.Scene({
+        triggerElement: ".Hobbies-1",
         triggerHook: 0.5,
         duration: heightOfHobbies
     })
@@ -527,22 +548,22 @@ $(document).ready(function(){
     .addTo(controller);
 
 
-    
+    /*
     function rotate(event) 
     {
         var x = event.clientX;
         var wwidth = window.innerWidth;
         var horizmidpoint = wwidth / 2;
         var xpos = x - horizmidpoint;
-        var xval = (xpos / horizmidpoint);
+        var xval = (xpos / horizmidpoint) * 2;
         
         var y = event.clientY;
         var wheight = window.innerHeight;
         var vertmidpoint = wheight / 2;
         var ypos = y - vertmidpoint;
-        var yval = (ypos / vertmidpoint);
+        var yval = (ypos / vertmidpoint) * 2;
         
-        var tilt0 = document.getElementById("language");
+        var tilt0 = document.getElementById("window-1");
         console.log(ypos);
         
         tilt0.style.transform = "translateX(" + (-xval) + "vw)";
@@ -552,7 +573,7 @@ $(document).ready(function(){
     {
         rotate(event)
     }, false);
-    
+    */
 
      /*================Remove down arrow when in Landscape layout on mobile devices================*/
      var sm = window.matchMedia( "(max-width: 991px)" );
@@ -643,121 +664,121 @@ $(window).scroll(function(){
           });
 
           $('#hobby-icons img:first-child').hover(function(){
-               $('.tenth').css({
+               $('.Hobbies-1').css({
                     'background-image' : 'url(' + tennis + ')'
                })
           }, function(){
-               $('.tenth').css({
+               $('.Hobbies-1').css({
                     'background-image' : 'url(' + breakdance + ')'
                })
           });
 
           $('#hobby-icons img:nth-child(2)').hover(function(){
-               $('.tenth').css({
+               $('.Hobbies-1').css({
                     'background-image' : 'url(' + gaming + ')'
                })
           }, function(){
-               $('.tenth').css({
+               $('.Hobbies-1').css({
                     'background-image' : 'url(' + breakdance + ')'
                })
           });
 
           $('#hobby-icons img:nth-child(3)').hover(function(){
-               $('.tenth').css({
+               $('.Hobbies-1').css({
                     'background-image' : 'url(' + trance + ')'
                })
           }, function(){
-               $('.tenth').css({
+               $('.Hobbies-1').css({
                     'background-image' : 'url(' + breakdance + ')'
                })
           });
 
           $('#hobby-icons img:nth-child(4)').hover(function(){
-               $('.tenth').css({
+               $('.Hobbies-1').css({
                     'background-image' : 'url(' + travel + ')'
                })
           }, function(){
-               $('.tenth').css({
+               $('.Hobbies-1').css({
                     'background-image' : 'url(' + breakdance + ')'
                })
           });
 
           $('#hobby-icons img:nth-child(5)').hover(function(){
-               $('.tenth').css({
+               $('.Hobbies-1').css({
                     'background-image' : 'url(' + foreign + ')'
                })
           }, function(){
-               $('.tenth').css({
+               $('.Hobbies-1').css({
                     'background-image' : 'url(' + breakdance + ')'
                })
           });
 
           $('#hobby-icons img:nth-child(6)').hover(function(){
-               $('.tenth').css({
+               $('.Hobbies-1').css({
                     'background-image' : 'url(' + weightlifting + ')'
                })
           }, function(){
-               $('.tenth').css({
+               $('.Hobbies-1').css({
                     'background-image' : 'url(' + breakdance + ')'
                })
           });
 
           $('#hobby-icons img:nth-child(7)').hover(function(){
-               $('.tenth').css({
+               $('.Hobbies-1').css({
                     'background-image' : 'url(' + running + ')'
                })
           }, function(){
-               $('.tenth').css({
+               $('.Hobbies-1').css({
                     'background-image' : 'url(' + breakdance + ')'
                })
           });
 
           $('#hobby-icons img:nth-child(8)').hover(function(){
-               $('.tenth').css({
+               $('.Hobbies-1').css({
                     'background-image' : 'url(' + cars + ')'
                })
           }, function(){
-               $('.tenth').css({
+               $('.Hobbies-1').css({
                     'background-image' : 'url(' + breakdance + ')'
                })
           });
 
           $('#hobby-icons img:nth-child(9)').hover(function(){
-               $('.tenth').css({
+               $('.Hobbies-1').css({
                     'background-image' : 'url(' + pingpong + ')'
                })
           }, function(){
-               $('.tenth').css({
+               $('.Hobbies-1').css({
                     'background-image' : 'url(' + breakdance + ')'
                })
           });
 
           $('#hobby-icons img:nth-child(10)').hover(function(){
-               $('.tenth').css({
+               $('.Hobbies-1').css({
                     'background-image' : 'url(' + history + ')'
                })
           }, function(){
-               $('.tenth').css({
+               $('.Hobbies-1').css({
                     'background-image' : 'url(' + breakdance + ')'
                })
           });
 
           $('#hobby-icons img:nth-child(11)').hover(function(){
-               $('.tenth').css({
+               $('.Hobbies-1').css({
                     'background-image' : 'url(' + health + ')'
                })
           }, function(){
-               $('.tenth').css({
+               $('.Hobbies-1').css({
                     'background-image' : 'url(' + breakdance + ')'
                })
           });
 
           $('#hobby-icons img:nth-child(12)').hover(function(){
-               $('.tenth').css({
+               $('.Hobbies-1').css({
                     'background-image' : 'url(' + pets + ')'
                })
           }, function(){
-               $('.tenth').css({
+               $('.Hobbies-1').css({
                     'background-image' : 'url(' + breakdance + ')'
                })
           });
@@ -765,7 +786,7 @@ $(window).scroll(function(){
 
 /*=============================================================FOR SMALL & X-SMALL SCREENS in Portrait Orienetation=============================================================*/
      if(sm.matches && (window.outerWidth < window.outerHeight)){
-          $('.first').css({
+          $('.Intro-1').css({
               'filter': 'brightness(' + (100 + wScroll/2.8) + '%'
           })
 
@@ -788,7 +809,7 @@ $(window).scroll(function(){
 
 
           //Pan-left effect on background
-          $('.third').css({
+          $('.Education-1').css({
                'background-position' : (23 + (wScroll/50)) + '% 30%'
           })
 
@@ -796,7 +817,7 @@ $(window).scroll(function(){
 
           $('#divOutsideProjecsButton').addClass('col-xs-offset-2');
 
-          $('.fifth').css({
+          $('.Languages-2').css({
                'background-position' : (wScroll-1500)/80 + '% 20%',
                'filter': 'invert(' + Math.pow((wScroll/2750), 50) + '%)'
           })
@@ -807,7 +828,7 @@ $(window).scroll(function(){
 
           $('#divOutsideAdditionalSkills').removeClass('col-xs-6 col-xs-offset-3');
 
-          $('.seventhParis').css({
+          $('.Skills-2').css({
                'background-size' : (100 + wScroll/2.9) + 'px'
           })
 
@@ -841,133 +862,133 @@ $(window).scroll(function(){
           });
 
           $('#hobby-icons img:first-child').hover(function(){
-               $('.tenth').css({
+               $('.Hobbies-1').css({
                     'background-image' : 'url(images/tennis.jpg)'
                })
           }, function(){
-               $('.tenth').css({
+               $('.Hobbies-1').css({
                     'background-image' : 'url(images/breakdance.jpg)'
                })
           });
 
           $('#hobby-icons img:nth-child(2)').hover(function(){
-               $('.tenth').css({
+               $('.Hobbies-1').css({
                     'background-image' : 'url(images/gaming.jpg)'
                })
           }, function(){
-               $('.tenth').css({
+               $('.Hobbies-1').css({
                     'background-image' : 'url(images/breakdance.jpg)'
                })
           });
 
           $('#hobby-icons img:nth-child(3)').hover(function(){
-               $('.tenth').css({
+               $('.Hobbies-1').css({
                     'background-image' : 'url(images/trance.jpg)'
                })
           }, function(){
-               $('.tenth').css({
+               $('.Hobbies-1').css({
                     'background-image' : 'url(images/breakdance.jpg)'
                })
           });
 
           $('#hobby-icons img:nth-child(4)').hover(function(){
-               $('.tenth').css({
+               $('.Hobbies-1').css({
                     'background-image' : 'url(images/travel.jpg)'
                })
           }, function(){
-               $('.tenth').css({
+               $('.Hobbies-1').css({
                     'background-image' : 'url(images/breakdance.jpg)'
                })
           });
 
           $('#hobby-icons img:nth-child(5)').hover(function(){
-               $('.tenth').css({
+               $('.Hobbies-1').css({
                     'background-image' : 'url(images/foreignlanguages.jpg)'
                })
           }, function(){
-               $('.tenth').css({
+               $('.Hobbies-1').css({
                     'background-image' : 'url(images/breakdance.jpg)'
                })
           });
 
           $('#hobby-icons img:nth-child(6)').hover(function(){
-               $('.tenth').css({
+               $('.Hobbies-1').css({
                     'background-image' : 'url(images/weight-lifting.jpg)'
                })
           }, function(){
-               $('.tenth').css({
+               $('.Hobbies-1').css({
                     'background-image' : 'url(images/breakdance.jpg)'
                })
           });
 
           $('#hobby-icons img:nth-child(7)').hover(function(){
-               $('.tenth').css({
+               $('.Hobbies-1').css({
                     'background-image' : 'url(images/running.jpg)'
                })
           }, function(){
-               $('.tenth').css({
+               $('.Hobbies-1').css({
                     'background-image' : 'url(images/breakdance.jpg)'
                })
           });
 
           $('#hobby-icons img:nth-child(8)').hover(function(){
-               $('.tenth').css({
+               $('.Hobbies-1').css({
                     'background-image' : 'url(images/cars.jpg)'
                })
           }, function(){
-               $('.tenth').css({
+               $('.Hobbies-1').css({
                     'background-image' : 'url(images/breakdance.jpg)'
                })
           });
 
           $('#hobby-icons img:nth-child(9)').hover(function(){
-               $('.tenth').css({
+               $('.Hobbies-1').css({
                     'background-image' : 'url(images/pingpong.jpg)'
                })
           }, function(){
-               $('.tenth').css({
+               $('.Hobbies-1').css({
                     'background-image' : 'url(images/breakdance.jpg)'
                })
           });
 
           $('#hobby-icons img:nth-child(10)').hover(function(){
-               $('.tenth').css({
+               $('.Hobbies-1').css({
                     'background-image' : 'url(images/history.jpg)'
                })
           }, function(){
-               $('.tenth').css({
+               $('.Hobbies-1').css({
                     'background-image' : 'url(images/breakdance.jpg)'
                })
           });
 
           $('#hobby-icons img:nth-child(11)').hover(function(){
-               $('.tenth').css({
+               $('.Hobbies-1').css({
                     'background-image' : 'url(images/health.jpg)'
                })
           }, function(){
-               $('.tenth').css({
+               $('.Hobbies-1').css({
                     'background-image' : 'url(images/breakdance.jpg)'
                })
           });
 
           $('#hobby-icons img:nth-child(12)').hover(function(){
-               $('.tenth').css({
+               $('.Hobbies-1').css({
                     'background-image' : 'url(images/pets.jpg)'
                })
           }, function(){
-               $('.tenth').css({
+               $('.Hobbies-1').css({
                     'background-image' : 'url(images/breakdance.jpg)'
                })
           });
 
-          $('.eleventh').css({
+          $('.Hobbies-2').css({
                'background-size' : 2900 - wScroll/3.9 + 'px'
           })
      }
 
      /*=============================================================FOR SMALL & X-SMALL SCREENS in Landscape Orienetation=============================================================*/
           if(sm.matches && (window.outerWidth > window.outerHeight)){
-               $('.first').css({
+               $('.Intro-1').css({
                     'filter': 'brightness(' + (100 + wScroll/2.8) + '%'
                })
 
@@ -1020,127 +1041,123 @@ $(window).scroll(function(){
                });
 
                $('#hobby-icons img:first-child').hover(function(){
-                    $('.tenth').css({
+                    $('.Hobbies-1').css({
                          'background-image' : 'url(images/tennis.jpg)'
                     })
                }, function(){
-                    $('.tenth').css({
+                    $('.Hobbies-1').css({
                          'background-image' : 'url(images/breakdance.jpg)'
                     })
                });
 
                $('#hobby-icons img:nth-child(2)').hover(function(){
-                    $('.tenth').css({
+                    $('.Hobbies-1').css({
                          'background-image' : 'url(images/gaming.jpg)'
                     })
                }, function(){
-                    $('.tenth').css({
+                    $('.Hobbies-1').css({
                          'background-image' : 'url(images/breakdance.jpg)'
                     })
                });
 
                $('#hobby-icons img:nth-child(3)').hover(function(){
-                    $('.tenth').css({
+                    $('.Hobbies-1').css({
                          'background-image' : 'url(images/trance.jpg)'
                     })
                }, function(){
-                    $('.tenth').css({
+                    $('.Hobbies-1').css({
                          'background-image' : 'url(images/breakdance.jpg)'
                     })
                });
 
                $('#hobby-icons img:nth-child(4)').hover(function(){
-                    $('.tenth').css({
+                    $('.Hobbies-1').css({
                          'background-image' : 'url(images/travel.jpg)'
                     })
                }, function(){
-                    $('.tenth').css({
+                    $('.Hobbies-1').css({
                          'background-image' : 'url(images/breakdance.jpg)'
                     })
                });
 
                $('#hobby-icons img:nth-child(5)').hover(function(){
-                    $('.tenth').css({
+                    $('.Hobbies-1').css({
                          'background-image' : 'url(images/foreignlanguages.jpg)'
                     })
                }, function(){
-                    $('.tenth').css({
+                    $('.Hobbies-1').css({
                          'background-image' : 'url(images/breakdance.jpg)'
                     })
                });
 
                $('#hobby-icons img:nth-child(6)').hover(function(){
-                    $('.tenth').css({
+                    $('.Hobbies-1').css({
                          'background-image' : 'url(images/weight-lifting.jpg)'
                     })
                }, function(){
-                    $('.tenth').css({
+                    $('.Hobbies-1').css({
                          'background-image' : 'url(images/breakdance.jpg)'
                     })
                });
 
                $('#hobby-icons img:nth-child(7)').hover(function(){
-                    $('.tenth').css({
+                    $('.Hobbies-1').css({
                          'background-image' : 'url(images/running.jpg)'
                     })
                }, function(){
-                    $('.tenth').css({
+                    $('.Hobbies-1').css({
                          'background-image' : 'url(images/breakdance.jpg)'
                     })
                });
 
                $('#hobby-icons img:nth-child(8)').hover(function(){
-                    $('.tenth').css({
+                    $('.Hobbies-1').css({
                          'background-image' : 'url(images/cars.jpg)'
                     })
                }, function(){
-                    $('.tenth').css({
+                    $('.Hobbies-1').css({
                          'background-image' : 'url(images/breakdance.jpg)'
                     })
                });
 
                $('#hobby-icons img:nth-child(9)').hover(function(){
-                    $('.tenth').css({
+                    $('.Hobbies-1').css({
                          'background-image' : 'url(images/pingpong.jpg)'
                     })
                }, function(){
-                    $('.tenth').css({
+                    $('.Hobbies-1').css({
                          'background-image' : 'url(images/breakdance.jpg)'
                     })
                });
 
                $('#hobby-icons img:nth-child(10)').hover(function(){
-                    $('.tenth').css({
+                    $('.Hobbies-1').css({
                          'background-image' : 'url(images/history.jpg)'
                     })
                }, function(){
-                    $('.tenth').css({
+                    $('.Hobbies-1').css({
                          'background-image' : 'url(images/breakdance.jpg)'
                     })
                });
 
                $('#hobby-icons img:nth-child(11)').hover(function(){
-                    $('.tenth').css({
+                    $('.Hobbies-1').css({
                          'background-image' : 'url(images/health.jpg)'
                     })
                }, function(){
-                    $('.tenth').css({
+                    $('.Hobbies-1').css({
                          'background-image' : 'url(images/breakdance.jpg)'
                     })
                });
 
                $('#hobby-icons img:nth-child(12)').hover(function(){
-                    $('.tenth').css({
+                    $('.Hobbies-1').css({
                          'background-image' : 'url(images/pets.jpg)'
                     })
                }, function(){
-                    $('.tenth').css({
+                    $('.Hobbies-1').css({
                          'background-image' : 'url(images/breakdance.jpg)'
                     })
                });
-
-               $('.eleventh').css({
-                    'background-size' : 2500 - wScroll/2.6 + 'px'
-               })
           }
 })
