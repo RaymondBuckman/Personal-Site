@@ -5,7 +5,7 @@ class AdditionalSkills extends Component {
     render() {
         return(
         <div>
-            <div className="sixth">
+            <div className="Skills-1">
                 <div className="container-fluid">
                     <div className="row">
                         <div id="divOutsideAdditionalSkills" className="col-md-6 col-md-offset-3">
@@ -27,14 +27,14 @@ class AdditionalSkills extends Component {
                     </div>
                 </div>
             </div>
-            <div className="seventhParis">
+            <div className="Skills-2">
                 <div className="container">
                     <div className="row">
                         <header id="french" className="col-sm-2.5 col-sm-offset-1 scrollmagicFadeIn" data-toggle="tooltip" data-delay="400" data-animation="true" data-easein="perspectiveLeftIn" data-placement="right" title="Mon niveau de compétence: Intermédiaire">Bon travail!</header>
                     </div> 
                 </div>
             </div>
-            <div className="seventhBerlin">
+            <div className="Skills-3">
                 <div className="container">
                     <div className="row">
                         <header id="german" className="col-xs-2.5 col-xs-offset-9 scrollmagicFadeIn" data-toggle="tooltip" data-delay="400" data-animation="true" data-easein="perspectiveRightIn"  data-placement="left" title="Mein Niveau:Anfänger">Ausgezeichnet!</header>
