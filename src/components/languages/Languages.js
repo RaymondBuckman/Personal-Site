@@ -5,7 +5,7 @@ class Languages extends Component {
     render() {
         return(
         <div>
-            <div className="fourth">
+            <div className="Languages-1">
                 <div className="container-fluid">
                     <div className="row">
                         <div id="divOutsideLanguages" className="col-md-4 col-md-offset-4 col-xs-8 col-xs-offset-2">
@@ -27,7 +27,7 @@ class Languages extends Component {
                     </div> 
                 </div> 
             </div> 
-            <div className="fifth"></div>
+            <div className="Languages-2"></div>
         </div>
         );
     }
