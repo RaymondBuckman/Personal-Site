@@ -5,7 +5,7 @@ class Education extends Component {
     render() {
         return(
         <div>
-            <div className="Education-1">
+            <div id="jump-to-education" className="Education-1">
                 <div className="container-fluid">
                     <div className="row">
                         <div className="col-md-4 col-md-offset-1 col-xs-8 col-xs-offset-1">
@@ -35,26 +35,22 @@ class Education extends Component {
                 </div>
             </div>
             <div className="Education-2">
-                <div className="container-fluid">
-                    <div className="row">
-                        <header id="online-courses" className="scrollmagicFadeIn">
-                            On<span id="online_li">li</span>ne Cours<span id="online_e">e</span>s
-                        </header>
-                        <ul id="online-list" className="scrollmagicFadeIn">
-                            <li>CSS:Core Concepts</li><br/>
-                            <li>JavaScript Essential Training</li><br/>
-                            <li>User Experience for Web Design</li><br/>
-                            <li>Bootstrap 3 Essential Training</li><br/>
-                            <li>Learn React.js: The Basics</li><br/>
-                            <li>Responsive Design Fundamentals</li><br/>
-                            <li>Foundations of UX: Accessibility</li><br/>
-                            <li>HTML Essential Training</li><br/>
-                            <li>Up & Running with Git & GitHub </li><br/>
-                            <li>Foundations of Programming: Fundamentals</li><br/>
-                            <li>Sass Essential Training</li>
-                        </ul>
-                    </div>
-                </div>
+                <header id="online-courses" className="scrollmagicFadeIn">
+                    On<span id="online_li">li</span>ne Cours<span id="online_e">e</span>s
+                </header>
+                <ul id="online-list" className="scrollmagicFadeIn">
+                    <li>CSS:Core Concepts</li><br/>
+                    <li>JavaScript Essential Training</li><br/>
+                    <li>User Experience for Web Design</li><br/>
+                    <li>Bootstrap 3 Essential Training</li><br/>
+                    <li>Learn React.js: The Basics</li><br/>
+                    <li>Responsive Design Fundamentals</li><br/>
+                    <li>Foundations of UX: Accessibility</li><br/>
+                    <li>HTML Essential Training</li><br/>
+                    <li>Up & Running with Git & GitHub </li><br/>
+                    <li>Foundations of Programming: Fundamentals</li><br/>
+                    <li>Sass Essential Training</li>
+                </ul>
             </div>
         </div>
         );
