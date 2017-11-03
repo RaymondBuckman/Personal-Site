@@ -5,27 +5,21 @@ class AdditionalSkills extends Component {
     render() {
         return(
         <div>
-            <div className="Skills-1">
-                <div className="container-fluid">
-                    <div className="row">
-                        <div id="divOutsideAdditionalSkills" className="col-md-6 col-md-offset-3">
-                            <header id="additionalSkills" className="scrollmagicFadeIn">
-                                Add<span id="additionalSkills_iti">iti</span>onal Ski<span id="additionalSkills_ll">ll</span>s
-                            </header>
-                        </div>
-                        <ul id="skillList"  className="col-md-2 col-md-offset-5 col-xs-6 col-xs-offset-3 scrollmagicFadeIn">
-                            <li>Atom/Brackets</li><br/><span></span>
-                            <li>Notepad++</li><br/><span></span>
-                            <li>MS Visual Studio</li><br/><span></span>
-                            <li>Eclipse</li><br/><span></span>
-                            <li>Git & GitHub</li><br/><span></span>
-                            <li>Microsoft Office</li><br/><span></span>
-                            <li>Adobe Photoshop</li><br/><span></span>
-                            <li>Français (intermédiaire)</li><br/><span></span>
-                            <li>Deutsch (anfänger)</li>
-                        </ul>
-                    </div>
-                </div>
+            <div id="jump-to-additional-skills" className="Skills-1">
+                <header id="additional-skills" className="scrollmagicFadeIn">
+                    Add<span id="additional-skills_iti">iti</span>onal Ski<span id="additional-skills_ll">ll</span>s
+                </header>
+                <ul id="skill-list"  className="scrollmagicFadeIn">
+                    <li>Atom/Brackets</li><br/>
+                    <li>Notepad++</li><br/>
+                    <li>MS Visual Studio</li><br/>
+                    <li>Eclipse</li><br/>
+                    <li>Git & GitHub</li><br/>
+                    <li>Microsoft Office</li><br/>
+                    <li>Adobe Photoshop</li><br/>
+                    <li>Français (intermédiaire)</li><br/>
+                    <li>Deutsch (anfänger)</li>
+                </ul>
             </div>
             <div className="Skills-2">
                 <div className="container">
