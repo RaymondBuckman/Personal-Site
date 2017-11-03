@@ -78,6 +78,25 @@ $hobby-list: tennis gaming trance travel foreignlanguages weight-lifting running
     transition: all 0.4s ease;
 }
 
+@mixin main-font{
+    font-family: $main-font, Arial, Helvetica, serif;
+}
+
+@mixin secondary-font{
+    font-family: $secondary-font, Arial, Helvetica, serif;
+}
+
+@mixin header-padding-margin{
+    display: table;
+    padding: 10px 20px;
+    margin: 0 auto;
+}
+
+@mixin div-padding{
+    padding-top: 15vh;
+    padding-bottom: 15vh;
+}
+
 /*================== Main Keyframes ==================*/
 @keyframes lightenDarken{
 		29%, 100% 	  {filter:  invert(0%);}
@@ -145,6 +164,11 @@ body{
 ::selection {
     color: $secondary-color;
     background: $tertiary-color !important; /* WebKit/Blink Browsers */
+}
+
+.tooltip-span{
+    @include secondary-font;
+    color: #fff;
 }
 
 .fade-in{
@@ -234,7 +258,7 @@ body{
 	z-index:80;
 }
 
-.profile-pic{
+.profile-image{
 	background: url("images/me2.jpg") $nrs 50% 50%;
 	background-size: 155px;
 	border: transparent solid 2px;
@@ -259,7 +283,7 @@ body{
     letter-spacing: 5px;
     padding: 10px 15px 10px 25px;
     color: $secondary-color;
-    font-family: $main-font, Arial, Helvetica, serif;
+    @include main-font;
     line-height: 44px;
 }
 
@@ -281,10 +305,10 @@ body{
 }
 
 .sidebar-nav li a{
-    font-family: $secondary-font, Arial, Helvetica, serif;
+    @include secondary-font;
     
     &:first-letter{
-        font-family: $main-font, Arial, Helvetica, serif;
+        @include main-font;
         font-size: 2em;
         letter-spacing: 3px;
     }    
@@ -369,35 +393,42 @@ body{
 
 /*=============== Page Content Wrapper ===============*/
 .Intro-1{
+    position: relative;
     height:100vh;
     overflow: hidden;
 	background:url("images/subway.jpg") $nrf 80% 60%;
 	background-size: 100vw $first-height;
+    padding-top:35vh;
+    padding-bottom: 35vh;
     transition: filter 0.2s ease-in-out;
+    
+    #name{
+        position: relative;
+        width: auto;
+        margin: 0 auto;
+        @include main-font;
+        font-size: 10em;
+        letter-spacing: 15px;
+        color: $secondary-color;    
+        text-align: center;
+        display: table;
+        padding: 10px 20px;
+        margin: auto auto;
+        border-bottom: $secondary-color 3px solid;
+        border-top: $secondary-color 3px solid;
+        //opacity: 0;
+        transition: border-color 0.5s ease-in-out, opacity 0.5s ease-in-out;
+    }
+
 }
 
-#name{
-	position: absolute;
-	top: 32vh;
-	left: 0vh;
-	display: inline-block;
-	text-align: center;
-	font-size: 10em;
-	font-family: $main-font, Arial, Helvetica, serif;
-	color: $secondary-color;
-	letter-spacing: 15px;
-	padding:20px;
-	border-bottom:4px solid $secondary-color;
-	border-top:4px solid $secondary-color;
-	z-index:4;
-	transition: border-color 0.5s ease-in-out;
-}
 
-#dArrow1{
+#down-arrow{
     position:absolute;
     top: 90vh;
     color: #fff;
     font-size: 3em;
+    cursor: pointer;
     z-index: 1;
     opacity:0.5;
 
@@ -410,7 +441,7 @@ body{
 }
 
 
-#name:hover, #aboutMe:hover, #education:hover, #languages:hover, #additionalSkills:hover, #vWork:hover, #hobbies:hover{
+#name:hover, #about-me:hover, #education:hover, #languages:hover, #additionalSkills:hover, #vWork:hover, #hobbies:hover{
 	border-color:  $tertiary-color !important;
 }
 
@@ -418,9 +449,9 @@ body{
 	border: $tertiary-color solid 3px !important;
 }
 
-#name_y, #name_m, #name_B, #aboutMe_ut, #education_d,
-#education_on, #online_li, #online_e, #languages_gu, #languages_e, #additionalSkills_iti,
-#additionalSkills_ll, #vWork_unt, #vWork_rk, #hobbies_bb{
+#name_y, #name_m, #name_B, #about-me_ut, #education_d,
+#education_on, #online_li, #online_e, #languages_gu, #languages_e, #additional-skills_iti,
+#additional-skills_ll, #vWork_unt, #vWork_rk, #hobbies_bb{
 	animation: lightenDarken 12s infinite 1.1s;
 }
 
@@ -433,7 +464,6 @@ body{
 #french:hover,
 #german:hover,
 #hobby-icons > *:hover,
-#goToTop:hover,
 #icons8:hover {
 	animation: occasionalBlurOnHover 4s infinite;
 }
@@ -476,7 +506,7 @@ body{
   
         line-height: 30px;
         color: $secondary-color;
-        font-family: $main-font, Arial, Helvetica, serif;
+        @include main-font;
         //font-size: 3em;
         text-align: center;
         
@@ -503,14 +533,14 @@ body{
         }
         
         &:nth-child(2){
-            #aboutMe{
+            #about-me{
                 position: relative;
                 top: 10vh;
                 //left: 50%;
                 display: inline;
                 text-align: center;
                 width: 500px;
-                font-family: $main-font, Arial, Helvetica, serif;
+                @include main-font;
                 font-size: $subheader-font-size;
                 letter-spacing: 13px;
                 text-align: center;
@@ -522,10 +552,10 @@ body{
                 transition: border-color 0.5s ease-in-out, opacity 0.5s ease-in-out;
             }
 
-            #aboutMe-paragraph{
+            #about-me-paragraph{
                 position: relative;
                 //top: 10vh;
-                font-family: $secondary-font, Arial, Helvetica, serif;
+                @include secondary-font;
                 color: $secondary-color;                
                 //padding: 2% 0% 5% 0%;
                 margin: 20vh 0vh 5vh 0vh;
@@ -567,7 +597,7 @@ body{
 
 
 .navbar-default .navbar-nav > li > a{
-	font-family: $secondary-font, Arial, Helvetica, serif;
+	@include secondary-font;
 	color: rgb(190,190,190);
 	font-size: 0.8em;
 	letter-spacing: 2px;
@@ -609,7 +639,7 @@ body{
 }
 
 #education{
-	font-family: $main-font, Arial, Helvetica, serif;
+	@include main-font;
 	font-size: $subheader-font-size;
 	letter-spacing: 12px;
 	color: $main-color;
@@ -627,7 +657,7 @@ body{
 
 /*targets university text*/
 header + header{
-	font-family: $secondary-font, Arial, Helvetica, serif;
+	@include secondary-font;
 	font-size: 2vw;
 	letter-spacing: 5px;
 	color: $main-color;
@@ -641,7 +671,7 @@ header + header{
 
 #courseList{
     position: relative;
-	font-family: $secondary-font, Arial, Helvetica, serif;
+	@include secondary-font;
 	text-align: left;
 	line-height: 200%;
 	font-size: 1.2vw;
@@ -692,7 +722,7 @@ header + header{
      
 	 position: relative;
 	 top: 40vh;
-	 font-family: $secondary-font, Arial, Helvetica, serif;
+	 @include secondary-font;
 	 letter-spacing: 4px;
 	 color: $secondary-color;
 	 background-color: $main-color;
@@ -723,20 +753,20 @@ header + header{
 	height: auto;
 	background: url("images/laptop2.jpg") $nrf 20% 70%;
 	background-size: cover;
-	z-index: 1;
+    @include div-padding;
     
     #online-courses{
         position: relative;
-        width:700px;
+        width: auto;
         //text-align: center;
         //display: block;
-        margin: 15vh auto 5vh auto;
-	    font-family: $main-font, Arial, Helvetica, serif;
+        margin: 0 auto;
+	    @include main-font;
 	    font-size: $subheader-font-size;
 	    letter-spacing: 7px;
 	    color: $secondary-color;    
         text-align: center;
-        padding: 1% 2% 1% 4%;
+        @include header-padding-margin;
 	    border-bottom: $secondary-color 3px solid;
 	    border-top: $secondary-color 3px solid;
 	    opacity: 0;
@@ -745,15 +775,13 @@ header + header{
     
     #online-list{
         position: relative;
-        font-family: $secondary-font, Arial, Helvetica, serif;
+        @include secondary-font;
         text-align: center;
         line-height: 200%;
         font-size: 1.2vw;
         list-style-type: none;
-        margin-top: 0vh;
-        margin-bottom: 10vh;
+        margin-top: 5vh;
         
-
         li:nth-child(4n+1){
             @include li-odd;
         }
@@ -773,51 +801,53 @@ header + header{
 }
 
 .Languages-1{
-	position:relative;
-	height:90vh;
+	position: relative;
+	height: auto;
 	background: $main-color;
-	z-index: 4;
-}
-
-#languages{
-	font-family: $main-font, Arial, Helvetica, serif;
-	font-size: $subheader-font-size;
-	letter-spacing: 12px;
-	color: $secondary-color;
-	position: relative;
-	text-align: center;
-	top: 8vh;
-	padding: 1% 4% 1% 2%;
-	margin-top: 7%;
-	border-bottom: $secondary-color 3px solid;
-	border-top: $secondary-color 3px solid;
-    opacity: 0;
-	transition: border-color 0.5s ease-in-out, opacity 0.5s ease-in-out;
-}
-
-#languageList{
-	font-family: $secondary-font, Arial, Helvetica, serif;
-	text-align: center;
-	line-height: 200%;
-	font-size: 1.2vw;
-	list-style-type: none;
-	position: relative;
-	top: 8vh;
+    @include div-padding;
     
-    li:nth-child(odd){
-        @include li-odd;
+    #languages{
+        position: relative;
+        width: auto;
+        //text-align: center;
+        //display: block;
+        margin: 0 auto;
+	    @include main-font;
+	    font-size: $subheader-font-size;
+	    letter-spacing: 7px;
+	    color: $secondary-color;    
+        text-align: center;
+        @include header-padding-margin;
+	    border-bottom: $secondary-color 3px solid;
+	    border-top: $secondary-color 3px solid;
+	    opacity: 0;
+	    transition: border-color 0.5s ease-in-out, opacity 0.5s ease-in-out;
     }
     
-    li:nth-child(even){
-        @include li-even;
-    } 
-    
-    *:after{
-        @include underscore;
-    }
-    
-    *:hover:after{
-	   transform: scaleX(1);
+    #language-list{
+        position: relative;
+        @include secondary-font;
+        text-align: center;
+        line-height: 200%;
+        font-size: 1.2vw;
+        list-style-type: none;
+        margin-top: 5vh;
+        
+        li:nth-child(4n+1){
+            @include li-odd;
+        }
+
+        li:nth-child(4n+3){ 
+            @include li-even;
+        } 
+
+        *:after{
+            @include underscore;
+        }
+
+        *:hover:after{
+           transform: scaleX(1);
+        }
     }
 }
 
@@ -831,55 +861,56 @@ header + header{
 }
 
 .Skills-1{
-	position:relative;
+    position: relative;
 	height: auto;
 	background: url("images/graffiti2.jpg") $nrf 41% 10%;
-	background-size:1900px;
-	z-index:1;
-}
+    background-size:1900px;
+    @include div-padding;
+    
+    #additional-skills{
+        position: relative;
+        width: auto;
+        //text-align: center;
+        //display: block;
+        margin: 0 auto;
+	    @include main-font;
+	    font-size: $subheader-font-size;
+	    letter-spacing: 7px;
+	    color: $secondary-color;    
+        text-align: center;
+        @include header-padding-margin;
+	    border-bottom: $secondary-color 3px solid;
+	    border-top: $secondary-color 3px solid;
+	    opacity: 0;
+	    transition: border-color 0.5s ease-in-out, opacity 0.5s ease-in-out;
+    }
+    
+    #skill-list{
+        position: relative;
+        @include secondary-font;
+        text-align: center;
+        line-height: 200%;
+        font-size: 1.2vw;
+        list-style-type: none;
+        margin-top: 5vh;
+        
+        li:nth-child(4n+1){
+            @include li-odd;
+        }
 
-#additionalSkills{
-    position: relative;
-    top: 0.8em;
-	font-family: $main-font, Arial, Helvetica, serif;
-	font-size: $subheader-font-size;
-	letter-spacing: 7px;
-	color: $secondary-color;
-	text-align: center;
-	padding: 1% 2% 1% 4%;
-	border-bottom: $secondary-color 3px solid;
-	border-top: $secondary-color 3px solid;
-	opacity: 0;
-	transition: border-color 0.5s ease-in-out, opacity 0.5s ease-in-out;
-}
+        li:nth-child(4n+3){ 
+            @include li-even;
+        } 
 
-#skillList{
-    position:relative;
-    top: 0vh;
-    height: auto;
-	font-family: $secondary-font, Arial, Helvetica, serif;
-	text-align: center;
-	line-height: 200%;
-	font-size: 1.2vw;
-    margin-top: 15vh;
-    margin-bottom: 10vh;
-	list-style-type:none;
-    
-    li:nth-child(even){
-        @include li-even;
-    }
-   
-    li:nth-child(odd){
-        @include li-odd(rgb(210, 210, 210));
+        *:after{
+            @include underscore;
+        }
+
+        *:hover:after{
+           transform: scaleX(1);
+        }
     }
     
-    *:after{
-        @include underscore;
-    }
-    
-    *:hover:after{
-        transform: scaleX(1);
-    }
 }
 
 .Skills-2{    
@@ -890,7 +921,7 @@ header + header{
 }
 
 #french{
-	font-family: $secondary-font, Arial, Helvetica, serif;
+	@include secondary-font;
 	font-size: 2em;
 	letter-spacing: 5px;
 	color: rgb(130,130,130);
@@ -918,7 +949,7 @@ header + header{
 }
 
 #german {
-	font-family: $secondary-font, Arial, Helvetica, serif;
+	@include secondary-font;
 	font-size: 2em;
 	letter-spacing: 5px;
 	color: $secondary-color;
@@ -979,7 +1010,7 @@ header + header{
   
         line-height: 30px;
         color: $secondary-color;
-        font-family: $main-font, Arial, Helvetica, serif;
+        @include main-font;
         //font-size: 3em;
         text-align: center;
         
@@ -1015,7 +1046,7 @@ header + header{
                 display: inline;
                 text-align: center;
                 width: 700px;
-                font-family: $main-font, Arial, Helvetica, serif;
+                @include main-font;
                 font-size: $subheader-font-size;
                 letter-spacing: 13px;
                 text-align: center;
@@ -1030,7 +1061,7 @@ header + header{
             #vList{
                 position:relative;
                 top:0vh;
-                font-family: $secondary-font, Arial, Helvetica, serif;
+                @include secondary-font;
                 text-align: center;
                 line-height: 200%;
                 font-size: 20px;
@@ -1090,7 +1121,7 @@ header + header{
 }
 
 #hobbies{
-	font-family: $main-font, Arial, Helvetica, serif;
+	@include main-font;
 	font-size: $subheader-font-size;
 	letter-spacing: 10px;
 	color: $secondary-color;
@@ -1111,16 +1142,19 @@ header + header{
 	top: 70vh;
     
     img{
-       opacity: .4;
-	   transition: all 0.3s ease-in-out;
-	   display: inline-block;
-	   -webkit-backface-visibility: hidden;
+        opacity: .4;
+	    transition: all 0.3s ease-in-out;
+	    display: inline-block;
+        cursor: pointer;
+        -webkit-backface-visibility: hidden;
+        
+        &:hover{
+            transform: scale(1.3) !important;
+            opacity: 1 !important;
+        }
     }
     
-    *:hover{
-        transform: scale(1.3);
-        opacity: 1;
-    }
+    
 }
 
 
@@ -1195,8 +1229,8 @@ header + header{
 	z-index:3;
 }
 
-#goToTop{
-	font-family: $secondary-font, Arial, Helvetica, serif;
+#thanks{
+	@include secondary-font;
 	position: relative;
 	top:0.5em;
 	font-size:25px;
@@ -1206,18 +1240,10 @@ header + header{
 	text-align: center;
 	display: inline-block;
 	transition: all .5s ease-in-out;
-        
-    &:after{
-        @include underscore;
-    }
-    
-    &:hover:after{
-        transform: scaleX(1);
-    }
 }
 
 #end{
-	font-family: $main-font, Arial, Helvetica, serif;
+	@include main-font;
 	position: relative;
 	top:0em;
 	font-size: 90px;
@@ -1229,7 +1255,7 @@ header + header{
 }
 
 #icons8{
-	font-family: $secondary-font, Arial, Helvetica, serif;
+	@include secondary-font;
 	position: relative;
 	top:0.5em;
 	font-size:25px;
@@ -1270,7 +1296,7 @@ header + header{
 	background-color:  $main-color;
 }
  .modal-title{
-	font-family: $secondary-font, Arial, Helvetica, serif;
+	@include secondary-font;
 	font-size: 30px;
 	letter-spacing: 4px;
 	color: $secondary-color;
@@ -1290,7 +1316,7 @@ header + header{
         transition: all 0.9s ease-in-out;
      }
      
-	font-family: $secondary-font, Arial, Helvetica, serif;
+	@include secondary-font;
 	color: $main-color;
 	letter-spacing: 2px;
     border-color: transparent;
@@ -1340,14 +1366,14 @@ header + header{
 		transition: border 0.5s ease-in-out;
 	}
 
-	#aboutMe{
+	#about-me{
         position: relative;
         top:20vh;
 		font-size:2.5em;
         letter-spacing: 6px;
 	}
 
-	#aboutMe-paragraph{
+	#about-me-paragraph{
         position: relative;
         top:25vh;
 		font-size: 13px;
@@ -1384,7 +1410,7 @@ header + header{
 	#projects-button{
 	    position: relative;
 	    top: 20vh;
-	    font-family: $secondary-font, Arial, Helvetica, serif;
+	    @include secondary-font;
 	    letter-spacing: 4px;
 	    color: $secondary-color;
 	    background-color: $main-color;
@@ -1522,7 +1548,7 @@ header + header{
 		padding-top: 25px;
 	}
 
-	#goToTop{
+	#thanks{
 		font-size:15px;
 		padding-top: 30px;
 	}
@@ -1569,7 +1595,7 @@ header + header{
           transition: border 0.5s ease-in-out;
       }
 
-      #aboutMe{
+      #about-me{
           position: relative;
           top:20vh;
           font-size:2.3em;
@@ -1578,7 +1604,7 @@ header + header{
           text-align: center;
       }
 
-      #aboutMe-paragraph{
+      #about-me-paragraph{
           position: relative;
           top:20vh;
           font-size: 13px;
@@ -1615,7 +1641,7 @@ header + header{
       #projects-button{
           position: relative;
           top: 80vh;
-          font-family: $secondary-font, Arial, Helvetica, serif;
+          @include secondary-font;
           letter-spacing: 4px;
           color: $secondary-color;
           background-color: $main-color;
@@ -1760,7 +1786,7 @@ header + header{
           padding-top: 0px;
       }
 
-      #goToTop{
+      #thanks{
           font-size:15px;
           padding-top: 10px;
       }

@@ -8,7 +8,7 @@ class Footer extends Component {
             <div className="container">
                 <div className="row">
                     <div className="col-xs-4 text-center">
-                        <header id="goToTop">Thanks for visiting!</header>
+                        <header id="thanks">Thanks for visiting!</header>
                     </div>
                     <div className="col-xs-4 text-center">
                         <header id="end" className="scrollmagicFadeIn">End</header>

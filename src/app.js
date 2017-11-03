@@ -62,10 +62,10 @@ ReactDOM.render(
 
 
 $(document).ready(function(){    
-    $("#dArrow1").click(function() {
+    $("#down-arrow").click(function() {
         $('html, body').animate({
-            scrollTop: $(".Intro-2").offset().top
-        }, 1200);
+            scrollTop: $("#about-me").offset().top
+        }, 2000);
     });
     
     
@@ -93,8 +93,7 @@ $(document).ready(function(){
     
     var changeTopNavColorScene = new ScrollMagic.Scene({
         triggerElement: '.navbar',
-        triggerHook: 0,
-        duration: '789.15%'
+        triggerHook: 0
     })
     .setClassToggle('.navbar', 'black-nav')
     .addTo(controller);
@@ -143,13 +142,13 @@ $(document).ready(function(){
     .setTween(nameBorderTween)
     .addTo(controller);
     
-    var aboutMeBorderTween = TweenMax.to("#aboutMe", 1, { 
+    var aboutMeBorderTween = TweenMax.to("#about-me", 1, { 
         borderRadius: borderRadius,
         ease:Power1.easeIn
     });
 
 	var aboutMeBorderscene = new ScrollMagic.Scene({
-        triggerElement: "#aboutMe",
+        triggerElement: "#about-me",
         triggerHook: 0.25,
         reverse: true
     })
@@ -195,13 +194,13 @@ $(document).ready(function(){
     .setTween(languagesBorderTween)
     .addTo(controller);
     
-    var additionalSkillsBorderTween = TweenMax.to("#additionalSkills", 1, { 
+    var additionalSkillsBorderTween = TweenMax.to("#additional-skills", 1, { 
         borderRadius: borderRadius,
         ease:Power1.easeIn
     });
 
 	var additionalSkillsBorderscene = new ScrollMagic.Scene({
-        triggerElement: "#additionalSkills",
+        triggerElement: "#additional-skills",
         triggerHook: 0.25,
         reverse: true
     })
@@ -269,35 +268,35 @@ $(document).ready(function(){
     .addTo(controller);
         
     var languageListOddScene = new ScrollMagic.Scene({
-        triggerElement: '#languageList li:nth-child(odd)',
+        triggerElement: '#language-list li:nth-child(odd)',
         triggerHook: 0.8,
         reverse: false    
     })
-    .setClassToggle('#languageList li:nth-child(odd)', 'fade-in')
+    .setClassToggle('#language-list li:nth-child(odd)', 'fade-in')
     .addTo(controller);
         
     var languageListEvenScene = new ScrollMagic.Scene({
-        triggerElement: '#languageList li:nth-child(odd)',
+        triggerElement: '#language-list li:nth-child(odd)',
         triggerHook: 0.8,
         reverse: false    
     })
-    .setClassToggle('#languageList li:nth-child(even)', 'fade-in')
+    .setClassToggle('#language-list li:nth-child(even)', 'fade-in')
     .addTo(controller);
         
     var skillListOddScene = new ScrollMagic.Scene({
-        triggerElement: '#skillList li:nth-child(odd)',
+        triggerElement: '#skill-list li:nth-child(odd)',
         triggerHook: 0.8,
         reverse: false    
     })
-    .setClassToggle('#skillList li:nth-child(odd)', 'fade-in')
+    .setClassToggle('#skill-list li:nth-child(odd)', 'fade-in')
     .addTo(controller);
         
     var skillListEvenScene = new ScrollMagic.Scene({
-        triggerElement: '#skillList li:nth-child(odd)',
+        triggerElement: '#skill-list li:nth-child(odd)',
         triggerHook: 0.8,
         reverse: false    
     })
-    .setClassToggle('#skillList li:nth-child(even)', 'fade-in')
+    .setClassToggle('#skill-list li:nth-child(even)', 'fade-in')
     .addTo(controller);
         
     var vListOddScene = new ScrollMagic.Scene({
@@ -496,6 +495,19 @@ $(document).ready(function(){
         duration: "150%"
     })
     .setTween(eleventhParallaxTween)
+    .addTo(controller);
+    
+    /*----- Hobbies Tween -----*/
+    
+    var hobbiesTween = TweenMax.staggerFrom("#hobby-icons img", 0.2, { ease:  Power0.easeNone, x:20, opacity: 0, rotationY: 90, transformOrigin: "left top" }, 0.15);
+    
+    var hobbiesScene = new ScrollMagic.Scene({
+        triggerElement: '#hobby-icons',
+        triggerHook: 0.95,
+        offset: 0,
+        reverse: false
+    })
+    .setTween(hobbiesTween)
     .addTo(controller);
     
 
@@ -804,8 +816,8 @@ $(window).scroll(function(){
           $('#divOutsideAboutMe').removeClass('col-xs-offset-4');
           $('#divOutsideAboutMe').addClass('col-xs-offset-3');
 
-          $('#aboutMe').removeClass('col-xs-2 col-xs-offset-5');
-          $('#aboutMe').addClass('col-xs-6 col-xs-offset-3');
+          $('#about-me').removeClass('col-xs-2 col-xs-offset-5');
+          $('#about-me').addClass('col-xs-6 col-xs-offset-3');
 
 
           //Pan-left effect on background
@@ -997,8 +1009,8 @@ $(window).scroll(function(){
                })
                $('#name').css('opacity', Math.pow(150/wScroll, 7));
 
-               $('#aboutMe').removeClass('col-xs-6 col-xs-offset-3');
-               $('#aboutMe').addClass('col-xs-2 col-xs-offset-5');
+               $('#about-me').removeClass('col-xs-6 col-xs-offset-3');
+               $('#about-me').addClass('col-xs-2 col-xs-offset-5');
               
 
                $('#divOutsideProjecsButton').removeClass('col-xs-offset-2');
