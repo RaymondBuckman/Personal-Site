@@ -11,7 +11,7 @@ class Sidebar extends Component {
         return(
         <div>
             <ul className="sidebar-nav">
-                <div className="profile-pic"></div>
+                <div className="profile-image"></div>
                 <li className="sidebar-brand">Raymond</li>
                 <li>
                     <a href="https://www.linkedin.com/in/raymondbuckman" target="_blank">
