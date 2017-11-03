@@ -5,7 +5,7 @@ class VolumteerWork extends Component {
     render() {
         return(
         <div>
-            <div className="VWork-1">
+            <div id="jump-to-vWork" className="VWork-1">
                     <ul className="flex-container">
                         <li className="flex-item">
                             <div className="scrollmagicWindow window2"></div>
