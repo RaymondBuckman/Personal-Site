@@ -21,9 +21,7 @@ class Hobbies extends Component {
             <div id="jump-to-hobbies" className="Hobbies-1">
                 <div className="container">
                     <div className="row">
-                        <div id="divOutsideHobibes" className="col-md-4 col-md-offset-4 col-xs-6 col-xs-offset-3">
-                            <header id="hobbies" className=" scrollmagicFadeIn">Ho<span id="hobbies_bb">bb</span>ies</header>
-                        </div>
+                            <header id="hobbies" className=" scrollmagicFadeIn" tabIndex="0">Ho<span id="hobbies_bb">bb</span>ies</header>
                     </div>
                     <div className="row">
                         <div id="hobby-icons">
