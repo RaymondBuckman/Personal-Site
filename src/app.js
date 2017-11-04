@@ -31,6 +31,7 @@ import pets from './images/pets.jpg';
 import {TweenMax, Power2, TimelineLite} from "gsap";
 import scrollTo from '../node_modules/gsap/ScrollToPlugin';
 import ScrollMagic from 'scrollmagic';
+import ReactTooltip from 'react-tooltip';
 
 import 'imports-loader?define=>false!scrollmagic/scrollmagic/uncompressed/plugins/animation.gsap.js';
 import 'imports-loader?define=>false!scrollmagic/scrollmagic/uncompressed/plugins/debug.addIndicators.js';
@@ -42,7 +43,7 @@ ReactDOM.render(
             <div id="sidebar-wrapper">
                 <Sidebar />
             </div>
-            <img id="menu" src="https://png.icons8.com/menu/androidL/73/000000" height="40px"></img>
+            <img id="menu" src="https://png.icons8.com/menu/androidL/73/000000" height="40px" data-tip data-for="sidebar-toggle" aria-describedby="sidebar-toggle" tabIndex="0"></img>
             <span id="close" className="glyphicon glyphicon-remove"></span>
             <div id="page-content-wrapper">
                 <Intro />
@@ -55,6 +56,10 @@ ReactDOM.render(
             </div>
         </div>
         <Modal />
+        <ReactTooltip id="sidebar-toggle" place="right" type="dark"
+            effect="solid" delayShow={300} role="tooltip">
+                <span className="tooltip-span">Open Sidebar</span>
+        </ReactTooltip>
     </div>,
     document.getElementById('root')
 );
@@ -512,6 +517,7 @@ $(document).ready(function(){
     
 
     /*----- Navbar highlight animations -----*/ 
+    var heightFromTopToLanguages = $('.Languages-1').offset().top;
     var heightOfEducation = $('.Languages-1').offset().top - $('.Education-1').offset().top;
     var heightOfLanguages = $('.Skills-1').offset().top - $('.Languages-1').offset().top;
     var heightOfSkills = $('.VWork-1').offset().top - $('.Skills-1').offset().top;
@@ -557,6 +563,55 @@ $(document).ready(function(){
         duration: heightOfHobbies
     })
     .setClassToggle(".navbar-default .navbar-nav > li:nth-child(5)", "active") // add class toggle
+    .addTo(controller);
+    
+    var navIconShowTween = new ScrollMagic.Scene({
+        triggerElement: ".Education-1",
+        triggerHook: 0.5,
+        duration: "100000%"
+    })
+    
+    .setClassToggle("#nav-icon", "fade-in") // add class toggle
+    .addTo(controller);
+    
+    var navIcon1Tween = new ScrollMagic.Scene({
+        triggerElement: ".Intro-1",
+        triggerHook: 0,
+        duration: heightFromTopToLanguages
+    })
+    .setClassToggle("#nav-icon", "nav-icon-education") // add class toggle
+    .addTo(controller);
+    
+	var navIcon2Tween = new ScrollMagic.Scene({
+        triggerElement: ".Languages-1",
+        triggerHook: 0.5,
+        duration: heightOfLanguages
+    })
+    .setClassToggle("#nav-icon", "nav-icon-languages") // add class toggle
+    .addTo(controller);
+    
+	var navIcon3Tween = new ScrollMagic.Scene({
+        triggerElement: ".Skills-1",
+        triggerHook: 0.5,
+        duration: heightOfSkills
+    })
+    .setClassToggle("#nav-icon", "nav-icon-skills") // add class toggle
+    .addTo(controller);
+    
+	var navIcon4Tween = new ScrollMagic.Scene({
+        triggerElement: ".VWork-1",
+        triggerHook: 0.5,
+        duration: heightOfVWork
+    })
+    .setClassToggle("#nav-icon", "nav-icon-vWork") // add class toggle
+    .addTo(controller);
+    
+    var navIcon5Tween = new ScrollMagic.Scene({
+        triggerElement: ".Hobbies-1",
+        triggerHook: 0.5,
+        duration: heightOfHobbies
+    })
+    .setClassToggle("#nav-icon", "nav-icon-hobbies") // add class toggle
     .addTo(controller);
 
 
