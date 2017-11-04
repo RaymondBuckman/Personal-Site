@@ -9,7 +9,7 @@ class Education extends Component {
                 <div className="container-fluid">
                     <div className="row">
                         <div className="col-md-4 col-md-offset-1 col-xs-8 col-xs-offset-1">
-                            <header id="education" className="scrollmagicFadeIn">
+                            <header id="education" className="scrollmagicFadeIn"tabIndex="0">
                                 <span id="education_E">E</span><span id="education_d">d</span><span id="education_u">u</span><span id="education_ca">ca</span><span id="education_ti">ti</span><span id="education_on">on</span>
                             </header>
                             <header className="scrollmagicFadeIn">Bachelor's of Science<br/>
@@ -28,14 +28,14 @@ class Education extends Component {
                             <li>Microprocessor Design</li>
                             <li>Embedded Systems</li>
                         </ul>
-                        <div id="divOutsideProjecsButton" className="col-md-2 col-md-offset-9 col-xs-2 col-xs-offset-2 scrollmagicFadeIn">
+                        <div id="divOutsideProjecsButton" className="scrollmagicFadeIn">
                             <button id="projects-button" type="button" className="btn btn-lg" data-toggle="modal" data-target="#projectsModal">Senior Project</button>
                         </div>
                     </div> 
                 </div>
             </div>
             <div className="Education-2">
-                <header id="online-courses" className="scrollmagicFadeIn">
+                <header id="online-courses" className="scrollmagicFadeIn" tabIndex="0">
                     On<span id="online_li">li</span>ne Cours<span id="online_e">e</span>s
                 </header>
                 <ul id="online-list" className="scrollmagicFadeIn">

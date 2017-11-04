@@ -1,3 +1,13 @@
+/*Work done today:
+    - Changing hobby icons
+    - Reducing unnecassary bootstrap use
+    - Changed down arrow
+    - Hobbies revamp
+    - Video background
+    - Darken .Edicatuion-2/lighten text
+
+*/
+
 @import url('https://fonts.googleapis.com/css?family=Akronim');
 @import url('https://fonts.googleapis.com/css?family=Orbitron');
 @import url('https://fonts.googleapis.com/css?family=Covered+By+Your+Grace|Prosto+One|Satisfy');
@@ -425,15 +435,20 @@ body{
 
 #down-arrow{
     position:absolute;
-    top: 90vh;
-    color: #fff;
-    font-size: 3em;
+    top: 88vh;
+    filter: invert(100%);
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    display: inline-block;
     cursor: pointer;
     z-index: 1;
     opacity:0.5;
 
     animation: updown 2s infinite 1.1s;
-	transition: opacity 1.3s ease-in-out;
+	transition: opacity 0.5s ease-in-out;
     
     &:hover{
         opacity: 1;
@@ -441,13 +456,13 @@ body{
 }
 
 
-#name:hover, #about-me:hover, #education:hover, #languages:hover, #additionalSkills:hover, #vWork:hover, #hobbies:hover{
+#about-me:hover, #education:hover, #online-courses:hover, #languages:hover, #additional-skills:hover, #vWork:hover, #hobbies:hover {
 	border-color:  $tertiary-color !important;
 }
-
+/*
 .window1:hover, .window2:hover{
 	border: $tertiary-color solid 3px !important;
-}
+}*/
 
 #name_y, #name_m, #name_B, #about-me_ut, #education_d,
 #education_on, #online_li, #online_e, #languages_gu, #languages_e, #additional-skills_iti,
@@ -524,11 +539,19 @@ body{
                 margin: 5vh auto 0vh auto;
                 height: 600px;
                 width: 600px;
-                background: url("images/road2.jpg") $nrf 55% 20%;
-                background-size: 1200px;
-                border: transparent solid 3px;
+                //background: url("images/road2.jpg") $nrf 55% 20%;
+                //background-size: 1200px;
+                
                 border-radius: 50%;
+                //filter: invert(100%);
                 transition: border 0.5s ease-in-out, opacity 0.5s ease-in-out;
+                
+                #subway-video{
+                    height: 600px;
+                    width: 600px;
+                    border-radius: 50%;
+                    object-fit: cover;
+                }
             }
         }
         
@@ -629,6 +652,43 @@ body{
 .navbar-default .navbar-nav>.active > a:hover{
      color: $secondary-color;
 }
+
+#nav-icon{
+    position: absolute;
+    top: 0;
+    margin: 5px 1vw;
+    right: 0vw !important;
+    filter: invert(100%);
+    opacity: 0;
+    transition: all 0.5s ease-in-out;
+}
+
+.nav-icon-education{
+    content:url("https://png.icons8.com/learning/ios7/73/000000");
+    //opacity: 1 !important;
+}
+
+.nav-icon-languages{
+    content:url("https://png.icons8.com/code/ios7/73/000000");
+    //opacity: 1 !important;
+}
+
+.nav-icon-skills{
+    content:url("https://png.icons8.com/analyzing-skill/ios7/73/000000");
+    //opacity: 1 !important;
+}
+
+.nav-icon-vWork{
+    content:url("https://png.icons8.com/volunteering/ios7/73/000000");
+    //opacity: 1 !important;
+}
+
+.nav-icon-hobbies{
+    content:url("https://png.icons8.com/drum-set/ios7/73/000000");
+    //opacity: 1 !important;
+}
+
+
 
 .Education-1{
 	position: relative;
@@ -783,7 +843,7 @@ header + header{
         margin-top: 5vh;
         
         li:nth-child(4n+1){
-            @include li-odd;
+            @include li-odd(rgb(200,200,200));
         }
 
         li:nth-child(4n+3){ 
@@ -1021,20 +1081,26 @@ header + header{
             //font-weight: 700;
         } 
         
-        &:nth-child(1){
-            margin-bottom: 0px;
-            
+         &:nth-child(1){
             .window2{
                 position: relative;
                 top: 0vh;
                 margin: 5vh auto 0vh auto;
                 height: 600px;
                 width: 600px;
-                background: url("images/care.jpg") $nrf 55% 20%;
-                background-size: 1200px;
+                //background: url("images/road2.jpg") $nrf 55% 20%;
+                //background-size: 1200px;
                 border: transparent solid 3px;
                 border-radius: 50%;
+                filter: grayscale(100%);
                 transition: border 0.5s ease-in-out, opacity 0.5s ease-in-out;
+                
+                #volunteer-video{
+                    height: 600px;
+                    width: 600px;
+                    border-radius: 50%;
+                    object-fit: cover;
+                }
             }
         }
         
@@ -1116,54 +1182,51 @@ header + header{
 	height: 115vh;
 	background: url("images/breakdance.jpg") $nrf 0% 20%;
 	background-size: cover;
-	transition: background-image .3s ease-in-out;
-	-moz-transition: background-image .3s ease-in-out;
-}
-
-#hobbies{
-	@include main-font;
-	font-size: $subheader-font-size;
-	letter-spacing: 10px;
-	color: $secondary-color;
-	position:relative;
-	text-align:center;
-	top:8vh;
-	padding: 1% 3% 1% 3%;
-	margin-top: 7%;
-	border-bottom: $secondary-color 3px solid;
-	border-top: $secondary-color 3px solid;
-	opacity:1;
-    opacity: 0;
-	transition: border-color 0.5s ease-in-out, opacity 0.5s ease-in-out;
-}
-
-#hobby-icons{
-	position: relative;
-	top: 70vh;
+    @include div-padding;
+	
+    #hobbies{
+        position: relative;
+        width: auto;
+        //text-align: center;
+        //display: block;
+        margin: 0 auto;
+	    @include main-font;
+	    font-size: $subheader-font-size;
+	    letter-spacing: 7px;
+	    color: $secondary-color;    
+        text-align: center;
+        @include header-padding-margin;
+	    border-bottom: $secondary-color 3px solid;
+	    border-top: $secondary-color 3px solid;
+	    opacity: 0;
+	    transition: border-color 0.5s ease-in-out, opacity 0.5s ease-in-out;
+    }
     
-    img{
-        opacity: .4;
-	    transition: all 0.3s ease-in-out;
-	    display: inline-block;
-        cursor: pointer;
-        -webkit-backface-visibility: hidden;
-        
-        &:hover{
-            transform: scale(1.3) !important;
-            opacity: 1 !important;
+    #hobby-icons{
+        position: relative;
+        top: 50vh;
+
+        img{
+            opacity: .4;
+            transition: all 0.3s ease-in-out;
+            display: inline-block;
+            cursor: pointer;
+            -webkit-backface-visibility: hidden;
+
+            &:hover{
+                transform: scale(1.3) !important;
+                opacity: 1 !important;
+            }
+        } 
+    }
+
+    @each $hobby in $hobby-list{ 
+        .#{$hobby}{
+            background-image: url("/images/#{$hobby}.jpg");
         }
-    }
-    
-    
+    }    
 }
 
-
-@each $hobby in $hobby-list{
-    
-    .#{$hobby}{
-        background-image: url("/images/#{$hobby}.jpg");
-    }
-}
 /*
 .tennis{
      background-image: url("/images/tennis.jpg");
