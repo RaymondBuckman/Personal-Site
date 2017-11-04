@@ -42,14 +42,7 @@ module.exports={
             },
             {
                 test: /\.(mov|mp4)$/,
-                use: [
-                {
-                    loader: 'file-loader',
-                    options: {
-                        name: 'subwayvideo.mp4'
-                    }  
-                }
-                ]
+                loader: 'file-loader?name=[name].[ext]'
             }
             
         ]   
