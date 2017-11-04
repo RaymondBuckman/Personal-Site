@@ -6,7 +6,7 @@ class AdditionalSkills extends Component {
         return(
         <div>
             <div id="jump-to-additional-skills" className="Skills-1">
-                <header id="additional-skills" className="scrollmagicFadeIn">
+                <header id="additional-skills" className="scrollmagicFadeIn" tabIndex="0">
                     Add<span id="additional-skills_iti">iti</span>onal Ski<span id="additional-skills_ll">ll</span>s
                 </header>
                 <ul id="skill-list"  className="scrollmagicFadeIn">
