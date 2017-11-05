@@ -1,13 +1,3 @@
-/*Work done today:
-    - Changing hobby icons
-    - Reducing unnecassary bootstrap use
-    - Changed down arrow
-    - Hobbies revamp
-    - Video background
-    - Darken .Edicatuion-2/lighten text
-
-*/
-
 @import url('https://fonts.googleapis.com/css?family=Akronim');
 @import url('https://fonts.googleapis.com/css?family=Orbitron');
 @import url('https://fonts.googleapis.com/css?family=Covered+By+Your+Grace|Prosto+One|Satisfy');
@@ -366,22 +356,17 @@ body{
 
 #menu{
 	position:fixed;
-	top:6px;
-	left:15px;
+	top: 15px;
+	left: 15px;
     cursor: pointer;
-	opacity: .3;
-    filter: invert(100%) !important;
+	opacity: 0.5;
+    
 	z-index:98; 
-	transition: all 0.5s ease-in-out;
+	transition: all 0.3s ease-in-out;
     
     &:hover{
-        filter: invert(100%);
-        opacity: 0.9;
+        opacity: 1;
 	    //animation: occasionalBlurOnHover 4s infinite; 
-    }
-    
-    &:active, &:visited{
-        filter: invert(100%);
     }
 }
 
@@ -445,10 +430,10 @@ body{
     display: inline-block;
     cursor: pointer;
     z-index: 1;
-    opacity:0.5;
+    opacity: 0.5;
 
     animation: updown 2s infinite 1.1s;
-	transition: opacity 0.5s ease-in-out;
+	transition: opacity 0.3s ease-in-out;
     
     &:hover{
         opacity: 1;
@@ -456,7 +441,7 @@ body{
 }
 
 
-#about-me:hover, #education:hover, #online-courses:hover, #languages:hover, #additional-skills:hover, #vWork:hover, #hobbies:hover {
+#about-me:hover, #education:hover, #online-courses:hover, #languages:hover, #additional-skills:hover, #volunteer-work:hover, #hobbies:hover {
 	border-color:  $tertiary-color !important;
 }
 /*
@@ -465,8 +450,8 @@ body{
 }*/
 
 #name_y, #name_m, #name_B, #about-me_ut, #education_d,
-#education_on, #online_li, #online_e, #languages_gu, #languages_e, #additional-skills_iti,
-#additional-skills_ll, #vWork_unt, #vWork_rk, #hobbies_bb{
+#education_on, #project_io, #project_j, #online_li, #online_e, #languages_gu, #languages_e, #languages_ib, #additional-skills_iti,
+#additional-skills_ll, #volunteer-work_unt, #volunteer-work_rk, #hobbies_bb{
 	animation: lightenDarken 12s infinite 1.1s;
 }
 
@@ -475,7 +460,7 @@ body{
 #languageList > *:hover,
 #online-list > *:hover,
 #skillList > *:hover,
-#vList > *:hover,
+#volunteer-list > *:hover,
 #french:hover,
 #german:hover,
 #hobby-icons > *:hover,
@@ -533,7 +518,7 @@ body{
         } 
         
         &:nth-child(1){
-            .window1{
+            #intro-window{
                 position: relative;
                 top: 0vh;
                 margin: 5vh auto 0vh auto;
@@ -544,13 +529,14 @@ body{
                 
                 border-radius: 50%;
                 //filter: invert(100%);
-                transition: border 0.5s ease-in-out, opacity 0.5s ease-in-out;
+                transition: border 0.5s ease-in-out, opacity 0.5s ease-in-out, filter 0.7s ease-in-out;
                 
                 #subway-video{
                     height: 600px;
                     width: 600px;
                     border-radius: 50%;
                     object-fit: cover;
+                    filter: contrast(130%);
                 }
             }
         }
@@ -587,7 +573,7 @@ body{
                 font-size: 1.2em;
                 opacity: 0;
 
-                transition: transform 0.5s ease-in-out;
+                transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
                 transform: translateY(40px);
             }
         }
@@ -678,7 +664,7 @@ body{
     //opacity: 1 !important;
 }
 
-.nav-icon-vWork{
+.nav-icon-volunteer-work{
     content:url("https://png.icons8.com/volunteering/ios7/73/000000");
     //opacity: 1 !important;
 }
@@ -808,7 +794,162 @@ header + header{
      }
 }
 
-.Education-2{
+.Education-2 {
+    position: relative;
+    height: auto;
+    width: 100vw;
+    background: $main-color;
+        
+    .flex-container {
+          padding: 15vh 5vw;
+          margin: 0;
+          list-style: none;
+
+          display: -webkit-box;
+          display: -moz-box;
+          display: -ms-flexbox;
+          display: -webkit-flex;
+          display: flex;
+
+          -webkit-flex-flow: row wrap;
+          justify-content: space-around;
+        }
+
+    .flex-item {
+        //padding: 5px;
+        width: 25vw;
+        height: 400px;
+        margin-top: 10px;
+        margin-bottom: 30px;
+        text-align: center;
+        transition: all 0.3s ease-in-out;
+
+        h1{
+            font-size: 1.3em;
+        }
+        
+        &:nth-child(1){
+            width: 100vw;
+            height: 100px;
+            margin-bottom: 10vh;
+            background: transparent;
+            
+            #senior-project{
+                position: relative;
+                width: auto;
+                //text-align: center;
+                //display: block;
+                margin: 0 auto;
+                @include main-font;
+                font-size: $subheader-font-size;
+                letter-spacing: 7px;
+                color: $secondary-color;    
+                text-align: center;
+                @include header-padding-margin;
+                border-bottom: $secondary-color 3px solid;
+                border-top: $secondary-color 3px solid;
+                opacity: 0;
+                transition: border-color 0.5s ease-in-out, opacity 0.5s ease-in-out;
+            }
+        }
+        
+        &:nth-child(2){
+            div{
+                height: 400px;
+                width: 25vw;
+                background: url("images/pcopter3.jpg") $nrs 50% 10%;
+                background-size: cover;
+            }
+        }
+        
+        &:nth-child(3){
+            div{
+                #project-video{
+                    height: 400px;
+                    width: 25vw;
+                    border-radius: 50%;
+                    object-fit: cover;
+                    filter: grayscale(100%);
+                }
+            }
+        }
+        
+        &:nth-child(4){
+            div{
+                height: 400px;
+                width: 25vw;
+                background: url("images/pcopter2.jpg") $nrs 100% 70%;
+                background-size: cover;
+            }
+        }
+        
+        &:nth-child(5){
+            div{
+                height: 400px;
+                width: 25vw;
+                background: url("images/pcopter1.jpg") $nrs 50% 70%;
+                background-size: cover;
+            }
+        }
+        
+        &:nth-child(6){
+            div{
+                height: 400px;
+                width: 25vw;
+                background: url("images/pboard1smudge.jpg") $nrs 30% 70%;
+                background-size: cover;
+            }
+        }
+        
+        &:nth-child(7){
+            div{
+                height: 400px;
+                width: 25vw;
+                background: url("images/pboard2.jpg") $nrs 50% 70%;
+                background-size: cover;
+            }
+        }
+        
+        &:nth-child(8){
+            div{
+                height: 400px;
+                width: 25vw;
+                background: url("images/pboard3.jpg") $nrs 50% 70%;
+                background-size: cover;
+            }
+        }
+        
+        &:nth-child(n+2){
+            div{
+                border-radius: 50%;
+                transition: all 0.3s ease-in-out;
+            }
+            
+            h2{
+                position: relative;
+                top: -200px;
+                @include secondary-font;
+                color: $tertiary-color;
+                opacity: 0;
+                transform: rotateY(90deg); 
+                transition: all 0.5s ease-in-out;
+            }
+            
+            &:hover h2{
+                    opacity: 1;
+                    transform: rotateY(0deg); 
+            }
+            
+            &:hover div{
+                filter: brightness(20%);
+            }
+        }
+        
+        
+    }
+}
+
+.Education-3{
 	position: relative;
 	height: auto;
 	background: url("images/laptop2.jpg") $nrf 20% 70%;
@@ -894,7 +1035,7 @@ header + header{
         margin-top: 5vh;
         
         li:nth-child(4n+1){
-            @include li-odd;
+            @include li-odd(rgb(200,200,200));
         }
 
         li:nth-child(4n+3){ 
@@ -918,6 +1059,122 @@ header + header{
 	background-size: 2000px;
 	z-index: 4;
     transition: filter 0.7s ease-in-out;
+}
+
+.Employment-1 {
+    position: relative;
+    height: auto;
+    background: $main-color;
+    font-size: large;
+    color: $tertiary-color;
+    z-index: 19;
+    
+    .flex-container {
+        position: relative;
+        padding: 20px;
+        margin: 0;
+        list-style: none;
+
+        display: -webkit-box;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+
+        -webkit-flex-flow: row wrap;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+
+    .flex-item{
+        padding: 5px;
+        width: 80vw;
+        height: auto;
+        margin: 20px 0px;
+        overflow: hidden;
+  
+        line-height: 30px;
+        color: $secondary-color;
+        @include main-font;
+        //font-size: 3em;
+        text-align: center;
+        
+        h1{
+            position: relative;
+            top: 30px;
+            //font-size: 2em;
+            //font-weight: 700;
+        } 
+        
+        &:nth-child(1){
+            #employment-window{
+                position: relative;
+                top: 0vh;
+                margin: 5vh auto 0vh auto;
+                height: 600px;
+                width: 600px;
+                //background: url("images/road2.jpg") $nrf 55% 20%;
+                //background-size: 1200px;
+                
+                border-radius: 50%;
+                //filter: invert(100%);
+                transition: border 0.5s ease-in-out, opacity 0.5s ease-in-out, filter 0.7s ease-in-out;
+                
+                #drill-video{
+                    height: 600px;
+                    width: 600px;
+                    border-radius: 50%;
+                    object-fit: cover;
+                    filter: grayscale(100%);
+                }
+            }
+        }
+        
+        &:nth-child(2){
+            #employment{
+                position: relative;
+                top: 10vh;
+                //left: 50%;
+                display: inline;
+                text-align: center;
+                width: 500px;
+                @include main-font;
+                font-size: $subheader-font-size;
+                letter-spacing: 13px;
+                text-align: center;
+                color: $secondary-color;
+                //padding: 35px 35% 35px 35px;
+                border-bottom: $secondary-color 3px solid;
+                border-top: $secondary-color 3px solid;
+                opacity: 1;
+                transition: border-color 0.5s ease-in-out, opacity 0.5s ease-in-out;
+            }
+
+            #employment-paragraph{
+                position: relative;
+                //top: 10vh;
+                @include secondary-font;
+                color: $secondary-color;                
+                //padding: 2% 0% 5% 0%;
+                margin: 20vh 0vh 5vh 0vh;
+                text-align: center;
+                line-height: 200%;
+                font-size: 1.2em;
+                opacity: 0;
+
+                transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+                transform: translateY(40px);
+            }
+        }
+    }
+}
+
+.Employment-2{
+	position: relative;
+	height: 50vh;
+	background: url("images/hammer.jpeg") $nrf 100% 20%;
+	background-size: cover;
+    filter: grayscale(100%);
 }
 
 .Skills-1{
@@ -955,7 +1212,7 @@ header + header{
         margin-top: 5vh;
         
         li:nth-child(4n+1){
-            @include li-odd;
+            @include li-odd(rgb(200,200,200));
         }
 
         li:nth-child(4n+3){ 
@@ -1036,7 +1293,7 @@ header + header{
 	transform: scaleX(1);
  }
 
-.VWork-1 {
+.Volunteer-1 {
 	position: relative;
     height: auto;
     background: $main-color;
@@ -1082,7 +1339,7 @@ header + header{
         } 
         
          &:nth-child(1){
-            .window2{
+            #volunteer-window{
                 position: relative;
                 top: 0vh;
                 margin: 5vh auto 0vh auto;
@@ -1092,20 +1349,21 @@ header + header{
                 //background-size: 1200px;
                 border: transparent solid 3px;
                 border-radius: 50%;
-                filter: grayscale(100%);
-                transition: border 0.5s ease-in-out, opacity 0.5s ease-in-out;
+                
+                transition: border 0.5s ease-in-out, opacity 0.5s ease-in-out, filter 0.7s ease-in-out;
                 
                 #volunteer-video{
                     height: 600px;
                     width: 600px;
                     border-radius: 50%;
                     object-fit: cover;
+                    filter: contrast(110%) grayscale(100%);
                 }
             }
         }
         
         &:nth-child(2){
-            #vWork{
+            #volunteer-work{
                 position: relative;
                 top: 7vh;
                 //left: 50%;
@@ -1120,11 +1378,11 @@ header + header{
                 padding: 0px 35px;
                 border-bottom: $secondary-color 3px solid;
                 border-top: $secondary-color 3px solid;
-                opacity: 1;
+                opacity: 0;
                 transition: border-color 0.5s ease-in-out, opacity 0.5s ease-in-out;
             }
 
-            #vList{
+            #volunteer-list{
                 position:relative;
                 top:0vh;
                 @include secondary-font;
@@ -1160,7 +1418,7 @@ header + header{
     }
 }
 
-.VWork-2{
+.Volunteer-2{
 	position: relative;
 	height: 50vh;
 	background: url("images/heartcross.jpg") $nrf 40% 60%;
@@ -1168,7 +1426,7 @@ header + header{
 	z-index:1;
 }
 
-.VWork-2-blurred{
+.Volunteer-2-blurred{
 	position: relative;
 	height: 50vh;
 	background: url("images/heartcross-blurred.jpg") $nrf 40% 60%;
@@ -1415,7 +1673,7 @@ header + header{
           top: 80vh;
      }
 
-	.window1{
+	#intro-window{
 		position: relative;
 		top: 15vh;
 		margin: auto;
@@ -1545,11 +1803,11 @@ header + header{
 	     font-size: 15px;
 	}
 
-     .VWork-1{
+     .Volunteer-1{
           height:130vh;
      }
 
-	.window2{
+	#volunteer-window{
 		position: relative;
 		top: 15vh;
 		margin: auto;
@@ -1562,16 +1820,16 @@ header + header{
 		transition: border 0.5s ease-in-out;
      }
 
-     #vWork{
+     #volunteer-work{
           font-size:2.5em;
           letter-spacing: 6px;
      }
 
-	#vList{
+	#volunteer-list{
 		font-size:1em;
 	}
 
-	.VWork-2{
+	.Volunteer-2{
 		background: url("images/heartcross.jpg") $nrs 48% 60%;
 		background-size: 3000px;
 	}
@@ -1644,7 +1902,7 @@ header + header{
            height: 210vh;
       }
 
-      .window1{
+      #intro-window{
           position: relative;
           top: 15vh;
           margin: auto;
@@ -1778,11 +2036,11 @@ header + header{
           font-size: 15px;
       }
 
-      .VWork-1{
+      .Volunteer-1{
           height:160vh;
       }
 
-      .window2{
+      #volunteer-window{
           position: relative;
           top: 15vh;
           margin: auto;
@@ -1795,16 +2053,16 @@ header + header{
           transition: border 0.5s ease-in-out;
       }
 
-      #vWork{
+      #volunteer-work{
           font-size:2.5em;
           letter-spacing: 6px;
       }
 
-      #vList{
+      #volunteer-list{
           font-size:1em;
       }
 
-      .VWork-2{
+      .Volunteer-2{
           background: url("images/heartcross.jpg") $nrs 48% 50%;
           background-size: 2900px;
       }
