@@ -6,6 +6,7 @@ import Sidebar from './components/sidebar/Sidebar';
 import Intro from'./components/intro/Intro';
 import Education from './components/education/Education';
 import Languages from './components/languages/Languages';
+import Employment from './components/employment/Employment';
 import AdditionalSkills from './components/additionalSkills/additionalSkills';
 import VolunteerWork from './components/volunteerWork/VolunteerWork';
 import Hobbies from './components/hobbies/Hobbies';
@@ -43,12 +44,13 @@ ReactDOM.render(
             <div id="sidebar-wrapper">
                 <Sidebar />
             </div>
-            <img id="menu" src="https://png.icons8.com/menu/androidL/73/000000" height="40px" data-tip data-for="sidebar-toggle" aria-describedby="sidebar-toggle" tabIndex="0"></img>
-            <span id="close" className="glyphicon glyphicon-remove"></span>
+            <img id="menu" src="https://png.icons8.com/xbox-menu/ios7/73/ffffff" height="40px" tabIndex="0"></img>
+            <img id="close" src="https://png.icons8.com/cancel/ios7/73/ffffff" height="40px"></img>
             <div id="page-content-wrapper">
                 <Intro />
                 <Education />
                 <Languages />
+                <Employment />
                 <AdditionalSkills />
                 <VolunteerWork />
                 <Hobbies />
@@ -56,10 +58,6 @@ ReactDOM.render(
             </div>
         </div>
         <Modal />
-        <ReactTooltip id="sidebar-toggle" place="right" type="dark"
-            effect="solid" delayShow={300} role="tooltip">
-                <span className="tooltip-span">Open Sidebar</span>
-        </ReactTooltip>
     </div>,
     document.getElementById('root')
 );
@@ -98,6 +96,7 @@ $(document).ready(function(){
     
     var changeTopNavColorScene = new ScrollMagic.Scene({
         triggerElement: '.navbar',
+        autoRound: false,
         triggerHook: 0
     })
     .setClassToggle('.navbar', 'black-nav')
@@ -115,7 +114,20 @@ $(document).ready(function(){
     .setTween(pushNavUpTween)
     .addTo(controller);
     
-    $('.scrollmagicFadeIn').each(function(){
+    var pushMenuUpTween = TweenMax.to("#menu", 0.01, {
+        y: "-=9px",
+        autoRound: false
+    });
+    
+    var pushMenuUpScene = new ScrollMagic.Scene({
+        triggerElement: '.navbar',
+        triggerHook: 0.04
+    })
+    .setTween(pushMenuUpTween)
+    .addTo(controller);
+    
+    /*----- Header fade-in animations -----*/
+    $('.scrollmagic-fade-in').each(function(){
         var headerScene = new ScrollMagic.Scene({
             triggerElement: this,
             triggerHook: 0.8,
@@ -173,6 +185,19 @@ $(document).ready(function(){
     .setTween(educationBorderTween)
     .addTo(controller);
     
+    var projectBorderTween = TweenMax.to("#senior-project", 1, { 
+        borderRadius: borderRadius,
+        ease:Power1.easeIn
+    });
+
+	var projectBorderscene = new ScrollMagic.Scene({
+        triggerElement: "#senior-project",
+        triggerHook: 0.25,
+        reverse: true
+    })
+    .setTween(projectBorderTween)
+    .addTo(controller);
+    
     var onlineBorderTween = TweenMax.to("#online-courses", 1, { 
         borderRadius: borderRadius,
         ease:Power1.easeIn
@@ -199,6 +224,19 @@ $(document).ready(function(){
     .setTween(languagesBorderTween)
     .addTo(controller);
     
+    var employmentBorderTween = TweenMax.to("#employment", 1, { 
+        borderRadius: borderRadius,
+        ease:Power1.easeIn
+    });
+
+	var employmentBorderscene = new ScrollMagic.Scene({
+        triggerElement: "#employment",
+        triggerHook: 0.25,
+        reverse: true
+    })
+    .setTween(employmentBorderTween)
+    .addTo(controller);
+    
     var additionalSkillsBorderTween = TweenMax.to("#additional-skills", 1, { 
         borderRadius: borderRadius,
         ease:Power1.easeIn
@@ -212,17 +250,17 @@ $(document).ready(function(){
     .setTween(additionalSkillsBorderTween)
     .addTo(controller);
     
-    var vWorkBorderTween = TweenMax.to("#vWork", 1, { 
+    var volunteerWorkBorderTween = TweenMax.to("#volunteer-work", 1, { 
         borderRadius:"40px 20px 40px 20px",
         ease:Power1.easeIn
     });
 
-	var vWorkBorderscene = new ScrollMagic.Scene({
-        triggerElement: "#vWork",
+	var volunteerWorkBorderscene = new ScrollMagic.Scene({
+        triggerElement: "#volunteer-work",
         triggerHook: 0.25,
         reverse: true
     })
-    .setTween(vWorkBorderTween)
+    .setTween(volunteerWorkBorderTween)
     .addTo(controller);
     
     var hobbiesBorderTween = TweenMax.to("#hobbies", 1, { 
@@ -304,20 +342,20 @@ $(document).ready(function(){
     .setClassToggle('#skill-list li:nth-child(even)', 'fade-in')
     .addTo(controller);
         
-    var vListOddScene = new ScrollMagic.Scene({
-        triggerElement: '#vList li:nth-child(odd)',
+    var volunteerListOddScene = new ScrollMagic.Scene({
+        triggerElement: '#volunteer-list li:nth-child(odd)',
         triggerHook: 0.8,
         reverse: false    
     })
-    .setClassToggle('#vList li:nth-child(odd)', 'fade-in')
+    .setClassToggle('#volunteer-list li:nth-child(odd)', 'fade-in')
     .addTo(controller);
         
-    var vListEvenScene = new ScrollMagic.Scene({
-        triggerElement: '#vList li:nth-child(odd)',
+    var volunteerListEvenScene = new ScrollMagic.Scene({
+        triggerElement: '#volunteer-list li:nth-child(odd)',
         triggerHook: 0.8,
         reverse: false    
     })
-    .setClassToggle('#vList li:nth-child(even)', 'fade-in')
+    .setClassToggle('#volunteer-list li:nth-child(even)', 'fade-in')
     .addTo(controller);
 
     /* ----Background Scroll animations -----*/    
@@ -446,42 +484,42 @@ $(document).ready(function(){
     .setTween(seventhBerlinParallaxTween)
     .addTo(controller);
     
-    var ninthParallaxTween = TweenMax.from(".VWork-2", 1, { 
+    var ninthParallaxTween = TweenMax.from(".Volunteer-2", 1, { 
         backgroundSize: "+=400px +=266.8px", //changes bg image size without changing proportions
         autoRound:false, 
         ease:Power1.easeOut
     });
 
 	var ninthParallaxscene = new ScrollMagic.Scene({
-        triggerElement: ".VWork-2",
+        triggerElement: ".Volunteer-2",
         triggerHook: 1,
         duration: "200%"
     })
     .setTween(ninthParallaxTween)
     .addTo(controller);
     
-    var ninthBlurredParallaxTween = TweenMax.from(".VWork-2-blurred", 1, { 
+    var ninthBlurredParallaxTween = TweenMax.from(".Volunteer-2-blurred", 1, { 
         backgroundSize: "+=400px +=266.8px", //changes bg image size without changing proportions
         autoRound:false, 
         ease:Power1.easeOut
     });
 
 	var ninthBlurredParallaxscene = new ScrollMagic.Scene({
-        triggerElement: ".VWork-2-blurred",
+        triggerElement: ".Volunteer-2-blurred",
         triggerHook: 1,
         duration: "200%"
     })
     .setTween(ninthBlurredParallaxTween)
     .addTo(controller);
     
-    var ninthDisappearParallaxTween = TweenMax.to(".VWork-2-blurred", 1, { 
+    var ninthDisappearParallaxTween = TweenMax.to(".Volunteer-2-blurred", 1, { 
         opacity: "1",
         autoRound:false, 
         ease:Power1.easeOut
     });
 
 	var ninthDisappearParallaxscene = new ScrollMagic.Scene({
-        triggerElement: ".VWork-2-blurred",
+        triggerElement: ".Volunteer-2-blurred",
         triggerHook: 0.2,
         duration: "50%"
     })
@@ -520,8 +558,8 @@ $(document).ready(function(){
     var heightFromTopToLanguages = $('.Languages-1').offset().top;
     var heightOfEducation = $('.Languages-1').offset().top - $('.Education-1').offset().top;
     var heightOfLanguages = $('.Skills-1').offset().top - $('.Languages-1').offset().top;
-    var heightOfSkills = $('.VWork-1').offset().top - $('.Skills-1').offset().top;
-    var heightOfVWork = $('.Hobbies-1').offset().top - $('.VWork-1').offset().top;
+    var heightOfSkills = $('.Volunteer-1').offset().top - $('.Skills-1').offset().top;
+    var heightOfVolunteer = $('.Hobbies-1').offset().top - $('.Volunteer-1').offset().top;
     var heightOfHobbies = $('.Hobbies-2').offset().top - $('.Hobbies-1').offset().top;
     
     
@@ -550,9 +588,9 @@ $(document).ready(function(){
     .addTo(controller);
     
 	var nav4Tween = new ScrollMagic.Scene({
-        triggerElement: ".VWork-1",
+        triggerElement: ".Volunteer-1",
         triggerHook: 0.5,
-        duration: heightOfVWork
+        duration: heightOfVolunteer
     })
     .setClassToggle(".navbar-default .navbar-nav > li:nth-child(4)", "active") // add class toggle
     .addTo(controller);
@@ -599,11 +637,11 @@ $(document).ready(function(){
     .addTo(controller);
     
 	var navIcon4Tween = new ScrollMagic.Scene({
-        triggerElement: ".VWork-1",
+        triggerElement: ".Volunteer-1",
         triggerHook: 0.5,
-        duration: heightOfVWork
+        duration: heightOfVolunteer
     })
-    .setClassToggle("#nav-icon", "nav-icon-vWork") // add class toggle
+    .setClassToggle("#nav-icon", "nav-icon-volunteer-work") // add class toggle
     .addTo(controller);
     
     var navIcon5Tween = new ScrollMagic.Scene({
@@ -614,7 +652,37 @@ $(document).ready(function(){
     .setClassToggle("#nav-icon", "nav-icon-hobbies") // add class toggle
     .addTo(controller);
 
+    /*----- Video animations -----*/
+    /*
+    var introVideoInvertTween = TweenMax.to("#intro-window", 0.01, {
+        filter: "invert(100%)",
+        autoRound:false, 
+        ease:Power0.linear
+    });
 
+    var introVideoInvertScene = new ScrollMagic.Scene({
+        triggerElement: "#about-me",
+        triggerHook: 0.5,
+        reverse: true
+    })
+    .setTween(introVideoInvertTween)
+    .addTo(controller);
+    
+    var volunteerVideoInvertTween = TweenMax.to("#volunteer-window", 0.01, {
+        filter: "invert(100%) grayscale(100%)",
+        autoRound:false, 
+        ease:Power0.linear
+    });
+
+    var volunteerVideoInvertScene = new ScrollMagic.Scene({
+        triggerElement: "#volunteer-work",
+        triggerHook: 0.5,
+        reverse: true
+    })
+    .setTween(volunteerVideoInvertTween)
+    .addTo(controller);*/
+    
+    
     /*
     function rotate(event) 
     {
@@ -667,12 +735,6 @@ $(document).ready(function(){
                'transform' : 'translateX(30px)',
                'opacity' : '1'
           });
-          menuRotate += 360;
-         $('#menu').css({
-             '-webkit-transform': 'rotateY(' + menuRotate   + 'deg)',
-             '-moz-transform': 'rotateY(' +  menuRotate   + 'deg)',
-             'transform': 'rotateY('  + menuRotate   + 'deg)'
-         });
     });
 
     /*================Pre-load Hobby Images================*/
@@ -863,7 +925,7 @@ $(window).scroll(function(){
           $('#name').css('opacity', Math.pow(280/wScroll, 7));
           
 
-          $('.window1').css({
+          $('#intro-window').css({
                'background-position' : '47%'+ (-900+wScroll) + 'px', //complicated logic!!!
                'opacity': Math.pow(750/wScroll, 15)
           })
@@ -907,8 +969,8 @@ $(window).scroll(function(){
                $('#german').css('opacity', '1');
           }
 
-          $('#vWork').removeClass('col-xs-6 col-xs-offset-3');
-          $('#vWork').addClass('col-xs-10 col-xs-offset-1');
+          $('#volunteer-work').removeClass('col-xs-6 col-xs-offset-3');
+          $('#volunteer-work').addClass('col-xs-10 col-xs-offset-1');
 
           $('#divOutsideHobibes').removeClass('col-xs-4 col-xs-offset-4');
           $('#divOutsideHobibes').addClass('col-xs-6 col-xs-offset-3');
@@ -1086,8 +1148,8 @@ $(window).scroll(function(){
                     $('#german').css('opacity', '1');
                }
 
-               $('#vWork').removeClass('col-xs-10 col-xs-offset-1');
-               $('#vWork').addClass('col-xs-6 col-xs-offset-3');
+               $('#volunteer-work').removeClass('col-xs-10 col-xs-offset-1');
+               $('#volunteer-work').addClass('col-xs-6 col-xs-offset-3');
 
                $('#divOutsideHobibes').removeClass('col-xs-6 col-xs-offset-3');
                $('#divOutsideHobibes').addClass('col-xs-4 col-xs-offset-4');
