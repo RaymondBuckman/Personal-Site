@@ -6,18 +6,18 @@ class VolumteerWork extends Component {
     render() {
         return(
         <div>
-            <div id="jump-to-vWork" className="VWork-1">
+            <div id="jump-to-volunteer-work" className="Volunteer-1">
                     <ul className="flex-container">
                         <li className="flex-item">
-                            <div className="scrollmagicWindow window2">
+                            <div id="volunteer-window" className="scrollmagicWindow">
                                 <video preload="preload" id="volunteer-video" autoPlay="autoplay" loop="loop" muted>
                                     <source src={cameraVideo} type="video/mp4"></source>
                                 </video>
                             </div>
                         </li>
                         <li className="flex-item">
-                            <header id="vWork"  className="scrollmagicFadeIn" tabIndex="0">Volunteer Work</header>
-                            <ul id="vList" className="scrollmagicFadeIn">
+                            <header id="volunteer-work"  className="scrollmagic-fade-in" tabIndex="0">Vol<span id="volunteer-work_unt">unt</span>eer Wo<span id="volunteer-work_rk">rk</span></header>
+                            <ul id="volunteer-list" className="scrollmagic-fade-in">
                                 <li>Cameraman</li><br/>
                                 <li>Average of 2 hours/week since February 2016</li><br/>
                                 <li>Food Packer @ San Diego Food Bank</li><br/>
@@ -26,8 +26,8 @@ class VolumteerWork extends Component {
                         </li>
                     </ul>
             </div>
-            <div className="VWork-2">
-                <div className="VWork-2-blurred"></div>
+            <div className="Volunteer-2">
+                <div className="Volunteer-2-blurred"></div>
             </div>
         </div>         
         );
