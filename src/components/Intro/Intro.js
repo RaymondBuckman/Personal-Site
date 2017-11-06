@@ -37,6 +37,7 @@ class Intro extends Component {
                     <ul className="nav navbar-nav navbar-right">
                         <li><a href="#jump-to-education">Education</a></li>
                         <li><a href="#jump-to-languages">Languages</a></li>
+                        <li><a href="#jump-to-employment">Employment</a></li>
                         <li><a href="#jump-to-additional-skills">Additional Skills</a></li>
                         <li><a href="#jump-to-volunteer-work">Volunteer Work</a></li>
                         <li><a href="#jump-to-hobbies">Hobbies</a></li>
