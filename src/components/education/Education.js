@@ -41,11 +41,11 @@ class Education extends Component {
                         <h1 id="senior-project" className="scrollmagic-fade-in" tabIndex="0">
                             Sen<span id="project_io">io</span>r Pro<span id="project_j">j</span>ect
                         </h1></li>
-                    <li className="flex-item">
+                    <li className="flex-item scrollmagic-circle">
                         <div></div>
                         <h2>Flight Controller Board</h2>
                     </li>
-                    <li className="flex-item">
+                    <li className="flex-item scrollmagic-circle">
                         <div>
                             <video preload="preload" id="project-video" autoPlay="autoplay" loop="loop" muted>
                                 <source src={subwayVideo} type="video/mp4"></source>
@@ -53,19 +53,19 @@ class Education extends Component {
                         </div>
                         <h2>Demo</h2>
                     </li>
-                    <li className="flex-item">
+                    <li className="flex-item scrollmagic-circle">
                         <div></div>
                         <h2>Propellers & Controller</h2>
                     </li>
-                    <li className="flex-item">
+                    <li className="flex-item scrollmagic-circle">
                         <div></div>
                         <h2>Drone Structure</h2>
                     </li>
-                    <li className="flex-item">
+                    <li className="flex-item scrollmagic-circle">
                         <div></div>
                         <h2>Project Board</h2>
                     </li>
-                    <li className="flex-item">
+                    <li className="flex-item scrollmagic-circle">
                         <div></div>
                         <h2>Project Booth</h2>
                     </li>
