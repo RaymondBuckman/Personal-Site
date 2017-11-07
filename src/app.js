@@ -129,7 +129,24 @@ $(document).ready(function(){
     $('.scrollmagic-fade-in').each(function(){
         var headerScene = new ScrollMagic.Scene({
             triggerElement: this,
-            triggerHook: 0.8,
+            triggerHook: 0.85,
+            reverse: false
+        })
+        .setClassToggle(this, 'fade-in')
+        /*
+        .addIndicators({
+            name: 'fade scene',
+            colorTrigger: 'black',
+            colorStart: '#75C695'
+        })*/
+        .addTo(controller);
+    })
+    
+    /*----- Circle animations -----*/
+    $('.scrollmagic-circle').each(function(){
+        var headerScene = new ScrollMagic.Scene({
+            triggerElement: this,
+            triggerHook: 0.85,
             reverse: false
         })
         .setClassToggle(this, 'fade-in')
@@ -358,185 +375,199 @@ $(document).ready(function(){
     .addTo(controller);
 
     /* ----Background Scroll animations -----*/    
-    var firstParallaxTween = TweenMax.to(".Intro-1", 1, {
+    var intro1ParallaxTween = TweenMax.to(".Intro-1", 1, {
         backgroundSize: "+=200px +=133.3px", //changes bg image size without changing proportions
         backgroundPositionX: "-=50%",
         autoRound:false, 
         ease:Power1.ease0ut
     });
 
-	var firstParallaxscene = new ScrollMagic.Scene({
+	var intro1Parallaxscene = new ScrollMagic.Scene({
         triggerElement: ".Intro-1", 
         duration: "100%",
         triggerHook:0
     })
-    .setTween(firstParallaxTween)
+    .setTween(intro1ParallaxTween)
     .addTo(controller);
      
-    var firstBrighterTween = TweenMax.to(".Intro-1", 0.01, {
+    var intro1BrighterTween = TweenMax.to(".Intro-1", 0.01, {
         filter: "brightness(150%)",
         autoRound:false, 
         ease:Power0.linear
     });
 
     
-    var firstBrighterScene = new ScrollMagic.Scene({
+    var intro1BrighterScene = new ScrollMagic.Scene({
         triggerElement: ".Intro-2",
         triggerHook: 0.9
     })
-    .setTween(firstBrighterTween)
+    .setTween(intro1BrighterTween)
     .addTo(controller);
     
-    var firstEvenBrighterTween = TweenMax.to(".Intro-1", 0.01, {
+    var intro1EvenBrighterTween = TweenMax.to(".Intro-1", 0.01, {
         filter: "brightness(200%)",
         autoRound:false, 
         ease:Power0.linear
     });
     
-    var firstEvenBrighterScene = new ScrollMagic.Scene({
+    var intro1EvenBrighterScene = new ScrollMagic.Scene({
         triggerElement: ".Intro-2",
         triggerHook: 0.7
     })
-    .setTween(firstEvenBrighterTween)
+    .setTween(intro1EvenBrighterTween)
     .addTo(controller);
     
-    var firstBrightestTween = TweenMax.to(".Intro-1", 0.01, {
+    var intro1BrightestTween = TweenMax.to(".Intro-1", 0.01, {
         filter: "brightness(300%)",
         autoRound:false, 
         ease:Power0.linear
     });
 
-    var firstBrightestScene = new ScrollMagic.Scene({
+    var intro1BrightestScene = new ScrollMagic.Scene({
         triggerElement: ".Intro-2",
         triggerHook: 0.5,
         
     })
-    .setTween(firstBrightestTween)
+    .setTween(intro1BrightestTween)
     .addTo(controller);
     
-    var thirdParallaxTween = TweenMax.to(".Education-1", 1, { 
+    var education1ParallaxTween = TweenMax.to(".Education-1", 1, { 
         backgroundPositionX: "+=80%",
         autoRound:false, 
         ease:Power1.easeIn
     });
 
-	var thirdParallaxscene = new ScrollMagic.Scene({
+	var education1Parallaxscene = new ScrollMagic.Scene({
         triggerElement: ".Education-1",
         triggerHook: 1,
         duration: "200%"
     })
-    .setTween(thirdParallaxTween)
+    .setTween(education1ParallaxTween)
     .addTo(controller);
     
-    var fifthParallaxTween = TweenMax.to(".Languages-2", 1, { 
+    var languages2ParallaxTween = TweenMax.to(".Languages-2", 1, { 
         backgroundPositionX: "-=30%",
         autoRound:false, 
         ease:Power0.linear
     });
 
-	var fifthParallaxscene = new ScrollMagic.Scene({
+	var languages2Parallaxscene = new ScrollMagic.Scene({
         triggerElement: ".Languages-2",
         triggerHook: 1,
         duration: "250%"
     })
-    .setTween(fifthParallaxTween)
+    .setTween(languages2ParallaxTween)
     .addTo(controller);
     
-    var fifthInvertTween = TweenMax.to(".Languages-2", 0.01, {
+    var languages2InvertTween = TweenMax.to(".Languages-2", 0.01, {
         filter: "invert(300%)",
         autoRound:false, 
         ease:Power0.linear
     });
 
-    var fifthInvertScene = new ScrollMagic.Scene({
+    var languages2InvertScene = new ScrollMagic.Scene({
         triggerElement: ".Languages-2",
         triggerHook: 0.25,
     })
-    .setTween(fifthInvertTween)
+    .setTween(languages2InvertTween)
     .addTo(controller);
     
-    var seventhParisParallaxTween = TweenMax.to(".Skills-2", 1, { 
+    var employment2ParallaxTween = TweenMax.from(".Employment-2", 1, { 
+        backgroundSize: "+=200px +=150px",
+        autoRound:false, 
+        ease:Power1.easeOut
+    });
+
+	var employment2Parallaxscene = new ScrollMagic.Scene({
+        triggerElement: ".Employment-2",
+        triggerHook: 1,
+        duration: "200%"
+    })
+    .setTween(employment2ParallaxTween)
+    .addTo(controller);
+    
+    var skills2ParallaxTween = TweenMax.to(".Skills-2", 1, { 
         backgroundSize: "+=500px +=332.25px", //changes bg image size without changing proportions
         autoRound:false, 
         ease:Power0.easeOut
     });
 
-	var seventhParisParallaxscene = new ScrollMagic.Scene({
+	var skills2Parallaxscene = new ScrollMagic.Scene({
         triggerElement: ".Skills-2",
         triggerHook: 1,
         duration: "200%"
     })
-    .setTween(seventhParisParallaxTween)
+    .setTween(skills2ParallaxTween)
     .addTo(controller);
     
-    var seventhBerlinParallaxTween = TweenMax.to(".Skills-3", 1, { 
+    var skills3ParallaxTween = TweenMax.to(".Skills-3", 1, { 
         backgroundPositionX: "-=100%",
         autoRound:false, 
         ease:Power0.easeOut
     });
 
-	var seventhBerlinParallaxscene = new ScrollMagic.Scene({
+	var skills3Parallaxscene = new ScrollMagic.Scene({
         triggerElement: ".Skills-3",
         triggerHook: 1,
         duration: "200%"
     })
-    .setTween(seventhBerlinParallaxTween)
+    .setTween(skills3ParallaxTween)
     .addTo(controller);
     
-    var ninthParallaxTween = TweenMax.from(".Volunteer-2", 1, { 
+    var volunteer2ParallaxTween = TweenMax.from(".Volunteer-2", 1, { 
         backgroundSize: "+=400px +=266.8px", //changes bg image size without changing proportions
         autoRound:false, 
         ease:Power1.easeOut
     });
 
-	var ninthParallaxscene = new ScrollMagic.Scene({
+	var volunteer2Parallaxscene = new ScrollMagic.Scene({
         triggerElement: ".Volunteer-2",
         triggerHook: 1,
         duration: "200%"
     })
-    .setTween(ninthParallaxTween)
+    .setTween(volunteer2ParallaxTween)
     .addTo(controller);
     
-    var ninthBlurredParallaxTween = TweenMax.from(".Volunteer-2-blurred", 1, { 
+    var volunteer2BlurredParallaxTween = TweenMax.from(".Volunteer-2-blurred", 1, { 
         backgroundSize: "+=400px +=266.8px", //changes bg image size without changing proportions
         autoRound:false, 
         ease:Power1.easeOut
     });
 
-	var ninthBlurredParallaxscene = new ScrollMagic.Scene({
+	var volunteer2BlurredParallaxscene = new ScrollMagic.Scene({
         triggerElement: ".Volunteer-2-blurred",
         triggerHook: 1,
         duration: "200%"
     })
-    .setTween(ninthBlurredParallaxTween)
+    .setTween(volunteer2BlurredParallaxTween)
     .addTo(controller);
     
-    var ninthDisappearParallaxTween = TweenMax.to(".Volunteer-2-blurred", 1, { 
+    var volunteer2DisappearParallaxTween = TweenMax.to(".Volunteer-2-blurred", 1, { 
         opacity: "1",
         autoRound:false, 
         ease:Power1.easeOut
     });
 
-	var ninthDisappearParallaxscene = new ScrollMagic.Scene({
+	var volunteer2DisappearParallaxscene = new ScrollMagic.Scene({
         triggerElement: ".Volunteer-2-blurred",
         triggerHook: 0.2,
         duration: "50%"
     })
-    .setTween(ninthDisappearParallaxTween)
+    .setTween(volunteer2DisappearParallaxTween)
     .addTo(controller);
     
-    var eleventhParallaxTween = TweenMax.from(".Hobbies-2", 1, { 
+    var hobbies2ParallaxTween = TweenMax.from(".Hobbies-2", 1, { 
         backgroundSize: "+=300px +=199.65px", //changes bg image size without changing proportions
         autoRound:false, 
         ease:Power1.easeIn
     });
 
-	var eleventhDisappearParallaxscene = new ScrollMagic.Scene({
+	var hobbies2DisappearParallaxscene = new ScrollMagic.Scene({
         triggerElement: ".Hobbies-2",
         triggerHook: 1,
         duration: "150%"
     })
-    .setTween(eleventhParallaxTween)
+    .setTween(hobbies2ParallaxTween)
     .addTo(controller);
     
     /*----- Hobbies Tween -----*/
