@@ -17,10 +17,11 @@ $tertiary-color: rgb(200,250,0);
 $nrf: no-repeat fixed;
 $nrs: no-repeat scroll;
 
-$first-height: 100vw * .6665;
-$seventhParis-height: 100vw * .6645;
-$ninth-height: 100vw * .667;
-$eleventh-height: 100vw * .6655;
+$intro-1-height: 100vw * .6665;
+$skills-2-height: 100vw * .6645;
+$employment-2-height: 100vw * .75;
+$volunteer-2-height: 100vw * .667;
+$hobbies-2-height: 100vw * .6655;
 
 /*List for looping background images*/
 $hobby-list: tennis gaming trance travel foreignlanguages weight-lifting running cars pingpong history health pets; 
@@ -175,7 +176,7 @@ body{
 
 .fade-in{
     opacity: 1 !important;
-    transform: translateX(0px) translateY(0px) !important;
+    transform: translateX(0px) translateY(0px) rotateY(0deg) !important;
     transition: 0.5s ease-in-out;
 }
 
@@ -183,6 +184,10 @@ body{
     opacity: 0;
 }
 
+.scrollmagic-circle{
+    opacity: 0;
+    transform: translateX(-50px) translateY(50px);
+}
 
 /*=============== SIDEBAR ===============*/
 #sidebar-wrapper{
@@ -394,7 +399,7 @@ body{
     height:100vh;
     overflow: hidden;
 	background:url("images/subway.jpg") $nrf 80% 60%;
-	background-size: 100vw $first-height;
+	background-size: 100vw $intro-1-height;
     padding-top:35vh;
     padding-bottom: 35vh;
     transition: filter 0.2s ease-in-out;
@@ -864,8 +869,9 @@ header + header{
         
         &:nth-child(2){
             div{
-                height: 400px;
-                width: 25vw;
+                width: 100%;
+                height: 0;
+                padding: 50% 0;
                 background: url("images/pcopter3.jpg") $nrs 50% 10%;
                 background-size: cover;
             }
@@ -873,9 +879,12 @@ header + header{
         
         &:nth-child(3){
             div{
+                padding: 0 !important;
+                
                 #project-video{
                     height: 400px;
                     width: 25vw;
+                    padding: 0;
                     border-radius: 50%;
                     object-fit: cover;
                     filter: grayscale(100%);
@@ -885,8 +894,9 @@ header + header{
         
         &:nth-child(4){
             div{
-                height: 400px;
-                width: 25vw;
+                width: 100%;
+                height: 0;
+                padding: 50% 0;
                 background: url("images/pcopter2.jpg") $nrs 100% 70%;
                 background-size: cover;
             }
@@ -894,8 +904,9 @@ header + header{
         
         &:nth-child(5){
             div{
-                height: 400px;
-                width: 25vw;
+                width: 100%;
+                height: 0;
+                padding: 50% 0;
                 background: url("images/pcopter1.jpg") $nrs 50% 70%;
                 background-size: cover;
             }
@@ -903,8 +914,9 @@ header + header{
         
         &:nth-child(6){
             div{
-                height: 400px;
-                width: 25vw;
+                width: 100%;
+                height: 0;
+                padding: 50% 0;
                 background: url("images/pboard1smudge.jpg") $nrs 30% 70%;
                 background-size: cover;
             }
@@ -912,8 +924,9 @@ header + header{
         
         &:nth-child(7){
             div{
-                height: 400px;
-                width: 25vw;
+                width: 100%;
+                height: 0;
+                padding: 50% 0;
                 background: url("images/pboard2.jpg") $nrs 50% 70%;
                 background-size: cover;
             }
@@ -921,8 +934,9 @@ header + header{
         
         &:nth-child(8){
             div{
-                height: 400px;
-                width: 25vw;
+                width: 100%;
+                height: 0;
+                padding: 50% 0;
                 background: url("images/pboard3.jpg") $nrs 50% 70%;
                 background-size: cover;
             }
@@ -1181,8 +1195,8 @@ header + header{
 .Employment-2{
 	position: relative;
 	height: 50vh;
-	background: url("images/hammer.jpg") $nrf 100% 20%;
-	background-size: cover;
+	background: url("images/hammer.jpg") $nrf 50% 0%;
+	background-size: 100vw $employment-2-height;
 }
 
 .Skills-1{
@@ -1241,65 +1255,58 @@ header + header{
 .Skills-2{    
 	height: 50vh;
 	background: url("images/eiffel.jpg") $nrf 50% 60%;
-	background-size: 100vw $seventhParis-height;
-	z-index: 11;
-}
-
-#french{
-	@include secondary-font;
-	font-size: 2em;
-	letter-spacing: 5px;
-	color: rgb(130,130,130);
-	position: relative;
-	text-align: center;
-	left: -4%;
-	margin-top: 20px;
-	opacity: 0;
-	display: inline-block;
-	transition: all .5s ease-in-out;
-}
-
-#french + .tooltip > .tooltip-inner {
-    background-color: black;
-    color: $secondary-color;
-    padding: 7px;
-    font-size: 12px;
+	background-size: 100vw $skills-2-height;
+	@include div-padding;
+    
+    #french{
+        @include secondary-font;
+        font-size: 2em;
+        letter-spacing: 5px;
+        color: rgb(130,130,130);
+        position: relative;
+        text-align: center;
+        left: -4%;
+        margin-top: 20px;
+        opacity: 0;
+        display: inline-block;
+        transition: all .5s ease-in-out;
+        
+        &:after{
+            @include underscore;
+        }
+        
+        &:hover:after{
+            transform: scaleX(1);
+        }
+    }
 }
 
 .Skills-3{
 	height:50vh;
 	background: url("images/brandenburggate.jpg") $nrf 100% 40%;
 	background-size: 1950px;
-	z-index:11;
+    
+    #german {
+        @include secondary-font;
+        font-size: 2em;
+        letter-spacing: 5px;
+        color: $secondary-color;
+        position: relative;
+        text-align: left;
+        margin-top: 20px;
+        opacity:  0;
+        display: inline-block;
+        transition: all .5s ease-in-out;
+        
+        &:after{
+            @include underscore;
+        }
+        
+        &:hover:after{
+            transform: scaleX(1);
+        }
+    }
 }
-
-#german {
-	@include secondary-font;
-	font-size: 2em;
-	letter-spacing: 5px;
-	color: $secondary-color;
-	position: relative;
-	text-align: left;
-	margin-top: 20px;
-	opacity:  0;
-	display: inline-block;
-	transition: all .5s ease-in-out;
-}
-
-#german + .tooltip > .tooltip-inner {
-     background-color: black;
-	 color: $secondary-color;
-	 padding: 7px;
-	 font-size: 12px;
-}
-
-#french:after, #german:after {
-    @include underscore;
-}
-
-#french:hover:after,  #german:hover:after{
-	transform: scaleX(1);
- }
 
 .Volunteer-1 {
 	position: relative;
@@ -1430,7 +1437,7 @@ header + header{
 	position: relative;
 	height: 50vh;
 	background: url("images/heartcross.jpg") $nrf 40% 60%;
-	background-size: 100vw $ninth-height;
+	background-size: 100vw $volunteer-2-height;
 	z-index:1;
 }
 
@@ -1438,7 +1445,7 @@ header + header{
 	position: relative;
 	height: 50vh;
 	background: url("images/heartcross-blurred.jpg") $nrf 40% 60%;
-	background-size: 100vw $ninth-height;
+	background-size: 100vw $volunteer-2-height;
 	opacity:0;
 	z-index:2;
 }
@@ -1505,8 +1512,6 @@ header + header{
         
         &:nth-child(2){
             div{
-                height: 400px;
-                width: 25vw;
                 background: url("images/tennis.jpg") $nrs 40% 10%;
                 background-size: cover;
             }
@@ -1514,8 +1519,6 @@ header + header{
         
         &:nth-child(3){
             div{
-                height: 400px;
-                width: 25vw;
                 background: url("images/trance.jpg") $nrs 20% 70%;
                 background-size: cover;
             }
@@ -1523,8 +1526,6 @@ header + header{
         
         &:nth-child(4){
             div{
-                height: 400px;
-                width: 25vw;
                 background: url("images/travel.jpg") $nrs 100% 70%;
                 background-size: cover;
             }
@@ -1532,8 +1533,6 @@ header + header{
         
         &:nth-child(5){
             div{
-                height: 400px;
-                width: 25vw;
                 background: url("images/foreignlanguages.jpg") $nrs 100% 70%;
                 background-size: cover;
             }
@@ -1541,8 +1540,6 @@ header + header{
         
         &:nth-child(6){
             div{
-                height: 400px;
-                width: 25vw;
                 background: url("images/weight-lifting.jpg") $nrs 90% 70%;
                 background-size: cover;
             }
@@ -1550,8 +1547,6 @@ header + header{
         
         &:nth-child(7){
             div{
-                height: 400px;
-                width: 25vw;
                 background: url("images/running.jpg") $nrs 50% 70%;
                 background-size: cover;
             }
@@ -1559,8 +1554,6 @@ header + header{
         
         &:nth-child(8){
             div{
-                height: 400px;
-                width: 25vw;
                 background: url("images/cars.jpg") $nrs 90% 70%;
                 background-size: cover;
             }
@@ -1568,8 +1561,6 @@ header + header{
         
         &:nth-child(9){
             div{
-                height: 400px;
-                width: 25vw;
                 background: url("images/pingpong.jpg") $nrs 70% 70%;
                 background-size: cover;
             }
@@ -1577,8 +1568,6 @@ header + header{
         
         &:nth-child(10){
             div{
-                height: 400px;
-                width: 25vw;
                 background: url("images/history.jpg") $nrs 50% 70%;
                 background-size: cover;
             }
@@ -1586,8 +1575,6 @@ header + header{
         
         &:nth-child(11){
             div{
-                height: 400px;
-                width: 25vw;
                 background: url("images/health.jpg") $nrs 60% 70%;
                 background-size: cover;
             }
@@ -1595,8 +1582,6 @@ header + header{
         
         &:nth-child(12){
             div{
-                height: 400px;
-                width: 25vw;
                 background: url("images/pets.jpg") $nrs 30% 70%;
                 background-size: cover;
             }
@@ -1604,15 +1589,16 @@ header + header{
         
         &:nth-child(13){
             div{
-                height: 400px;
-                width: 25vw;
-                background: url("images/gaming.jpg") $nrs 60% 50%;
+                background: url("images/gaming.jpg") $nrs 30% 50%;
                 background-size: cover;
             }
         }
         
         &:nth-child(n+2){
             div{
+                width: 100%;
+                height: 0;
+                padding: 50% 0;
                 border-radius: 50%;
                 transition: all 0.3s ease-in-out;
             }
@@ -1646,7 +1632,7 @@ header + header{
 	position:relative;
 	height:85vh;
 	background: url("images/saxophone.jpg") $nrf 50% 20%;
-	background-size: 100vw $eleventh-height;
+	background-size: 100vw $hobbies-2-height;
 	z-index:3;
 }
 
