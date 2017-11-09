@@ -396,12 +396,15 @@ body{
 /*=============== Page Content Wrapper ===============*/
 .Intro-1{
     position: relative;
+    top: 0;
     height:100vh;
     overflow: hidden;
-	background:url("images/subway.jpg") $nrf 80% 60%;
+	background:url("images/subway.jpg") $nrs 80% 60%;
 	background-size: 100vw $intro-1-height;
     padding-top:35vh;
     padding-bottom: 35vh;
+    opacity: 0.999999999;
+    z-index: auto;
     transition: filter 0.2s ease-in-out;
     
     #name{
@@ -604,11 +607,10 @@ body{
     background: #000;
 }
 
-.fixedheader{
-	position: fixed;
-	top: 0px;
-    background: rgb(0,0,0);
-	z-index: 10;
+
+.affix{
+	position: fixed !important;
+	top: 0px!important;
 }
 
 
@@ -695,117 +697,73 @@ body{
 	height: 110vh;
 	background: url("images/books.jpg") $nrf 20% 30%;
 	background-size: 2300px;
-	z-index: 1;
-}
-
-#education{
-	@include main-font;
-	font-size: $subheader-font-size;
-	letter-spacing: 12px;
-	color: $main-color;
-	position: relative;
-	text-align: center;
-	top: 10vh;
-	padding: 1% 4% .7% 2%;
-	margin-top: 5%;
-	border-bottom: $main-color 3px solid;
-	border-top: $main-color 3px solid;
-	z-index: 3;
-    opacity: 0;
-	transition: border-color 0.5s ease-in-out, opacity 0.5s ease-in-out;
-}
-
-/*targets university text*/
-header + header{
-	@include secondary-font;
-	font-size: 2vw;
-	letter-spacing: 5px;
-	color: $main-color;
-	position: relative;
-	text-align: left;
-	top: 14vh;
-	width: 600px;
-    opacity: 0;
-	transition: border-color 0.5s ease-in-out, opacity 0.5s ease-in-out;
-}
-
-#courseList{
-    position: relative;
-	@include secondary-font;
-	text-align: left;
-	line-height: 200%;
-	font-size: 1.2vw;
-	list-style-type: none;
-	top: 55vh;
-	left: -40vw;
+    @include div-padding;
+    padding-left: 5vw;
+    padding-right: 5vw;
+	
     
-    li:nth-child(odd){
-        opacity:0;
+    #education{
+        position: relative;
+        width: auto;
+        //display: block;
+        //margin: 0 auto;
+	    @include main-font;
+	    font-size: $subheader-font-size;
+	    letter-spacing: 7px;
+	    color: $main-color;    
+        text-align: left;
+        display: table;
+	    border-bottom: $main-color 3px solid;
+	    border-top: $main-color 3px solid;
+	    opacity: 1;
+	    transition: border-color 0.5s ease-in-out, opacity 0.5s ease-in-out;
+    }
+    
+    /*targets university text*/
+    header + header{
+        position: relative;
+        top: 5vh;
+        width: 600px;
+        @include secondary-font;
+        letter-spacing: 5px;
         color: $main-color;
-        display:inline-block;
-        padding-left: 20px;
-        transform: translateX(-15px);
-        transition: all 0.5s ease-in-out;
+        font-size: 2vw;       
+        text-align: left;
+        opacity: 0;
+        transition: border-color 0.5s ease-in-out, opacity 0.5s ease-in-out;
     }
     
-    li:nth-child(even){
-        opacity:0;
-        color: rgb(150,150,150);
-        display: inline-block;
-        border-left: solid transparent 2px;
-        padding-left: 20px;
-        transform: translateX(15px);
-        transition: all 0.5s ease-in-out;
-    }
-    
-    *:after {
-      @include underscore;
-    }
-    
-    *:hover:after {
-	   transform: scaleX(1);
-    }
-}
+    #course-list{
+        position: relative;
+        top: 2vh;
+        left: 0vw;
+        @include secondary-font;
+        text-align: left;
+        line-height: 200%;
+        font-size: 1.2vw;
+        list-style-type: none;
+        margin-top: 5vh;
+        
+        li:nth-child(4n+1){
+            @include li-odd(rgb(150,150,150));
+        }
 
- #projects-button{
-     &:before{
-        content:'';
-        position: absolute;
-        top: 0px;
-        left: 0px;
-        width: 0px;
-        height: 45px;
-        background: rgba(255,255,255,0.2);
-        border-radius: 10px;
-        transition: all 0.9s ease-in-out;
-     }
-     
-	 position: relative;
-	 top: 40vh;
-	 @include secondary-font;
-	 letter-spacing: 4px;
-	 color: $secondary-color;
-	 background-color: $main-color;
-	 border: $main-color;
-	 border-radius: 10px;
-	 opacity: 0;
-	 transition: color 1.0s ease-in-out, background 1.0s ease-in-out, border-radius 1.0s ease-in-out;
-     
-     &:hover:before, &:active:before{
-         width: 100%;
-	     border-radius:30px; 
-     }
-     
-     &:hover, &:active{
-         color: $main-color;
-	     background-color: #ddd;
-	     border-radius:30px;
-     }
-     
-     /*Hides blue border around button*/
-     &:focus{
-         outline:0;
-     }
+        li:nth-child(4n-1){ 
+            opacity: 0;
+            color: #000;
+            display: inline-block;
+            transform: translateX(-15px);
+            transition: all 0.5s ease-in-out;
+        } 
+
+        *:after{
+            @include underscore;
+        }
+
+        *:hover:after{
+           transform: scaleX(1);
+        }
+    }
 }
 
 .Education-2 {
