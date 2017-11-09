@@ -7,33 +7,24 @@ class Education extends Component {
         return(
         <div>
             <div id="jump-to-education" className="Education-1">
-                <div className="container-fluid">
-                    <div className="row">
-                        <div className="col-md-4 col-md-offset-1 col-xs-8 col-xs-offset-1">
-                            <header id="education" className="scrollmagic-fade-in"tabIndex="0">
-                                <span id="education_E">E</span><span id="education_d">d</span><span id="education_u">u</span><span id="education_ca">ca</span><span id="education_ti">ti</span><span id="education_on">on</span>
-                            </header>
-                            <header className="scrollmagic-fade-in">Bachelor's of Science<br/>
-                                    Computer Engineering<br/>
-                                    San Jose State University
-                            </header>
-                        </div>
-                        <ul id="courseList" className="col-md-3 col-md-offset-1 col-xs-8 col-xs-offset-1 scrollmagic-fade-in">
-                            <li>Operating Systems</li>
-                            <li>Database Systems I</li>
-                            <li>Computer Architecture</li>
-                            <li>Digital Design I & II</li>
-                            <li>Algorithms & Data Structures</li>
-                            <li>Computer Networking</li>
-                            <li>Advanced Algorithm Design</li>
-                            <li>Microprocessor Design</li>
-                            <li>Embedded Systems</li>
-                        </ul>
-                        <div id="divOutsideProjecsButton" className="scrollmagic-fade-in">
-                            <button id="projects-button" type="button" className="btn btn-lg" data-toggle="modal" data-target="#projectsModal">Senior Project</button>
-                        </div>
-                    </div> 
-                </div>
+                <header id="education" className="scrollmagic-fade-in" tabIndex="0">
+                    <span id="education_E">E</span><span id="education_d">d</span><span id="education_u">u</span><span id="education_ca">ca</span><span id="education_ti">ti</span><span id="education_on">on</span>
+                </header>
+                <header className="scrollmagic-fade-in">Bachelor's of Science<br/>
+                    Computer Engineering<br/>
+                    San Jose State University
+                </header>
+                <ul id="course-list" className="scrollmagic-fade-in">
+                    <li>Operating Systems</li><br/>
+                    <li>Database Systems I</li><br/>
+                    <li>Computer Architecture</li><br/>
+                    <li>Digital Design I & II</li><br/>
+                    <li>Algorithms & Data Structures</li><br/>
+                    <li>Computer Networking</li><br/>
+                    <li>Advanced Algorithm Design</li><br/>
+                    <li>Microprocessor Design</li><br/>
+                    <li>Embedded Systems</li>
+                </ul>
             </div>
             <div className="Education-2">
                 <ul className="flex-container">
