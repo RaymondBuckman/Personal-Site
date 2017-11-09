@@ -78,20 +78,25 @@ $(document).ready(function(){
     var navTween = TweenMax.staggerFrom(".navbar li", 0.7, { ease:  Power0.easeNone, x:20, opacity: 0, rotationY: 90, transformOrigin: "left top" }, 0.3);
     
     var navItemsAppearScene = new ScrollMagic.Scene({
-        triggerElement: '.navbar',
+        triggerElement: '.Education-1',
         triggerHook: 0.95,
         offset: 0,
         reverse: false
     })
     .setTween(navTween)
     .addTo(controller);
+    /*
+    var pinTopNavTween1 = TweenMax.to(".navbar", 0.05, {
+        dataSpy: 'affix',
+        autoRound: false
+    });
     
     var pinTopNavScene = new ScrollMagic.Scene({
         triggerElement: '.navbar',
         triggerHook: 0
     })
-    .setPin('.navbar')
-    .addTo(controller);
+    .setTween(pinTopNavTween1)
+    .addTo(controller);*/
     
     var changeTopNavColorScene = new ScrollMagic.Scene({
         triggerElement: '.navbar',
@@ -100,17 +105,29 @@ $(document).ready(function(){
     })
     .setClassToggle('.navbar', 'black-nav')
     .addTo(controller);
-    
-    var pushNavUpTween = TweenMax.to(".navbar", 0.05, {
+    /*
+    var pushNavUpTween1 = TweenMax.from(".navbar", 0.05, {
         y: "-=50px",
         autoRound: false
     });
     
-    var pushNavUpScene = new ScrollMagic.Scene({
+    var pushNavUpScene1 = new ScrollMagic.Scene({
+        triggerElement: '.Education',
+        triggerHook: 0.95
+    })
+    .setTween(pushNavUpTween1)
+    .addTo(controller);*/
+    
+    var pushNavUpTween2 = TweenMax.to(".navbar", 0.05, {
+        y: "-=50px",
+        autoRound: false
+    });
+    
+    var pushNavUpScene2 = new ScrollMagic.Scene({
         triggerElement: '.Hobbies-1',
         triggerHook: 0.07
     })
-    .setTween(pushNavUpTween)
+    .setTween(pushNavUpTween2)
     .addTo(controller);
     
     var pushMenuUpTween = TweenMax.to("#menu", 0.01, {
@@ -295,19 +312,19 @@ $(document).ready(function(){
         
     /*----- List fade in scenes -----*/
     var courseListOddScene = new ScrollMagic.Scene({
-        triggerElement: '#courseList li:nth-child(odd)',
+        triggerElement: '#course-list li:nth-child(odd)',
         triggerHook: 0.8,
         reverse: false    
     })
-    .setClassToggle('#courseList li:nth-child(odd)', 'fade-in')
+    .setClassToggle('#course-list li:nth-child(odd)', 'fade-in')
     .addTo(controller);
         
     var courseListEvenScene = new ScrollMagic.Scene({
-        triggerElement: '#courseList li:nth-child(odd)',
+        triggerElement: '#course-list li:nth-child(odd)',
         triggerHook: 0.8,
         reverse: false    
     })
-    .setClassToggle('#courseList li:nth-child(even)', 'fade-in')
+    .setClassToggle('#course-list li:nth-child(even)', 'fade-in')
     .addTo(controller);
     
     var onlineListOddScene = new ScrollMagic.Scene({
@@ -374,9 +391,9 @@ $(document).ready(function(){
     .setClassToggle('#volunteer-list li:nth-child(even)', 'fade-in')
     .addTo(controller);
 
-    /* ----Background Scroll animations -----*/    
+    /* ----Background Scroll animations -----*/   
     var intro1ParallaxTween = TweenMax.to(".Intro-1", 1, {
-        backgroundSize: "+=200px +=133.3px", //changes bg image size without changing proportions
+        backgroundSize: "+=200px +=133.3px",
         backgroundPositionX: "-=50%",
         autoRound:false, 
         ease:Power1.ease0ut
@@ -390,6 +407,7 @@ $(document).ready(function(){
     .setTween(intro1ParallaxTween)
     .addTo(controller);
      
+    /*
     var intro1BrighterTween = TweenMax.to(".Intro-1", 0.01, {
         filter: "brightness(150%)",
         autoRound:false, 
@@ -429,7 +447,7 @@ $(document).ready(function(){
         
     })
     .setTween(intro1BrightestTween)
-    .addTo(controller);
+    .addTo(controller);*/
     
     var education1ParallaxTween = TweenMax.to(".Education-1", 1, { 
         backgroundPositionX: "+=80%",
@@ -809,7 +827,14 @@ $(document).ready(function(){
             
             
             
-            
+     if(navigator.userAgent.match(/MSIE 10/i) || navigator.userAgent.match(/Trident\/7\./) || navigator.userAgent.match(/Edge\/12\./)) {
+        $('body').on("mousewheel", function () {
+            event.preventDefault();
+            var wd = event.wheelDelta;
+            var csp = window.pageYOffset;
+            window.scrollTo(0, csp - wd);
+        });
+    }       
             
 
 })
@@ -818,522 +843,58 @@ $(window).scroll(function(){
      var wScroll = $(this).scrollTop();
      var sm = window.matchMedia( "(max-width: 991px)" );
      var md = window.matchMedia( "(min-width: 992px)" );
+    
+    
+    $('.navbar').data('spy','affix-top');
 
-     if(wScroll > 0){
-          $('#dArrow1').css('opacity', '0');
-     }
-
-     //Parallax doesn't work as well on mobile devices
-     if(md.matches){
-          //Zoom in & pan-left effects on background
-
-          /*====================Change background-image on icon hover====================*/
-          /*Hides #hobbies header on icon hover*/
-          $('#hobby-icons *').hover(function(){
-               $('#hobbies').css({
-                    'opacity' : '0'
-               })
-          }, function(){
-               $('#hobbies').css({
-                    'opacity' : '1'
-               })
-          });
-
-          $('#hobby-icons img:first-child').hover(function(){
-               $('.Hobbies-1').css({
-                    'background-image' : 'url(' + tennis + ')'
-               })
-          }, function(){
-               $('.Hobbies-1').css({
-                    'background-image' : 'url(' + breakdance + ')'
-               })
-          });
-
-          $('#hobby-icons img:nth-child(2)').hover(function(){
-               $('.Hobbies-1').css({
-                    'background-image' : 'url(' + gaming + ')'
-               })
-          }, function(){
-               $('.Hobbies-1').css({
-                    'background-image' : 'url(' + breakdance + ')'
-               })
-          });
-
-          $('#hobby-icons img:nth-child(3)').hover(function(){
-               $('.Hobbies-1').css({
-                    'background-image' : 'url(' + trance + ')'
-               })
-          }, function(){
-               $('.Hobbies-1').css({
-                    'background-image' : 'url(' + breakdance + ')'
-               })
-          });
-
-          $('#hobby-icons img:nth-child(4)').hover(function(){
-               $('.Hobbies-1').css({
-                    'background-image' : 'url(' + travel + ')'
-               })
-          }, function(){
-               $('.Hobbies-1').css({
-                    'background-image' : 'url(' + breakdance + ')'
-               })
-          });
-
-          $('#hobby-icons img:nth-child(5)').hover(function(){
-               $('.Hobbies-1').css({
-                    'background-image' : 'url(' + foreign + ')'
-               })
-          }, function(){
-               $('.Hobbies-1').css({
-                    'background-image' : 'url(' + breakdance + ')'
-               })
-          });
-
-          $('#hobby-icons img:nth-child(6)').hover(function(){
-               $('.Hobbies-1').css({
-                    'background-image' : 'url(' + weightlifting + ')'
-               })
-          }, function(){
-               $('.Hobbies-1').css({
-                    'background-image' : 'url(' + breakdance + ')'
-               })
-          });
-
-          $('#hobby-icons img:nth-child(7)').hover(function(){
-               $('.Hobbies-1').css({
-                    'background-image' : 'url(' + running + ')'
-               })
-          }, function(){
-               $('.Hobbies-1').css({
-                    'background-image' : 'url(' + breakdance + ')'
-               })
-          });
-
-          $('#hobby-icons img:nth-child(8)').hover(function(){
-               $('.Hobbies-1').css({
-                    'background-image' : 'url(' + cars + ')'
-               })
-          }, function(){
-               $('.Hobbies-1').css({
-                    'background-image' : 'url(' + breakdance + ')'
-               })
-          });
-
-          $('#hobby-icons img:nth-child(9)').hover(function(){
-               $('.Hobbies-1').css({
-                    'background-image' : 'url(' + pingpong + ')'
-               })
-          }, function(){
-               $('.Hobbies-1').css({
-                    'background-image' : 'url(' + breakdance + ')'
-               })
-          });
-
-          $('#hobby-icons img:nth-child(10)').hover(function(){
-               $('.Hobbies-1').css({
-                    'background-image' : 'url(' + history + ')'
-               })
-          }, function(){
-               $('.Hobbies-1').css({
-                    'background-image' : 'url(' + breakdance + ')'
-               })
-          });
-
-          $('#hobby-icons img:nth-child(11)').hover(function(){
-               $('.Hobbies-1').css({
-                    'background-image' : 'url(' + health + ')'
-               })
-          }, function(){
-               $('.Hobbies-1').css({
-                    'background-image' : 'url(' + breakdance + ')'
-               })
-          });
-
-          $('#hobby-icons img:nth-child(12)').hover(function(){
-               $('.Hobbies-1').css({
-                    'background-image' : 'url(' + pets + ')'
-               })
-          }, function(){
-               $('.Hobbies-1').css({
-                    'background-image' : 'url(' + breakdance + ')'
-               })
-          });
-     }
-
-/*=============================================================FOR SMALL & X-SMALL SCREENS in Portrait Orienetation=============================================================*/
-     if(sm.matches && (window.outerWidth < window.outerHeight)){
-          $('.Intro-1').css({
-              'filter': 'brightness(' + (100 + wScroll/2.8) + '%'
-          })
-
-          $('#name').css({
-               'transform' : 'translate(0px, ' + wScroll/4 + '%)'
-          })
-          $('#name').css('opacity', Math.pow(280/wScroll, 7));
-          
-
-          $('#intro-window').css({
-               'background-position' : '47%'+ (-900+wScroll) + 'px', //complicated logic!!!
-               'opacity': Math.pow(750/wScroll, 15)
-          })
-
-          $('#divOutsideAboutMe').removeClass('col-xs-offset-4');
-          $('#divOutsideAboutMe').addClass('col-xs-offset-3');
-
-          $('#about-me').removeClass('col-xs-2 col-xs-offset-5');
-          $('#about-me').addClass('col-xs-6 col-xs-offset-3');
-
-
-          //Pan-left effect on background
-          $('.Education-1').css({
-               'background-position' : (23 + (wScroll/50)) + '% 30%'
-          })
-
-          $('header + header').css('opacity', Math.pow(wScroll/1400,35));
-
-          $('#divOutsideProjecsButton').addClass('col-xs-offset-2');
-
-          $('.Languages-2').css({
-               'background-position' : (wScroll-1500)/80 + '% 20%',
-               'filter': 'invert(' + Math.pow((wScroll/2750), 50) + '%)'
-          })
-
-          $('#divOutsideLanguages').removeClass('col-xs-4 col-xs-offset-4');
-          $('#divOutsideLanguages').addClass('col-xs-8 col-xs-offset-2');
-
-
-          $('#divOutsideAdditionalSkills').removeClass('col-xs-6 col-xs-offset-3');
-
-          $('.Skills-2').css({
-               'background-size' : (100 + wScroll/2.9) + 'px'
-          })
-
-          if(wScroll > $('#french').offset().top-440){
-               $('#french').css('opacity', '1');
-          }
-
-          if(wScroll > $('#german').offset().top-440){
-               $('#german').css('opacity', '1');
-          }
-
-          $('#volunteer-work').removeClass('col-xs-6 col-xs-offset-3');
-          $('#volunteer-work').addClass('col-xs-10 col-xs-offset-1');
-
-          $('#divOutsideHobibes').removeClass('col-xs-4 col-xs-offset-4');
-          $('#divOutsideHobibes').addClass('col-xs-6 col-xs-offset-3');
-
-          $('#hobby-icons *').removeClass('col-xs-1');
-          $('#hobby-icons *').addClass('col-xs-2 hobby-icons-buffer');
-
-          /*====================Change background-image on icon hover====================*/
-          /*Hides #hobbies header on icon hover*/
-          $('#hobby-icons *').hover(function(){
-               $('#hobbies').css({
-                    'opacity' : '0'
-               })
-          }, function(){
-               $('#hobbies').css({
-                    'opacity' : '1'
-               })
-          });
-
-          $('#hobby-icons img:first-child').hover(function(){
-               $('.Hobbies-1').css({
-                    'background-image' : 'url(images/tennis.jpg)'
-               })
-          }, function(){
-               $('.Hobbies-1').css({
-                    'background-image' : 'url(images/breakdance.jpg)'
-               })
-          });
-
-          $('#hobby-icons img:nth-child(2)').hover(function(){
-               $('.Hobbies-1').css({
-                    'background-image' : 'url(images/gaming.jpg)'
-               })
-          }, function(){
-               $('.Hobbies-1').css({
-                    'background-image' : 'url(images/breakdance.jpg)'
-               })
-          });
-
-          $('#hobby-icons img:nth-child(3)').hover(function(){
-               $('.Hobbies-1').css({
-                    'background-image' : 'url(images/trance.jpg)'
-               })
-          }, function(){
-               $('.Hobbies-1').css({
-                    'background-image' : 'url(images/breakdance.jpg)'
-               })
-          });
-
-          $('#hobby-icons img:nth-child(4)').hover(function(){
-               $('.Hobbies-1').css({
-                    'background-image' : 'url(images/travel.jpg)'
-               })
-          }, function(){
-               $('.Hobbies-1').css({
-                    'background-image' : 'url(images/breakdance.jpg)'
-               })
-          });
-
-          $('#hobby-icons img:nth-child(5)').hover(function(){
-               $('.Hobbies-1').css({
-                    'background-image' : 'url(images/foreignlanguages.jpg)'
-               })
-          }, function(){
-               $('.Hobbies-1').css({
-                    'background-image' : 'url(images/breakdance.jpg)'
-               })
-          });
-
-          $('#hobby-icons img:nth-child(6)').hover(function(){
-               $('.Hobbies-1').css({
-                    'background-image' : 'url(images/weight-lifting.jpg)'
-               })
-          }, function(){
-               $('.Hobbies-1').css({
-                    'background-image' : 'url(images/breakdance.jpg)'
-               })
-          });
-
-          $('#hobby-icons img:nth-child(7)').hover(function(){
-               $('.Hobbies-1').css({
-                    'background-image' : 'url(images/running.jpg)'
-               })
-          }, function(){
-               $('.Hobbies-1').css({
-                    'background-image' : 'url(images/breakdance.jpg)'
-               })
-          });
-
-          $('#hobby-icons img:nth-child(8)').hover(function(){
-               $('.Hobbies-1').css({
-                    'background-image' : 'url(images/cars.jpg)'
-               })
-          }, function(){
-               $('.Hobbies-1').css({
-                    'background-image' : 'url(images/breakdance.jpg)'
-               })
-          });
-
-          $('#hobby-icons img:nth-child(9)').hover(function(){
-               $('.Hobbies-1').css({
-                    'background-image' : 'url(images/pingpong.jpg)'
-               })
-          }, function(){
-               $('.Hobbies-1').css({
-                    'background-image' : 'url(images/breakdance.jpg)'
-               })
-          });
-
-          $('#hobby-icons img:nth-child(10)').hover(function(){
-               $('.Hobbies-1').css({
-                    'background-image' : 'url(images/history.jpg)'
-               })
-          }, function(){
-               $('.Hobbies-1').css({
-                    'background-image' : 'url(images/breakdance.jpg)'
-               })
-          });
-
-          $('#hobby-icons img:nth-child(11)').hover(function(){
-               $('.Hobbies-1').css({
-                    'background-image' : 'url(images/health.jpg)'
-               })
-          }, function(){
-               $('.Hobbies-1').css({
-                    'background-image' : 'url(images/breakdance.jpg)'
-               })
-          });
-
-          $('#hobby-icons img:nth-child(12)').hover(function(){
-               $('.Hobbies-1').css({
-                    'background-image' : 'url(images/pets.jpg)'
-               })
-          }, function(){
-               $('.Hobbies-1').css({
-                    'background-image' : 'url(images/breakdance.jpg)'
-               })
-          });
-
-          $('.Hobbies-2').css({
-               'background-size' : 2900 - wScroll/3.9 + 'px'
-          })
-     }
-
-     /*=============================================================FOR SMALL & X-SMALL SCREENS in Landscape Orienetation=============================================================*/
-          if(sm.matches && (window.outerWidth > window.outerHeight)){
-               $('.Intro-1').css({
-                    'filter': 'brightness(' + (100 + wScroll/2.8) + '%'
-               })
-
-               $('#name').css({
-                    'transform' : 'translate(0px, ' + wScroll/4 + '%)'
-               })
-               $('#name').css('opacity', Math.pow(150/wScroll, 7));
-
-               $('#about-me').removeClass('col-xs-6 col-xs-offset-3');
-               $('#about-me').addClass('col-xs-2 col-xs-offset-5');
-              
-
-               $('#divOutsideProjecsButton').removeClass('col-xs-offset-2');
-
-               $('#divOutsideLanguages').removeClass('col-xs-8 col-xs-offset-2');
-               $('#divOutsideLanguages').addClass('col-xs-4 col-xs-offset-4');
-
-               $('#divOutsideAdditionalSkills').addClass('col-xs-6 col-xs-offset-3');
-
-               $('#skillList').removeClass('col-xs-6 col-xs-offset-3');
-               $('#skillList').addClass('col-xs-4 col-xs-offset-4');
-
-               if(wScroll > $('#french').offset().top-440){
-                    $('#french').css('opacity', '1');
-               }
-
-               if(wScroll > $('#german').offset().top-440){
-                    $('#german').css('opacity', '1');
-               }
-
-               $('#volunteer-work').removeClass('col-xs-10 col-xs-offset-1');
-               $('#volunteer-work').addClass('col-xs-6 col-xs-offset-3');
-
-               $('#divOutsideHobibes').removeClass('col-xs-6 col-xs-offset-3');
-               $('#divOutsideHobibes').addClass('col-xs-4 col-xs-offset-4');
-
-               $('#hobby-icons *').removeClass('col-xs-2 hobby-icons-buffer');
-               $('#hobby-icons *').addClass('col-xs-1');
-
-               /*====================Change background-image on icon hover====================*/
-               /*Hides #hobbies header on icon hover*/
-               $('#hobby-icons *').hover(function(){
-                    $('#hobbies').css({
-                         'opacity' : '0'
-                    })
-               }, function(){
-                    $('#hobbies').css({
-                         'opacity' : '1'
-                    })
-               });
-
-               $('#hobby-icons img:first-child').hover(function(){
-                    $('.Hobbies-1').css({
-                         'background-image' : 'url(images/tennis.jpg)'
-                    })
-               }, function(){
-                    $('.Hobbies-1').css({
-                         'background-image' : 'url(images/breakdance.jpg)'
-                    })
-               });
-
-               $('#hobby-icons img:nth-child(2)').hover(function(){
-                    $('.Hobbies-1').css({
-                         'background-image' : 'url(images/gaming.jpg)'
-                    })
-               }, function(){
-                    $('.Hobbies-1').css({
-                         'background-image' : 'url(images/breakdance.jpg)'
-                    })
-               });
-
-               $('#hobby-icons img:nth-child(3)').hover(function(){
-                    $('.Hobbies-1').css({
-                         'background-image' : 'url(images/trance.jpg)'
-                    })
-               }, function(){
-                    $('.Hobbies-1').css({
-                         'background-image' : 'url(images/breakdance.jpg)'
-                    })
-               });
-
-               $('#hobby-icons img:nth-child(4)').hover(function(){
-                    $('.Hobbies-1').css({
-                         'background-image' : 'url(images/travel.jpg)'
-                    })
-               }, function(){
-                    $('.Hobbies-1').css({
-                         'background-image' : 'url(images/breakdance.jpg)'
-                    })
-               });
-
-               $('#hobby-icons img:nth-child(5)').hover(function(){
-                    $('.Hobbies-1').css({
-                         'background-image' : 'url(images/foreignlanguages.jpg)'
-                    })
-               }, function(){
-                    $('.Hobbies-1').css({
-                         'background-image' : 'url(images/breakdance.jpg)'
-                    })
-               });
-
-               $('#hobby-icons img:nth-child(6)').hover(function(){
-                    $('.Hobbies-1').css({
-                         'background-image' : 'url(images/weight-lifting.jpg)'
-                    })
-               }, function(){
-                    $('.Hobbies-1').css({
-                         'background-image' : 'url(images/breakdance.jpg)'
-                    })
-               });
-
-               $('#hobby-icons img:nth-child(7)').hover(function(){
-                    $('.Hobbies-1').css({
-                         'background-image' : 'url(images/running.jpg)'
-                    })
-               }, function(){
-                    $('.Hobbies-1').css({
-                         'background-image' : 'url(images/breakdance.jpg)'
-                    })
-               });
-
-               $('#hobby-icons img:nth-child(8)').hover(function(){
-                    $('.Hobbies-1').css({
-                         'background-image' : 'url(images/cars.jpg)'
-                    })
-               }, function(){
-                    $('.Hobbies-1').css({
-                         'background-image' : 'url(images/breakdance.jpg)'
-                    })
-               });
-
-               $('#hobby-icons img:nth-child(9)').hover(function(){
-                    $('.Hobbies-1').css({
-                         'background-image' : 'url(images/pingpong.jpg)'
-                    })
-               }, function(){
-                    $('.Hobbies-1').css({
-                         'background-image' : 'url(images/breakdance.jpg)'
-                    })
-               });
-
-               $('#hobby-icons img:nth-child(10)').hover(function(){
-                    $('.Hobbies-1').css({
-                         'background-image' : 'url(images/history.jpg)'
-                    })
-               }, function(){
-                    $('.Hobbies-1').css({
-                         'background-image' : 'url(images/breakdance.jpg)'
-                    })
-               });
-
-               $('#hobby-icons img:nth-child(11)').hover(function(){
-                    $('.Hobbies-1').css({
-                         'background-image' : 'url(images/health.jpg)'
-                    })
-               }, function(){
-                    $('.Hobbies-1').css({
-                         'background-image' : 'url(images/breakdance.jpg)'
-                    })
-               });
-
-               $('#hobby-icons img:nth-child(12)').hover(function(){
-                    $('.Hobbies-1').css({
-                         'background-image' : 'url(images/pets.jpg)'
-                    })
-               }, function(){
-                    $('.Hobbies-1').css({
-                         'background-image' : 'url(images/breakdance.jpg)'
-                    })
-               });
-          }
 })
+
+/*
+Firefox super responsive scroll (c) Keith Clark - MIT Licensed
+*/
+(function(doc) {
+
+  var root = doc.documentElement,
+      scrollbarWidth, scrollEvent;
+
+  // Not ideal, but better than UA sniffing.
+  if ("MozAppearance" in root.style) {
+
+    // determine the vertical scrollbar width
+    scrollbarWidth = root.clientWidth;
+    root.style.overflow = "scroll";
+    scrollbarWidth -= root.clientWidth;
+    root.style.overflow = "";
+
+    // create a synthetic scroll event
+    scrollEvent = doc.createEvent("UIEvent")
+    scrollEvent.initEvent("scroll", true, true);
+
+    // event dispatcher
+    function scrollHandler() {
+      doc.dispatchEvent(scrollEvent)
+    }
+
+    // detect mouse events in the document scrollbar track
+    doc.addEventListener("mousedown", function(e) {
+      if (e.clientX > root.clientWidth - scrollbarWidth) {
+        doc.addEventListener("mousemove", scrollHandler, false);
+        doc.addEventListener("mouseup", function() {
+          doc.removeEventListener("mouseup", arguments.callee, false);
+          doc.removeEventListener("mousemove", scrollHandler, false);
+        }, false)
+      }
+    }, false)
+
+    // override mouse wheel behaviour.
+    doc.addEventListener("DOMMouseScroll", function(e) {
+      // Don't disable hot key behaviours
+      if (!e.ctrlKey && !e.shiftKey) {
+        root.scrollTop += e.detail * 16;
+        scrollHandler.call(this, e);
+        e.preventDefault()
+      }
+    }, false)
+
+  }
+})(document);
