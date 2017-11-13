@@ -6,9 +6,9 @@ class Languages extends Component {
         return(
         <div>
             <div id="jump-to-languages" className="Languages-1">
-                <header id="languages" className="scrollmagic-fade-in" tabIndex="0">
+                <h1 id="languages" className="scrollmagic-fade-in" tabIndex="0">
                     Lan<span id="languages_gu">gu</span>ag<span id="languages_e">e</span>s & L<span id="languages_ib">ib</span>raries
-                </header>
+                </h1>
                 <ul id="language-list"  className="scrollmagic-fade-in">
                     <li>HTML5/CSS3</li><br/>
                     <li>Javascript</li><br/>
