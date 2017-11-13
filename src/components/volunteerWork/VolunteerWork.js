@@ -16,7 +16,7 @@ class VolumteerWork extends Component {
                             </div>
                         </li>
                         <li className="flex-item">
-                            <header id="volunteer-work"  className="scrollmagic-fade-in" tabIndex="0">Vol<span id="volunteer-work_unt">unt</span>eer Wo<span id="volunteer-work_rk">rk</span></header>
+                            <h1 id="volunteer-work"  className="scrollmagic-fade-in" tabIndex="0">Vol<span id="volunteer-work_unt">unt</span>eer Wo<span id="volunteer-work_rk">rk</span></h1>
                             <ul id="volunteer-list" className="scrollmagic-fade-in">
                                 <li>Cameraman</li><br/>
                                 <li>Average of 2 hours/week since February 2016</li><br/>
@@ -29,6 +29,7 @@ class VolumteerWork extends Component {
             <div className="Volunteer-2">
                 <div className="Volunteer-2-blurred"></div>
             </div>
+            <div className="Volunteer-3"></div>
         </div>         
         );
     }
