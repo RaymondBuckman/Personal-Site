@@ -69,8 +69,7 @@ $(document).ready(function(){
             scrollTop: $("#about-me").offset().top
         }, 2000);
     });
-    
-    
+       
     var borderRadius = "40px 20px 40px 20px";
     var controller = new ScrollMagic.Controller();
     
@@ -85,18 +84,20 @@ $(document).ready(function(){
     })
     .setTween(navTween)
     .addTo(controller);
-    /*
-    var pinTopNavTween1 = TweenMax.to(".navbar", 0.05, {
-        dataSpy: 'affix',
-        autoRound: false
-    });
+    
     
     var pinTopNavScene = new ScrollMagic.Scene({
         triggerElement: '.navbar',
         triggerHook: 0
     })
-    .setTween(pinTopNavTween1)
-    .addTo(controller);*/
+    .setPin('.navbar')
+    .addTo(controller);
+    /*
+    $('.navbar').affix({
+        offset: {
+            top: $('.navbar').offset().top
+        }
+    }); */
     
     var changeTopNavColorScene = new ScrollMagic.Scene({
         triggerElement: '.navbar',
@@ -105,6 +106,7 @@ $(document).ready(function(){
     })
     .setClassToggle('.navbar', 'black-nav')
     .addTo(controller);
+    
     /*
     var pushNavUpTween1 = TweenMax.from(".navbar", 0.05, {
         y: "-=50px",
@@ -118,13 +120,15 @@ $(document).ready(function(){
     .setTween(pushNavUpTween1)
     .addTo(controller);*/
     
+    
+    
     var pushNavUpTween2 = TweenMax.to(".navbar", 0.05, {
         y: "-=50px",
         autoRound: false
     });
     
     var pushNavUpScene2 = new ScrollMagic.Scene({
-        triggerElement: '.Hobbies-1',
+        triggerElement: '.Hobbies-2',
         triggerHook: 0.07
     })
     .setTween(pushNavUpTween2)
@@ -393,7 +397,7 @@ $(document).ready(function(){
 
     /* ----Background Scroll animations -----*/   
     var intro1ParallaxTween = TweenMax.to(".Intro-1", 1, {
-        backgroundSize: "+=200px +=133.3px",
+        backgroundSize: "+=200px +=133.3332px",
         backgroundPositionX: "-=50%",
         autoRound:false, 
         ease:Power1.ease0ut
@@ -407,47 +411,49 @@ $(document).ready(function(){
     .setTween(intro1ParallaxTween)
     .addTo(controller);
      
-    /*
-    var intro1BrighterTween = TweenMax.to(".Intro-1", 0.01, {
-        filter: "brightness(150%)",
-        autoRound:false, 
-        ease:Power0.linear
-    });
+    
+    //Do for all browsers except Firefox
+    if (!(/Firefox/i.test(navigator.userAgent))){
+        var intro1BrighterTween = TweenMax.to(".Intro-1", 0.01, {
+            filter: "brightness(150%)",
+            autoRound:false, 
+            ease:Power0.linear
+        });
 
-    
-    var intro1BrighterScene = new ScrollMagic.Scene({
-        triggerElement: ".Intro-2",
-        triggerHook: 0.9
-    })
-    .setTween(intro1BrighterTween)
-    .addTo(controller);
-    
-    var intro1EvenBrighterTween = TweenMax.to(".Intro-1", 0.01, {
-        filter: "brightness(200%)",
-        autoRound:false, 
-        ease:Power0.linear
-    });
-    
-    var intro1EvenBrighterScene = new ScrollMagic.Scene({
-        triggerElement: ".Intro-2",
-        triggerHook: 0.7
-    })
-    .setTween(intro1EvenBrighterTween)
-    .addTo(controller);
-    
-    var intro1BrightestTween = TweenMax.to(".Intro-1", 0.01, {
-        filter: "brightness(300%)",
-        autoRound:false, 
-        ease:Power0.linear
-    });
+        var intro1BrighterScene = new ScrollMagic.Scene({
+            triggerElement: ".Intro-2",
+            triggerHook: 0.9
+        })
+        .setTween(intro1BrighterTween)
+        .addTo(controller);
 
-    var intro1BrightestScene = new ScrollMagic.Scene({
-        triggerElement: ".Intro-2",
-        triggerHook: 0.5,
-        
-    })
-    .setTween(intro1BrightestTween)
-    .addTo(controller);*/
+        var intro1EvenBrighterTween = TweenMax.to(".Intro-1", 0.01, {
+            filter: "brightness(200%)",
+            autoRound:false, 
+            ease:Power0.linear
+        });
+
+        var intro1EvenBrighterScene = new ScrollMagic.Scene({
+            triggerElement: ".Intro-2",
+            triggerHook: 0.7
+        })
+        .setTween(intro1EvenBrighterTween)
+        .addTo(controller);
+
+        var intro1BrightestTween = TweenMax.to(".Intro-1", 0.01, {
+            filter: "brightness(300%)",
+            autoRound:false, 
+            ease:Power0.linear
+        });
+
+        var intro1BrightestScene = new ScrollMagic.Scene({
+            triggerElement: ".Intro-2",
+            triggerHook: 0.5,
+
+        })
+        .setTween(intro1BrightestTween)
+        .addTo(controller);
+    }    
     
     var education1ParallaxTween = TweenMax.to(".Education-1", 1, { 
         backgroundPositionX: "+=80%",
@@ -477,8 +483,22 @@ $(document).ready(function(){
     .setTween(languages2ParallaxTween)
     .addTo(controller);
     
+    var languages2InnerParallaxTween = TweenMax.to(".Languages-2-inner", 1, { 
+        backgroundPositionX: "-=30%",
+        autoRound:false, 
+        ease:Power0.linear
+    });
+
+	var languages2InnerParallaxscene = new ScrollMagic.Scene({
+        triggerElement: ".Languages-2-inner",
+        triggerHook: 1,
+        duration: "250%"
+    })
+    .setTween(languages2InnerParallaxTween)
+    .addTo(controller);
+    
     var languages2InvertTween = TweenMax.to(".Languages-2", 0.01, {
-        filter: "invert(300%)",
+        filter: "invert(100%)",
         autoRound:false, 
         ease:Power0.linear
     });
@@ -491,7 +511,7 @@ $(document).ready(function(){
     .addTo(controller);
     
     var employment2ParallaxTween = TweenMax.from(".Employment-2", 1, { 
-        backgroundSize: "+=200px +=150px",
+        backgroundPositionY: "-=50px",
         autoRound:false, 
         ease:Power1.easeOut
     });
@@ -574,33 +594,47 @@ $(document).ready(function(){
     .setTween(volunteer2DisappearParallaxTween)
     .addTo(controller);
     
-    var hobbies2ParallaxTween = TweenMax.from(".Hobbies-2", 1, { 
-        backgroundSize: "+=300px +=199.65px", //changes bg image size without changing proportions
+     var volunteer3ParallaxTween = TweenMax.to(".Volunteer-3", 1, { 
+        backgroundPositionX: "+=20%",
         autoRound:false, 
-        ease:Power1.easeIn
+        ease:Power0.linear
     });
 
-	var hobbies2DisappearParallaxscene = new ScrollMagic.Scene({
+	var volunteer3Parallaxscene = new ScrollMagic.Scene({
+        triggerElement: ".Volunteer-3",
+        triggerHook: 1,
+        duration: "250%"
+    })
+    .setTween(volunteer3ParallaxTween)
+    .addTo(controller);
+    
+    var hobbies2ParallaxTween = TweenMax.from(".Hobbies-2", 1, { 
+        backgroundPositionY: "-=100px",
+        autoRound:false, 
+        ease:Power1.easeOut
+    });
+
+	var hobbies2Parallaxscene = new ScrollMagic.Scene({
         triggerElement: ".Hobbies-2",
         triggerHook: 1,
-        duration: "150%"
+        duration: "200%"
     })
     .setTween(hobbies2ParallaxTween)
     .addTo(controller);
     
-    /*----- Hobbies Tween -----*/
-    
-    var hobbiesTween = TweenMax.staggerFrom("#hobby-icons img", 0.2, { ease:  Power0.easeNone, x:20, opacity: 0, rotationY: 90, transformOrigin: "left top" }, 0.15);
-    
-    var hobbiesScene = new ScrollMagic.Scene({
-        triggerElement: '#hobby-icons',
-        triggerHook: 0.95,
-        offset: 0,
-        reverse: false
+    var hobbies3ParallaxTween = TweenMax.from(".Hobbies-3", 1, { 
+        backgroundSize: "+=300px +=199.65px",
+        autoRound:false, 
+        ease:Power1.easeIn
+    });
+
+	var hobbies3DisappearParallaxscene = new ScrollMagic.Scene({
+        triggerElement: ".Hobbies-3",
+        triggerHook: 1,
+        duration: "150%"
     })
-    .setTween(hobbiesTween)
+    .setTween(hobbies3ParallaxTween)
     .addTo(controller);
-    
 
     /*----- Navbar highlight animations -----*/ 
     var heightFromTopToLanguages = $('.Languages-1').offset().top;
@@ -609,7 +643,7 @@ $(document).ready(function(){
     var heightOfEmployment = $('.Skills-1').offset().top - $('.Employment-1').offset().top;
     var heightOfSkills = $('.Volunteer-1').offset().top - $('.Skills-1').offset().top;
     var heightOfVolunteer = $('.Hobbies-1').offset().top - $('.Volunteer-1').offset().top;
-    var heightOfHobbies = $('.Hobbies-2').offset().top - $('.Hobbies-1').offset().top;
+    var heightOfHobbies = $('.Hobbies-3').offset().top - $('.Hobbies-1').offset().top;
     
     
     var nav1Tween = new ScrollMagic.Scene({
@@ -844,8 +878,13 @@ $(window).scroll(function(){
      var sm = window.matchMedia( "(max-width: 991px)" );
      var md = window.matchMedia( "(min-width: 992px)" );
     
-    
-    $('.navbar').data('spy','affix-top');
+    /*
+    if(wScroll >= $(".navbar").offset().top - 1){
+        $(".navbar").addClass("pinned-nav");
+    } else{
+        $(".navbar").toggleClass("pinned-nav");
+    }*/
+
 
 })
 
