@@ -7,13 +7,13 @@ class Education extends Component {
         return(
         <div>
             <div id="jump-to-education" className="Education-1">
-                <header id="education" className="scrollmagic-fade-in" tabIndex="0">
+                <h1 id="education" className="scrollmagic-fade-in" tabIndex="0">
                     <span id="education_E">E</span><span id="education_d">d</span><span id="education_u">u</span><span id="education_ca">ca</span><span id="education_ti">ti</span><span id="education_on">on</span>
-                </header>
-                <header className="scrollmagic-fade-in">Bachelor's of Science<br/>
+                </h1>
+                <h1 className="scrollmagic-fade-in">Bachelor's of Science<br/>
                     Computer Engineering<br/>
                     San Jose State University
-                </header>
+                </h1>
                 <ul id="course-list" className="scrollmagic-fade-in">
                     <li>Operating Systems</li><br/>
                     <li>Database Systems I</li><br/>
@@ -63,9 +63,9 @@ class Education extends Component {
                 </ul>
             </div>
             <div className="Education-3">
-                <header id="online-courses" className="scrollmagic-fade-in" tabIndex="0">
+                <h1 id="online-courses" className="scrollmagic-fade-in" tabIndex="0">
                     On<span id="online_li">li</span>ne Cours<span id="online_e">e</span>s
-                </header>
+                </h1>
                 <ul id="online-list" className="scrollmagic-fade-in">
                     <li>CSS:Core Concepts</li><br/>
                     <li>JavaScript Essential Training</li><br/>
