@@ -8,7 +8,7 @@ class Hobbies extends Component {
                 <ul className="flex-container">
                     <li className="flex-item">
                         <h1 id="hobbies" className="scrollmagic-fade-in" tabIndex="0">
-                            Ho<span id="hobbies_bb">bb</span>ies
+                            Ho<span id="hobbies_bb">bb</span>ies & In<span id="hobbies_t">t</span>ere<span id="hobbies_st">st</span>s
                         </h1></li>
                     <li className="flex-item scrollmagic-circle">
                         <div></div>
@@ -16,7 +16,7 @@ class Hobbies extends Component {
                     </li>
                     <li className="flex-item scrollmagic-circle">
                         <div></div>
-                        <h2>Trance & Music production</h2>
+                        <h2>Trance</h2>
                     </li>
                     <li className="flex-item scrollmagic-circle">
                         <div></div>
@@ -44,7 +44,7 @@ class Hobbies extends Component {
                     </li>
                     <li className="flex-item scrollmagic-circle">
                         <div></div>
-                        <h2>Geography & History</h2>
+                        <h2>Geography</h2>
                     </li>
                     <li className="flex-item scrollmagic-circle">
                         <div></div>
@@ -58,9 +58,34 @@ class Hobbies extends Component {
                         <div></div>
                         <h2>Gaming</h2>
                     </li>
+                    <li className="flex-item scrollmagic-circle">
+                        <div></div>
+                        <h2>Music Production</h2>
+                    </li>
+                    <li className="flex-item scrollmagic-circle">
+                        <div></div>
+                        <h2>History</h2>
+                    </li>
+                    <li className="flex-item scrollmagic-circle">
+                        <div></div>
+                        <h2>Technology</h2>
+                    </li>
+                    <li className="flex-item scrollmagic-circle">
+                        <div></div>
+                        <h2>Modern Design</h2>
+                    </li>
+                    <li className="flex-item scrollmagic-circle">
+                        <div></div>
+                        <h2>Reading</h2>
+                    </li>
+                    <li className="flex-item scrollmagic-circle">
+                        <div></div>
+                        <h2>Dubstep</h2>
+                    </li>
                 </ul>
             </div>
             <div className="Hobbies-2"></div>
+            <div className="Hobbies-3"></div>
         </div>
         );
     }

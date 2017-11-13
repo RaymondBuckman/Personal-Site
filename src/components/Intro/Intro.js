@@ -7,11 +7,11 @@ class Intro extends Component {
         return(
         <div> 
             <div className="Intro-1" id="top-of-page">
-                        <header id="name">
+                        <h1 id="name">
                             <span id="name_R">R</span><span id="name_a">a</span><span id="name_y">y</span><span id="name_m">m</span><span id="name_o">o</span><span id="name_nd">nd</span>
                             <span id="name_B">B</span><span id="name_uc">uc</span><span id="name_k">k</span>ma<span id="name_n">n</span>
-                        </header>
-                        <img id="down-arrow" src="https://png.icons8.com/downward-arrow/ios7/73/000000" height="60px" data-tip data-for="scroll" aria-describedby="scroll"></img>            
+                        </h1>
+                        <img id="down-arrow" src="https://png.icons8.com/downward-arrow/ios7/73/ffffff" height="60px"></img>            
             </div>
             
             <div className="Intro-2" id="arrow-dest">

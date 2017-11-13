@@ -1,7 +1,4 @@
-
-
 @import url('https://fonts.googleapis.com/css?family=Akronim');
-@import url('https://fonts.googleapis.com/css?family=Orbitron');
 @import url('https://fonts.googleapis.com/css?family=Covered+By+Your+Grace|Prosto+One|Satisfy');
 
 //Variables
@@ -21,7 +18,7 @@ $intro-1-height: 100vw * .6665;
 $skills-2-height: 100vw * .6645;
 $employment-2-height: 100vw * .75;
 $volunteer-2-height: 100vw * .667;
-$hobbies-2-height: 100vw * .6655;
+$hobbies-3-height: 100vw * .6655;
 
 /*List for looping background images*/
 $hobby-list: tennis gaming trance travel foreignlanguages weight-lifting running cars pingpong history health pets; 
@@ -169,9 +166,20 @@ body{
     background: $tertiary-color !important; /* WebKit/Blink Browsers */
 }
 
+img:focus, a:focus, header:focus{
+    outline: none !important;
+}
+
+.scrollmagic-pin-spacer{
+    top: 0px !important;
+}
+
+
 .tooltip-span{
     @include secondary-font;
     color: #fff;
+    position: fixed !important;
+    top: 0 !important;
 }
 
 .fade-in{
@@ -238,7 +246,7 @@ body{
         display: inline-block;
         width: 100%;
         
-        &:nth-child(n+3):before {
+        &:nth-child(n+2):before {
             content: '';
             position: absolute;
             background-color: $secondary-color;
@@ -255,30 +263,47 @@ body{
     }
 }
 
-/*Targets X symbol*/
-.sidebar-nav > .glyphicon{
-	position: fixed;
-	top: 10px;
-	left: 180px;
-	opacity: 1;
-	color: $secondary-color;
-	z-index:80;
-}
 
 .profile-image{
-	background: url("images/me2.jpg") $nrs 50% 50%;
-	background-size: 155px;
 	border: transparent solid 2px;
 	border-radius: 50%;
 	width: 150px;
 	height: 150px;
 	margin-top: 35px;
 	margin-left: 9px;
-	margin-bottom: 15px;
+	margin-bottom: 35px;
 	transition: border 0.5s ease-in-out;
     
-    &:hover{
-        border-color: $tertiary-color;
+    div{
+        background: url("images/me2.jpg") $nrs 50% 50%;
+        background-size: 155px;
+        width: 100%;
+        height: 0;
+        padding: 50% 0;
+        border-radius: 50%;
+        transition: all 0.3s ease-in-out;
+    }
+            
+    h2{
+        position: relative;
+        top: -85px;
+        left: 40%;
+        
+        @include secondary-font;
+        color: $tertiary-color;
+        opacity: 0;
+        transform: rotateY(90deg); 
+        transform-origin: left;
+        transition: all 0.5s ease-in-out;
+    }
+            
+    &:hover h2{
+        opacity: 1;
+        transform: rotateY(0deg); 
+    }
+            
+    &:hover div{
+        filter: brightness(20%);
     }
 }
 
@@ -321,12 +346,12 @@ body{
     }    
 }    
 
-.sidebar-nav  li:nth-child(n+2) a:hover,
-.sidebar-nav  li:nth-child(n+2) a:active,
-.sidebar-nav  li:nth-child(n+2) a:focus,
-.sidebar-nav  li:nth-child(n+2).open a:hover,
-.sidebar-nav  li:nth-child(n+2).open a:active,
-.sidebar-nav  li:nth-child(n+2).open a:focus{
+.sidebar-nav  li:nth-child(n+1) a:hover,
+.sidebar-nav  li:nth-child(n+1) a:active,
+.sidebar-nav  li:nth-child(n+1) a:focus,
+.sidebar-nav  li:nth-child(n+1).open a:hover,
+.sidebar-nav  li:nth-child(n+1).open a:active,
+.sidebar-nav  li:nth-child(n+1).open a:focus{
     background-color: transparent;
     color: #000;
     animation: occasionalBlurOnHover 4s infinite;
@@ -396,12 +421,15 @@ body{
 /*=============== Page Content Wrapper ===============*/
 .Intro-1{
     position: relative;
+    top: 0;
     height:100vh;
     overflow: hidden;
-	background:url("images/subway.jpg") $nrf 80% 60%;
+	background:url("images/subway.jpg") $nrs 80% 60%;
 	background-size: 100vw $intro-1-height;
     padding-top:35vh;
     padding-bottom: 35vh;
+    opacity: 0.999999999;
+    z-index: auto;
     transition: filter 0.2s ease-in-out;
     
     #name{
@@ -428,7 +456,6 @@ body{
 #down-arrow{
     position:absolute;
     top: 88vh;
-    filter: invert(100%);
     display: inline-block;
     margin-left: auto;
     margin-right: auto;
@@ -448,7 +475,7 @@ body{
 }
 
 
-#about-me:hover, #education:hover, #senior-project:hover, #online-courses:hover, #languages:hover, #additional-skills:hover, #volunteer-work:hover, #hobbies:hover {
+#about-me:hover, #education:hover, #senior-project:hover, #online-courses:hover, #languages:hover, #employment:hover, #additional-skills:hover, #volunteer-work:hover, #hobbies:hover {
 	border-color:  $tertiary-color !important;
 }
 /*
@@ -458,7 +485,7 @@ body{
 
 #name_y, #name_m, #name_B, #about-me_ut, #education_d,
 #education_on, #project_io, #project_j, #online_li, #online_e, #languages_gu, #languages_e, #languages_ib, #additional-skills_iti,
-#additional-skills_ll, #volunteer-work_unt, #volunteer-work_rk, #hobbies_bb{
+#additional-skills_ll, #volunteer-work_unt, #volunteer-work_rk, #hobbies_bb, #hobbies_t, #hobbies_st{
 	animation: lightenDarken 12s infinite 1.1s;
 }
 
@@ -604,11 +631,10 @@ body{
     background: #000;
 }
 
-.fixedheader{
-	position: fixed;
-	top: 0px;
-    background: rgb(0,0,0);
-	z-index: 10;
+
+.affix{
+	position: fixed !important;
+	top: 0px!important;
 }
 
 
@@ -686,7 +712,13 @@ body{
     //opacity: 1 !important;
 }
 
-
+.pinned-nav{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 99;
+    opacity: 1;  
+}
 
 
 
@@ -695,117 +727,73 @@ body{
 	height: 110vh;
 	background: url("images/books.jpg") $nrf 20% 30%;
 	background-size: 2300px;
-	z-index: 1;
-}
-
-#education{
-	@include main-font;
-	font-size: $subheader-font-size;
-	letter-spacing: 12px;
-	color: $main-color;
-	position: relative;
-	text-align: center;
-	top: 10vh;
-	padding: 1% 4% .7% 2%;
-	margin-top: 5%;
-	border-bottom: $main-color 3px solid;
-	border-top: $main-color 3px solid;
-	z-index: 3;
-    opacity: 0;
-	transition: border-color 0.5s ease-in-out, opacity 0.5s ease-in-out;
-}
-
-/*targets university text*/
-header + header{
-	@include secondary-font;
-	font-size: 2vw;
-	letter-spacing: 5px;
-	color: $main-color;
-	position: relative;
-	text-align: left;
-	top: 14vh;
-	width: 600px;
-    opacity: 0;
-	transition: border-color 0.5s ease-in-out, opacity 0.5s ease-in-out;
-}
-
-#courseList{
-    position: relative;
-	@include secondary-font;
-	text-align: left;
-	line-height: 200%;
-	font-size: 1.2vw;
-	list-style-type: none;
-	top: 55vh;
-	left: -40vw;
+    @include div-padding;
+    padding-left: 5vw;
+    padding-right: 5vw;
+	
     
-    li:nth-child(odd){
-        opacity:0;
+    #education{
+        position: relative;
+        width: auto;
+        //display: block;
+        //margin: 0 auto;
+	    @include main-font;
+	    font-size: $subheader-font-size;
+	    letter-spacing: 7px;
+	    color: $main-color;    
+        text-align: left;
+        display: table;
+	    border-bottom: $main-color 3px solid;
+	    border-top: $main-color 3px solid;
+	    opacity: 1;
+	    transition: border-color 0.5s ease-in-out, opacity 0.5s ease-in-out;
+    }
+    
+    /*targets university text*/
+    h1 + h1{
+        position: relative;
+        top: 5vh;
+        width: 600px;
+        @include secondary-font;
+        letter-spacing: 5px;
         color: $main-color;
-        display:inline-block;
-        padding-left: 20px;
-        transform: translateX(-15px);
-        transition: all 0.5s ease-in-out;
+        font-size: 2vw;       
+        text-align: left;
+        opacity: 0;
+        transition: border-color 0.5s ease-in-out, opacity 0.5s ease-in-out;
     }
     
-    li:nth-child(even){
-        opacity:0;
-        color: rgb(150,150,150);
-        display: inline-block;
-        border-left: solid transparent 2px;
-        padding-left: 20px;
-        transform: translateX(15px);
-        transition: all 0.5s ease-in-out;
-    }
-    
-    *:after {
-      @include underscore;
-    }
-    
-    *:hover:after {
-	   transform: scaleX(1);
-    }
-}
+    #course-list{
+        position: relative;
+        top: 2vh;
+        left: 0vw;
+        @include secondary-font;
+        text-align: left;
+        line-height: 200%;
+        font-size: 1.2vw;
+        list-style-type: none;
+        margin-top: 5vh;
+        
+        li:nth-child(4n+1){
+            @include li-odd(rgb(150,150,150));
+        }
 
- #projects-button{
-     &:before{
-        content:'';
-        position: absolute;
-        top: 0px;
-        left: 0px;
-        width: 0px;
-        height: 45px;
-        background: rgba(255,255,255,0.2);
-        border-radius: 10px;
-        transition: all 0.9s ease-in-out;
-     }
-     
-	 position: relative;
-	 top: 40vh;
-	 @include secondary-font;
-	 letter-spacing: 4px;
-	 color: $secondary-color;
-	 background-color: $main-color;
-	 border: $main-color;
-	 border-radius: 10px;
-	 opacity: 0;
-	 transition: color 1.0s ease-in-out, background 1.0s ease-in-out, border-radius 1.0s ease-in-out;
-     
-     &:hover:before, &:active:before{
-         width: 100%;
-	     border-radius:30px; 
-     }
-     
-     &:hover, &:active{
-         color: $main-color;
-	     background-color: #ddd;
-	     border-radius:30px;
-     }
-     
-     /*Hides blue border around button*/
-     &:focus{
-         outline:0;
-     }
+        li:nth-child(4n-1){ 
+            opacity: 0;
+            color: #000;
+            display: inline-block;
+            transform: translateX(-15px);
+            transition: all 0.5s ease-in-out;
+        } 
+
+        *:after{
+            @include underscore;
+        }
+
+        *:hover:after{
+           transform: scaleX(1);
+        }
+    }
 }
 
 .Education-2 {
@@ -868,6 +856,8 @@ header + header{
         }
         
         &:nth-child(2){
+            border-radius: 50%;
+            
             div{
                 width: 100%;
                 height: 0;
@@ -943,6 +933,8 @@ header + header{
         }
         
         &:nth-child(n+2){
+            clip-path: circle(50% at 50% 50%);
+            
             div{
                 border-radius: 50%;
                 transition: all 0.3s ease-in-out;
@@ -1080,8 +1072,7 @@ header + header{
 	height: 50vh;
 	background: url("images/code.jpg") $nrf 100% 20%;
 	background-size: 2000px;
-	z-index: 4;
-    transition: filter 0.7s ease-in-out;
+    transition: filter 0.5s ease-in-out;
 }
 
 .Employment-1 {
@@ -1439,23 +1430,30 @@ header + header{
 	background: url("images/heartcross.jpg") $nrf 40% 60%;
 	background-size: 100vw $volunteer-2-height;
 	z-index:1;
+    
+    .Volunteer-2-blurred{
+        position: relative;
+        height: 50vh;
+        background: url("images/heartcross-blurred.jpg") $nrf 40% 60%;
+        background-size: 100vw $volunteer-2-height;
+        opacity:0;
+        z-index:2;
+    }
 }
 
-.Volunteer-2-blurred{
+.Volunteer-3{
 	position: relative;
 	height: 50vh;
-	background: url("images/heartcross-blurred.jpg") $nrf 40% 60%;
-	background-size: 100vw $volunteer-2-height;
-	opacity:0;
-	z-index:2;
+	background: url("images/care.jpg") $nrf 0% 50%;
+	background-size: 120vw;
+	z-index:1;
 }
 
 .Hobbies-1 {
     position: relative;
     height: auto;
     width: 100vw;
-    background: url("images/breakdance.jpg") $nrf 50% 50%;
-    background-size: cover;
+    background: $main-color;
         
     .flex-container {
           padding: 15vh 5vw;
@@ -1554,7 +1552,7 @@ header + header{
         
         &:nth-child(8){
             div{
-                background: url("images/cars.jpg") $nrs 90% 70%;
+                background: url("images/cars.jpg") $nrs 35% 70%;
                 background-size: cover;
             }
         }
@@ -1568,7 +1566,7 @@ header + header{
         
         &:nth-child(10){
             div{
-                background: url("images/history.jpg") $nrs 50% 70%;
+                background: url("images/geography.jpg") $nrs 50% 70%;
                 background-size: cover;
             }
         }
@@ -1594,7 +1592,51 @@ header + header{
             }
         }
         
+        &:nth-child(14){
+            div{
+                background: url("images/music-production.jpg") $nrs 50% 70%;
+                background-size: cover;
+            }
+        }
+        
+        &:nth-child(15){
+            div{
+                background: url("images/history.jpg") $nrs 60% 70%;
+                background-size: cover;
+            }
+        }
+        
+        &:nth-child(16){
+            div{
+                background: url("images/technology.jpg") $nrs 30% 70%;
+                background-size: cover;
+            }
+        }
+        
+        &:nth-child(17){
+            div{
+                background: url("images/modern-design.jpg") $nrs 30% 90%;
+                background-size: cover;
+            }
+        }
+        
+        &:nth-child(18){
+            div{
+                background: url("images/reading.jpg") $nrs 30% 70%;
+                background-size: cover;
+            }
+        }
+        
+        &:nth-child(19){
+            div{
+                background: url("images/dubstep.jpg") $nrs 30% 90%;
+                background-size: cover;
+            }
+        }
+        
         &:nth-child(n+2){
+            clip-path: circle(50% at 50% 50%);
+            
             div{
                 width: 100%;
                 height: 0;
@@ -1627,12 +1669,19 @@ header + header{
     }
 }
 
-
 .Hobbies-2{
+	position: relative;
+	height: 50vh;
+	background: url("images/graffiti.jpg") $nrf 100% 100%;
+	background-size: cover;
+}
+
+
+.Hobbies-3{
 	position:relative;
 	height:85vh;
 	background: url("images/saxophone.jpg") $nrf 50% 20%;
-	background-size: 100vw $hobbies-2-height;
+	background-size: 100vw $hobbies-3-height;
 	z-index:3;
 }
 
@@ -1951,7 +2000,7 @@ header + header{
 		margin-top:25px;
 	}
 
-	.Hobbies-2{
+	.Hobbies-3{
 		background: url("images/saxophone.jpg") $nrs 60% 0%;
 		background-size: 2900px;
 		z-index:3;
@@ -2184,7 +2233,7 @@ header + header{
           margin-top:25px;
       }
 
-      .Hobbies-2{
+      .Hobbies-3{
           background: url("images/saxophone.jpg") $nrs 60% 30%;
           background-size: 2500px;
           z-index:3;
@@ -2217,3 +2266,25 @@ header + header{
           width: 90%;
       }
 }
+/*-----Browser specific scss -----*/
+
+//
+@-moz-document url-prefix() {
+    .Languages-2{
+        background-attachment: scroll !important;
+    }
+}
+
+//targets Microsoft Edge
+@supports (-ms-ime-align: auto) {
+    //fixes background image scaling problems on divs with parallax background sizes
+    .Intro-1, .Skills-2, .Volunteer-2, .Volunteer-2-blurred, .Hobbies-3{
+        background-size: cover !important;
+    }
+    
+    //A fixed div inside another fixed div causes jumping in edge
+    .Volunteer-2, .Volunteer-2-blurred{
+        background-attachment: scroll !important;
+    }
+}
+
