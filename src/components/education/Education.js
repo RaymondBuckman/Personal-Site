@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import subwayVideo from '../../images/dronevideo.mp4';
+import subwayVideo from '../../images/drone-video.mp4';
 
 
 class Education extends Component {
