@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import drillVideo from '../../images/drillvideo.mp4';
+import drillVideo from '../../images/drill-video.mp4';
 
 class Employment extends Component {
     render() {

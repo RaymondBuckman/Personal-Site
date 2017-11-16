@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import ReactTooltip from 'react-tooltip';
-import subwayVideo from '../../images/subwayvideo.mp4';
+import subwayVideo from '../../images/subway-video.mp4';
 
 class Intro extends Component {
     render() {
@@ -32,7 +32,7 @@ class Intro extends Component {
                 </ul>
             </div>
             
-            <nav className="navbar navbar-default hidden-xs" role="navigation">
+            <nav className="navbar navbar-default visible-lg" role="navigation">
                 <div className="container">
                     <ul className="nav navbar-nav navbar-right">
                         <li><a href="#jump-to-education">Education</a></li>

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import cameraVideo from '../../images/cameravideo.mp4';
+import cameraVideo from '../../images/camera-video.mp4';
 
 
 class VolumteerWork extends Component {

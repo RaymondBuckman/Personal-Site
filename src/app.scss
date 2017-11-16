@@ -7,9 +7,9 @@ $secondary-font: "Prosto One";
 
 $subheader-font-size: 5em;
 
-$main-color: rgb(40,40,40);
-$secondary-color: white;
-$tertiary-color: rgb(200,250,0);
+$concrete-gray: rgb(40,40,40);
+$bright-white: white;
+$acid-green: rgb(200,250,0);
 
 $nrf: no-repeat fixed;
 $nrs: no-repeat scroll;
@@ -26,7 +26,7 @@ $hobby-list: tennis gaming trance travel foreignlanguages weight-lifting running
 //mixins
 @mixin li-even{
     opacity: 0;
-    color: $secondary-color;
+    color: $bright-white;
     display: inline-block;
     transform: translateX(-15px);
     transition: all 0.5s ease-in-out;
@@ -42,7 +42,7 @@ $hobby-list: tennis gaming trance travel foreignlanguages weight-lifting running
 
 @mixin li-mobile-even{
     opacity: 1;
-    color: $secondary-color;
+    color: $bright-white;
     display: inline-block;
     transition: all 0.5s ease-in-out;
 }
@@ -57,7 +57,7 @@ $hobby-list: tennis gaming trance travel foreignlanguages weight-lifting running
 @mixin underscore{
     display:block;
     content:  '';
-    border-bottom: solid 2px $tertiary-color;
+    border-bottom: solid 2px $acid-green;
     transform: scaleX(0);
     transition: transform 500ms ease-in-out;
 }
@@ -95,6 +95,38 @@ $hobby-list: tennis gaming trance travel foreignlanguages weight-lifting running
 @mixin div-padding{
     padding-top: 15vh;
     padding-bottom: 15vh;
+}
+
+@mixin for-small-phone-portrait {
+    @media (max-width: 399px){ @content; }
+}
+
+@mixin for-large-phone-portrait {
+    @media (min-width: 400px) and (max-width: 599px) { @content; }
+}
+
+@mixin for-small-tablet-portrait {
+    @media (min-width: 600px) and (max-width: 899px) and (orientation: portrait){ @content; }
+}
+
+@mixin for-phone-landscape {
+    @media (min-width: 600px) and (max-width: 899px) and (orientation: landscape){ @content; }
+}
+
+@mixin for-large-tablet-portrait {
+    @media (min-width: 900px) and (max-width: 1199px) and (orientation: portrait){ @content; }
+}
+
+@mixin for-small-tablet-landscape {
+    @media (min-width: 900px) and (max-width: 1199px) and (orientation: landscape){ @content; }
+}
+
+@mixin for-small-desktop-or-large-tablet-landscape {
+    @media (min-width: 1200px) and (max-width: 1399px){ @content; }
+}
+
+@mixin for-2K-and-4K-desktop-landscape {
+    @media (min-width: 1921px){ @content; }
 }
 
 /*================== Main Keyframes ==================*/
@@ -162,8 +194,37 @@ body{
 
 //modifies text highlight color
 ::selection {
-    color: $secondary-color;
-    background: $tertiary-color !important; /* WebKit/Blink Browsers */
+    color: $bright-white;
+    background: $acid-green !important; /* WebKit/Blink Browsers */
+}
+
+//general rules
+#about-me:hover, #education:hover, #senior-project:hover, #online-courses:hover, #languages:hover, #employment:hover, #additional-skills:hover, #volunteer-work:hover, #hobbies:hover {
+	border-color:  $acid-green !important;
+}
+
+
+#name_y, #name_m, #name_B, #about-me_ut, #education_d,
+#education_on, #project_io, #project_j, #online_li, #online_e, #languages_gu, #languages_e, #languages_ib, #additional-skills_iti,
+#additional-skills_ll, #volunteer-work_unt, #volunteer-work_rk, #hobbies_bb, #hobbies_t, #hobbies_st{
+	animation: lightenDarken 12s infinite 1.1s;
+}
+
+#courseList > *:hover,
+.carousel-control:hover,
+#languageList > *:hover,
+#online-list > *:hover,
+#skill-list > *:hover,
+#volunteer-list > *:hover,
+#french:hover,
+#german:hover,
+#hobby-icons > *:hover,
+#icons8:hover {
+	animation: occasionalBlurOnHover 4s infinite;
+}
+
+#page-content-wrapper > div:nth-child(1) > div.scrollmagic-pin-spacer{
+    margin-bottom: 0vh !important;
 }
 
 img:focus, a:focus, header:focus{
@@ -204,7 +265,7 @@ img:focus, a:focus, header:focus{
 	width: 0;
 	height: 100%;
 	overflow-x: hidden;
-	background: $main-color;
+	background: $concrete-gray;
     z-index: 99;
 	@include sidebar-transition;
 }
@@ -249,7 +310,7 @@ img:focus, a:focus, header:focus{
         &:nth-child(n+2):before {
             content: '';
             position: absolute;
-            background-color: $secondary-color;
+            background-color: $bright-white;
             top: 0;
             left: -1px;
             z-index: -1;
@@ -275,7 +336,7 @@ img:focus, a:focus, header:focus{
 	transition: border 0.5s ease-in-out;
     
     div{
-        background: url("images/me2.jpg") $nrs 50% 50%;
+        background: url("images/me.jpg") $nrs 50% 50%;
         background-size: 155px;
         width: 100%;
         height: 0;
@@ -290,7 +351,7 @@ img:focus, a:focus, header:focus{
         left: 40%;
         
         @include secondary-font;
-        color: $tertiary-color;
+        color: $acid-green;
         opacity: 0;
         transform: rotateY(90deg); 
         transform-origin: left;
@@ -314,7 +375,7 @@ img:focus, a:focus, header:focus{
     font-size: 2em;
     letter-spacing: 5px;
     padding: 10px 15px 10px 25px;
-    color: $secondary-color;
+    color: $bright-white;
     @include main-font;
     line-height: 44px;
 }
@@ -330,7 +391,7 @@ img:focus, a:focus, header:focus{
 
 .sidebar-nav li a, .sidebar-nav li:first-child {
     display: block;
-    color: $secondary-color;
+    color: $bright-white;
     text-decoration: none;
     padding: 10px 15px 10px 30px;
     transition: color .5s ease;
@@ -358,7 +419,7 @@ img:focus, a:focus, header:focus{
 }
 
 .sidebar-nav  li:nth-child(n+2) a:visited{
-    color: $secondary-color;
+    color: $bright-white;
     
     &:hover{
         color:#000;
@@ -411,7 +472,7 @@ img:focus, a:focus, header:focus{
 	top: 15px;
 	left: 155px;
 	font-size: 25px;
-	color: $secondary-color;
+	color: $bright-white;
     cursor: pointer;
     opacity: 0;
 	z-index: 70;
@@ -424,7 +485,7 @@ img:focus, a:focus, header:focus{
     top: 0;
     height:100vh;
     overflow: hidden;
-	background:url("images/subway.jpg") $nrs 80% 60%;
+	background:url("images/subway.jpg") $nrf 80% 60%;
 	background-size: 100vw $intro-1-height;
     padding-top:35vh;
     padding-bottom: 35vh;
@@ -439,79 +500,45 @@ img:focus, a:focus, header:focus{
         @include main-font;
         font-size: 10em;
         letter-spacing: 15px;
-        color: $secondary-color;    
+        color: $bright-white;    
         text-align: center;
         display: table;
         padding: 10px 20px;
         margin: auto auto;
-        border-bottom: $secondary-color 3px solid;
-        border-top: $secondary-color 3px solid;
+        border-bottom: $bright-white 3px solid;
+        border-top: $bright-white 3px solid;
         //opacity: 0;
         transition: border-color 0.5s ease-in-out, opacity 0.5s ease-in-out;
     }
-
-}
-
-
-#down-arrow{
-    position:absolute;
-    top: 88vh;
-    display: inline-block;
-    margin-left: auto;
-    margin-right: auto;
-    left: 0;
-    right: 0;
-    display: inline-block;
-    cursor: pointer;
-    z-index: 1;
-    opacity: 0.5;
-
-    animation: updown 2s infinite 1.1s;
-	transition: opacity 0.3s ease-in-out;
     
-    &:hover{
-        opacity: 1;
+    #down-arrow{
+        position:absolute;
+        top: 88vh;
+        display: inline-block;
+        margin-left: auto;
+        margin-right: auto;
+        left: 0;
+        right: 0;
+        display: inline-block;
+        cursor: pointer;
+        z-index: 1;
+        opacity: 0.5;
+
+        animation: updown 2s infinite 1.1s;
+        transition: opacity 0.3s ease-in-out;
+
+        &:hover{
+            opacity: 1;
+        }
     }
-}
-
-
-#about-me:hover, #education:hover, #senior-project:hover, #online-courses:hover, #languages:hover, #employment:hover, #additional-skills:hover, #volunteer-work:hover, #hobbies:hover {
-	border-color:  $tertiary-color !important;
-}
-/*
-.window1:hover, .window2:hover{
-	border: $tertiary-color solid 3px !important;
-}*/
-
-#name_y, #name_m, #name_B, #about-me_ut, #education_d,
-#education_on, #project_io, #project_j, #online_li, #online_e, #languages_gu, #languages_e, #languages_ib, #additional-skills_iti,
-#additional-skills_ll, #volunteer-work_unt, #volunteer-work_rk, #hobbies_bb, #hobbies_t, #hobbies_st{
-	animation: lightenDarken 12s infinite 1.1s;
-}
-
-#courseList > *:hover,
-.carousel-control:hover,
-#languageList > *:hover,
-#online-list > *:hover,
-#skillList > *:hover,
-#volunteer-list > *:hover,
-#french:hover,
-#german:hover,
-#hobby-icons > *:hover,
-#icons8:hover {
-	animation: occasionalBlurOnHover 4s infinite;
-}
-
-#page-content-wrapper > div:nth-child(1) > div.scrollmagic-pin-spacer{
-    margin-bottom: 0vh !important;
 }
 
 .Intro-2 {
     position: relative;
     height: auto;
-    background: $main-color;
+    background: $concrete-gray;
     font-size: large;
-    color: $tertiary-color;
+    color: $acid-green;
     z-index: 19;
     
     .flex-container {
@@ -539,7 +566,7 @@ img:focus, a:focus, header:focus{
         overflow: hidden;
   
         line-height: 30px;
-        color: $secondary-color;
+        color: $bright-white;
         @include main-font;
         //font-size: 3em;
         text-align: center;
@@ -587,10 +614,10 @@ img:focus, a:focus, header:focus{
                 font-size: $subheader-font-size;
                 letter-spacing: 13px;
                 text-align: center;
-                color: $secondary-color;
+                color: $bright-white;
                 //padding: 35px 35% 35px 35px;
-                border-bottom: $secondary-color 3px solid;
-                border-top: $secondary-color 3px solid;
+                border-bottom: $bright-white 3px solid;
+                border-top: $bright-white 3px solid;
                 opacity: 1;
                 transition: border-color 0.5s ease-in-out, opacity 0.5s ease-in-out;
             }
@@ -599,7 +626,7 @@ img:focus, a:focus, header:focus{
                 position: relative;
                 //top: 10vh;
                 @include secondary-font;
-                color: $secondary-color;                
+                color: $bright-white;                
                 //padding: 2% 0% 5% 0%;
                 margin: 20vh 0vh 5vh 0vh;
                 text-align: center;
@@ -620,7 +647,7 @@ img:focus, a:focus, header:focus{
 	left: 0%;
 	height: 50px;
     width: 100%;
-	background: $main-color;
+	background: $concrete-gray;
 	border: none;
 	border-radius: 0px;
     z-index: 97;
@@ -651,7 +678,7 @@ img:focus, a:focus, header:focus{
     }
     
     &:hover{
-	   color: $secondary-color;
+	   color: $bright-white;
 	   animation: occasionalBlurOnHover 4s infinite;
         
         &:after{
@@ -662,14 +689,15 @@ img:focus, a:focus, header:focus{
 
 .navbar-default .navbar-nav>.active > a,
 .navbar-default .navbar-nav>.active > a:focus {
-    color: $tertiary-color;
+    color: $acid-green;
     margin: 0px 20px;
     transform: scale(1.3);
+    animation: occasionalBlurOnHover 4s infinite;
     
 }
 
 .navbar-default .navbar-nav>.active > a:hover{
-     color: $secondary-color;
+     color: $bright-white;
 }
 
 #nav-icon{
@@ -740,11 +768,11 @@ img:focus, a:focus, header:focus{
 	    @include main-font;
 	    font-size: $subheader-font-size;
 	    letter-spacing: 7px;
-	    color: $main-color;    
+	    color: $concrete-gray;    
         text-align: left;
         display: table;
-	    border-bottom: $main-color 3px solid;
-	    border-top: $main-color 3px solid;
+	    border-bottom: $concrete-gray 3px solid;
+	    border-top: $concrete-gray 3px solid;
 	    opacity: 1;
 	    transition: border-color 0.5s ease-in-out, opacity 0.5s ease-in-out;
     }
@@ -756,7 +784,7 @@ img:focus, a:focus, header:focus{
         width: 600px;
         @include secondary-font;
         letter-spacing: 5px;
-        color: $main-color;
+        color: $concrete-gray;
         font-size: 2vw;       
         text-align: left;
         opacity: 0;
@@ -800,7 +828,7 @@ img:focus, a:focus, header:focus{
     position: relative;
     height: auto;
     width: 100vw;
-    background: $main-color;
+    background: $concrete-gray;
         
     .flex-container {
           padding: 15vh 5vw;
@@ -845,11 +873,11 @@ img:focus, a:focus, header:focus{
                 @include main-font;
                 font-size: $subheader-font-size;
                 letter-spacing: 7px;
-                color: $secondary-color;    
+                color: $bright-white;    
                 text-align: center;
                 @include header-padding-margin;
-                border-bottom: $secondary-color 3px solid;
-                border-top: $secondary-color 3px solid;
+                border-bottom: $bright-white 3px solid;
+                border-top: $bright-white 3px solid;
                 opacity: 0;
                 transition: border-color 0.5s ease-in-out, opacity 0.5s ease-in-out;
             }
@@ -862,7 +890,7 @@ img:focus, a:focus, header:focus{
                 width: 100%;
                 height: 0;
                 padding: 50% 0;
-                background: url("images/pcopter3.jpg") $nrs 50% 10%;
+                background: url("images/drone-3.jpg") $nrs 50% 10%;
                 background-size: cover;
             }
         }
@@ -887,7 +915,7 @@ img:focus, a:focus, header:focus{
                 width: 100%;
                 height: 0;
                 padding: 50% 0;
-                background: url("images/pcopter2.jpg") $nrs 100% 70%;
+                background: url("images/drone-2.jpg") $nrs 100% 70%;
                 background-size: cover;
             }
         }
@@ -897,7 +925,7 @@ img:focus, a:focus, header:focus{
                 width: 100%;
                 height: 0;
                 padding: 50% 0;
-                background: url("images/pcopter1.jpg") $nrs 50% 70%;
+                background: url("images/drone-1.jpg") $nrs 50% 70%;
                 background-size: cover;
             }
         }
@@ -907,7 +935,7 @@ img:focus, a:focus, header:focus{
                 width: 100%;
                 height: 0;
                 padding: 50% 0;
-                background: url("images/pboard1smudge.jpg") $nrs 30% 70%;
+                background: url("images/board-1-smudge.jpg") $nrs 30% 70%;
                 background-size: cover;
             }
         }
@@ -917,7 +945,7 @@ img:focus, a:focus, header:focus{
                 width: 100%;
                 height: 0;
                 padding: 50% 0;
-                background: url("images/pboard2.jpg") $nrs 50% 70%;
+                background: url("images/board-2.jpg") $nrs 50% 70%;
                 background-size: cover;
             }
         }
@@ -927,7 +955,7 @@ img:focus, a:focus, header:focus{
                 width: 100%;
                 height: 0;
                 padding: 50% 0;
-                background: url("images/pboard3.jpg") $nrs 50% 70%;
+                background: url("images/board-3.jpg") $nrs 50% 70%;
                 background-size: cover;
             }
         }
@@ -944,7 +972,7 @@ img:focus, a:focus, header:focus{
                 position: relative;
                 top: -200px;
                 @include secondary-font;
-                color: $tertiary-color;
+                color: $acid-green;
                 opacity: 0;
                 transform: rotateY(90deg); 
                 transition: all 0.5s ease-in-out;
@@ -967,7 +995,7 @@ img:focus, a:focus, header:focus{
 .Education-3{
 	position: relative;
 	height: auto;
-	background: url("images/laptop2.jpg") $nrf 20% 70%;
+	background: url("images/laptop.jpg") $nrf 20% 70%;
 	background-size: cover;
     @include div-padding;
     
@@ -980,11 +1008,11 @@ img:focus, a:focus, header:focus{
 	    @include main-font;
 	    font-size: $subheader-font-size;
 	    letter-spacing: 7px;
-	    color: $secondary-color;    
+	    color: $bright-white;    
         text-align: center;
         @include header-padding-margin;
-	    border-bottom: $secondary-color 3px solid;
-	    border-top: $secondary-color 3px solid;
+	    border-bottom: $bright-white 3px solid;
+	    border-top: $bright-white 3px solid;
 	    opacity: 0;
 	    transition: border-color 0.5s ease-in-out, opacity 0.5s ease-in-out;
     }
@@ -1019,7 +1047,7 @@ img:focus, a:focus, header:focus{
 .Languages-1{
 	position: relative;
 	height: auto;
-	background: $main-color;
+	background: $concrete-gray;
     @include div-padding;
     
     #languages{
@@ -1031,11 +1059,11 @@ img:focus, a:focus, header:focus{
 	    @include main-font;
 	    font-size: $subheader-font-size;
 	    letter-spacing: 7px;
-	    color: $secondary-color;    
+	    color: $bright-white;    
         text-align: center;
         @include header-padding-margin;
-	    border-bottom: $secondary-color 3px solid;
-	    border-top: $secondary-color 3px solid;
+	    border-bottom: $bright-white 3px solid;
+	    border-top: $bright-white 3px solid;
 	    opacity: 0;
 	    transition: border-color 0.5s ease-in-out, opacity 0.5s ease-in-out;
     }
@@ -1078,9 +1106,9 @@ img:focus, a:focus, header:focus{
 .Employment-1 {
     position: relative;
     height: auto;
-    background: $main-color;
+    background: $concrete-gray;
     font-size: large;
-    color: $tertiary-color;
+    color: $acid-green;
     z-index: 19;
     
     .flex-container {
@@ -1108,7 +1136,7 @@ img:focus, a:focus, header:focus{
         overflow: hidden;
   
         line-height: 30px;
-        color: $secondary-color;
+        color: $bright-white;
         @include main-font;
         //font-size: 3em;
         text-align: center;
@@ -1156,10 +1184,10 @@ img:focus, a:focus, header:focus{
                 font-size: $subheader-font-size;
                 letter-spacing: 13px;
                 text-align: center;
-                color: $secondary-color;
+                color: $bright-white;
                 //padding: 35px 35% 35px 35px;
-                border-bottom: $secondary-color 3px solid;
-                border-top: $secondary-color 3px solid;
+                border-bottom: $bright-white 3px solid;
+                border-top: $bright-white 3px solid;
                 opacity: 1;
                 transition: border-color 0.5s ease-in-out, opacity 0.5s ease-in-out;
             }
@@ -1168,7 +1196,7 @@ img:focus, a:focus, header:focus{
                 position: relative;
                 //top: 10vh;
                 @include secondary-font;
-                color: $secondary-color;                
+                color: $bright-white;                
                 //padding: 2% 0% 5% 0%;
                 margin: 20vh 0vh 5vh 0vh;
                 text-align: center;
@@ -1193,7 +1221,7 @@ img:focus, a:focus, header:focus{
 .Skills-1{
     position: relative;
 	height: auto;
-	background: url("images/graffiti2.jpg") $nrf 41% 10%;
+	background: url("images/graffiti-2.jpg") $nrf 41% 10%;
     background-size:1900px;
     @include div-padding;
     
@@ -1206,11 +1234,11 @@ img:focus, a:focus, header:focus{
 	    @include main-font;
 	    font-size: $subheader-font-size;
 	    letter-spacing: 7px;
-	    color: $secondary-color;    
+	    color: $bright-white;    
         text-align: center;
         @include header-padding-margin;
-	    border-bottom: $secondary-color 3px solid;
-	    border-top: $secondary-color 3px solid;
+	    border-bottom: $bright-white 3px solid;
+	    border-top: $bright-white 3px solid;
 	    opacity: 0;
 	    transition: border-color 0.5s ease-in-out, opacity 0.5s ease-in-out;
     }
@@ -1274,14 +1302,14 @@ img:focus, a:focus, header:focus{
 
 .Skills-3{
 	height:50vh;
-	background: url("images/brandenburggate.jpg") $nrf 100% 40%;
+	background: url("images/brandenburg-gate.jpg") $nrf 100% 40%;
 	background-size: 1950px;
     
     #german {
         @include secondary-font;
         font-size: 2em;
         letter-spacing: 5px;
-        color: $secondary-color;
+        color: $bright-white;
         position: relative;
         text-align: left;
         margin-top: 20px;
@@ -1302,9 +1330,9 @@ img:focus, a:focus, header:focus{
 .Volunteer-1 {
 	position: relative;
     height: auto;
-    background: $main-color;
+    background: $concrete-gray;
     font-size: large;
-    color: $tertiary-color;
+    color: $acid-green;
     z-index: 19;
     
     .flex-container {
@@ -1332,7 +1360,7 @@ img:focus, a:focus, header:focus{
         overflow: hidden;
   
         line-height: 30px;
-        color: $secondary-color;
+        color: $bright-white;
         @include main-font;
         //font-size: 3em;
         text-align: center;
@@ -1380,10 +1408,10 @@ img:focus, a:focus, header:focus{
                 font-size: $subheader-font-size;
                 letter-spacing: 13px;
                 text-align: center;
-                color: $secondary-color;
+                color: $bright-white;
                 padding: 0px 35px;
-                border-bottom: $secondary-color 3px solid;
-                border-top: $secondary-color 3px solid;
+                border-bottom: $bright-white 3px solid;
+                border-top: $bright-white 3px solid;
                 opacity: 0;
                 transition: border-color 0.5s ease-in-out, opacity 0.5s ease-in-out;
             }
@@ -1427,14 +1455,14 @@ img:focus, a:focus, header:focus{
 .Volunteer-2{
 	position: relative;
 	height: 50vh;
-	background: url("images/heartcross.jpg") $nrf 40% 60%;
+	background: url("images/heart-cross.jpg") $nrf 40% 60%;
 	background-size: 100vw $volunteer-2-height;
 	z-index:1;
     
     .Volunteer-2-blurred{
         position: relative;
         height: 50vh;
-        background: url("images/heartcross-blurred.jpg") $nrf 40% 60%;
+        background: url("images/heart-cross-blurred.jpg") $nrf 40% 60%;
         background-size: 100vw $volunteer-2-height;
         opacity:0;
         z-index:2;
@@ -1453,7 +1481,7 @@ img:focus, a:focus, header:focus{
     position: relative;
     height: auto;
     width: 100vw;
-    background: $main-color;
+    background: $concrete-gray;
         
     .flex-container {
           padding: 15vh 5vw;
@@ -1498,11 +1526,11 @@ img:focus, a:focus, header:focus{
                 @include main-font;
                 font-size: $subheader-font-size;
                 letter-spacing: 7px;
-                color: $secondary-color;    
+                color: $bright-white;    
                 text-align: center;
                 @include header-padding-margin;
-                border-bottom: $secondary-color 3px solid;
-                border-top: $secondary-color 3px solid;
+                border-bottom: $bright-white 3px solid;
+                border-top: $bright-white 3px solid;
                 opacity: 0;
                 transition: border-color 0.5s ease-in-out, opacity 0.5s ease-in-out;
             }
@@ -1517,7 +1545,7 @@ img:focus, a:focus, header:focus{
         
         &:nth-child(3){
             div{
-                background: url("images/trance.jpg") $nrs 20% 70%;
+                background: url("images/trance.jpg") $nrs 20% 90%;
                 background-size: cover;
             }
         }
@@ -1531,7 +1559,7 @@ img:focus, a:focus, header:focus{
         
         &:nth-child(5){
             div{
-                background: url("images/foreignlanguages.jpg") $nrs 100% 70%;
+                background: url("images/foreign-languages.jpg") $nrs 100% 70%;
                 background-size: cover;
             }
         }
@@ -1566,7 +1594,7 @@ img:focus, a:focus, header:focus{
         
         &:nth-child(10){
             div{
-                background: url("images/geography.jpg") $nrs 50% 70%;
+                background: url("images/geography.jpg") $nrs 85% 70%;
                 background-size: cover;
             }
         }
@@ -1649,7 +1677,7 @@ img:focus, a:focus, header:focus{
                 position: relative;
                 top: -200px;
                 @include secondary-font;
-                color: $tertiary-color;
+                color: $acid-green;
                 opacity: 0;
                 transform: rotateY(90deg); 
                 transition: all 0.5s ease-in-out;
@@ -1672,12 +1700,20 @@ img:focus, a:focus, header:focus{
 .Hobbies-2{
 	position: relative;
 	height: 50vh;
-	background: url("images/graffiti.jpg") $nrf 100% 100%;
+	background: url("images/graffiti-1.jpg") $nrf 100% 100%;
 	background-size: cover;
 }
 
-
 .Hobbies-3{
+	position:relative;
+	height: 50vh;
+	background: url("images/breakdance.jpg") $nrf 50% 20%;
+	background-size: cover;
+	z-index:3;
+}
+
+
+.Hobbies-4{
 	position:relative;
 	height:85vh;
 	background: url("images/saxophone.jpg") $nrf 50% 20%;
@@ -1688,7 +1724,7 @@ img:focus, a:focus, header:focus{
 .Footer-1{
 	position:relative;
 	height: 17vh;
-	background: $secondary-color $nrf;
+	background: $bright-white $nrf;
 	z-index:3;
 }
 
@@ -1699,7 +1735,7 @@ img:focus, a:focus, header:focus{
 	font-size:25px;
 	letter-spacing: 2px;
 	padding-top: 35px;
-	color: $main-color;
+	color: $concrete-gray;
 	text-align: center;
 	display: inline-block;
 	transition: all .5s ease-in-out;
@@ -1711,7 +1747,7 @@ img:focus, a:focus, header:focus{
 	top:0em;
 	font-size: 90px;
 	letter-spacing: 5px;
-	color: $main-color;
+	color: $concrete-gray;
 	text-align: center;
 	display: inline-block;
 	transition: all .5s ease-in-out;
@@ -1725,7 +1761,7 @@ img:focus, a:focus, header:focus{
 	letter-spacing: 2px;
 	padding-top: 35px;
 	text-decoration: none;
-	color: $main-color;
+	color: $concrete-gray;
 	text-align: center;
 	display: inline-block;
 	transition: all .5s ease-in-out;
@@ -1739,533 +1775,980 @@ img:focus, a:focus, header:focus{
     }
 }
 
-/*==================== Modal ====================*/
- /*Prevents background from shifting to the right when modal is active
- code from: http://stackoverflow.com/questions/32862394/bootstrap-modals-keep-adding-padding-right-to-body-after-closed/41155747
- */
 
-.modal-open {
-     overflow: auto;
-	padding-right:0 !important;
- }
- /*End modal fix*/
-
- .modal-dialog {
-	 border-radius: 20px;
-	 width: 60%;
- }
-
-.modal-header, .modal-body, .modal-footer {
-	background-color:  $main-color;
-}
- .modal-title{
-	@include secondary-font;
-	font-size: 30px;
-	letter-spacing: 4px;
-	color: $secondary-color;
-	text-align: center;
- }
-
- .modal-footer > button {
-     &:before {
-        content:'';
-        position: absolute;
-        top: 0px;
-        left: 0px;
-        width: 0px;
-        height: 45px;
-        background: rgba(255,255,255,0.2);
-        border-radius: 10px;
-        transition: all 0.9s ease-in-out;
-     }
-     
-	@include secondary-font;
-	color: $main-color;
-	letter-spacing: 2px;
-    border-color: transparent;
-    border-radius: 10px;
-    transition: all 0.9s ease-in-out;
-     
-    &:hover:before, &:active:before{
-       width: 100%;
-	   border-radius:30px;   
-    }
-     
-    &:hover, &:active{
-       color: $secondary-color;
-	   background-color: rgb(130,130,130);
-       border-color: transparent;
-	   border-radius:30px;    
-    }
- }
-
- @media (max-width: 991px) and (orientation: portrait) {
+/*-----Breakpoints-----*/
+@include for-small-phone-portrait{
     .Intro-1{
-		background: url("images/subway.jpg") $nrs 20% 0%;
-		background-size: cover;
-	}
-
-	#name{
-		font-size:4em;
-		letter-spacing:6px;
-	}
-
-     #dArrow1{
-          position:absolute;
-          top: 80vh;
-     }
-
-	#intro-window{
-		position: relative;
-		top: 15vh;
-		margin: auto;
-		height:250px;
-		width: 250px;
-		background: url("images/graffiti.jpg") $nrs 47% 40%;
-		background-size: 1300px;
-		border: transparent solid 3px;
-		border-radius:50%;
-		padding: 3%;
-		transition: border 0.5s ease-in-out;
-	}
-
-	#about-me{
         position: relative;
-        top:20vh;
-		font-size:2.5em;
-        letter-spacing: 6px;
-	}
+        top: 0;
+        height: 100vh;
+        overflow: hidden;
+        background:red;
+        background-size: 100vh 100vw;
+        padding-top:35vh;
+        padding-bottom: 35vh;
+        opacity: 0.999999999;
+        z-index: auto;
+        transition: filter 0.2s ease-in-out;
 
-	#about-me-paragraph{
-        position: relative;
-        top:25vh;
-		font-size: 13px;
-		padding: 2% 10% 5% 10%;
-	}
+        #name{
+            position: relative;
+            width: auto;
+            margin: 0 auto;
+            @include main-font;
+            font-size: 10em;
+            letter-spacing: 15px;
+            color: $bright-white;    
+            text-align: center;
+            display: table;
+            padding: 10px 20px;
+            margin: auto auto;
+            border-bottom: $bright-white 3px solid;
+            border-top: $bright-white 3px solid;
+            //opacity: 0;
+            transition: border-color 0.5s ease-in-out, opacity 0.5s ease-in-out;
+        }
+
+        #down-arrow{
+            position:absolute;
+            top: 88vh;
+            display: inline-block;
+            margin-left: auto;
+            margin-right: auto;
+            left: 0;
+            right: 0;
+            display: inline-block;
+            cursor: pointer;
+            z-index: 1;
+            opacity: 0.5;
+
+            animation: updown 2s infinite 1.1s;
+            transition: opacity 0.3s ease-in-out;
+
+            &:hover{
+                opacity: 1;
+            }
+        }
+    }
+
+}
+
+@include for-large-phone-portrait{
+    
+}
+
+@include for-small-tablet-portrait{
+    .Intro-1{
+        background:url("images/subway.jpg") $nrs 20% 30%;
+        background-size: cover;
+        padding-top:45vh;
+        padding-bottom: 45vh;
+
+        #name{
+            font-size: 5em;
+            letter-spacing: 10px;
+            color: $bright-white;    
+            text-align: center;
+            display: table;
+            padding: 10px 20px;
+            margin: auto auto;
+        }
+    }
+
+    .Intro-2 {
+        .flex-item{
+            padding: 5px;
+            width: 80vw;
+            height: auto;
+            margin: 20px 0px;
+            overflow: hidden;
+
+            line-height: 30px;
+            color: $bright-white;
+            @include main-font;
+            //font-size: 3em;
+            text-align: center;
+
+            h1{
+                position: relative;
+                top: 30px;
+                //font-size: 2em;
+                //font-weight: 700;
+            } 
+
+            &:nth-child(1){
+                #intro-window{
+                    position: relative;
+                    top: 0vh;
+                    margin: 5vh auto 0vh auto;
+                    height: 600px;
+                    width: 600px;
+                    //background: url("images/road2.jpg") $nrf 55% 20%;
+                    //background-size: 1200px;
+
+                    border-radius: 50%;
+                    //filter: invert(100%);
+                    transition: border 0.5s ease-in-out, opacity 0.5s ease-in-out, filter 0.7s ease-in-out;
+
+                    #subway-video{
+                        height: 600px;
+                        width: 600px;
+                        border-radius: 50%;
+                        object-fit: cover;
+                        filter: contrast(130%);
+                    }
+                }
+            }
+
+            &:nth-child(2){
+                #about-me{
+                    position: relative;
+                    top: 10vh;
+                    //left: 50%;
+                    display: inline;
+                    text-align: center;
+                    width: 500px;
+                    @include main-font;
+                    font-size: $subheader-font-size;
+                    letter-spacing: 10px;
+                    text-align: center;
+                    color: $bright-white;
+                    //padding: 35px 35% 35px 35px;
+                    border-bottom: $bright-white 3px solid;
+                    border-top: $bright-white 3px solid;
+                    opacity: 1;
+                    transition: border-color 0.5s ease-in-out, opacity 0.5s ease-in-out;
+                }
+
+                #about-me-paragraph{
+                    position: relative;
+                    //top: 10vh;
+                    @include secondary-font;
+                    color: $bright-white;                
+                    //padding: 2% 0% 5% 0%;
+                    margin: 20vh 0vh 5vh 0vh;
+                    text-align: center;
+                    line-height: 180%;
+                    font-size: 1.2em;
+                    opacity: 0;
+
+                    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+                    transform: translateY(40px);
+                }
+            }
+        }
+    }
 
     .Education-1{
-     	position:relative;
-     	height:110vh;
-     	background: url("images/books.jpg") $nrs 23% 30%;
-     	background-size: cover;
-     	z-index:1;
+        position: relative;
+        height: 110vh;
+        background: url("images/books.jpg") $nrs 60% 30%;
+        background-size: cover;
+        @include div-padding;
+        padding-left: 5vw;
+        padding-right: 5vw;
+
+
+        #education{
+            position: relative;
+            width: auto;
+            //display: block;
+            //margin: 0 auto;
+            @include main-font;
+            font-size: $subheader-font-size;
+            letter-spacing: 7px;
+            color: $concrete-gray;    
+            text-align: left;
+            display: table;
+            border-bottom: $concrete-gray 3px solid;
+            border-top: $concrete-gray 3px solid;
+            opacity: 1;
+            transition: border-color 0.5s ease-in-out, opacity 0.5s ease-in-out;
+        }
+
+        /*targets university text*/
+        h1 + h1{
+            position: relative;
+            top: 5vh;
+            width: 300px;
+            @include secondary-font;
+            letter-spacing: 5px;
+            color: $concrete-gray;
+            font-size: 2em;       
+            text-align: left;
+            opacity: 0;
+            transition: border-color 0.5s ease-in-out, opacity 0.5s ease-in-out;
+        }
+
+        #course-list{
+            position: relative;
+            top: 5vh;
+            left: 0vw;
+            @include secondary-font;
+            text-align: left;
+            line-height: 200%;
+            font-size: 1.5em;
+            list-style-type: none;
+            margin-top: 5vh;
+        }
+    }
+
+    .Education-2 {
+        position: relative;
+        height: auto;
+        width: 100vw;
+        background: $concrete-gray;
+
+        .flex-item {
+            //padding: 5px;
+            width: 300px;
+            height: 300px;
+            margin-top: 10px;
+            margin-bottom: 30px;
+            text-align: center;
+            transition: all 0.3s ease-in-out;
+
+            h1{
+                font-size: 1.3em;
+            }
+
+            &:nth-child(1){
+                width: 100vw;
+                height: 100px;
+                margin-bottom: 10vh;
+                background: transparent;
+
+                #senior-project{
+                    position: relative;
+                    width: auto;
+                    //text-align: center;
+                    //display: block;
+                    margin: 0 auto;
+                    @include main-font;
+                    font-size: $subheader-font-size;
+                    letter-spacing: 7px;
+                    color: $bright-white;    
+                    text-align: center;
+                    @include header-padding-margin;
+                    border-bottom: $bright-white 3px solid;
+                    border-top: $bright-white 3px solid;
+                    opacity: 0;
+                    transition: border-color 0.5s ease-in-out, opacity 0.5s ease-in-out;
+                }
+            }
+            
+            &:nth-child(2){
+                div{
+                    background: url("images/drone-3-mini.jpg") $nrs 50% 10%;
+                    background-size: cover;
+                }
+            }
+
+
+            &:nth-child(3){
+                div{
+                    padding: 0 !important;
+
+                    #project-video{
+                        height: 300px;
+                        width: 300px;
+                    }
+                }
+            }
+            
+            &:nth-child(4){
+                div{
+                    background: url("images/drone-2-mini.jpg") $nrs 100% 70%;
+                    background-size: cover;
+                }
+            }
+
+            &:nth-child(5){
+                div{
+                    background: url("images/drone-1-mini.jpg") $nrs 50% 70%;
+                    background-size: cover;
+                }
+            }
+
+            &:nth-child(6){
+                div{
+                    background: url("images/board-1-smudge-mini.jpg") $nrs 30% 70%;
+                    background-size: cover;
+                }
+            }
+
+            &:nth-child(7){
+                div{
+                    background: url("images/board-2-mini.jpg") $nrs 50% 70%;
+                    background-size: cover;
+                }
+            }
+
+            &:nth-child(8){
+                div{
+                    background: url("images/board-3-mini.jpg") $nrs 50% 70%;
+                    background-size: cover;
+                }
+            }
+
+            &:nth-child(n+2){
+                clip-path: circle(50% at 50% 50%);
+
+                div{
+                    border-radius: 50%;
+                    transition: all 0.3s ease-in-out;
+                }
+
+                h2{
+                    position: relative;
+                    top: -150px;
+                }
+            }
+        }
+    }
+
+    .Education-3{
+        background: url("images/laptop.jpg") $nrs 20% 70%;
+        background-size: cover;
+
+        #online-courses{
+            position: relative;
+            width: auto;
+            //text-align: center;
+            //display: block;
+            margin: 0 auto;
+            @include main-font;
+            font-size: $subheader-font-size;
+            letter-spacing: 7px;
+            color: $bright-white;    
+            text-align: center;
+            @include header-padding-margin;
+            border-bottom: $bright-white 3px solid;
+            border-top: $bright-white 3px solid;
+            opacity: 0;
+            transition: border-color 0.5s ease-in-out, opacity 0.5s ease-in-out;
+        }
+
+        #online-list{
+            position: relative;
+            @include secondary-font;
+            text-align: center;
+            line-height: 200%;
+            font-size: 1.5em;
+            list-style-type: none;
+            margin-top: 5vh;
+        }
+    }
+
+    .Languages-1{
+        #languages{
+            position: relative;
+            width: auto;
+            //text-align: center;
+            //display: block;
+            margin: 0 auto;
+            @include main-font;
+            font-size: 4em;
+            letter-spacing: 7px;
+            color: $bright-white;    
+            text-align: center;
+            @include header-padding-margin;
+            border-bottom: $bright-white 3px solid;
+            border-top: $bright-white 3px solid;
+            opacity: 0;
+            transition: border-color 0.5s ease-in-out, opacity 0.5s ease-in-out;
+        }
+
+        #language-list{
+            position: relative;
+            @include secondary-font;
+            text-align: center;
+            line-height: 200%;
+            font-size: 1.5em;
+            list-style-type: none;
+            margin-top: 5vh;
+        }
+    }
+
+    .Languages-2{
+        background: url("images/code.jpg") $nrs 100% 20%;
+        background-size: 2000px;
+    }
+
+    .Employment-1 {
+        .flex-item{
+            padding: 5px;
+            width: 80vw;
+            height: auto;
+            margin: 20px 0px;
+            overflow: hidden;
+
+            line-height: 30px;
+            color: $bright-white;
+            @include main-font;
+            //font-size: 3em;
+            text-align: center;
+
+            h1{
+                position: relative;
+                top: 30px;
+                //font-size: 2em;
+                //font-weight: 700;
+            } 
+
+            &:nth-child(1){
+                #employment-window{
+                    position: relative;
+                    top: 0vh;
+                    margin: 5vh auto 0vh auto;
+                    height: 600px;
+                    width: 600px;
+                    //background: url("images/road2.jpg") $nrf 55% 20%;
+                    //background-size: 1200px;
+
+                    border-radius: 50%;
+                    //filter: invert(100%);
+                    transition: border 0.5s ease-in-out, opacity 0.5s ease-in-out, filter 0.7s ease-in-out;
+
+                    #drill-video{
+                        height: 600px;
+                        width: 600px;
+                        border-radius: 50%;
+                        object-fit: cover;
+                        filter: grayscale(100%);
+                    }
+                }
+            }
+
+            &:nth-child(2){
+                #employment{
+                    position: relative;
+                    top: 10vh;
+                    //left: 50%;
+                    display: inline;
+                    text-align: center;
+                    width: 500px;
+                    @include main-font;
+                    font-size: $subheader-font-size;
+                    letter-spacing: 10px;
+                    text-align: center;
+                }
+
+                #employment-paragraph{
+                    position: relative;
+                    //top: 10vh;
+                    @include secondary-font;
+                    color: $bright-white;                
+                    //padding: 2% 0% 5% 0%;
+                    margin: 20vh 0vh 5vh 0vh;
+                    text-align: center;
+                    line-height: 180%;
+                    font-size: 1.2em;
+                    opacity: 0;
+                }
+            }
+        }
+    }
+
+    .Employment-2{
+        background: url("images/hammer.jpg") $nrs 50% 0%;
+        background-size: cover;
+    }
+
+    .Skills-1{
+        background: url("images/graffiti-2.jpg") $nrs 50% 0%;
+        background-size: cover;
+
+        #additional-skills{
+            font-size: $subheader-font-size;
+            letter-spacing: 7px;
+            color: $bright-white;    
+            text-align: center;
+            @include header-padding-margin;
+        }
+
+        #skill-list{
+            position: relative;
+            @include secondary-font;
+            text-align: center;
+            line-height: 200%;
+            font-size: 1.5em;
+            list-style-type: none;
+            margin-top: 5vh;
+
+            li:nth-child(4n+1){
+                @include li-odd(rgb(200,200,200));
+            }
+
+            li:nth-child(4n+3){ 
+                @include li-even;
+            } 
+
+            *:after{
+                @include underscore;
+            }
+
+            *:hover:after{
+               transform: scaleX(1);
+            }
+        }
+
+    }
+
+    .Skills-2{    
+        background: url("images/eiffel.jpg") $nrs 50% 60%;
+        background-size: cover;
+
+        #french{
+            @include secondary-font;
+            font-size: 2em;
+            letter-spacing: 5px;
+            color: rgb(130,130,130);
+            position: relative;
+            text-align: center;
+            left: -4%;
+            margin-top: 20px;
+            opacity: 0;
+            display: inline-block;
+            transition: all .5s ease-in-out;
+
+            &:after{
+                @include underscore;
+            }
+
+            &:hover:after{
+                transform: scaleX(1);
+            }
+        }
+    }
+
+    .Skills-3{
+        background: url("images/brandenburg-gate.jpg") $nrs 50% 40%;
+        background-size: cover;
+
+        #german {
+            @include secondary-font;
+            font-size: 2em;
+            letter-spacing: 5px;
+            color: $bright-white;
+            position: relative;
+            text-align: left;
+            margin-top: 20px;
+            opacity:  0;
+            display: inline-block;
+            transition: all .5s ease-in-out;
+
+            &:after{
+                @include underscore;
+            }
+
+            &:hover:after{
+                transform: scaleX(1);
+            }
+        }
+    }
+
+    .Volunteer-1 {
+        .flex-item{
+            padding: 5px;
+            width: 80vw;
+            height: auto;
+            margin: 50px 0px;
+            overflow: hidden;
+
+            line-height: 30px;
+            color: $bright-white;
+            @include main-font;
+            //font-size: 3em;
+            text-align: center;
+
+            h1{
+                position: relative;
+                top: 30px;
+                //font-size: 2em;
+                //font-weight: 700;
+            } 
+
+             &:nth-child(1){
+                #volunteer-window{
+                    position: relative;
+                    top: 0vh;
+                    margin: 5vh auto 0vh auto;
+                    height: 600px;
+                    width: 600px;
+                    //background: url("images/road2.jpg") $nrf 55% 20%;
+                    //background-size: 1200px;
+                    border: transparent solid 3px;
+                    border-radius: 50%;
+
+                    transition: border 0.5s ease-in-out, opacity 0.5s ease-in-out, filter 0.7s ease-in-out;
+
+                    #volunteer-video{
+                        height: 600px;
+                        width: 600px;
+                        border-radius: 50%;
+                        object-fit: cover;
+                        filter: contrast(110%) grayscale(100%);
+                    }
+                }
+            }
+
+            &:nth-child(2){
+                #volunteer-work{
+                    position: relative;
+                    top: 7vh;
+                    //left: 50%;
+                    display: inline;
+                    text-align: center;
+                    width: 700px;
+                    @include main-font;
+                    font-size: 4em;
+                    letter-spacing: 10px;
+                    text-align: center;
+                    color: $bright-white;
+                    padding: 0px 35px;
+                    border-bottom: $bright-white 3px solid;
+                    border-top: $bright-white 3px solid;
+                    opacity: 0;
+                    transition: border-color 0.5s ease-in-out, opacity 0.5s ease-in-out;
+                }
+
+                #volunteer-list{
+                    position:relative;
+                    top:0vh;
+                    @include secondary-font;
+                    text-align: center;
+                    line-height: 180%;
+                    font-size: 1.5em;
+                    list-style-type:none;
+                    margin-top: 15vh;
+                    margin-bottom: 10vh;
+                    //margin: 20px 0px!important;
+                    //display: inline-block;
+
+
+
+
+                    li:nth-child(4n+1){
+                        @include li-even;
+                    }
+
+                    li:nth-child(4n+3){
+                        @include li-odd(rgb(210, 210, 210));
+                    }
+
+                    *:after{
+                        @include underscore;
+                    }
+
+                    *:hover:after{
+                        transform: scaleX(1);
+                    }
+                }
+            }
+        }
+    }
+
+    .Volunteer-2{
+        background: url("images/heart-cross.jpg") $nrs 50% 60%;
+        background-size: 75vh 50vh;
+        
+        .Volunteer-2-blurred{
+            background: url("images/heart-cross-blurred.jpg") $nrs 50% 60%;
+            background-size: 75vh 50vh;
+        }
+    }
+
+    .Volunteer-3{
+        background: url("images/care.jpg") $nrs 0% 50%;
+        background-size: 120vw;
+    }
+
+    .Hobbies-1 {
+        .flex-item {
+            //padding: 5px;
+            width: 300px;
+            height: 300px;
+            margin-top: 10px;
+            margin-bottom: 30px;
+            text-align: center;
+            transition: all 0.3s ease-in-out;
+
+            h1{
+                font-size: 1.3em;
+            }
+
+            &:nth-child(1){
+                width: 100vw;
+                height: 100px;
+                margin-bottom: 10vh;
+                background: transparent;
+
+                #hobbies{
+                    font-size: $subheader-font-size;
+                    letter-spacing: 7px;
+                    color: $bright-white;    
+                    text-align: center;
+                }
+            }
+            
+            &:nth-child(2){
+                div{
+                    background: url("images/tennis-mini.jpg") $nrs 40% 10%;
+                    background-size: cover;
+                }
+            }
+
+            &:nth-child(3){
+                div{
+                    background: url("images/trance-mini.jpg") $nrs 20% 90%;
+                    background-size: cover;
+                }
+            }
+
+            &:nth-child(4){
+                div{
+                    background: url("images/travel-mini.jpg") $nrs 100% 70%;
+                    background-size: cover;
+                }
+            }
+
+            &:nth-child(5){
+                div{
+                    background: url("images/foreign-languages-mini.jpg") $nrs 100% 70%;
+                    background-size: cover;
+                }
+            }
+
+            &:nth-child(6){
+                div{
+                    background: url("images/weight-lifting-mini.jpg") $nrs 90% 70%;
+                    background-size: cover;
+                }
+            }
+
+            &:nth-child(7){
+                div{
+                    background: url("images/running-mini.jpg") $nrs 50% 70%;
+                    background-size: cover;
+                }
+            }
+
+            &:nth-child(8){
+                div{
+                    background: url("images/cars-mini.jpg") $nrs 35% 70%;
+                    background-size: cover;
+                }
+            }
+
+            &:nth-child(9){
+                div{
+                    background: url("images/pingpong-mini.jpg") $nrs 70% 70%;
+                    background-size: cover;
+                }
+            }
+
+            &:nth-child(10){
+                div{
+                    background: url("images/geography-mini.jpg") $nrs 85% 70%;
+                    background-size: cover;
+                }
+            }
+
+            &:nth-child(11){
+                div{
+                    background: url("images/health-mini.jpg") $nrs 60% 70%;
+                    background-size: cover;
+                }
+            }
+
+            &:nth-child(12){
+                div{
+                    background: url("images/pets-mini.jpg") $nrs 30% 70%;
+                    background-size: cover;
+                }
+            }
+
+            &:nth-child(13){
+                div{
+                    background: url("images/gaming-mini.jpg") $nrs 30% 50%;
+                    background-size: cover;
+                }
+            }
+
+            &:nth-child(14){
+                div{
+                    background: url("images/music-production-mini.jpg") $nrs 50% 70%;
+                    background-size: cover;
+                }
+            }
+
+            &:nth-child(15){
+                div{
+                    background: url("images/history-mini.jpg") $nrs 60% 70%;
+                    background-size: cover;
+                }
+            }
+
+            &:nth-child(16){
+                div{
+                    background: url("images/technology-mini.jpg") $nrs 30% 70%;
+                    background-size: cover;
+                }
+            }
+
+            &:nth-child(17){
+                div{
+                    background: url("images/modern-design-mini.jpg") $nrs 30% 90%;
+                    background-size: cover;
+                }
+            }
+
+            &:nth-child(18){
+                div{
+                    background: url("images/reading-mini.jpg") $nrs 30% 70%;
+                    background-size: cover;
+                }
+            }
+
+            &:nth-child(19){
+                div{
+                    background: url("images/dubstep-mini.jpg") $nrs 30% 90%;
+                    background-size: cover;
+                }
+            }
+
+            &:nth-child(n+2){
+                clip-path: circle(50% at 50% 50%);
+
+                div{
+                    width: 100%;
+                    height: 0;
+                    padding: 50% 0;
+                    border-radius: 50%;
+                    transition: all 0.3s ease-in-out;
+                }
+
+                h2{
+                    position: relative;
+                    top: -150px;
+                    @include secondary-font;
+                    color: $acid-green;
+                    opacity: 0;
+                    transform: rotateY(90deg); 
+                    transition: all 0.5s ease-in-out;
+                }
+
+                &:hover h2{
+                        opacity: 1;
+                        transform: rotateY(0deg); 
+                }
+
+                &:hover div{
+                    filter: brightness(20%);
+                }
+            }
+
+
+        }
+    }
+
+    .Hobbies-2{
+        background: url("images/graffiti-1.jpg") $nrs 50% 50%;
+        background-size: cover;
+    }
+
+    .Hobbies-3{
+        background: url("images/breakdance.jpg") $nrs 50% 20%;
+        background-size: cover;
     }
 
 
-	#education{
-        top:0vh;
-		font-size:2.5em;
-        width: 5em;
-        letter-spacing: 6px;
-		margin-top: 40px;
-	}
+    .Hobbies-4{
+        background: url("images/saxophone.jpg") $nrs 50% 20%;
+        background-size: cover;
+        z-index:3;
+    }
 
-	header + header{
-		font-size: 0.9em;
-	}
-
-	#courseList{
-        top:10vh;
-		font-size:12px;
-		left:0vw;
-	}
-
-	#projects-button{
-	    position: relative;
-	    top: 20vh;
-	    @include secondary-font;
-	    letter-spacing: 4px;
-	    color: $secondary-color;
-	    background-color: $main-color;
-	    border:  $main-color;
-	    border-radius: 10px;
-     }
-
-     .Languages-1{
-        height:75vh;
-     }
-
-     #languages{
-        font-size:2.5em;
-        letter-spacing: 6px;
-     }
-
-	#languageList{
-		font-size: 1em;
-	}
-
-     .Languages-2{
-     	position: relative;
-     	height:50vh;
-     	background: url("images/code.jpg")  $nrs 0% 20%;
-     	background-size:50vh;
-     	z-index:4;
-     }
-
-     .Skills-1{
-     	position:relative;
-     	height:75vh;
-     	background: url("images/graffiti2.jpg") $nrs 25% 60%;
-     	background-size:1500px;
-     	z-index:1;
-     }
-
-     #additionalSkills{
-          position: relative;
-          top: 10vh;
-          font-size:2.5em;
-          letter-spacing: 6px;
-          text-align: center;
-     }
-
-     #skillList{
-          font-size: 1em;
-     }
-
-	.Skills-2{
-		height:50vh;
-		background: url("images/eiffel.jpg") $nrs 51% 60%;
-		background-size: 900px;
-		z-index:3;
-	}
-
-	#french {
-	   position:relative;
-	   left: 5%;
-	   font-size: 15px;
-	}
-
-	.Skills-3{
-		background: url("images/brandenburggate.jpg") $nrs 80% 40%;
-	}
-
-	#german{
-	     position:relative;
-	     left: -30%;
-	     font-size: 15px;
-	}
-
-     .Volunteer-1{
-          height:130vh;
-     }
-
-	#volunteer-window{
-		position: relative;
-		top: 15vh;
-		margin: auto;
-		height:250px;
-		width: 250px;
-		background: url("images/care.jpg") $nrs 70% 0%;
-		background-size: 1300px;
-		border: transparent solid 3px;
-		border-radius:50%;
-		transition: border 0.5s ease-in-out;
-     }
-
-     #volunteer-work{
-          font-size:2.5em;
-          letter-spacing: 6px;
-     }
-
-	#volunteer-list{
-		font-size:1em;
-	}
-
-	.Volunteer-2{
-		background: url("images/heartcross.jpg") $nrs 48% 60%;
-		background-size: 3000px;
-	}
-
-
-	.Hobbies-1{
-		background: url("images/breakdance.jpg") $nrs 35% 10%;
-          height:80vh;
-		background-size: 130vh;
-	}
-
-     #hobbies{
-          font-size:2.5em;
-          letter-spacing: 6px;
-     }
-
-	#hobby-icons{
-		top: 45vh;
-        
-        *:hover{
-            transform: scale(1.2);
-        }
-	}
-
-	.hobby-icons-buffer{
-		margin-top:25px;
-	}
-
-	.Hobbies-3{
-		background: url("images/saxophone.jpg") $nrs 60% 0%;
-		background-size: 2900px;
-		z-index:3;
-	}
-
-	#end{
-		font-size: 35px;
-		padding-top: 25px;
-	}
-
-	#thanks{
-		font-size:15px;
-		padding-top: 30px;
-	}
-
-	#icons8{
-		font-size: 15px;
-		padding-top:18px;
-	}
-
-    .modal-dialog{
-         top:4em;
-         left:0.5em;
-    	 border-radius: 20px;
-    	 width: 90%;
-     }
- }
-
- @media (max-width: 991px) and (orientation: landscape) {
-      .Intro-1{
-          background: url("images/subway.jpg") $nrs 20% 60%;
-          background-size: 1000px;
-      }
-
-      #name{
-          font-size:3.7em;
-          letter-spacing:6px;
-      }
-
-      .Intro-2{
-           height: 210vh;
-      }
-
-      #intro-window{
-          position: relative;
-          top: 15vh;
-          margin: auto;
-          height:250px;
-          width: 250px;
-          background: url("images/graffiti.jpg") $nrs 47% 40%;
-          background-size: 1500px;
-          border: transparent solid 3px;
-          border-radius:50%;
-          padding: 3%;
-          transition: border 0.5s ease-in-out;
-      }
-
-      #about-me{
-          position: relative;
-          top:20vh;
-          font-size:2.3em;
-          letter-spacing: 6px;
-          padding: 0% 2% 0% 2%;
-          text-align: center;
-      }
-
-      #about-me-paragraph{
-          position: relative;
-          top:20vh;
-          font-size: 13px;
-          padding: 2% 10% 5% 10%;
-      }
-
-      .Education-1{
-          position:relative;
-          height:150vh;
-          background: url("images/books.jpg") $nrs 23% 30%;
-          background-size: 2300px;
-          z-index:1;
-      }
-
-
-      #education{
-          font-size:2.5em;
-          width: 5em;
-          letter-spacing: 6px;
-          margin-top: 40px;
-      }
-
-      header + header{
-          font-size: 0.9em;
-      }
-
-      #courseList{
-          font-size:12px;
-          left:0%;
-          top:10vh;
-          width:40vw;
-      }
-
-      #projects-button{
-          position: relative;
-          top: 80vh;
-          @include secondary-font;
-          letter-spacing: 4px;
-          color: $secondary-color;
-          background-color: $main-color;
-          border:  $main-color;
-          border-radius: 10px;
-      }
-
-      .Languages-1{
-          height:115vh;
-      }
-
-      #languages{
-          font-size:2.5em;
-          letter-spacing: 6px;
-      }
-
-      #languageList{
-          font-size: 1em;
-          transition: opacity  0.5s ease-in-out;
-      }
-
-      .Languages-2{
-          position: relative;
-          height:50vh;
-          background: url("images/code.jpg")  $nrs 0% 20%;
-          background-size:3000px;
-          z-index:4;
-      }
-
-      .Skills-1{
-          position:relative;
-          height:130vh;
-          background: url("images/graffiti2.jpg") $nrs 25% 60%;
-          background-size:1500px;
-          z-index:1;
-      }
-
-      #additionalSkills{
-           position: relative;
-          top:15vh;
-          font-size:2.5em;
-          letter-spacing: 6px;
-          padding: 1% 2% 1% 2%;
-      }
-
-      #skillList{
-          top: 20vh;
-          font-size: 1em;
-      }
-
-      .Skills-2{
-          height:50vh;
-          background: url("images/eiffel.jpg") $nrs 51% 60%;
-          background-size: 900px;
-          z-index:3;
-      }
-
-      #french {
+    .Footer-1{
         position:relative;
-        left: 5%;
-        font-size: 15px;
-      }
+        height: 17vh;
+        background: $bright-white $nrf;
+        z-index:3;
+    }
 
-      .Skills-3{
-          background: url("images/brandenburggate.jpg") $nrs 80% 40%;
-      }
+    #thanks{
+        @include secondary-font;
+        position: relative;
+        top:0.5em;
+        font-size:25px;
+        letter-spacing: 2px;
+        padding-top: 35px;
+        color: $concrete-gray;
+        text-align: center;
+        display: inline-block;
+        transition: all .5s ease-in-out;
+    }
 
-      #german{
-          position:relative;
-          left: -10%;
-          font-size: 15px;
-      }
+    #end{
+        @include main-font;
+        position: relative;
+        top:0em;
+        font-size: 90px;
+        letter-spacing: 5px;
+        color: $concrete-gray;
+        text-align: center;
+        display: inline-block;
+        transition: all .5s ease-in-out;
+    }
 
-      .Volunteer-1{
-          height:160vh;
-      }
+    #icons8{
+        @include secondary-font;
+        position: relative;
+        top:0.5em;
+        font-size:25px;
+        letter-spacing: 2px;
+        padding-top: 35px;
+        text-decoration: none;
+        color: $concrete-gray;
+        text-align: center;
+        display: inline-block;
+        transition: all .5s ease-in-out;
 
-      #volunteer-window{
-          position: relative;
-          top: 15vh;
-          margin: auto;
-          height:250px;
-          width: 250px;
-          background: url("images/care.jpg") $nrs 70% 0%;
-          background-size: 1200px;
-          border: transparent solid 3px;
-          border-radius:50%;
-          transition: border 0.5s ease-in-out;
-      }
+        &:after{
+            @include underscore;
+        }
 
-      #volunteer-work{
-          font-size:2.5em;
-          letter-spacing: 6px;
-      }
-
-      #volunteer-list{
-          font-size:1em;
-      }
-
-      .Volunteer-2{
-          background: url("images/heartcross.jpg") $nrs 48% 50%;
-          background-size: 2900px;
-      }
-
-
-      .Hobbies-1{
-          background: url("images/breakdance.jpg") $nrs 35% 10%;
-          height:130vh;
-          background-size: 130vw;
-      }
-
-      #hobbies{
-          font-size:2.5em;
-          letter-spacing: 6px;
-      }
-
-      #hobby-icons{
-          top: 80vh;
-          
-          *:hover{
-              transform: scale(1.2);
-          }
-      }
-
-      .hobby-icons-buffer{
-          margin-top:25px;
-      }
-
-      .Hobbies-3{
-          background: url("images/saxophone.jpg") $nrs 60% 30%;
-          background-size: 2500px;
-          z-index:3;
-      }
-
-      .Footer-1{
-          position: relative;
-          height: 15vh;
-      }
-
-      #end{
-          font-size: 2.7em;
-          padding-top: 0px;
-      }
-
-      #thanks{
-          font-size:15px;
-          padding-top: 10px;
-      }
-
-      #icons8{
-          font-size: 15px;
-          padding-top:10px;
-      }
-
-      .modal-dialog{
-          top:4em;
-          left:0.5em;
-          border-radius: 20px;
-          width: 90%;
-      }
+        &:hover:after{
+            transform: scaleX(1);
+        }
+    }
 }
+
+@include for-phone-landscape{
+    
+}
+
+@include for-large-tablet-portrait{
+    
+}
+
+@include for-small-tablet-landscape{
+    
+}
+
+@include for-small-desktop-or-large-tablet-landscape{
+    
+}
+
+@include for-2K-and-4K-desktop-landscape{
+    
+}
+
+
+
+
+
 /*-----Browser specific scss -----*/
 
 //
@@ -2280,6 +2763,10 @@ img:focus, a:focus, header:focus{
     //fixes background image scaling problems on divs with parallax background sizes
     .Intro-1, .Skills-2, .Volunteer-2, .Volunteer-2-blurred, .Hobbies-3{
         background-size: cover !important;
+    }
+    
+    .Intro-1{
+        background-attachment: scroll;
     }
     
     //A fixed div inside another fixed div causes jumping in edge
