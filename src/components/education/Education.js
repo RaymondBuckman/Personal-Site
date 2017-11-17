@@ -42,7 +42,7 @@ class Education extends Component {
                                 <source src={subwayVideo} type="video/mp4"></source>
                             </video> 
                         </div>
-                        <h2>Demo</h2>
+                        <h2>Flight Demo</h2>
                     </li>
                     <li className="flex-item scrollmagic-circle">
                         <div></div>
