@@ -283,7 +283,7 @@ $(document).ready(function(){
         .addTo(controller);
         
         var employment2ParallaxTween = TweenMax.from(".Employment-2", 1, { 
-            backgroundPositionY: "-=50px",
+            backgroundPositionY: "-=100px",
             autoRound:false, 
             ease:Power1.easeOut
         });
@@ -352,6 +352,20 @@ $(document).ready(function(){
         .setTween(hobbies2ParallaxTween)
         .addTo(controller);
         
+        var hobbies3ParallaxTween = TweenMax.from(".Hobbies-3", 1, { 
+            backgroundPositionX: "-=200px",
+            autoRound:false, 
+            ease:Power1.easeOut
+        });
+
+        var hobbies3Parallaxscene = new ScrollMagic.Scene({
+            triggerElement: ".Hobbies-3",
+            triggerHook: 1,
+            duration: "200%"
+        })
+        .setTween(hobbies3ParallaxTween)
+        .addTo(controller);
+        
         var hobbies4ParallaxTween = TweenMax.from(".Hobbies-4", 1, { 
             backgroundSize: "+=300px +=199.65px",
             autoRound:false, 
@@ -398,14 +412,14 @@ $(document).ready(function(){
         .addTo(controller);
 
         var intro1BrightestTween = TweenMax.to(".Intro-1", 0.01, {
-            filter: "brightness(300%)",
+            filter: "brightness(250%)",
             autoRound:false, 
             ease:Power0.linear
         });
         
         var intro1BrightestScene = new ScrollMagic.Scene({
         triggerElement: ".Intro-2",
-        triggerHook: 0.5,
+        triggerHook: 0.4,
         })
         .setTween(intro1BrightestTween)
         .addTo(controller);
