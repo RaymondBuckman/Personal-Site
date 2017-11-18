@@ -1,19 +1,3 @@
-/*
-    - Changed units for circular flex-items to px across the board
-    - me.jpg is compressed to 24KB
-    - higher resolution break-dancer image added for desktop/laptop
-    - mini images added for background-images in half-screen divs
-    - overhauled background-images: all background images for desktops/laptops are QHD resolution
-    - overhaual 
-    - pexels.com link is now in the sidebar
-    - lowered max brightness on .Intro-1 tween
-    - changed the height of smaller content-less divs to 40vh on mobile
-    - changed the sidebar animation so it no longer pushes the content #page-content-wrapper when active. 
-    - redone VolunteerWork.js with #volunteer-paragraph replacing #volunteer-list
-    - increased rate of parallax effect on .Employment-2
-    - changed footer height to auto
-*/
-
 @import url('https://fonts.googleapis.com/css?family=Akronim');
 @import url('https://fonts.googleapis.com/css?family=Covered+By+Your+Grace|Prosto+One|Satisfy');
 
@@ -109,25 +93,17 @@ $hobby-list: tennis gaming trance travel foreignlanguages weight-lifting running
     margin: 0 auto;
 }
 
-@mixin div-padding{
-    padding-top: 15vh;
-    padding-bottom: 15vh;
+@mixin div-padding($padding-value: 15vh){
+    padding-top: $padding-value;
+    padding-bottom: $padding-value;
 }
 
-@mixin for-small-phone-portrait {
-    @media (max-width: 399px){ @content; }
-}
-
-@mixin for-large-phone-portrait {
-    @media (min-width: 400px) and (max-width: 599px) { @content; }
-}
-
-@mixin for-small-tablet-portrait {
-    @media (min-width: 600px) and (max-width: 899px) and (orientation: portrait){ @content; }
+@mixin for-phone-and-tablet-portrait {
+    @media (max-width: 899px) and (orientation: portrait){ @content; }
 }
 
 @mixin for-phone-landscape {
-    @media (min-width: 600px) and (max-width: 899px) and (orientation: landscape){ @content; }
+    @media (max-width: 899px) and (orientation: landscape){ @content; }
 }
 
 @mixin for-large-tablet-portrait {
@@ -1713,7 +1689,7 @@ img:focus, a:focus, header:focus{
 .Hobbies-4{
 	position:relative;
 	height:85vh;
-	background: url("images/city-1.jpg") $nrf 50% 0%;
+	background: url("images/escalator.jpg") $nrf 50% 60%;
 	background-size: 100vw $hobbies-4-height;
 	z-index:3;
 }
@@ -1722,6 +1698,7 @@ img:focus, a:focus, header:focus{
 	position:relative;
 	height: auto;
 	background: $concrete-gray $nrf;
+    //@include div-padding(1vh);
 	
     #thanks{
         @include secondary-font;
@@ -1729,9 +1706,11 @@ img:focus, a:focus, header:focus{
         top:0.5em;
         font-size:25px;
         letter-spacing: 2px;
-        padding-top: 35px;
         color: $bright-white;
         text-align: center;
+        margin-top: 40px;
+        margin-bottom: 40px;
+        vertical-align: middle;
         display: inline-block;
         transition: all .5s ease-in-out;
     }
@@ -1754,10 +1733,11 @@ img:focus, a:focus, header:focus{
         top:0.5em;
         font-size:25px;
         letter-spacing: 2px;
-        padding-top: 35px;
         text-decoration: none;
         color: $bright-white;
         text-align: center;
+        margin-top: 40px;
+        margin-bottom: 40px;
         display: inline-block;
         transition: all .5s ease-in-out;
 
@@ -1772,7 +1752,7 @@ img:focus, a:focus, header:focus{
 }
 
 /*-----Breakpoints-----*/
-@include for-small-tablet-portrait{
+@include for-phone-and-tablet-portrait{
     .Intro-1{
         background:url("images/subway.jpg") $nrs 20% 30%;
         background-size: cover;
@@ -2589,7 +2569,7 @@ img:focus, a:focus, header:focus{
 
 
     .Hobbies-4{
-        background: url("images/saxophone.jpg") $nrs 50% 20%;
+        background: url("images/escalator.jpg") $nrs 10% 20%;
         background-size: cover;
         z-index:3;
     }
@@ -3380,7 +3360,7 @@ img:focus, a:focus, header:focus{
 
 
     .Hobbies-4{
-        background: url("images/saxophone.jpg") $nrs 50% 20%;
+        background: url("images/escalator.jpg") $nrs 50% 30%;
         background-size: cover;
         z-index:3;
     }
