@@ -453,32 +453,32 @@ $(document).ready(function(){
     .addTo(controller);
     
     var volunteer2ParallaxTween = TweenMax.from(".Volunteer-2", 1, { 
-            backgroundSize: "+=400px +=266.8px", //changes bg image size without changing proportions
-            autoRound:false, 
-            ease:Power1.easeOut
-        });
+        backgroundSize: "+=400px +=266.8px", //changes bg image size without changing proportions
+        autoRound:false, 
+        ease:Power1.easeOut
+    });
 
-        var volunteer2Parallaxscene = new ScrollMagic.Scene({
-            triggerElement: ".Volunteer-2",
-            triggerHook: 1,
-            duration: "200%"
-        })
-        .setTween(volunteer2ParallaxTween)
-        .addTo(controller);
+    var volunteer2Parallaxscene = new ScrollMagic.Scene({
+        triggerElement: ".Volunteer-2",
+        triggerHook: 1,
+        duration: "200%"
+    })
+    .setTween(volunteer2ParallaxTween)
+    .addTo(controller);
 
-        var volunteer2BlurredParallaxTween = TweenMax.from(".Volunteer-2-blurred", 1, { 
-            backgroundSize: "+=400px +=266.8px", //changes bg image size without changing proportions
-            autoRound:false, 
-            ease:Power1.easeOut
-        });
+    var volunteer2BlurredParallaxTween = TweenMax.from(".Volunteer-2-blurred", 1, { 
+        backgroundSize: "+=400px +=266.8px", //changes bg image size without changing proportions
+        autoRound:false, 
+        ease:Power1.easeOut
+    });
 
-        var volunteer2BlurredParallaxscene = new ScrollMagic.Scene({
-            triggerElement: ".Volunteer-2-blurred",
-            triggerHook: 1,
-            duration: "200%"
-        })
-        .setTween(volunteer2BlurredParallaxTween)
-        .addTo(controller);
+    var volunteer2BlurredParallaxscene = new ScrollMagic.Scene({
+        triggerElement: ".Volunteer-2-blurred",
+        triggerHook: 1,
+        duration: "200%"
+    })
+    .setTween(volunteer2BlurredParallaxTween)
+    .addTo(controller);
 
     var volunteer2DisappearParallaxTween = TweenMax.to(".Volunteer-2-blurred", 1, { 
         opacity: "1",
