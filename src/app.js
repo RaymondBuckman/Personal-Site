@@ -662,19 +662,19 @@ $(document).ready(function(){
         
     /*----- List fade in scenes -----*/
     var courseListOddScene = new ScrollMagic.Scene({
-        triggerElement: '#course-list li:nth-child(odd)',
+        triggerElement: '#education-list li:nth-child(odd)',
         triggerHook: 0.8,
         reverse: false    
     })
-    .setClassToggle('#course-list li:nth-child(odd)', 'fade-in')
+    .setClassToggle('#education-list li:nth-child(odd)', 'fade-in')
     .addTo(controller);
         
     var courseListEvenScene = new ScrollMagic.Scene({
-        triggerElement: '#course-list li:nth-child(odd)',
+        triggerElement: '#education-list li:nth-child(odd)',
         triggerHook: 0.8,
         reverse: false    
     })
-    .setClassToggle('#course-list li:nth-child(even)', 'fade-in')
+    .setClassToggle('#education-list li:nth-child(even)', 'fade-in')
     .addTo(controller);
     
     var onlineListOddScene = new ScrollMagic.Scene({
