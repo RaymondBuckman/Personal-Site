@@ -14,7 +14,7 @@ class Education extends Component {
                     Computer Engineering<br/>
                     San Jose State University
                 </h1>
-                <ul id="course-list" className="scrollmagic-fade-in">
+                <ul id="education-list" className="scrollmagic-fade-in">
                     <li>Operating Systems</li><br/>
                     <li>Database Systems I</li><br/>
                     <li>Computer Architecture</li><br/>
@@ -34,7 +34,10 @@ class Education extends Component {
                         </h1></li>
                     <li className="flex-item scrollmagic-circle">
                         <div></div>
-                        <h2>Flight Controller Board</h2>
+                        <span className="text-container">
+                            <h2>RC Over IP</h2>
+                            <p>Our project, named RC Over IP, was to build a drone controlled via a smartphone app.</p>
+                        </span>
                     </li>
                     <li className="flex-item scrollmagic-circle">
                         <div>
@@ -42,23 +45,47 @@ class Education extends Component {
                                 <source src={subwayVideo} type="video/mp4"></source>
                             </video> 
                         </div>
-                        <h2>Flight Demo</h2>
+                        <span className="text-container">
+                            <h2>How It Works</h2>
+                            <p>The app sends data to the drone's microcontroller via UDP (User Datagram Protocol) over the drone's Wifi connection. The UDP packets then get decoded & translated into PWM signals, which get sent to the flight controller board.</p>
+                        </span>
                     </li>
                     <li className="flex-item scrollmagic-circle">
                         <div></div>
-                        <h2>Propellers & Controller</h2>
+                        <span className="text-container">
+                            <h2>The App</h2>
+                            <p>The app consists of two on-screen joysticks. Each joystick moves in two axes (x and y) for a total of 4 position values:  roll, pitch, yaw and throttle. Those inputs affect the RPM of each of the drone's propellors.</p>
+                        </span>
                     </li>
                     <li className="flex-item scrollmagic-circle">
                         <div></div>
-                        <h2>Drone Structure</h2>
+                        <span className="text-container">
+                            <h2>The Frame</h2>
+                            <p>The frame is made completely out of aluminum to minimize both weight & damage in case of a crash. Weight distrubtion was key to ensure predictable flight behavior. </p>
+                        </span>
                     </li>
                     <li className="flex-item scrollmagic-circle">
                         <div></div>
-                        <h2>Project Board</h2>
+                        <span className="text-container">
+                            <h2>The Flight Controller Board</h2>
+                            <p>The board contains a 32-bit ARM processor along with several sensors, including a gyroscope. It takes in directional control data from the user in the form of PWM signals, reads the data in real time, then outputs PWM signals to the motors.</p>
+                        </span>
                     </li>
                     <li className="flex-item scrollmagic-circle">
                         <div></div>
-                        <h2>Project Booth</h2>
+                        <span className="text-container">
+                            <h2>Parts List</h2>
+                            <p> &#8226; ST450 Kit Quadcopter Folding Frame<br/>
+                                &#8226; 4 KA20-22L 924KV Brushless Motors<br/>
+                                &#8226; DYS 30A Brushless ESC<br/>
+                                &#8226; APC 10x4.7 propeller set<br/>
+                                &#8226; FunFly Controller "Naze32"<br/>
+                                &#8226; ArduCopter 3DR PDB<br/>
+                                &#8226; Mbed NXP LPC 1768<br/>
+                                &#8226; Roving Networks WiFly 2.21 RC<br/>
+                                &#8226; Voltz 2200 mAh battery                         
+                            </p>
+                        </span>
                     </li>
                 </ul>
             </div>
