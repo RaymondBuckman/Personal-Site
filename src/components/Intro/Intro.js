@@ -8,8 +8,8 @@ class Intro extends Component {
         <div> 
             <div className="Intro-1" id="top-of-page">
                         <h1 id="name">
-                            <span id="name_R">R</span><span id="name_a">a</span><span id="name_y">y</span><span id="name_m">m</span><span id="name_o">o</span><span id="name_nd">nd</span>
-                            <span id="name_B">B</span><span id="name_uc">uc</span><span id="name_k">k</span>ma<span id="name_n">n</span>
+                            Ra<span id="name_ym">ym</span>ond
+                            <span id="name_B">B</span>uckman
                         </h1>
                         <img id="down-arrow" src="https://png.icons8.com/downward-arrow/ios7/73/ffffff" height="60px"></img>            
             </div>
@@ -21,6 +21,11 @@ class Intro extends Component {
                             <video preload="preload" id="subway-video" autoPlay="autoplay" loop="loop" muted>
                                 <source src={subwayVideo} type="video/mp4"></source>
                             </video> 
+                            {/*
+                            <span className="text-container">
+                                <h2>Concrete Jungle</h2>
+                            </span>
+                            */}
                         </div>
                     </li>
                     <li className="flex-item">
