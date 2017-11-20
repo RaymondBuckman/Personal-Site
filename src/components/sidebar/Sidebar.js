@@ -13,7 +13,9 @@ class Sidebar extends Component {
             <ul className="sidebar-nav">
                 <div className="profile-image">
                     <div></div>
-                    <h2>Me</h2>
+                    <span className="text-container">
+                        <h2>Me</h2>
+                    </span>
                 </div>                
                 <li>
                     <a href="https://www.linkedin.com/in/raymondbuckman" target="_blank">
