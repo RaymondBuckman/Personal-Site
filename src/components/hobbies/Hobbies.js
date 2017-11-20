@@ -12,75 +12,129 @@ class Hobbies extends Component {
                         </h1></li>
                     <li className="flex-item scrollmagic-circle">
                         <div></div>
-                        <h2>Tennis</h2>
+                        <span className="text-container">
+                            <h2>Tennis</h2>
+                            <p>Favorite players:<br/>Rafael Nadal<br/>Stan Wawrinka<br/>Venus Williams<br/>Simona Halep</p>
+                        </span>
                     </li>
                     <li className="flex-item scrollmagic-circle">
                         <div></div>
-                        <h2>Trance</h2>
+                        <span className="text-container">
+                            <h2>Trance</h2>
+                            <p>Favorite song:<br/>Sail - Armin van Buuren</p>
+                        </span>
                     </li>
                     <li className="flex-item scrollmagic-circle">
                         <div></div>
-                        <h2>Travel</h2>
+                        <span className="text-container">
+                            <h2>Travel</h2>
+                            <p>Bucket list:<br/>Croatia<br/>Turkey<br/>Japan</p>
+                        </span>
                     </li>
                     <li className="flex-item scrollmagic-circle">
                         <div></div>
-                        <h2>Foreign Languages & Culture</h2>
+                        <span className="text-container">
+                            <h2>Foreign Languages</h2>
+                            <p>Вы можете читать это?<br/>Check out my <a href="https://www.duolingo.com/xKrankenhausx" target="_blank" tabIndex="0">Duolingo</a> account</p>
+                        </span>
                     </li>
                     <li className="flex-item scrollmagic-circle">
                         <div></div>
-                        <h2>Weight-Lifting</h2>
+                        <span className="text-container">
+                            <h2>Weight-Lifting</h2>
+                            <p>Mind over matter</p>
+                        </span>
                     </li>
                     <li className="flex-item scrollmagic-circle">
                         <div></div>
-                        <h2>Running</h2>
+                        <span className="text-container">
+                            <h2>Running</h2>
+                            <p>Treadmill hog</p>
+                        </span>
                     </li>
                     <li className="flex-item scrollmagic-circle">
                         <div></div>
-                        <h2>Cars & Driving</h2>
+                        <span className="text-container">
+                            <h2>Cars & Driving</h2>
+                            <p>Dream car: McLaren 720S</p>
+                        </span>
                     </li>
                     <li className="flex-item scrollmagic-circle">
                         <div></div>
-                        <h2>Ping Pong</h2>
+                        <span className="text-container">
+                            <h2>Ping Pong</h2>
+                            <p>#KillerBackhand</p>
+                        </span>
                     </li>
                     <li className="flex-item scrollmagic-circle">
                         <div></div>
-                        <h2>Geography</h2>
+                        <span className="text-container">
+                            <h2>Geography</h2>
+                            <p>Geography Now<br/>#NotificationSquad</p>
+                        </span>
                     </li>
                     <li className="flex-item scrollmagic-circle">
                         <div></div>
-                        <h2>Health & Nutrition</h2>
+                        <span className="text-container">
+                            <h2>Health & Nutrition</h2>
+                            <p>You are what you eat!</p>
+                        </span>
                     </li>
                     <li className="flex-item scrollmagic-circle">
                         <div></div>
-                        <h2>Pets</h2>
+                        <span className="text-container">
+                            <h2>Pets</h2>
+                            <p>Two dogs & two guinea pigs</p>   
+                        </span>
                     </li>
                     <li className="flex-item scrollmagic-circle">
                         <div></div>
-                        <h2>Gaming</h2>
+                        <span className="text-container">
+                            <h2>Gaming</h2>
+                            <p>Favorite games:<br/>Metroid Prime 1-3<br/>Killer Instinct<br/>MK9/MKX<br/>Injustice 2<br/>Skyrim<br/>Super Smash Bros. Melee</p>
+                        </span>
                     </li>
                     <li className="flex-item scrollmagic-circle">
                         <div></div>
-                        <h2>Music Production</h2>
+                        <span className="text-container">
+                            <h2>Music Production</h2>
+                            <p>FL Studio novice</p>
+                        </span>
                     </li>
                     <li className="flex-item scrollmagic-circle">
                         <div></div>
-                        <h2>History</h2>
+                        <span className="text-container">
+                            <h2>History</h2>
+                            <p>Turns out the Ivan wasn't so terrible...</p>
+                        </span>
                     </li>
                     <li className="flex-item scrollmagic-circle">
                         <div></div>
-                        <h2>Technology</h2>
+                        <span className="text-container">
+                            <h2>Technology</h2>
+                            <p>Vorsprung Durch Technik</p>
+                        </span>
                     </li>
                     <li className="flex-item scrollmagic-circle">
                         <div></div>
-                        <h2>Modern Design</h2>
+                        <span className="text-container">
+                            <h2>Modern Design</h2>
+                            <p>Less is more</p>
+                        </span>
                     </li>
                     <li className="flex-item scrollmagic-circle">
                         <div></div>
-                        <h2>Reading</h2>
+                        <span className="text-container">
+                            <h2>Reading</h2>
+                            <p>Favorite book:<br/>Les Miserables</p>
+                        </span>
                     </li>
                     <li className="flex-item scrollmagic-circle">
                         <div></div>
-                        <h2>Dubstep</h2>
+                        <span className="text-container">
+                            <h2>Dubstep</h2>
+                            <p>Wub wub wub</p>
+                        </span>
                     </li>
                 </ul>
             </div>
