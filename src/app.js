@@ -50,6 +50,10 @@ ReactDOM.render(
 $(document).ready(function(){  
     var laptopsAndDesktops = window.matchMedia( "(min-width: 1420px)" );
     var borderRadius = "40px 20px 40px 20px";
+    var navBrowserHeight = 50/$(window).height();
+   
+    //window.alert(navBrowserHeight);
+    
     
     $("#down-arrow").click(function() {
         $('html, body').animate({
@@ -76,8 +80,9 @@ $(document).ready(function(){
 
 
         var pinTopNavScene = new ScrollMagic.Scene({
-            triggerElement: '.navbar',
-            triggerHook: 0
+            triggerElement: '.Education-1',
+            autoRound: false,
+            triggerHook: navBrowserHeight 
         })
         .setPin('.navbar')
         .addTo(controller);
@@ -89,9 +94,9 @@ $(document).ready(function(){
         }); */
 
         var changeTopNavColorScene = new ScrollMagic.Scene({
-            triggerElement: '.navbar',
+            triggerElement: '.Education-1',
             autoRound: false,
-            triggerHook: 0
+            triggerHook: navBrowserHeight 
         })
         .setClassToggle('.navbar', 'black-nav')
         .addTo(controller);
