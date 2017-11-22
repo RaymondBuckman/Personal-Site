@@ -35,7 +35,7 @@ class Hobbies extends Component {
                         <div></div>
                         <span className="text-container">
                             <h2>Foreign Languages</h2>
-                            <p>Вы можете читать это?<br/>Check out my <a href="https://www.duolingo.com/xKrankenhausx" target="_blank" tabIndex="0">Duolingo</a> account</p>
+                            <p>Вы можете читать это? Я могу!<br/>Check out my <a href="https://www.duolingo.com/xKrankenhausx" target="_blank" tabIndex="0">Duolingo</a> account</p>
                         </span>
                     </li>
                     <li className="flex-item scrollmagic-circle">
@@ -126,7 +126,7 @@ class Hobbies extends Component {
                         <div></div>
                         <span className="text-container">
                             <h2>Reading</h2>
-                            <p>Favorite book:<br/>Les Miserables</p>
+                            <p>Favorite fiction: Les Miserables</p>
                         </span>
                     </li>
                     <li className="flex-item scrollmagic-circle">
