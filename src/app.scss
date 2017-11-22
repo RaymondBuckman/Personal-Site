@@ -1,15 +1,3 @@
-/*
-    - Expanded content on circular flex-items
-    - h2s in circular flex-items are now have Akronim font
-    - more robust scss is now used to center text inside the circular divs
-    - Sidebar #profile-image text is now centered
-    - Renamed #course-list to #education-list for more consistent semantics
-    - Fixed issue with #education-list elements not behaving correctly on hover
-    - Deleted unnecessary spans that were targeting unused letters
-    - Changed Footer text from End to Fin. Id is also also changed accordingly
-    - Navbar jank has been fixed by making the Trigger Hook based off .Educaton-1 instead of .navbar
-*/
-
 @import url('https://fonts.googleapis.com/css?family=Akronim');
 @import url('https://fonts.googleapis.com/css?family=Covered+By+Your+Grace|Prosto+One|Satisfy');
 
@@ -237,13 +225,6 @@ img:focus, a:focus, header:focus{
 
 .scrollmagic-pin-spacer{
     top: 0px !important;
-}
-
-.tooltip-span{
-    @include secondary-font;
-    color: #fff;
-    position: fixed !important;
-    top: 0 !important;
 }
 
 .fade-in{
@@ -3425,6 +3406,10 @@ img:focus, a:focus, header:focus{
     }
 
     .Intro-2 {
+        .flex-container{
+            padding: 10vh 5vw;
+        }
+        
         .flex-item{
             padding: 5px;
             width: 80vw;
@@ -3490,7 +3475,7 @@ img:focus, a:focus, header:focus{
                     //top: 10vh;
                     @include secondary-font;               
                     //padding: 2% 0% 5% 0%;
-                    margin: 10vh 0vh 5vh 0vh;
+                    margin: 10vh 0vh 0vh 0vh;
                     line-height: 180%;
                     font-size: 1em;
                 }
@@ -3503,7 +3488,7 @@ img:focus, a:focus, header:focus{
         height: auto;
         background: url("images/books.jpg") $nrs 60% 30%;
         background-size: cover;
-        padding: 5vh 5vw 10vh 5vw;
+        padding: 10vh 5vw;
 
         #education{
             position: relative;
@@ -3727,6 +3712,10 @@ img:focus, a:focus, header:focus{
     }
 
     .Employment-1 {
+        .flex-container{
+            padding: 10vh 5vw;
+        }
+        
         .flex-item{
             padding: 5px;
             width: 80vw;
@@ -3751,7 +3740,7 @@ img:focus, a:focus, header:focus{
                 #employment-window{
                     position: relative;
                     top: 0vh;
-                    margin: 5vh auto 0vh auto;
+                    margin: 0vh auto 0vh auto;
                     height: 600px;
                     width: 600px;
                     //background: url("images/road2.jpg") $nrf 55% 20%;
@@ -3774,7 +3763,7 @@ img:focus, a:focus, header:focus{
             &:nth-child(2){
                 #employment{
                     position: relative;
-                    top: 10vh;
+                    top: 5vh;
                     //left: 50%;
                     display: inline;
                     text-align: center;
@@ -3791,7 +3780,7 @@ img:focus, a:focus, header:focus{
                     @include secondary-font;
                     color: $bright-white;                
                     //padding: 2% 0% 5% 0%;
-                    margin: 20vh 0vh 5vh 0vh;
+                    margin: 10vh 0vh 0vh 0vh;
                     text-align: center;
                     line-height: 180%;
                     font-size: 1em;
@@ -3802,7 +3791,7 @@ img:focus, a:focus, header:focus{
     }
 
     .Employment-2{
-        height: 50vh;
+        height: 40vh;
         background: url("images/hammer-mini.jpg") $nrs 50% 0%;
         background-size: cover;
     }
@@ -3810,6 +3799,7 @@ img:focus, a:focus, header:focus{
     .Skills-1{
         background: url("images/graffiti-2.jpg") $nrs 50% 0%;
         background-size: cover;
+        padding: 10vh 5vw;
 
         #additional-skills{
             font-size: 4em;
@@ -3841,11 +3831,15 @@ img:focus, a:focus, header:focus{
     }
 
     .Volunteer-1 {
+        .flex-container{
+            padding: 10vh 5vw;
+        }
+        
         .flex-item{
             padding: 5px;
             width: 80vw;
             height: auto;
-            margin: 50px 0px;
+            margin: 20px 0px;
             overflow: hidden;
 
             line-height: 30px;
@@ -3865,7 +3859,7 @@ img:focus, a:focus, header:focus{
                 #volunteer-window{
                     position: relative;
                     top: 0vh;
-                    margin: 5vh auto 0vh auto;
+                    margin: 0vh auto 0vh auto;
                     height: 600px;
                     width: 600px;
                     //background: url("images/road2.jpg") $nrf 55% 20%;
@@ -3888,7 +3882,7 @@ img:focus, a:focus, header:focus{
             &:nth-child(2){
                 #volunteer-work{
                     position: relative;
-                    top: 7vh;
+                    top: 5vh;
                     //left: 50%;
                     display: inline;
                     text-align: center;
@@ -3910,7 +3904,7 @@ img:focus, a:focus, header:focus{
                     @include secondary-font;
                     color: $bright-white;                
                     //padding: 2% 0% 5% 0%;
-                    margin: 20vh 0vh 5vh 0vh;
+                    margin: 10vh 0vh 0vh 0vh;
                     text-align: center;
                     line-height: 180%;
                     font-size: 1em;
@@ -3923,12 +3917,12 @@ img:focus, a:focus, header:focus{
     .Volunteer-2{
         height: 40vh;
         background: url("images/heart-cross-mini.jpg") $nrs 50% 50%;
-        background-size: 225vh 150vh;
+        background-size: 150vh 100vh;
         
         .Volunteer-2-blurred{
             height: 40vh;
             background: url("images/heart-cross-blurred-mini.jpg") $nrs 50% 50%;
-            background-size: 225vh 150vh;
+            background-size: 150vh 100vh;
         }
     }
 
@@ -3939,6 +3933,9 @@ img:focus, a:focus, header:focus{
     }
 
     .Hobbies-1 {
+        .flex-container{
+            padding: 10vh 5vw;
+        }
         .flex-item {
             //padding: 5px;
             width: 400px;
@@ -3955,7 +3952,7 @@ img:focus, a:focus, header:focus{
             &:nth-child(1){
                 width: 100vw;
                 height: 100px;
-                margin-bottom: 10vh;
+                margin-bottom: 5vh;
                 background: transparent;
 
                 #hobbies{
@@ -4176,7 +4173,793 @@ img:focus, a:focus, header:focus{
 }
 
 @include for-2K-and-4K-desktop-landscape{
-    
+    .Intro-1{
+        background: url("images/subway.jpg") $nrf 20% 30%;
+        background-size: 100vw $intro-1-height;
+        padding-top: 35vh;
+        padding-bottom: 15vh;
+
+        #name{
+            font-size: 15em;
+            letter-spacing: 10px;
+            padding: 10px 20px;
+            margin: auto auto;
+        }
+        
+        #down-arrow{
+            top: 90vh;
+        }
+    }
+
+    .Intro-2 {
+        height: auto;
+        
+        .flex-container{
+            padding: 10vh 5vw;
+        }
+        
+        .flex-item{
+            padding: 5px;
+            width: 80vw;
+            height: auto;
+            margin: 20px 0px;
+            overflow: hidden;
+
+            line-height: 30px;
+            color: $bright-white;
+            @include main-font;
+            //font-size: 3em;
+            text-align: center;
+
+            h1{
+                position: relative;
+                top: 30px;
+                //font-size: 2em;
+                //font-weight: 700;
+            } 
+
+            &:nth-child(1){
+                #intro-window{
+                    position: relative;
+                    top: 0vh;
+                    margin: 5vh auto 0vh auto;
+                    height: 900px;
+                    width: 900px;
+                    //background: url("images/road2.jpg") $nrf 55% 20%;
+                    //background-size: 1200px;
+
+                    border-radius: 50%;
+                    //filter: invert(100%);
+                    transition: border 0.5s ease-in-out, opacity 0.5s ease-in-out, filter 0.7s ease-in-out;
+
+                    #subway-video{
+                        height: 900px;
+                        width: 900px;
+                        border-radius: 50%;
+                        object-fit: cover;
+                        filter: contrast(130%);
+                    }
+                }
+            }
+
+            &:nth-child(2){
+                #about-me{
+                    position: relative;
+                    top: 15vh;
+                    //left: 50%;
+                    display: inline;
+                    text-align: center;
+                    width: 500px;
+                    @include main-font;
+                    font-size: 10em;
+                    letter-spacing: 10px;
+                    //padding: 35px 35% 35px 35px;
+                    border-bottom: $bright-white 3px solid;
+                    border-top: $bright-white 3px solid;
+                }
+
+                #about-me-paragraph{
+                    position: relative;
+                    top: 15vh;
+                    @include secondary-font;               
+                    padding-bottom: 10%;
+                    margin: 10vh 0vh 0vh 0vh;
+                    line-height: 180%;
+                    font-size: 2em;
+                }
+            }
+        }
+    }
+
+    .Education-1{
+        position: relative;
+        height: auto;
+        background: url("images/books.jpg") $nrf 20% 30%;
+        background-size: 130vw;
+        padding: 10vh 5vw;
+
+        #education{
+            position: relative;
+            width: auto;
+            //display: block;
+            //margin: 0 auto;
+            @include main-font;
+            font-size: 10em;
+            letter-spacing: 7px;
+            color: $concrete-gray;    
+            text-align: left;
+            display: table;
+            border-bottom: $concrete-gray 3px solid;
+            border-top: $concrete-gray 3px solid;
+            opacity: 1;
+            transition: border-color 0.5s ease-in-out, opacity 0.5s ease-in-out;
+        }
+
+        /*targets university text*/
+        h1 + h1{
+            position: relative;
+            top: 3vh;
+            width: 35vw;
+            @include secondary-font;
+            letter-spacing: 5px;
+            color: $concrete-gray;
+            font-size: 3em;       
+            text-align: left;
+            opacity: 0;
+            transition: border-color 0.5s ease-in-out, opacity 0.5s ease-in-out;
+        }
+
+        #education-list{
+            position: relative;
+            top: 0vh;
+            left: 0vw;
+            @include secondary-font;
+            text-align: left;
+            line-height: 200%;
+            font-size: 2em;
+            list-style-type: none;
+            margin-top: 5vh;
+        }
+    }
+
+    .Education-2 {
+        position: relative;
+        height: auto;
+        width: 100vw;
+        background: $concrete-gray;
+        
+        .flex-container {
+            padding: 10vh 5vw;
+        }
+        
+
+        .flex-item {
+            //padding: 5px;
+            width: 700px;
+            height: 700px;
+            margin-top: 30px;
+            margin-bottom: 30px;
+            text-align: center;
+            transition: all 0.3s ease-in-out;
+
+            &:nth-child(1){
+                width: 100vw;
+                height: 100px;
+                margin-bottom: 20vh;
+                background: transparent;
+
+                #senior-project{
+                    position: relative;
+                    height: auto;
+                    width: auto;
+                    //text-align: center;
+                    //display: block;
+                    margin: 0 auto;
+                    @include main-font;
+                    font-size: 10em;
+                    letter-spacing: 7px;
+                    color: $bright-white;    
+                    text-align: center;
+                    @include header-padding-margin;
+                    border-bottom: $bright-white 3px solid;
+                    border-top: $bright-white 3px solid;
+                    opacity: 0;
+                    transition: border-color 0.5s ease-in-out, opacity 0.5s ease-in-out;
+                }
+            }
+            
+            &:nth-child(2){
+                div{
+                    background: url("images/drone-3.jpg") $nrs 50% 10%;
+                    background-size: cover;
+                }
+            }
+
+
+            &:nth-child(3){
+                div{
+                    padding: 0 !important;
+
+                    #project-video{
+                        height: 700px;
+                        width: 700px;
+                    }
+                }
+            }
+            
+            &:nth-child(4){
+                div{
+                    background: url("images/drone-2.jpg") $nrs 100% 70%;
+                    background-size: cover;
+                }
+            }
+
+            &:nth-child(5){
+                div{
+                    background: url("images/drone-1.jpg") $nrs 50% 70%;
+                    background-size: cover;
+                }
+            }
+
+            &:nth-child(6){
+                div{
+                    background: url("images/board-1-smudge.jpg") $nrs 30% 70%;
+                    background-size: cover;
+                }
+            }
+
+            &:nth-child(7){
+                div{
+                    background: url("images/board-2.jpg") $nrs 50% 70%;
+                    background-size: cover;
+                }
+            }
+
+            &:nth-child(8){
+                div{
+                    background: url("images/board-3.jpg") $nrs 50% 70%;
+                    background-size: cover;
+                }
+            }
+            
+            &:nth-child(n+2){
+                h2{
+                    font-size: 3em !important;
+                }
+                
+                p{
+                    font-size: 1.3em !important;
+                }
+            }
+        }
+    }
+
+    .Education-3{
+        background: url("images/laptop.jpg") $nrf 20% 70%;
+        background-size: cover;
+        @include div-padding(15vh);
+
+        #online-courses{
+            position: relative;
+            width: auto;
+            //text-align: center;
+            //display: block;
+            margin: 0 auto;
+            @include main-font;
+            font-size: 10em;
+            letter-spacing: 7px;
+            color: $bright-white;    
+            text-align: center;
+            @include header-padding-margin;
+            border-bottom: $bright-white 3px solid;
+            border-top: $bright-white 3px solid;
+            opacity: 0;
+            transition: border-color 0.5s ease-in-out, opacity 0.5s ease-in-out;
+        }
+
+        #online-list{
+            position: relative;
+            @include secondary-font;
+            text-align: center;
+            line-height: 180%;
+            font-size: 2em;
+            list-style-type: none;
+            margin-top: 10vh;
+        }
+    }
+
+    .Languages-1{
+        @include div-padding(15vh);
+        
+        #languages{
+            position: relative;
+            width: auto;
+            //text-align: center;
+            //display: block;
+            margin: 0 auto;
+            @include main-font;
+            font-size: 10em;
+            letter-spacing: 7px;
+            color: $bright-white;    
+            text-align: center;
+            @include header-padding-margin;
+            border-bottom: $bright-white 3px solid;
+            border-top: $bright-white 3px solid;
+            opacity: 0;
+            transition: border-color 0.5s ease-in-out, opacity 0.5s ease-in-out;
+        }
+
+        #language-list{
+            position: relative;
+            @include secondary-font;
+            text-align: center;
+            line-height: 180%;
+            font-size: 2em;
+            list-style-type: none;
+            margin-top: 10vh;
+        }
+    }
+
+    .Languages-2{
+        height: 50vh;
+        background: url("images/code-mini.jpg") $nrf 100% 20%;
+        background-size: 150vw;
+    }
+
+    .Employment-1 {
+        .flex-container{
+            padding: 10vh 5vw;
+        }
+        
+        .flex-item{
+            padding: 5px;
+            width: 80vw;
+            height: auto;
+            margin: 20px 0px;
+            overflow: hidden;
+
+            line-height: 30px;
+            color: $bright-white;
+            @include main-font;
+            //font-size: 3em;
+            text-align: center;
+
+            h1{
+                position: relative;
+                top: 30px;
+                //font-size: 2em;
+                //font-weight: 700;
+            } 
+
+            &:nth-child(1){
+                #employment-window{
+                    position: relative;
+                    top: 0vh;
+                    margin: 0vh auto 0vh auto;
+                    height: 900px;
+                    width: 900px;
+                    //background: url("images/road2.jpg") $nrf 55% 20%;
+                    //background-size: 1200px;
+
+                    border-radius: 50%;
+                    //filter: invert(100%);
+                    transition: border 0.5s ease-in-out, opacity 0.5s ease-in-out, filter 0.7s ease-in-out;
+
+                    #drill-video{
+                        height: 900px;
+                        width: 900px;
+                        border-radius: 50%;
+                        object-fit: cover;
+                        filter: grayscale(100%);
+                    }
+                }
+            }
+
+            &:nth-child(2){
+                #employment{
+                    position: relative;
+                    top: 15vh;
+                    //left: 50%;
+                    display: inline;
+                    text-align: center;
+                    width: 500px;
+                    @include main-font;
+                    font-size: 10em;
+                    letter-spacing: 10px;
+                    //padding: 35px 35% 35px 35px;
+                    border-bottom: $bright-white 3px solid;
+                    border-top: $bright-white 3px solid;
+                }
+
+                #employment-paragraph{
+                    position: relative;
+                    top: 15vh;
+                    @include secondary-font;               
+                    padding-bottom: 10%;
+                    margin: 10vh 0vh 0vh 0vh;
+                    line-height: 180%;
+                    font-size: 2em;
+                }
+            }
+        }
+    }
+
+    .Employment-2{
+        height: 40vh;
+        background: url("images/hammer-mini.jpg") $nrf 50% 0%;
+        background-size: cover;
+    }
+
+    .Skills-1{
+        background: url("images/graffiti-2.jpg") $nrf 50% 0%;
+        background-size: cover;
+        padding: 10vh 5vw;
+
+        #additional-skills{
+            font-size: 10em;
+            letter-spacing: 7px;
+        }
+
+        #skill-list{
+            position: relative;
+            @include secondary-font;
+            text-align: center;
+            line-height: 180%;
+            font-size: 2em;
+            list-style-type: none;
+            margin-top: 5vh;
+        }
+
+    }
+
+    .Skills-2{    
+        height: 50vh;
+        background: url("images/eiffel-mini.jpg") $nrf 50% 60%;
+        background-size: 100vw $skills-2-height;
+    }
+
+    .Skills-3{
+        height: 50vh;
+        background: url("images/brandenburg-gate-mini.jpg") $nrf 90% 35%;
+        background-size: 120vw;
+    }
+
+    .Volunteer-1 {
+        .flex-container{
+            padding: 10vh 5vw;
+        }
+        
+        .flex-item{
+            padding: 5px;
+            width: 80vw;
+            height: auto;
+            margin: 20px 0px;
+            overflow: hidden;
+
+            line-height: 30px;
+            color: $bright-white;
+            @include main-font;
+            //font-size: 3em;
+            text-align: center;
+
+            h1{
+                position: relative;
+                top: 30px;
+                //font-size: 2em;
+                //font-weight: 700;
+            } 
+
+             &:nth-child(1){
+                #volunteer-window{
+                    position: relative;
+                    top: 0vh;
+                    margin: 0vh auto 0vh auto;
+                    height: 900px;
+                    width: 900px;
+                    //background: url("images/road2.jpg") $nrf 55% 20%;
+                    //background-size: 1200px;
+                    border: transparent solid 3px;
+                    border-radius: 50%;
+
+                    transition: border 0.5s ease-in-out, opacity 0.5s ease-in-out, filter 0.7s ease-in-out;
+
+                    #volunteer-video{
+                        height: 900px;
+                        width: 900px;
+                        border-radius: 50%;
+                        object-fit: cover;
+                        filter: contrast(110%) grayscale(100%);
+                    }
+                }
+            }
+
+            &:nth-child(2){
+                #volunteer-work{
+                    position: relative;
+                    top: 15vh;
+                    //left: 50%;
+                    display: inline;
+                    text-align: center;
+                    width: 500px;
+                    @include main-font;
+                    font-size: 10em;
+                    letter-spacing: 10px;
+                    //padding: 35px 35% 35px 35px;
+                    border-bottom: $bright-white 3px solid;
+                    border-top: $bright-white 3px solid;
+                }
+
+                #volunteer-paragraph{
+                    position: relative;
+                    top: 15vh;
+                    @include secondary-font;               
+                    padding-bottom: 10%;
+                    margin: 10vh 0vh 0vh 0vh;
+                    line-height: 180%;
+                    font-size: 2em;
+                }
+            }
+        }
+    }
+
+    .Volunteer-2{
+        height: 50vh;
+        background: url("images/heart-cross-mini.jpg") $nrf 50% 50%;
+        background-size: 210vh 140vh;
+        
+        .Volunteer-2-blurred{
+            height: 50vh;
+            background: url("images/heart-cross-blurred-mini.jpg") $nrf 50% 50%;
+            background-size: 210vh 140vh;
+        }
+    }
+
+    .Volunteer-3{
+        height: 40vh;
+        background: url("images/care-mini.jpg") $nrf 0% 50%;
+        background-size: 120vw;
+    }
+
+    .Hobbies-1 {
+        .flex-container{
+            padding: 10vh 5vw;
+        }
+        .flex-item {
+            //padding: 5px;
+            width: 700px;
+            height: 700px;
+            margin-top: 10px;
+            margin-bottom: 30px;
+            text-align: center;
+            transition: all 0.3s ease-in-out;
+
+            h1{
+                font-size: 1.3em;
+            }
+
+            &:nth-child(1){
+                width: 100vw;
+                height: 100px;
+                margin-bottom: 20vh;
+                background: transparent;
+
+                #hobbies{
+                    font-size: 10em;
+                    letter-spacing: 7px;
+                    color: $bright-white;    
+                    text-align: center;
+                }
+            }
+            
+            &:nth-child(2){
+                div{
+                    background: url("images/tennis-mini.jpg") $nrs 40% 10%;
+                    background-size: cover;
+                }
+            }
+
+            &:nth-child(3){
+                div{
+                    background: url("images/trance-mini.jpg") $nrs 20% 90%;
+                    background-size: cover;
+                }
+            }
+
+            &:nth-child(4){
+                div{
+                    background: url("images/travel-mini.jpg") $nrs 100% 70%;
+                    background-size: cover;
+                }
+            }
+
+            &:nth-child(5){
+                div{
+                    background: url("images/foreign-languages-mini.jpg") $nrs 100% 70%;
+                    background-size: cover;
+                }
+            }
+
+            &:nth-child(6){
+                div{
+                    background: url("images/weight-lifting-mini.jpg") $nrs 90% 70%;
+                    background-size: cover;
+                }
+            }
+
+            &:nth-child(7){
+                div{
+                    background: url("images/running-mini.jpg") $nrs 50% 70%;
+                    background-size: cover;
+                }
+            }
+
+            &:nth-child(8){
+                div{
+                    background: url("images/cars-mini.jpg") $nrs 35% 70%;
+                    background-size: cover;
+                }
+            }
+
+            &:nth-child(9){
+                div{
+                    background: url("images/pingpong-mini.jpg") $nrs 70% 70%;
+                    background-size: cover;
+                }
+            }
+
+            &:nth-child(10){
+                div{
+                    background: url("images/geography-mini.jpg") $nrs 85% 70%;
+                    background-size: cover;
+                }
+            }
+
+            &:nth-child(11){
+                div{
+                    background: url("images/health-mini.jpg") $nrs 60% 70%;
+                    background-size: cover;
+                }
+            }
+
+            &:nth-child(12){
+                div{
+                    background: url("images/pets-mini.jpg") $nrs 30% 70%;
+                    background-size: cover;
+                }
+            }
+
+            &:nth-child(13){
+                div{
+                    background: url("images/gaming-mini.jpg") $nrs 30% 50%;
+                    background-size: cover;
+                }
+            }
+
+            &:nth-child(14){
+                div{
+                    background: url("images/music-production-mini.jpg") $nrs 50% 70%;
+                    background-size: cover;
+                }
+            }
+
+            &:nth-child(15){
+                div{
+                    background: url("images/history-mini.jpg") $nrs 60% 70%;
+                    background-size: cover;
+                }
+            }
+
+            &:nth-child(16){
+                div{
+                    background: url("images/technology-mini.jpg") $nrs 30% 70%;
+                    background-size: cover;
+                }
+            }
+
+            &:nth-child(17){
+                div{
+                    background: url("images/modern-design-mini.jpg") $nrs 30% 90%;
+                    background-size: cover;
+                }
+            }
+
+            &:nth-child(18){
+                div{
+                    background: url("images/reading-mini.jpg") $nrs 30% 70%;
+                    background-size: cover;
+                }
+            }
+
+            &:nth-child(19){
+                div{
+                    background: url("images/dubstep-mini.jpg") $nrs 30% 90%;
+                    background-size: cover;
+                }
+            }
+            
+            &:nth-child(n+2){
+                h2{
+                    font-size: 3em !important;
+                }
+                
+                p{
+                    font-size: 1.3em !important;
+                }
+            }
+        }
+    }
+
+    .Hobbies-2{
+        height: 50vh;
+        background: url("images/graffiti-1-mini.jpg") $nrf 50% 50%;
+        background-size: cover;
+    }
+
+    .Hobbies-3{
+        height: 50vh;
+        background: url("images/break-dancer-mini.jpg") $nrf 50% 50%;
+        background-size: 110vw;
+    }
+
+
+    .Hobbies-4{
+        background: url("images/escalator.jpg") $nrf 0% 30%;
+        background-size: cover;
+    }
+
+    .Footer-1{
+        position:relative;
+        height: auto;
+        background: $concrete-gray $nrf;
+        
+        #thanks{
+            @include secondary-font;
+            position: relative;
+            top: 0.5em;
+            font-size: 3em;
+            letter-spacing: 2px;
+            padding-top: 35px;
+            color: $bright-white;
+            text-align: center;
+            display: inline-block;
+            transition: all .5s ease-in-out;
+        }
+
+        #fin{
+            @include main-font;
+            position: relative;
+            top: 0em;
+            font-size: 10em;
+            letter-spacing: 5px;
+            color: $bright-white;
+            margin: 4vh 0;
+            text-align: center;
+            display: inline-block;
+            transition: all .5s ease-in-out;
+        }
+
+        #icons8{
+            @include secondary-font;
+            position: relative;
+            top: 0.5em;
+            font-size: 3em;
+            letter-spacing: 2px;
+            padding-top: 35px;
+            text-decoration: none;
+            color: $bright-white;
+            text-align: center;
+            display: inline-block;
+            transition: all .5s ease-in-out;
+
+            &:after{
+                @include underscore;
+            }
+
+            &:hover:after{
+                transform: scaleX(1);
+            }
+        }
+    }
 }
 
 

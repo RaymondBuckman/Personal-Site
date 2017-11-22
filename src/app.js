@@ -260,7 +260,7 @@ $(document).ready(function(){
     if(laptopsAndDesktops.matches){
         var intro1ParallaxTween = TweenMax.to(".Intro-1", 1, {
             backgroundSize: "+=200px +=133.3332px",
-            backgroundPositionX: "-=50%",
+            backgroundPositionX: "-=20%",
             autoRound:false, 
             ease:Power1.ease0ut
         });

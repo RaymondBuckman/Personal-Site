@@ -1,10 +1,5 @@
 import React, { Component } from 'react';
-//import arrowRed from '../../img/arrow-red.png';
-//import arrowLightBlue from '../../img/arrow-light-blue.png';
-//import arrowDarkBlue from '../../img/arrow-dark-blue.png';
 import $ from "jquery";
-//import Draggable from "gsap/Draggable";
-
 
 class Sidebar extends Component {
     render() {
