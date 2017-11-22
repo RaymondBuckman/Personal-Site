@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import ReactTooltip from 'react-tooltip';
 import subwayVideo from '../../images/subway-video.mp4';
 
 class Intro extends Component {
@@ -50,11 +49,6 @@ class Intro extends Component {
                     <img id="nav-icon" height="40px"></img>
                 </div>
             </nav>
-            
-            <ReactTooltip id="scroll" place="top" type="dark"
-            effect="solid" delayShow={300} role="tooltip">
-                <span className="tooltip-span">Scroll down</span>
-            </ReactTooltip>
         </div>           
         );
     }
