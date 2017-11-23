@@ -210,7 +210,7 @@ body{
 #skill-list > *:hover,
 #french:hover,
 #german:hover,
-#hobby-icons > *:hover,
+#duolingo:hover,
 #icons8:hover {
 	animation: occasionalBlurOnHover 4s infinite;
 }
@@ -1573,9 +1573,23 @@ img:focus, a:focus, header:focus{
                 background-size: cover;
             }
             
-            a{
+            #duolingo{
                 color: $acid-green;
                 text-decoration: none;
+                display: inline-block;
+                transition: all 0.5s ease-in-out;
+                
+                &:hover{
+                    color: $bright-white;    
+                }
+                
+                &:after{
+                    @include underscore;
+                }
+
+                &:hover:after{
+                   transform: scaleX(1);
+                }
             }
         }
         

@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import subwayVideo from '../../images/drone-video.mp4';
 
-
 class Education extends Component {
     render() {
         return(

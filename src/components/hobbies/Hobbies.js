@@ -21,21 +21,22 @@ class Hobbies extends Component {
                         <div></div>
                         <span className="text-container">
                             <h2>Trance</h2>
-                            <p>Favorite song:<br/>Sail - Armin van Buuren</p>
+                            <p>Favorite songs:<br/>Sail - Armin van Buuren<br/>Polygons - Tomac & Mad<br/>Musica - Giuseppe Ottaviani<br/>Ondine - Nhato</p>
                         </span>
                     </li>
                     <li className="flex-item scrollmagic-circle">
                         <div></div>
                         <span className="text-container">
                             <h2>Travel</h2>
-                            <p>Bucket list:<br/>Croatia<br/>Turkey<br/>Japan</p>
+                            <p>Bucket list:<br/>Croatia<br/>Turkey<br/>Japan<br/>Georgia</p>
                         </span>
                     </li>
                     <li className="flex-item scrollmagic-circle">
                         <div></div>
                         <span className="text-container">
                             <h2>Foreign Languages</h2>
-                            <p>Вы можете читать это? Я могу!<br/>Check out my <a href="https://www.duolingo.com/xKrankenhausx" target="_blank" tabIndex="0">Duolingo</a> account</p>
+                            <p>Вы можете читать это? Я могу!<br/>
+                            Check out my <a id="duolingo" href="https://www.duolingo.com/xKrankenhausx" target="_blank" tabIndex="0">Duolingo</a> account</p>
                         </span>
                     </li>
                     <li className="flex-item scrollmagic-circle">
@@ -126,14 +127,14 @@ class Hobbies extends Component {
                         <div></div>
                         <span className="text-container">
                             <h2>Reading</h2>
-                            <p>Favorite fiction: Les Miserables</p>
+                            <p>Favorite book: Les Miserables</p>
                         </span>
                     </li>
                     <li className="flex-item scrollmagic-circle">
                         <div></div>
                         <span className="text-container">
                             <h2>Dubstep</h2>
-                            <p>Wub wub wub</p>
+                            <p>Favorite artists:<br/>Kromestar<br/>Von D<br/>Skream<br/>Distance</p>
                         </span>
                     </li>
                 </ul>
