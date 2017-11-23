@@ -16,7 +16,6 @@ import $ from "jquery";
 import {TweenMax, Power2, TimelineLite} from "gsap";
 import scrollTo from '../node_modules/gsap/ScrollToPlugin';
 import ScrollMagic from 'scrollmagic';
-import ReactTooltip from 'react-tooltip';
 
 import 'imports-loader?define=>false!scrollmagic/scrollmagic/uncompressed/plugins/animation.gsap.js';
 import 'imports-loader?define=>false!scrollmagic/scrollmagic/uncompressed/plugins/debug.addIndicators.js';
