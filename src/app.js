@@ -27,7 +27,7 @@ ReactDOM.render(
             <div id="sidebar-wrapper">
                 <Sidebar />
             </div>
-            <img id="menu" src="https://png.icons8.com/xbox-menu/ios7/73/ffffff" height="40px" tabIndex="0"></img>
+            <img id="menu" src="https://png.icons8.com/xbox-menu/ios7/73/ffffff" tabIndex="0"></img>
             <img id="close" src="https://png.icons8.com/cancel/ios7/73/ffffff" height="40px"></img>
             <div id="page-content-wrapper">
                 <Intro />
@@ -48,10 +48,24 @@ ReactDOM.render(
 
 $(document).ready(function(){  
     var laptopsAndDesktops = window.matchMedia( "(min-width: 1420px)" );
-    var borderRadius = "40px 20px 40px 20px";
+    var borderRadius = "30px 15px 30px 15px";
+    var menu = document.getElementById("menu");
+    var close = document.getElementById("close");
+    var downArrow = document.getElementById("down-arrow");
     var navBrowserHeight = 50/$(window).height();
-   
-    //window.alert(navBrowserHeight);
+    
+    
+    
+    //hange button size based on screen
+    if(laptopsAndDesktops.matches){
+        menu.height = "40";
+        close.height = "40";
+        downArrow.height = "60";
+    }else{
+        menu.height = "70";
+        close.height = "70";
+        downArrow.height = "70";
+    }
     
     
     $("#down-arrow").click(function() {
@@ -256,22 +270,7 @@ $(document).ready(function(){
     /* ----Background Scroll animations -----*/
     
     //only perform these background tweens on laptops & desktops
-    if(laptopsAndDesktops.matches){
-        var intro1ParallaxTween = TweenMax.to(".Intro-1", 1, {
-            backgroundSize: "+=200px +=133.3332px",
-            backgroundPositionX: "-=20%",
-            autoRound:false, 
-            ease:Power1.ease0ut
-        });
-
-        var intro1Parallaxscene = new ScrollMagic.Scene({
-            triggerElement: ".Intro-1", 
-            duration: "100%",
-            triggerHook:0
-        })
-        .setTween(intro1ParallaxTween)
-        .addTo(controller);
-        
+    if(laptopsAndDesktops.matches){        
         var education1ParallaxTween = TweenMax.to(".Education-1", 1, { 
             backgroundPositionX: "+=80%",
             autoRound:false, 
@@ -284,20 +283,6 @@ $(document).ready(function(){
             duration: "200%"
         })
         .setTween(education1ParallaxTween)
-        .addTo(controller);
-        
-        var employment2ParallaxTween = TweenMax.from(".Employment-2", 1, { 
-            backgroundPositionY: "-=100px",
-            autoRound:false, 
-            ease:Power1.easeOut
-        });
-
-        var employment2Parallaxscene = new ScrollMagic.Scene({
-            triggerElement: ".Employment-2",
-            triggerHook: 1,
-            duration: "200%"
-        })
-        .setTween(employment2ParallaxTween)
         .addTo(controller);
 
         var skills2ParallaxTween = TweenMax.to(".Skills-2", 1, { 
@@ -341,20 +326,6 @@ $(document).ready(function(){
         })
         .setTween(volunteer3ParallaxTween)
         .addTo(controller);
-
-        var hobbies2ParallaxTween = TweenMax.from(".Hobbies-2", 1, { 
-            backgroundPositionY: "-=100px",
-            autoRound:false, 
-            ease:Power1.easeOut
-        });
-
-        var hobbies2Parallaxscene = new ScrollMagic.Scene({
-            triggerElement: ".Hobbies-2",
-            triggerHook: 1,
-            duration: "200%"
-        })
-        .setTween(hobbies2ParallaxTween)
-        .addTo(controller);
         
         var hobbies3ParallaxTween = TweenMax.from(".Hobbies-3", 1, { 
             backgroundPositionX: "-=200px",
@@ -368,29 +339,14 @@ $(document).ready(function(){
             duration: "200%"
         })
         .setTween(hobbies3ParallaxTween)
-        .addTo(controller);
-        
-        var hobbies4ParallaxTween = TweenMax.from(".Hobbies-4", 1, { 
-            backgroundSize: "+=300px +=199.65px",
-            autoRound:false, 
-            ease:Power1.easeIn
-        });
-
-        var hobbies4Parallaxscene = new ScrollMagic.Scene({
-            triggerElement: ".Hobbies-4",
-            triggerHook: 1,
-            duration: "150%"
-        })
-        .setTween(hobbies4ParallaxTween)
-        .addTo(controller); 
-        
+        .addTo(controller);        
     }
      
     
     //Do for all browsers except Firefox
     if (!(/Firefox/i.test(navigator.userAgent))){
         var intro1BrighterTween = TweenMax.to(".Intro-1", 0.01, {
-            filter: "brightness(150%)",
+            filter: "brightness(133%)",
             autoRound:false, 
             ease:Power0.linear
         });
@@ -403,7 +359,7 @@ $(document).ready(function(){
         .addTo(controller);
 
         var intro1EvenBrighterTween = TweenMax.to(".Intro-1", 0.01, {
-            filter: "brightness(200%)",
+            filter: "brightness(167%)",
             autoRound:false, 
             ease:Power0.linear
         });
@@ -416,7 +372,7 @@ $(document).ready(function(){
         .addTo(controller);
 
         var intro1BrightestTween = TweenMax.to(".Intro-1", 0.01, {
-            filter: "brightness(250%)",
+            filter: "brightness(200%)",
             autoRound:false, 
             ease:Power0.linear
         });
@@ -427,7 +383,22 @@ $(document).ready(function(){
         })
         .setTween(intro1BrightestTween)
         .addTo(controller);
-    }    
+    }  
+    
+    var intro1ParallaxTween = TweenMax.to(".Intro-1", 1, {
+        backgroundSize: "+=300px +=199.9999998px",
+        backgroundPositionX: "-=10%",
+        autoRound:false, 
+        ease:Power1.ease0ut
+    });
+
+    var intro1Parallaxscene = new ScrollMagic.Scene({
+        triggerElement: ".Intro-1", 
+        duration: "100%",
+        triggerHook:0
+    })
+    .setTween(intro1ParallaxTween)
+    .addTo(controller);
 
     var languages2ParallaxTween = TweenMax.to(".Languages-2", 1, { 
         backgroundPositionX: "-=30%",
@@ -454,6 +425,20 @@ $(document).ready(function(){
         triggerHook: 0.25,
     })
     .setTween(languages2InvertTween)
+    .addTo(controller);
+    
+    var employment2ParallaxTween = TweenMax.from(".Employment-2", 1, { 
+        backgroundPositionY: "-=200px",
+        autoRound:false, 
+        ease:Power1.easeOut
+    });
+
+    var employment2Parallaxscene = new ScrollMagic.Scene({
+        triggerElement: ".Employment-2",
+        triggerHook: 1,
+        duration: "200%"
+    })
+    .setTween(employment2ParallaxTween)
     .addTo(controller);
     
     var volunteer2ParallaxTween = TweenMax.from(".Volunteer-2", 1, { 
@@ -497,6 +482,34 @@ $(document).ready(function(){
     })
     .setTween(volunteer2DisappearParallaxTween)
     .addTo(controller);  
+    
+    var hobbies2ParallaxTween = TweenMax.from(".Hobbies-2", 1, { 
+        backgroundPositionY: "-=100px",
+        autoRound:false, 
+        ease:Power1.easeOut
+    });
+
+    var hobbies2Parallaxscene = new ScrollMagic.Scene({
+        triggerElement: ".Hobbies-2",
+        triggerHook: 1,
+        duration: "200%"
+    })
+    .setTween(hobbies2ParallaxTween)
+    .addTo(controller);
+    
+    var hobbies4ParallaxTween = TweenMax.from(".Hobbies-4", 1, { 
+        backgroundSize: "+=300px +=199.65px",
+        autoRound:false, 
+        ease:Power1.easeIn
+    });
+
+    var hobbies4Parallaxscene = new ScrollMagic.Scene({
+        triggerElement: ".Hobbies-4",
+        triggerHook: 1,
+        duration: "150%"
+    })
+    .setTween(hobbies4ParallaxTween)
+    .addTo(controller); 
     
     /*----- Header fade-in animations -----*/
     $('.scrollmagic-fade-in').each(function(){
@@ -727,22 +740,6 @@ $(document).ready(function(){
         reverse: false    
     })
     .setClassToggle('#skill-list li:nth-child(even)', 'fade-in')
-    .addTo(controller);
-        
-    var volunteerListOddScene = new ScrollMagic.Scene({
-        triggerElement: '#volunteer-list li:nth-child(odd)',
-        triggerHook: 0.8,
-        reverse: false    
-    })
-    .setClassToggle('#volunteer-list li:nth-child(odd)', 'fade-in')
-    .addTo(controller);
-        
-    var volunteerListEvenScene = new ScrollMagic.Scene({
-        triggerElement: '#volunteer-list li:nth-child(odd)',
-        triggerHook: 0.8,
-        reverse: false    
-    })
-    .setClassToggle('#volunteer-list li:nth-child(even)', 'fade-in')
     .addTo(controller);
 
      /*================Remove down arrow when in Landscape layout on mobile devices================*/
