@@ -5,7 +5,7 @@ class Employment extends Component {
     render() {
         return(
         <div>             
-            <div id="jump-to-employment" className="Employment-1">
+            <div className="Employment-1">
                 <ul className="flex-container">
                     <li className="flex-item">
                         <div id="employment-window" className="scrollmagicWindow">
@@ -14,7 +14,7 @@ class Employment extends Component {
                             </video> 
                         </div>
                     </li>
-                    <li className="flex-item">
+                    <li id="jump-to-employment" className="flex-item">
                         <h1 id="employment" className="scrollmagic-fade-in" tabIndex="0">
                             Empl<span id="employment_oy">oy</span>me<span id="employment_n">n</span>t
                         </h1><br/>

@@ -106,7 +106,7 @@ class Hobbies extends Component {
                         <div></div>
                         <span className="text-container">
                             <h2>History</h2>
-                            <p>Turns out the Ivan wasn't so terrible...</p>
+                            <p>Consumer of Knowledge</p>
                         </span>
                     </li>
                     <li className="flex-item scrollmagic-circle">

@@ -10,7 +10,7 @@ class Intro extends Component {
                             Ra<span id="name_ym">ym</span>ond
                             <span id="name_B">B</span>uckman
                         </h1>
-                        <img id="down-arrow" src="https://png.icons8.com/downward-arrow/ios7/73/ffffff" height="60px"></img>            
+                        <img id="down-arrow" src="https://png.icons8.com/downward-arrow/ios7/73/ffffff"></img>            
             </div>
             
             <div className="Intro-2" id="arrow-dest">

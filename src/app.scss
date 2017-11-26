@@ -14,12 +14,19 @@ $acid-green: rgb(200,250,0);
 $nrf: no-repeat fixed;
 $nrs: no-repeat scroll;
 
+//These variables help replicate background-size: cover on landscape screens
 $intro-1-height: 100vw * .6665;
 $skills-2-height: 100vw * .6645;
 $employment-2-height: 100vw * .75;
 $volunteer-2-height: 100vw * .667;
 $hobbies-3-height: 100vw * .6668;
 $hobbies-4-height: 100vw * .6668;
+
+//These variables help replicate background-size: cover on portrait screens
+$intro-1-width: 100vh / .6665;
+$employment-2-width: 100vw / .75;
+$hobbies-3-width: 60vh / .6668;
+$hobbies-4-width: 100vw / .6668;
 
 /*List for looping background images*/
 $hobby-list: tennis gaming trance travel foreignlanguages weight-lifting running cars pingpong history health pets; 
@@ -135,7 +142,7 @@ $hobby-list: tennis gaming trance travel foreignlanguages weight-lifting running
 
 @keyframes occasionalBlur{
 	12%, 28%	{filter: blur(0px); -webkit-filter: blur(0px);}
-	20%		    {filter: blur(2px); -webkit-filter: blur(2px);}
+	20%		    {filter: blur(1px); -webkit-filter: blur(1px);}
 }
 
 @keyframes occasionalBlurOnHover{
@@ -710,39 +717,33 @@ img:focus, a:focus, header:focus{
     top: 0;
     margin: 5px 1vw;
     right: 0vw !important;
-    filter: invert(100%);
     opacity: 0;
     transition: all 0.5s ease-in-out;
+    //animation: occasionalBlur 4s infinite;
 }
 
 .nav-icon-education{
-    content:url("https://png.icons8.com/learning/ios7/73/000000");
-    //opacity: 1 !important;
+    content: url("images/education-icon.png");
 }
 
 .nav-icon-languages{
-    content:url("https://png.icons8.com/code/ios7/73/000000");
-    //opacity: 1 !important;
+    content: url("images/languages-icon.png");
 }
 
 .nav-icon-employment{
-    content:url("https://png.icons8.com/new-job/ios7/73/000000");
-    //opacity: 1 !important;
+    content: url("images/employment-icon.png");
 }
 
 .nav-icon-skills{
-    content:url("https://png.icons8.com/analyzing-skill/ios7/73/000000");
-    //opacity: 1 !important;
+    content: url("images/skills-icon.png");
 }
 
 .nav-icon-volunteer-work{
-    content:url("https://png.icons8.com/volunteering/ios7/73/000000");
-    //opacity: 1 !important;
+    content: url("images/volunteer-icon.png");
 }
 
 .nav-icon-hobbies{
-    content:url("https://png.icons8.com/drum-set/ios7/73/000000");
-    //opacity: 1 !important;
+    content: url("images/hobbies-icon.png");
 }
 
 .pinned-nav{
@@ -759,7 +760,7 @@ img:focus, a:focus, header:focus{
 	position: relative;
 	height: 110vh;
 	background: url("images/books.jpg") $nrf 20% 30%;
-	background-size: 2300px;
+	background-size: 130vw;
     @include div-padding;
     padding-left: 5vw;
     padding-right: 5vw;
@@ -858,10 +859,6 @@ img:focus, a:focus, header:focus{
         margin-bottom: 30px;
         text-align: center;
         transition: all 0.3s ease-in-out;
-
-        h1{
-            font-size: 1.3em;
-        }
         
         &:nth-child(1){
             width: 100vw;
@@ -1770,7 +1767,6 @@ img:focus, a:focus, header:focus{
 	height:85vh;
 	background: url("images/escalator.jpg") $nrf 50% 60%;
 	background-size: 100vw $hobbies-4-height;
-	z-index:3;
 }
 
 .Footer-1{
@@ -1833,8 +1829,8 @@ img:focus, a:focus, header:focus{
 /*-----Breakpoints-----*/
 @include for-phone-and-tablet-portrait{
     .Intro-1{
-        background:url("images/subway.jpg") $nrs 20% 30%;
-        background-size: cover;
+        background:url("images/subway.jpg") $nrs 25% 30%;
+        background-size: $intro-1-width 100vh;
         padding-top:45vh;
         padding-bottom: 45vh;
 
@@ -1846,6 +1842,10 @@ img:focus, a:focus, header:focus{
             display: table;
             padding: 10px 20px;
             margin: auto auto;
+        }
+        
+        #down-arrow{
+            top: 60vh;
         }
     }
 
@@ -1903,7 +1903,7 @@ img:focus, a:focus, header:focus{
                     text-align: center;
                     width: 500px;
                     @include main-font;
-                    font-size: $subheader-font-size;
+                    font-size: 6em;
                     letter-spacing: 10px;
                     text-align: center;
                     color: $bright-white;
@@ -1923,7 +1923,7 @@ img:focus, a:focus, header:focus{
                     margin: 20vh 0vh 5vh 0vh;
                     text-align: center;
                     line-height: 180%;
-                    font-size: 1.2em;
+                    font-size: 1.5em;
                     opacity: 0;
 
                     transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
@@ -1949,7 +1949,7 @@ img:focus, a:focus, header:focus{
             //display: block;
             //margin: 0 auto;
             @include main-font;
-            font-size: $subheader-font-size;
+            font-size: 6em;
             letter-spacing: 7px;
             color: $concrete-gray;    
             text-align: left;
@@ -1968,7 +1968,7 @@ img:focus, a:focus, header:focus{
             @include secondary-font;
             letter-spacing: 5px;
             color: $concrete-gray;
-            font-size: 2em;       
+            font-size: 2.5em;       
             text-align: left;
             opacity: 0;
             transition: border-color 0.5s ease-in-out, opacity 0.5s ease-in-out;
@@ -1981,7 +1981,7 @@ img:focus, a:focus, header:focus{
             @include secondary-font;
             text-align: left;
             line-height: 200%;
-            font-size: 1.5em;
+            font-size: 2em;
             list-style-type: none;
             margin-top: 5vh;
         }
@@ -2015,7 +2015,7 @@ img:focus, a:focus, header:focus{
                     //display: block;
                     margin: 0 auto;
                     @include main-font;
-                    font-size: $subheader-font-size;
+                    font-size: 6em;
                     letter-spacing: 7px;
                     color: $bright-white;    
                     text-align: center;
@@ -2080,6 +2080,18 @@ img:focus, a:focus, header:focus{
                     background-size: cover;
                 }
             }
+            
+            &:nth-child(n+2){
+                .text-container{
+                    h2{
+                        font-size: 2em;
+                    }
+
+                    p{
+                        font-size: 1em;
+                    } 
+                }
+            }
         }
     }
 
@@ -2094,7 +2106,7 @@ img:focus, a:focus, header:focus{
             //display: block;
             margin: 0 auto;
             @include main-font;
-            font-size: $subheader-font-size;
+            font-size: 6em;
             letter-spacing: 7px;
             color: $bright-white;    
             text-align: center;
@@ -2110,7 +2122,7 @@ img:focus, a:focus, header:focus{
             @include secondary-font;
             text-align: center;
             line-height: 200%;
-            font-size: 1.5em;
+            font-size: 2em;
             list-style-type: none;
             margin-top: 5vh;
         }
@@ -2140,7 +2152,7 @@ img:focus, a:focus, header:focus{
             @include secondary-font;
             text-align: center;
             line-height: 200%;
-            font-size: 1.5em;
+            font-size: 2em;
             list-style-type: none;
             margin-top: 5vh;
         }
@@ -2206,7 +2218,7 @@ img:focus, a:focus, header:focus{
                     text-align: center;
                     width: 500px;
                     @include main-font;
-                    font-size: $subheader-font-size;
+                    font-size: 6em;
                     letter-spacing: 10px;
                     text-align: center;
                 }
@@ -2220,7 +2232,7 @@ img:focus, a:focus, header:focus{
                     margin: 20vh 0vh 5vh 0vh;
                     text-align: center;
                     line-height: 180%;
-                    font-size: 1.2em;
+                    font-size: 1.5em;
                     opacity: 0;
                 }
             }
@@ -2229,8 +2241,8 @@ img:focus, a:focus, header:focus{
 
     .Employment-2{
         height: 40vh;
-        background: url("images/hammer-mini.jpg") $nrs 50% 0%;
-        background-size: cover;
+        background: url("images/hammer-mini.jpg") $nrs 20% 0%;
+        background-size: 100vh $employment-2-width;
     }
 
     .Skills-1{
@@ -2238,7 +2250,7 @@ img:focus, a:focus, header:focus{
         background-size: cover;
 
         #additional-skills{
-            font-size: $subheader-font-size;
+            font-size: 6em;
             letter-spacing: 7px;
             color: $bright-white;    
             text-align: center;
@@ -2250,7 +2262,7 @@ img:focus, a:focus, header:focus{
             @include secondary-font;
             text-align: center;
             line-height: 200%;
-            font-size: 1.5em;
+            font-size: 2em;
             list-style-type: none;
             margin-top: 5vh;
 
@@ -2402,7 +2414,7 @@ img:focus, a:focus, header:focus{
                     margin: 20vh 0vh 5vh 0vh;
                     text-align: center;
                     line-height: 180%;
-                    font-size: 1.2em;
+                    font-size: 1.5em;
                     opacity: 0;
                 }
             }
@@ -2436,10 +2448,6 @@ img:focus, a:focus, header:focus{
             margin-bottom: 30px;
             text-align: center;
             transition: all 0.3s ease-in-out;
-
-            h1{
-                font-size: 1.3em;
-            }
 
             &:nth-child(1){
                 width: 100vw;
@@ -2580,26 +2588,38 @@ img:focus, a:focus, header:focus{
                     background-size: cover;
                 }
             }
+            
+            &:nth-child(n+2){
+                .text-container{
+                    h2{
+                        font-size: 2em;
+                    }
+
+                    p{
+                        font-size: 1em;
+                    } 
+                }
+            }
         }
     }
 
     .Hobbies-2{
         height: 40vh;
         background: url("images/graffiti-1-mini.jpg") $nrs 50% 50%;
-        background-size: cover;
+        background-size: 130vw;
     }
 
     .Hobbies-3{
         height: 40vh;
-        background: url("images/break-dancer-mini.jpg") $nrs 50% 20%;
+        background: url("images/break-dancer-mini.jpg") $nrs 80% 40%;
         background-size: cover;
     }
 
 
     .Hobbies-4{
-        background: url("images/escalator.jpg") $nrs 10% 20%;
-        background-size: cover;
-        z-index:3;
+        background: url("images/escalator.jpg") $nrs 10% 60%;
+        background-size: 1300px;
+        overflow:hidden;
     }
 
     .Footer-1{
@@ -2607,7 +2627,7 @@ img:focus, a:focus, header:focus{
             @include secondary-font;
             position: relative;
             top:0.5em;
-            font-size:25px;
+            font-size: 25px;
             letter-spacing: 2px;
             padding-top: 35px;
             color: $bright-white;
@@ -2632,7 +2652,7 @@ img:focus, a:focus, header:focus{
             @include secondary-font;
             position: relative;
             top:0.5em;
-            font-size:25px;
+            font-size: 25px;
             letter-spacing: 2px;
             padding-top: 35px;
             text-decoration: none;
@@ -2644,6 +2664,12 @@ img:focus, a:focus, header:focus{
 }
 
 @include for-phone-landscape{
+    #bottom-sidebar-image{
+        height: 0vh;
+        opacity: 0;
+        z-index: 1;
+    }
+    
     .Intro-1{
         background:url("images/subway.jpg") $nrs 20% 30%;
         background-size: cover;
@@ -2651,14 +2677,14 @@ img:focus, a:focus, header:focus{
         padding-bottom: 35vh;
 
         #name{
-            font-size: 5em;
+            font-size: 4em;
             letter-spacing: 10px;
             padding: 10px 20px;
             margin: auto auto;
         }
         
         #down-arrow{
-            top: 80vh;
+            top: 70vh;
         }
     }
 
@@ -3329,7 +3355,7 @@ img:focus, a:focus, header:focus{
 
     .Hobbies-2{
         height: 50vh;
-        background: url("images/graffiti-1-mini.jpg") $nrs 50% 50%;
+        background: url("images/graffiti-1-mini.jpg") $nrs 50% 0%;
         background-size: cover;
     }
 
