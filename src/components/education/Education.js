@@ -46,7 +46,7 @@ class Education extends Component {
                         </div>
                         <span className="text-container">
                             <h2>How It Works</h2>
-                            <p>The app sends data to the drone's microcontroller via UDP (User Datagram Protocol) over the drone's Wifi connection. The UDP packets then get decoded & translated into PWM signals, which get sent to the flight controller board.</p>
+                            <p>The app sends data to the drone's microcontroller over the drone's Wifi. The UDP packets then get decoded & translated into PWM signals, which get sent to the flight controller board.</p>
                         </span>
                     </li>
                     <li className="flex-item scrollmagic-circle">
@@ -67,22 +67,22 @@ class Education extends Component {
                         <div></div>
                         <span className="text-container">
                             <h2>The Flight Controller Board</h2>
-                            <p>The board contains a 32-bit ARM processor along with several sensors, including a gyroscope. It takes in directional control data from the user in the form of PWM signals, reads the data in real time, then outputs PWM signals to the motors.</p>
+                            <p>The board contains a 32-bit ARM processor & several sensors. It takes in the user's directional control data, reads the data, then outputs PWM signals to the motors.</p>
                         </span>
                     </li>
                     <li className="flex-item scrollmagic-circle">
                         <div></div>
                         <span className="text-container">
                             <h2>Parts List</h2>
-                            <p> &#8226; ST450 Kit Quadcopter Folding Frame<br/>
+                            <p> &#8226; ST450 Kit Drone Frame<br/>
                                 &#8226; 4 KA20-22L 924KV Brushless Motors<br/>
                                 &#8226; DYS 30A Brushless ESC<br/>
-                                &#8226; APC 10x4.7 propeller set<br/>
-                                &#8226; FunFly Controller "Naze32"<br/>
+                                &#8226; APC propeller set<br/>
+                                &#8226; FunFly Controller Naze32<br/>
                                 &#8226; ArduCopter 3DR PDB<br/>
                                 &#8226; Mbed NXP LPC 1768<br/>
-                                &#8226; Roving Networks WiFly 2.21 RC<br/>
-                                &#8226; Voltz 2200 mAh battery                         
+                                &#8226; Roving Networks RC<br/>
+                                &#8226; Voltz battery                         
                             </p>
                         </span>
                     </li>
@@ -102,7 +102,7 @@ class Education extends Component {
                     <li>Foundations of UX: Accessibility</li><br/>
                     <li>HTML Essential Training</li><br/>
                     <li>Up & Running with Git & GitHub </li><br/>
-                    <li>Foundations of Programming: Fundamentals</li><br/>
+                    <li>Foundations of Programming</li><br/>
                     <li>Sass Essential Training</li>
                 </ul>
             </div>
