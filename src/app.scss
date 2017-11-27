@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Akronim');
-@import url('https://fonts.googleapis.com/css?family=Covered+By+Your+Grace|Prosto+One|Satisfy');
+@import url('https://fonts.googleapis.com/css?family=Akronim|Prosto+One');
 
 //Variables
 $main-font: "Akronim";
@@ -186,7 +185,7 @@ time, mark, audio, video {
 body{
     overflow: auto;
     height: 100%;
-	background: rgb(30,30,30); /*helps create darkening effect when sidebar is active*/
+	background: $concrete-gray; /*helps create darkening effect when sidebar is active*/
 	user-drag: none;
 	//user-select: none;
 	cursor: default;
@@ -273,13 +272,12 @@ img:focus, a:focus, header:focus{
     pointer-events: none;
 }
 
-
 #wrapper.menuDisplayed #sidebar-wrapper{
 	transform: translateX(170px);
 }
 
 #wrapper.menuDisplayed #page-content-wrapper{
-    opacity: 0.2; /*darkens page-content-wrapper when sidebar is active*/
+    opacity: 0.1; /*darkens page-content-wrapper when sidebar is active*/
 }
 
 .sidebar-nav {
@@ -313,59 +311,61 @@ img:focus, a:focus, header:focus{
             transition: width .3s ease-in;
         }
     }
-}
-
-
-.profile-image{
-    position: relative;
-	border: transparent solid 2px;
-	border-radius: 50%;
-	width: 150px;
-	height: 150px;
-	margin-top: 35px;
-	margin-left: 9px;
-	margin-bottom: 35px;
-    text-align: center;
-	transition: border 0.5s ease-in-out;
     
-    div{
-        background: url("images/me.jpg") $nrs 50% 50%;
-        background-size: 155px;
-        width: 100%;
-        height: 0;
-        padding: 50% 0;
+    .sidebar-window{
+        position: relative;
+        border: transparent solid 2px;
         border-radius: 50%;
-        transition: all 0.3s ease-in-out;
-    }
-    
-    .text-container{
-        position: absolute;
-        width: 80%;
-        top: 50%;
-        left: 50%;
-        transform: translateX(-50%) translateY(-50%);
-        
-        h2{
-            position: relative;        
-            @include main-font;
-            color: $acid-green;
-            font-size: 1.8em;
-            opacity: 0;
-            transform: rotateY(90deg); 
-            //transform-origin: left;
-            transition: all 0.5s ease-in-out;
+        width: 150px;
+        height: 150px;
+        margin-top: 35px;
+        margin-left: 9px;
+        margin-bottom: 35px;
+        text-align: center;
+        transition: border 0.5s ease-in-out;
+
+        div{
+            background: url("images/me.jpg") $nrs 50% 50%;
+            background-size: 155px;
+            width: 100%;
+            height: 0;
+            padding: 50% 0;
+            border-radius: 50%;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .text-container{
+            position: absolute;
+            width: 80%;
+            top: 50%;
+            left: 50%;
+            transform: translateX(-50%) translateY(-50%);
+
+            h2{
+                position: relative;        
+                @include main-font;
+                color: $acid-green;
+                font-size: 1.8em;
+                opacity: 0;
+                transform: rotateY(90deg); 
+                //transform-origin: left;
+                transition: all 0.5s ease-in-out;
+            }
+        }
+
+        &:hover h2{
+            opacity: 1;
+            transform: rotateY(0deg); 
+        }
+
+        &:hover div{
+            filter: brightness(20%);
         }
     }
-            
-    &:hover h2{
-        opacity: 1;
-        transform: rotateY(0deg); 
-    }
-            
-    &:hover div{
-        filter: brightness(20%);
-    }
 }
+
+
+
 
 .sidebar-nav li:hover:before,
 .sidebar-nav li.open:hover:before {
@@ -436,7 +436,7 @@ img:focus, a:focus, header:focus{
 
 #menu{
 	position:fixed;
-	top: 15px;
+	top: 6px;
 	left: 15px;
     cursor: pointer;
 	opacity: 0.5;
@@ -499,7 +499,7 @@ img:focus, a:focus, header:focus{
     }
     
     #down-arrow{
-        position:absolute;
+        position: absolute;
         top: 88vh;
         display: inline-block;
         margin-left: auto;
@@ -549,7 +549,7 @@ img:focus, a:focus, header:focus{
         padding: 5px;
         width: 80vw;
         height: auto;
-        margin: 20px 0px;
+        //margin: 20px 0px;
         overflow: hidden;
   
         line-height: 30px;
@@ -566,6 +566,8 @@ img:focus, a:focus, header:focus{
         } 
         
         &:nth-child(1){
+            margin-top: 50px;
+            
             #intro-window{
                 position: relative;
                 top: 0vh;
@@ -579,7 +581,7 @@ img:focus, a:focus, header:focus{
                 //filter: invert(100%);
                 transition: border 0.5s ease-in-out, opacity 0.5s ease-in-out, filter 0.7s ease-in-out;
                 
-                #subway-video{
+                #intro-video{
                     height: 600px;
                     width: 600px;
                     border-radius: 50%;
@@ -615,6 +617,8 @@ img:focus, a:focus, header:focus{
         }
         
         &:nth-child(2){
+            margin-top: 50px;
+            
             #about-me{
                 position: relative;
                 top: 10vh;
@@ -627,7 +631,6 @@ img:focus, a:focus, header:focus{
                 letter-spacing: 13px;
                 text-align: center;
                 color: $bright-white;
-                //padding: 35px 35% 35px 35px;
                 border-bottom: $bright-white 3px solid;
                 border-top: $bright-white 3px solid;
                 opacity: 1;
@@ -715,6 +718,9 @@ img:focus, a:focus, header:focus{
 #nav-icon{
     position: absolute;
     top: 0;
+    height: 40px;
+    width: 40px;
+    background-size: contain;
     margin: 5px 1vw;
     right: 0vw !important;
     opacity: 0;
@@ -723,27 +729,27 @@ img:focus, a:focus, header:focus{
 }
 
 .nav-icon-education{
-    content: url("images/education-icon.png");
+    background-image: url("images/education-icon.png");
 }
 
 .nav-icon-languages{
-    content: url("images/languages-icon.png");
+    background-image: url("images/languages-icon.png");
 }
 
 .nav-icon-employment{
-    content: url("images/employment-icon.png");
+    background-image: url("images/employment-icon.png");
 }
 
 .nav-icon-skills{
-    content: url("images/skills-icon.png");
+    background-image: url("images/skills-icon.png");
 }
 
 .nav-icon-volunteer-work{
-    content: url("images/volunteer-icon.png");
+    background-image: url("images/volunteer-icon.png");
 }
 
 .nav-icon-hobbies{
-    content: url("images/hobbies-icon.png");
+    background-image: url("images/hobbies-icon.png");
 }
 
 .pinned-nav{
@@ -1157,13 +1163,12 @@ img:focus, a:focus, header:focus{
         padding: 5px;
         width: 80vw;
         height: auto;
-        margin: 20px 0px;
+        //margin: 20px 0px;
         overflow: hidden;
   
         line-height: 30px;
         color: $bright-white;
         @include main-font;
-        //font-size: 3em;
         text-align: center;
         
         h1{
@@ -1174,6 +1179,8 @@ img:focus, a:focus, header:focus{
         } 
         
         &:nth-child(1){
+            margin-top: 50px;
+            
             #employment-window{
                 position: relative;
                 top: 0vh;
@@ -1187,7 +1194,7 @@ img:focus, a:focus, header:focus{
                 //filter: invert(100%);
                 transition: border 0.5s ease-in-out, opacity 0.5s ease-in-out, filter 0.7s ease-in-out;
                 
-                #drill-video{
+                #employment-video{
                     height: 600px;
                     width: 600px;
                     border-radius: 50%;
@@ -1198,22 +1205,24 @@ img:focus, a:focus, header:focus{
         }
         
         &:nth-child(2){
+            padding-top: 100px;
+            
             #employment{
                 position: relative;
-                top: 10vh;
+                //top: 7vh;
                 //left: 50%;
                 display: inline;
                 text-align: center;
-                width: 500px;
+                width: 700px;
                 @include main-font;
                 font-size: $subheader-font-size;
                 letter-spacing: 13px;
                 text-align: center;
                 color: $bright-white;
-                //padding: 35px 35% 35px 35px;
+                padding: 0px 35px;
                 border-bottom: $bright-white 3px solid;
                 border-top: $bright-white 3px solid;
-                opacity: 1;
+                opacity: 0;
                 transition: border-color 0.5s ease-in-out, opacity 0.5s ease-in-out;
             }
 
@@ -1223,12 +1232,11 @@ img:focus, a:focus, header:focus{
                 @include secondary-font;
                 color: $bright-white;                
                 //padding: 2% 0% 5% 0%;
-                margin: 20vh 0vh 5vh 0vh;
+                margin: 16vh 0vh 5vh 0vh;
                 text-align: center;
                 line-height: 200%;
                 font-size: 1.2em;
                 opacity: 0;
-
                 transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
                 transform: translateY(40px);
             }
@@ -1381,7 +1389,7 @@ img:focus, a:focus, header:focus{
         padding: 5px;
         width: 80vw;
         height: auto;
-        margin: 50px 0px;
+        //margin: 50px 0px;
         overflow: hidden;
   
         line-height: 30px;
@@ -1398,6 +1406,8 @@ img:focus, a:focus, header:focus{
         } 
         
          &:nth-child(1){
+            margin-top: 50px;
+             
             #volunteer-window{
                 position: relative;
                 top: 0vh;
@@ -1422,9 +1432,11 @@ img:focus, a:focus, header:focus{
         }
         
         &:nth-child(2){
+            padding-top: 100px;
+            
             #volunteer-work{
                 position: relative;
-                top: 7vh;
+                //top: 7vh;
                 //left: 50%;
                 display: inline;
                 text-align: center;
@@ -1447,7 +1459,7 @@ img:focus, a:focus, header:focus{
                 @include secondary-font;
                 color: $bright-white;                
                 //padding: 2% 0% 5% 0%;
-                margin: 20vh 0vh 5vh 0vh;
+                margin: 16vh 0vh 5vh 0vh;
                 text-align: center;
                 line-height: 200%;
                 font-size: 1.2em;
@@ -1688,9 +1700,7 @@ img:focus, a:focus, header:focus{
             }
         }
         
-        &:nth-child(n+2){
-            clip-path: circle(50% at 50% 50%);
-            
+        &:nth-child(n+2){            
             div{
                 width: 100%;
                 height: 0;
@@ -1756,7 +1766,7 @@ img:focus, a:focus, header:focus{
 .Hobbies-3{
 	position:relative;
 	height: 50vh;
-	background: url("images/break-dancer.jpg") $nrf 0% 60%;
+	background: url("images/break-dancer.jpg") $nrf 60% 60%;
 	background-size: 130vw;
 	z-index:3;
 }
@@ -1793,7 +1803,7 @@ img:focus, a:focus, header:focus{
     #fin{
         @include main-font;
         position: relative;
-        top:0em;
+        top: 0em;
         font-size: 90px;
         letter-spacing: 5px;
         color: $bright-white;
@@ -1845,7 +1855,8 @@ img:focus, a:focus, header:focus{
         }
         
         #down-arrow{
-            top: 60vh;
+            position: absolute;
+            top: 70vh;
         }
     }
 
@@ -1884,7 +1895,7 @@ img:focus, a:focus, header:focus{
                     //filter: invert(100%);
                     transition: border 0.5s ease-in-out, opacity 0.5s ease-in-out, filter 0.7s ease-in-out;
 
-                    #subway-video{
+                    #intro-video{
                         height: 600px;
                         width: 600px;
                         border-radius: 50%;
@@ -1995,8 +2006,8 @@ img:focus, a:focus, header:focus{
 
         .flex-item {
             //padding: 5px;
-            width: 300px;
-            height: 300px;
+            width: 600px;
+            height: 600px;
             margin-top: 10px;
             margin-bottom: 30px;
             text-align: center;
@@ -2040,8 +2051,8 @@ img:focus, a:focus, header:focus{
                     padding: 0 !important;
 
                     #project-video{
-                        height: 300px;
-                        width: 300px;
+                        height: 600px;
+                        width: 600px;
                     }
                 }
             }
@@ -2084,11 +2095,11 @@ img:focus, a:focus, header:focus{
             &:nth-child(n+2){
                 .text-container{
                     h2{
-                        font-size: 2em;
+                        font-size: 4em;
                     }
 
                     p{
-                        font-size: 1em;
+                        font-size: 1.7em;
                     } 
                 }
             }
@@ -2159,7 +2170,7 @@ img:focus, a:focus, header:focus{
     }
 
     .Languages-2{
-        height: 40vh;
+        height: 35vh;
         background: url("images/code-mini.jpg") $nrs 100% 20%;
         background-size: 2000px;
     }
@@ -2199,7 +2210,7 @@ img:focus, a:focus, header:focus{
                     //filter: invert(100%);
                     transition: border 0.5s ease-in-out, opacity 0.5s ease-in-out, filter 0.7s ease-in-out;
 
-                    #drill-video{
+                    #employment-video{
                         height: 600px;
                         width: 600px;
                         border-radius: 50%;
@@ -2240,7 +2251,7 @@ img:focus, a:focus, header:focus{
     }
 
     .Employment-2{
-        height: 40vh;
+        height: 35vh;
         background: url("images/hammer-mini.jpg") $nrs 20% 0%;
         background-size: 100vh $employment-2-width;
     }
@@ -2286,7 +2297,7 @@ img:focus, a:focus, header:focus{
     }
 
     .Skills-2{    
-        height: 40vh;
+        height: 35vh;
         background: url("images/eiffel-mini.jpg") $nrs 50% 60%;
         background-size: cover;
 
@@ -2314,7 +2325,7 @@ img:focus, a:focus, header:focus{
     }
 
     .Skills-3{
-        height: 40vh;
+        height: 35vh;
         background: url("images/brandenburg-gate-mini.jpg") $nrs 50% 40%;
         background-size: cover;
 
@@ -2422,19 +2433,19 @@ img:focus, a:focus, header:focus{
     }
 
     .Volunteer-2{
-        height: 40vh;
+        height: 35vh;
         background: url("images/heart-cross-mini.jpg") $nrs 50% 60%;
         background-size: 75vh 50vh;
         
         .Volunteer-2-blurred{
-            height: 40vh;
+            height: 35vh;
             background: url("images/heart-cross-blurred-mini.jpg") $nrs 50% 60%;
             background-size: 75vh 50vh;
         }
     }
 
     .Volunteer-3{
-        height: 40vh;
+        height: 35vh;
         background: url("images/care-mini.jpg") $nrs 0% 50%;
         background-size: 120vw;
     }
@@ -2442,8 +2453,8 @@ img:focus, a:focus, header:focus{
     .Hobbies-1 {
         .flex-item {
             //padding: 5px;
-            width: 300px;
-            height: 300px;
+            width: 600px;
+            height: 600px;
             margin-top: 10px;
             margin-bottom: 30px;
             text-align: center;
@@ -2592,11 +2603,11 @@ img:focus, a:focus, header:focus{
             &:nth-child(n+2){
                 .text-container{
                     h2{
-                        font-size: 2em;
+                        font-size: 4em;
                     }
 
                     p{
-                        font-size: 1em;
+                        font-size: 1.7em;
                     } 
                 }
             }
@@ -2604,13 +2615,13 @@ img:focus, a:focus, header:focus{
     }
 
     .Hobbies-2{
-        height: 40vh;
+        height: 35vh;
         background: url("images/graffiti-1-mini.jpg") $nrs 50% 50%;
         background-size: 130vw;
     }
 
     .Hobbies-3{
-        height: 40vh;
+        height: 35vh;
         background: url("images/break-dancer-mini.jpg") $nrs 80% 40%;
         background-size: cover;
     }
@@ -2618,8 +2629,7 @@ img:focus, a:focus, header:focus{
 
     .Hobbies-4{
         background: url("images/escalator.jpg") $nrs 10% 60%;
-        background-size: 1300px;
-        overflow:hidden;
+        background-size: cover;
     }
 
     .Footer-1{
@@ -2677,7 +2687,7 @@ img:focus, a:focus, header:focus{
         padding-bottom: 35vh;
 
         #name{
-            font-size: 4em;
+            font-size: 3em;
             letter-spacing: 10px;
             padding: 10px 20px;
             margin: auto auto;
@@ -2723,7 +2733,7 @@ img:focus, a:focus, header:focus{
                     //filter: invert(100%);
                     transition: border 0.5s ease-in-out, opacity 0.5s ease-in-out, filter 0.7s ease-in-out;
 
-                    #subway-video{
+                    #intro-video{
                         height: 400px;
                         width: 400px;
                         border-radius: 50%;
@@ -3020,7 +3030,7 @@ img:focus, a:focus, header:focus{
                     //filter: invert(100%);
                     transition: border 0.5s ease-in-out, opacity 0.5s ease-in-out, filter 0.7s ease-in-out;
 
-                    #drill-video{
+                    #employment-video{
                         height: 400px;
                         width: 400px;
                         border-radius: 50%;
@@ -3369,7 +3379,6 @@ img:focus, a:focus, header:focus{
     .Hobbies-4{
         background: url("images/escalator.jpg") $nrs 50% 30%;
         background-size: cover;
-        z-index:3;
     }
 
     .Footer-1{
@@ -3484,7 +3493,7 @@ img:focus, a:focus, header:focus{
                     //filter: invert(100%);
                     transition: border 0.5s ease-in-out, opacity 0.5s ease-in-out, filter 0.7s ease-in-out;
 
-                    #subway-video{
+                    #intro-video{
                         height: 600px;
                         width: 600px;
                         border-radius: 50%;
@@ -3746,7 +3755,7 @@ img:focus, a:focus, header:focus{
     }
 
     .Languages-2{
-        height: 40vh;
+        height: 35vh;
         background: url("images/code-mini.jpg") $nrs 100% 20%;
         background-size: 2000px;
     }
@@ -3790,7 +3799,7 @@ img:focus, a:focus, header:focus{
                     //filter: invert(100%);
                     transition: border 0.5s ease-in-out, opacity 0.5s ease-in-out, filter 0.7s ease-in-out;
 
-                    #drill-video{
+                    #employment-video{
                         height: 600px;
                         width: 600px;
                         border-radius: 50%;
@@ -3831,7 +3840,7 @@ img:focus, a:focus, header:focus{
     }
 
     .Employment-2{
-        height: 40vh;
+        height: 35vh;
         background: url("images/hammer-mini.jpg") $nrs 50% 0%;
         background-size: cover;
     }
@@ -3859,13 +3868,13 @@ img:focus, a:focus, header:focus{
     }
 
     .Skills-2{    
-        height: 40vh;
+        height: 35vh;
         background: url("images/eiffel-mini.jpg") $nrs 50% 60%;
         background-size: cover;
     }
 
     .Skills-3{
-        height: 40vh;
+        height: 35vh;
         background: url("images/brandenburg-gate-mini.jpg") $nrs 50% 40%;
         background-size: cover;
     }
@@ -3955,19 +3964,19 @@ img:focus, a:focus, header:focus{
     }
 
     .Volunteer-2{
-        height: 40vh;
+        height: 35vh;
         background: url("images/heart-cross-mini.jpg") $nrs 50% 50%;
         background-size: 150vh 100vh;
         
         .Volunteer-2-blurred{
-            height: 40vh;
+            height: 35vh;
             background: url("images/heart-cross-blurred-mini.jpg") $nrs 50% 50%;
             background-size: 150vh 100vh;
         }
     }
 
     .Volunteer-3{
-        height: 40vh;
+        height: 35vh;
         background: url("images/care-mini.jpg") $nrs 0% 50%;
         background-size: 120vw;
     }
@@ -4132,13 +4141,13 @@ img:focus, a:focus, header:focus{
     }
 
     .Hobbies-2{
-        height: 40vh;
+        height: 35vh;
         background: url("images/graffiti-1-mini.jpg") $nrs 50% 50%;
         background-size: cover;
     }
 
     .Hobbies-3{
-        height: 40vh;
+        height: 35vh;
         background: url("images/break-dancer-mini.jpg") $nrs 50% 20%;
         background-size: cover;
     }
@@ -4272,7 +4281,7 @@ img:focus, a:focus, header:focus{
                     //filter: invert(100%);
                     transition: border 0.5s ease-in-out, opacity 0.5s ease-in-out, filter 0.7s ease-in-out;
 
-                    #subway-video{
+                    #intro-video{
                         height: 900px;
                         width: 900px;
                         border-radius: 50%;
@@ -4585,7 +4594,7 @@ img:focus, a:focus, header:focus{
                     //filter: invert(100%);
                     transition: border 0.5s ease-in-out, opacity 0.5s ease-in-out, filter 0.7s ease-in-out;
 
-                    #drill-video{
+                    #employment-video{
                         height: 900px;
                         width: 900px;
                         border-radius: 50%;
@@ -4625,7 +4634,7 @@ img:focus, a:focus, header:focus{
     }
 
     .Employment-2{
-        height: 40vh;
+        height: 35vh;
         background: url("images/hammer-mini.jpg") $nrf 50% 0%;
         background-size: cover;
     }
@@ -4755,7 +4764,7 @@ img:focus, a:focus, header:focus{
     }
 
     .Volunteer-3{
-        height: 40vh;
+        height: 50vh;
         background: url("images/care-mini.jpg") $nrf 0% 50%;
         background-size: 120vw;
     }
@@ -5011,7 +5020,7 @@ img:focus, a:focus, header:focus{
 //
 @-moz-document url-prefix() {
     .Languages-2{
-        background-attachment: scroll !important;
+        background-attachment: fixed !important;
     }
 }
 
@@ -5022,6 +5031,9 @@ img:focus, a:focus, header:focus{
         background-size: cover !important;
     }
     
+    #intro-video, #employment-video, #volunteer-video{
+        border-radius: 0% !important;
+    }
     .Intro-1{
         background-attachment: scroll;
     }
@@ -5029,6 +5041,14 @@ img:focus, a:focus, header:focus{
     //A fixed div inside another fixed div causes jumping in edge
     .Volunteer-2, .Volunteer-2-blurred{
         background-attachment: scroll !important;
+    }
+    
+    .Education-2 .flex-item:nth-child(n+2) > div, .Hobbies-1 .flex-item:nth-child(n+2) > div{
+        border-radius: 0% !important;
+    }
+    
+    .Hobbies-4{
+        background-size: cover !important;
     }
 }
 
