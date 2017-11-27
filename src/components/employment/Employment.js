@@ -9,7 +9,7 @@ class Employment extends Component {
                 <ul className="flex-container">
                     <li className="flex-item">
                         <div id="employment-window" className="scrollmagicWindow">
-                            <video preload="preload" id="drill-video" autoPlay="autoplay" loop="loop" muted>
+                            <video preload="preload" id="employment-video" autoPlay="autoplay" loop="loop" muted>
                                 <source src={drillVideo} type="video/mp4"></source>
                             </video> 
                         </div>

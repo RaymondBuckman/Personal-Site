@@ -7,8 +7,7 @@ class Intro extends Component {
         <div> 
             <div className="Intro-1" id="top-of-page">
                         <h1 id="name">
-                            Ra<span id="name_ym">ym</span>ond
-                            <span id="name_B">B</span>uckman
+                            Ra<span id="name_ym">ym</span>ond <span id="name_B">B</span>uckman
                         </h1>
                         <img id="down-arrow" src="https://png.icons8.com/downward-arrow/ios7/73/ffffff"></img>            
             </div>
@@ -17,7 +16,7 @@ class Intro extends Component {
                 <ul className="flex-container">
                     <li className="flex-item">
                         <div id="intro-window" className="scrollmagicWindow">
-                            <video preload="preload" id="subway-video" autoPlay="autoplay" loop="loop" muted>
+                            <video preload="preload" id="intro-video" autoPlay="autoplay" loop="loop" muted>
                                 <source src={subwayVideo} type="video/mp4"></source>
                             </video> 
                             {/*
@@ -27,7 +26,7 @@ class Intro extends Component {
                             */}
                         </div>
                     </li>
-                    <li className="flex-item">
+                    <li id="down-arrow-dest" className="flex-item">
                         <h1 id="about-me" className="scrollmagic-fade-in" tabIndex="0">Ab<span id="about-me_o">o</span><span id="about-me_ut">ut</span> <span id="aboutMe_M">M</span><span id="about-me_e">e</span>
                         </h1><br/>
                         <p id="about-me-paragraph" className="scrollmagic-fade-in">I am an enthusiastic, driven college graduate looking for a rewarding entry-level position in tech. Currently, I am seeking employment opportunities that will both challenge me &
@@ -46,7 +45,7 @@ class Intro extends Component {
                         <li><a href="#jump-to-volunteer-work">Volunteer Work</a></li>
                         <li><a href="#jump-to-hobbies">Hobbies</a></li>
                     </ul>
-                    <img id="nav-icon" height="40px"></img>
+                    <div id="nav-icon"></div>
                 </div>
             </nav>
         </div>           

@@ -56,7 +56,7 @@ $(document).ready(function(){
     
     
     
-    //hange button size based on screen
+    //change button size based on screen
     if(laptopsAndDesktops.matches){
         menu.height = "40";
         close.height = "40";
@@ -70,7 +70,7 @@ $(document).ready(function(){
     
     $("#down-arrow").click(function() {
         $('html, body').animate({
-            scrollTop: $("#about-me").offset().top
+            scrollTop: $("#down-arrow-dest").offset().top
         }, 2000);
     });
     
@@ -114,19 +114,6 @@ $(document).ready(function(){
         .setClassToggle('.navbar', 'black-nav')
         .addTo(controller);
 
-        /*
-        var pushNavUpTween1 = TweenMax.from(".navbar", 0.05, {
-            y: "-=50px",
-            autoRound: false
-        });
-
-        var pushNavUpScene1 = new ScrollMagic.Scene({
-            triggerElement: '.Education',
-            triggerHook: 0.95
-        })
-        .setTween(pushNavUpTween1)
-        .addTo(controller);*/
-
         var pushNavUpTween2 = TweenMax.to(".navbar", 0.05, {
             y: "-=50px",
             autoRound: false
@@ -139,6 +126,7 @@ $(document).ready(function(){
         .setTween(pushNavUpTween2)
         .addTo(controller);
 
+        /*
         var pushMenuUpTween = TweenMax.to("#menu", 0.01, {
             y: "-=9px",
             autoRound: false
@@ -149,7 +137,7 @@ $(document).ready(function(){
             triggerHook: 0.04
         })
         .setTween(pushMenuUpTween)
-        .addTo(controller);
+        .addTo(controller);*/
         
         /*----- Navbar highlight animations -----*/ 
         var heightFromTopToLanguages = $('.Languages-1').offset().top;
@@ -270,20 +258,37 @@ $(document).ready(function(){
     /* ----Background Scroll animations -----*/
     
     //only perform these background tweens on laptops & desktops
-    if(laptopsAndDesktops.matches){        
-        var education1ParallaxTween = TweenMax.to(".Education-1", 1, { 
-            backgroundPositionX: "+=80%",
+    if(laptopsAndDesktops.matches){ 
+        var intro1ParallaxTween = TweenMax.to(".Intro-1", 1, {
+            backgroundSize: "+=300px +=199.9999998px",
+            backgroundPositionX: "-=10%",
             autoRound:false, 
-            ease:Power1.easeIn
+            ease:Power1.ease0ut
         });
 
-        var education1Parallaxscene = new ScrollMagic.Scene({
-            triggerElement: ".Education-1",
-            triggerHook: 1,
-            duration: "200%"
+        var intro1Parallaxscene = new ScrollMagic.Scene({
+            triggerElement: ".Intro-1", 
+            duration: "100%",
+            triggerHook:0
         })
-        .setTween(education1ParallaxTween)
+        .setTween(intro1ParallaxTween)
         .addTo(controller);
+        
+        if (!(/Firefox/i.test(navigator.userAgent))){
+            var employment2ParallaxTween = TweenMax.from(".Employment-2", 1, { 
+                backgroundPositionY: "-=200px",
+                autoRound:false, 
+                ease:Power1.easeOut
+            });
+
+            var employment2Parallaxscene = new ScrollMagic.Scene({
+                triggerElement: ".Employment-2",
+                triggerHook: 1,
+                duration: "200%"
+            })
+            .setTween(employment2ParallaxTween)
+            .addTo(controller);
+        }
 
         var skills2ParallaxTween = TweenMax.to(".Skills-2", 1, { 
             backgroundSize: "+=500px +=332.25px", //changes bg image size without changing proportions
@@ -328,7 +333,7 @@ $(document).ready(function(){
         .addTo(controller);
         
         var hobbies3ParallaxTween = TweenMax.from(".Hobbies-3", 1, { 
-            backgroundPositionX: "-=200px",
+            backgroundPositionX: "-=30%",
             autoRound:false, 
             ease:Power1.easeOut
         });
@@ -378,68 +383,53 @@ $(document).ready(function(){
         });
         
         var intro1BrightestScene = new ScrollMagic.Scene({
-        triggerElement: ".Intro-2",
-        triggerHook: 0.4,
+            triggerElement: ".Intro-2",
+            triggerHook: 0.4,
         })
         .setTween(intro1BrightestTween)
         .addTo(controller);
+        
+        var education1ParallaxTween = TweenMax.to(".Education-1", 1, { 
+            backgroundPositionX: "+=80%",
+            autoRound:false, 
+            ease:Power1.easeIn
+        });
+
+        var education1Parallaxscene = new ScrollMagic.Scene({
+            triggerElement: ".Education-1",
+            triggerHook: 1,
+            duration: "200%"
+        })
+        .setTween(education1ParallaxTween)
+        .addTo(controller);
+        
+        var languages2ParallaxTween = TweenMax.to(".Languages-2", 1, { 
+            backgroundPositionX: "-=30%",
+            autoRound:false, 
+            ease:Power0.linear
+        });
+
+        var languages2Parallaxscene = new ScrollMagic.Scene({
+            triggerElement: ".Languages-2",
+            triggerHook: 1,
+            duration: "250%"
+        })
+        .setTween(languages2ParallaxTween)
+        .addTo(controller);
+        
+        var languages2InvertTween = TweenMax.to(".Languages-2", 0.01, {
+            filter: "invert(100%)",
+            autoRound:false, 
+            ease:Power0.linear
+        });
+
+        var languages2InvertScene = new ScrollMagic.Scene({
+            triggerElement: ".Languages-2",
+            triggerHook: 0.25,
+        })
+        .setTween(languages2InvertTween)
+        .addTo(controller);
     }  
-    
-    var intro1ParallaxTween = TweenMax.to(".Intro-1", 1, {
-        backgroundSize: "+=300px +=199.9999998px",
-        backgroundPositionX: "-=10%",
-        autoRound:false, 
-        ease:Power1.ease0ut
-    });
-
-    var intro1Parallaxscene = new ScrollMagic.Scene({
-        triggerElement: ".Intro-1", 
-        duration: "100%",
-        triggerHook:0
-    })
-    .setTween(intro1ParallaxTween)
-    .addTo(controller);
-
-    var languages2ParallaxTween = TweenMax.to(".Languages-2", 1, { 
-        backgroundPositionX: "-=30%",
-        autoRound:false, 
-        ease:Power0.linear
-    });
-
-    var languages2Parallaxscene = new ScrollMagic.Scene({
-        triggerElement: ".Languages-2",
-        triggerHook: 1,
-        duration: "250%"
-    })
-    .setTween(languages2ParallaxTween)
-    .addTo(controller);
-
-    var languages2InvertTween = TweenMax.to(".Languages-2", 0.01, {
-        filter: "invert(100%)",
-        autoRound:false, 
-        ease:Power0.linear
-    });
-
-    var languages2InvertScene = new ScrollMagic.Scene({
-        triggerElement: ".Languages-2",
-        triggerHook: 0.25,
-    })
-    .setTween(languages2InvertTween)
-    .addTo(controller);
-    
-    var employment2ParallaxTween = TweenMax.from(".Employment-2", 1, { 
-        backgroundPositionY: "-=200px",
-        autoRound:false, 
-        ease:Power1.easeOut
-    });
-
-    var employment2Parallaxscene = new ScrollMagic.Scene({
-        triggerElement: ".Employment-2",
-        triggerHook: 1,
-        duration: "200%"
-    })
-    .setTween(employment2ParallaxTween)
-    .addTo(controller);
     
     var volunteer2ParallaxTween = TweenMax.from(".Volunteer-2", 1, { 
         backgroundSize: "+=400px +=266.8px", //changes bg image size without changing proportions
@@ -497,19 +487,8 @@ $(document).ready(function(){
     .setTween(hobbies2ParallaxTween)
     .addTo(controller);
     
-    var hobbies4ParallaxTween = TweenMax.from(".Hobbies-4", 1, { 
-        backgroundSize: "+=300px +=199.65px",
-        autoRound:false, 
-        ease:Power1.easeIn
-    });
-
-    var hobbies4Parallaxscene = new ScrollMagic.Scene({
-        triggerElement: ".Hobbies-4",
-        triggerHook: 1,
-        duration: "150%"
-    })
-    .setTween(hobbies4ParallaxTween)
-    .addTo(controller); 
+   
+    
     
     /*----- Header fade-in animations -----*/
     $('.scrollmagic-fade-in').each(function(){
@@ -758,6 +737,10 @@ $(document).ready(function(){
                'transform' : 'translateX(0px)',
                'transform' : 'rotateY(90deg)'
           });
+         $('#menu').css({
+             'transform' : 'rotateY(0deg)',
+             'opacity' : '1'
+         })
      });
 
      $('#menu').click(function(){
@@ -767,6 +750,10 @@ $(document).ready(function(){
                'transform' : 'translateX(30px)',
                'opacity' : '1'
           });
+         $('#menu').css({
+             'transform' : 'rotateY(90deg)',
+             'opacity' : '0'
+         })
     });
 })
 
