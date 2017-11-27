@@ -6,7 +6,7 @@ class Sidebar extends Component {
         return(
         <div>
             <ul className="sidebar-nav">
-                <div className="profile-image">
+                <div className="sidebar-window">
                     <div></div>
                     <span className="text-container">
                         <h2>Me</h2>
