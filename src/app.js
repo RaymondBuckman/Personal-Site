@@ -82,14 +82,17 @@ $(document).ready(function(){
         /*----- navbar pin, push-up, & li animations -----*/    
         var navTween = TweenMax.staggerFrom(".navbar li", 0.7, { ease:  Power0.easeNone, x:20, opacity: 0, rotationY: 90, transformOrigin: "left top" }, 0.3);
 
-        var navItemsAppearScene = new ScrollMagic.Scene({
-            triggerElement: '.Education-1',
-            triggerHook: 0.95,
-            offset: 0,
-            reverse: false
-        })
-        .setTween(navTween)
-        .addTo(controller);
+        //if not Firefox....
+        if (!(/Firefox/i.test(navigator.userAgent))){
+            var navItemsAppearScene = new ScrollMagic.Scene({
+                triggerElement: '.Education-1',
+                triggerHook: 0.95,
+                offset: 0,
+                reverse: false
+            })
+            .setTween(navTween)
+            .addTo(controller);
+        }
 
 
         var pinTopNavScene = new ScrollMagic.Scene({
@@ -274,6 +277,20 @@ $(document).ready(function(){
         .setTween(intro1ParallaxTween)
         .addTo(controller);
         
+        var education1ParallaxTween = TweenMax.to(".Education-1", 1, { 
+            backgroundPositionX: "+=80%",
+            autoRound:false, 
+            ease:Power1.easeIn
+        });
+
+        var education1Parallaxscene = new ScrollMagic.Scene({
+            triggerElement: ".Education-1",
+            triggerHook: 1,
+            duration: "200%"
+        })
+        .setTween(education1ParallaxTween)
+        .addTo(controller);
+        
         if (!(/Firefox/i.test(navigator.userAgent))){
             var employment2ParallaxTween = TweenMax.from(".Employment-2", 1, { 
                 backgroundPositionY: "-=200px",
@@ -387,20 +404,6 @@ $(document).ready(function(){
             triggerHook: 0.4,
         })
         .setTween(intro1BrightestTween)
-        .addTo(controller);
-        
-        var education1ParallaxTween = TweenMax.to(".Education-1", 1, { 
-            backgroundPositionX: "+=80%",
-            autoRound:false, 
-            ease:Power1.easeIn
-        });
-
-        var education1Parallaxscene = new ScrollMagic.Scene({
-            triggerElement: ".Education-1",
-            triggerHook: 1,
-            duration: "200%"
-        })
-        .setTween(education1ParallaxTween)
         .addTo(controller);
         
         var languages2ParallaxTween = TweenMax.to(".Languages-2", 1, { 
