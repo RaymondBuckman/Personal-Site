@@ -1,3 +1,7 @@
+/*
+    - Removed .Education-1 background scroll animation to improve performance on mobile
+*/
+
 @import url('https://fonts.googleapis.com/css?family=Akronim|Prosto+One');
 
 //Variables
@@ -1782,7 +1786,7 @@ img:focus, a:focus, header:focus{
 .Footer-1{
 	position:relative;
 	height: auto;
-	background: $concrete-gray $nrf;
+	background: $concrete-gray;
     //@include div-padding(1vh);
 	
     #thanks{
@@ -1856,7 +1860,7 @@ img:focus, a:focus, header:focus{
         
         #down-arrow{
             position: absolute;
-            top: 70vh;
+            top: 65vh;
         }
     }
 
@@ -2006,8 +2010,6 @@ img:focus, a:focus, header:focus{
 
         .flex-item {
             //padding: 5px;
-            width: 600px;
-            height: 600px;
             margin-top: 10px;
             margin-bottom: 30px;
             text-align: center;
@@ -2093,6 +2095,9 @@ img:focus, a:focus, header:focus{
             }
             
             &:nth-child(n+2){
+                height: 600px !important;
+                width: 600px !important;
+                
                 .text-container{
                     h2{
                         font-size: 4em;
@@ -2147,7 +2152,7 @@ img:focus, a:focus, header:focus{
             //display: block;
             margin: 0 auto;
             @include main-font;
-            font-size: 4em;
+            font-size: 4.5em;
             letter-spacing: 7px;
             color: $bright-white;    
             text-align: center;
@@ -2399,13 +2404,13 @@ img:focus, a:focus, header:focus{
             &:nth-child(2){
                 #volunteer-work{
                     position: relative;
-                    top: 7vh;
+                    top: 0vh;
                     //left: 50%;
                     display: inline;
                     text-align: center;
                     width: 700px;
                     @include main-font;
-                    font-size: 4em;
+                    font-size: 4.5em;
                     letter-spacing: 10px;
                     text-align: center;
                     color: $bright-white;
@@ -2422,7 +2427,7 @@ img:focus, a:focus, header:focus{
                     @include secondary-font;
                     color: $bright-white;                
                     //padding: 2% 0% 5% 0%;
-                    margin: 20vh 0vh 5vh 0vh;
+                    margin: 10vh 0vh 5vh 0vh;
                     text-align: center;
                     line-height: 180%;
                     font-size: 1.5em;
@@ -2453,8 +2458,6 @@ img:focus, a:focus, header:focus{
     .Hobbies-1 {
         .flex-item {
             //padding: 5px;
-            width: 600px;
-            height: 600px;
             margin-top: 10px;
             margin-bottom: 30px;
             text-align: center;
@@ -2601,6 +2604,9 @@ img:focus, a:focus, header:focus{
             }
             
             &:nth-child(n+2){
+                height: 600px !important;
+                width: 600px !important;
+                
                 .text-container{
                     h2{
                         font-size: 4em;
