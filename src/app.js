@@ -724,14 +724,6 @@ $(document).ready(function(){
     .setClassToggle('#skill-list li:nth-child(even)', 'fade-in')
     .addTo(controller);
 
-     /*================Remove down arrow when in Landscape layout on mobile devices================*/
-     var sm = window.matchMedia( "(max-width: 991px)" );
-     if(sm.matches && (window.outerWidth > window.outerHeight)){
-          $("#dArrow1").remove();
-     }
-     /*================Sidebar toggle & page-content-wrapper enable/disable================*/
-     var menuRotate = 0;
-
      $('#page-content-wrapper, #close').click(function(){
           $('#wrapper').removeClass('menuDisplayed');
           $('#page-content-wrapper *').removeClass('disabled');
