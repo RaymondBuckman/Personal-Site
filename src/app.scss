@@ -1,6 +1,4 @@
-/*
-    - Removed .Education-1 background scroll animation to improve performance on mobile
-*/
+
 
 @import url('https://fonts.googleapis.com/css?family=Akronim|Prosto+One');
 
@@ -711,7 +709,7 @@ img:focus, a:focus, header:focus{
     color: $acid-green;
     margin: 0px 20px;
     transform: scale(1.3);
-    animation: occasionalBlurOnHover 4s infinite;
+    //animation: occasionalBlurOnHover 4s infinite;
     
 }
 
@@ -729,6 +727,9 @@ img:focus, a:focus, header:focus{
     right: 0vw !important;
     opacity: 0;
     transition: all 0.5s ease-in-out;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility:    hidden;
+    -ms-backface-visibility:     hidden;
     //animation: occasionalBlur 4s infinite;
 }
 
@@ -2007,6 +2008,10 @@ img:focus, a:focus, header:focus{
         height: auto;
         width: 100vw;
         background: $concrete-gray;
+        
+        .flex-container {
+            padding: 15vh 10vw;   
+        }
 
         .flex-item {
             //padding: 5px;
