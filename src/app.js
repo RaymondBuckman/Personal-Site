@@ -158,6 +158,12 @@ $(document).ready(function(){
             duration: heightOfEducation
         })
         .setClassToggle(".navbar-default .navbar-nav > li:nth-child(1)", "active") // add class toggle
+        /*
+        .addIndicators({
+            name: 'Education',
+            colorTrigger: 'pink',
+            colorStart: '#75C695'
+        })*/
         .addTo(controller);
 
         var nav2Tween = new ScrollMagic.Scene({
@@ -166,6 +172,12 @@ $(document).ready(function(){
             duration: heightOfLanguages
         })
         .setClassToggle(".navbar-default .navbar-nav > li:nth-child(2)", "active") // add class toggle
+        /*
+        .addIndicators({
+            name: 'Languages',
+            colorTrigger: 'pink',
+            colorStart: '#75C695'
+        })*/
         .addTo(controller);
 
         var nav3Tween = new ScrollMagic.Scene({
@@ -174,6 +186,12 @@ $(document).ready(function(){
             duration: heightOfEmployment
         })
         .setClassToggle(".navbar-default .navbar-nav > li:nth-child(3)", "active") // add class toggle
+        /*
+        .addIndicators({
+            name: 'Employment',
+            colorTrigger: 'pink',
+            colorStart: '#75C695'
+        })*/
         .addTo(controller);
 
         var nav4Tween = new ScrollMagic.Scene({
@@ -269,7 +287,7 @@ $(document).ready(function(){
             ease:Power1.ease0ut
         });
 
-        var intro1Parallaxscene = new ScrollMagic.Scene({
+        var intro1ParallaxScene = new ScrollMagic.Scene({
             triggerElement: ".Intro-1", 
             duration: "100%",
             triggerHook:0
@@ -283,7 +301,7 @@ $(document).ready(function(){
             ease:Power1.easeIn
         });
 
-        var education1Parallaxscene = new ScrollMagic.Scene({
+        var education1ParallaxScene = new ScrollMagic.Scene({
             triggerElement: ".Education-1",
             triggerHook: 1,
             duration: "200%"
@@ -293,12 +311,12 @@ $(document).ready(function(){
         
         if (!(/Firefox/i.test(navigator.userAgent))){
             var employment2ParallaxTween = TweenMax.from(".Employment-2", 1, { 
-                backgroundPositionY: "-=200px",
+                backgroundPositionY: "-=50px",
                 autoRound:false, 
                 ease:Power1.easeOut
             });
 
-            var employment2Parallaxscene = new ScrollMagic.Scene({
+            var employment2ParallaxScene = new ScrollMagic.Scene({
                 triggerElement: ".Employment-2",
                 triggerHook: 1,
                 duration: "200%"
@@ -313,7 +331,7 @@ $(document).ready(function(){
             ease:Power0.easeOut
         });
 
-        var skills2Parallaxscene = new ScrollMagic.Scene({
+        var skills2ParallaxScene = new ScrollMagic.Scene({
             triggerElement: ".Skills-2",
             triggerHook: 1,
             duration: "200%"
@@ -327,7 +345,7 @@ $(document).ready(function(){
             ease:Power0.easeOut
         });
 
-        var skills3Parallaxscene = new ScrollMagic.Scene({
+        var skills3ParallaxScene = new ScrollMagic.Scene({
             triggerElement: ".Skills-3",
             triggerHook: 1,
             duration: "200%"
@@ -341,7 +359,7 @@ $(document).ready(function(){
             ease:Power0.linear
         });
 
-        var volunteer3Parallaxscene = new ScrollMagic.Scene({
+        var volunteer3ParallaxScene = new ScrollMagic.Scene({
             triggerElement: ".Volunteer-3",
             triggerHook: 1,
             duration: "250%"
@@ -355,13 +373,27 @@ $(document).ready(function(){
             ease:Power1.easeOut
         });
 
-        var hobbies3Parallaxscene = new ScrollMagic.Scene({
+        var hobbies3ParallaxScene = new ScrollMagic.Scene({
             triggerElement: ".Hobbies-3",
             triggerHook: 1,
             duration: "200%"
         })
         .setTween(hobbies3ParallaxTween)
-        .addTo(controller);        
+        .addTo(controller);     
+        
+        var hobbies4ParallaxTween = TweenMax.from(".Hobbies-4", 1, { 
+            backgroundSize: "+=200px +=133.6px",
+            autoRound:false, 
+            ease:Power1.easeOut
+        });
+
+        var hobbies4ParallaxScene = new ScrollMagic.Scene({
+            triggerElement: ".Hobbies-4",
+            triggerHook: 1,
+            duration: "200%"
+        })
+        .setTween(hobbies4ParallaxTween)
+        .addTo(controller); 
     }
      
     
@@ -488,9 +520,7 @@ $(document).ready(function(){
         duration: "200%"
     })
     .setTween(hobbies2ParallaxTween)
-    .addTo(controller);
-    
-   
+    .addTo(controller);   
     
     
     /*----- Header fade-in animations -----*/
@@ -723,14 +753,6 @@ $(document).ready(function(){
     })
     .setClassToggle('#skill-list li:nth-child(even)', 'fade-in')
     .addTo(controller);
-
-     /*================Remove down arrow when in Landscape layout on mobile devices================*/
-     var sm = window.matchMedia( "(max-width: 991px)" );
-     if(sm.matches && (window.outerWidth > window.outerHeight)){
-          $("#dArrow1").remove();
-     }
-     /*================Sidebar toggle & page-content-wrapper enable/disable================*/
-     var menuRotate = 0;
 
      $('#page-content-wrapper, #close').click(function(){
           $('#wrapper').removeClass('menuDisplayed');
