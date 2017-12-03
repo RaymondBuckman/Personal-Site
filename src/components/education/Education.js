@@ -7,7 +7,7 @@ class Education extends Component {
         <div>
             <div id="jump-to-education" className="Education-1">
                 <h1 id="education" className="scrollmagic-fade-in" tabIndex="0">
-                    <span id="education_E">E</span><span id="education_d">d</span><span id="education_u">u</span><span id="education_ca">ca</span><span id="education_ti">ti</span><span id="education_on">on</span>
+                    <span id="education-E">E</span><span id="education-d">d</span>uca<span id="education-t">t</span>ion
                 </h1>
                 <h1 className="scrollmagic-fade-in">Bachelor's of Science<br/>
                     Computer Engineering<br/>
@@ -29,7 +29,7 @@ class Education extends Component {
                 <ul className="flex-container">
                     <li className="flex-item">
                         <h1 id="senior-project" className="scrollmagic-fade-in" tabIndex="0">
-                            Sen<span id="project_io">io</span>r Pro<span id="project_j">j</span>ect
+                            S<span id="senior-project-e">e</span>nior Pro<span id="senior-project-j">j</span>ec<span id="senior-project-t">t</span>
                         </h1></li>
                     <li className="flex-item scrollmagic-circle">
                         <div></div>
@@ -90,7 +90,7 @@ class Education extends Component {
             </div>
             <div className="Education-3">
                 <h1 id="online-courses" className="scrollmagic-fade-in" tabIndex="0">
-                    On<span id="online_li">li</span>ne Cours<span id="online_e">e</span>s
+                    Onli<span id="online-courses-n">n</span>e Co<span id="online-courses-u">u</span>rs<span id="online-courses-e">e</span>s
                 </h1>
                 <ul id="online-list" className="scrollmagic-fade-in">
                     <li>CSS:Core Concepts</li><br/>

@@ -6,7 +6,7 @@ class AdditionalSkills extends Component {
         <div>
             <div id="jump-to-additional-skills" className="Skills-1">
                 <h1 id="additional-skills" className="scrollmagic-fade-in" tabIndex="0">
-                    Add<span id="additional-skills_iti">iti</span>onal Ski<span id="additional-skills_ll">ll</span>s
+                    A<span id="additional-skills-d">d</span>ditional <span id="additional-skills-S">S</span>ki<span id="additional-skills-l">l</span>ls
                 </h1>
                 <ul id="skill-list"  className="scrollmagic-fade-in">
                     <li>Webpack3/Grunt</li><br/>
