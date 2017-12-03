@@ -15,7 +15,9 @@ class VolumteerWork extends Component {
                             </div>
                         </li>
                         <li id="jump-to-volunteer-work" className="flex-item">
-                            <h1 id="volunteer-work"  className="scrollmagic-fade-in" tabIndex="0">Vol<span id="volunteer-work_unt">unt</span>eer Wo<span id="volunteer-work_rk">rk</span></h1>
+                            <h1 id="volunteer-work"  className="scrollmagic-fade-in" tabIndex="0">
+                                Vol<span id="volunteer-work-u">u</span>nteer <span id="volunteer-work-W">W</span>or<span id="volunteer-work-k">k</span>
+                            </h1>
                             <p id="volunteer-paragraph" className="scrollmagic-fade-in">
                                 Since February 2016, I've been volunteering as a cameraman for a local church. My resonsiblity is to track the pastor during sermons & to perform panning & zoom transitions during worship. The sermons last an hour & I usually do one to two sermons every other week. I've also done voluneer work as a food packager for the San Diego Food Bank, where I worked four hours/day packaging food for the elderly for two months.
                             </p>
