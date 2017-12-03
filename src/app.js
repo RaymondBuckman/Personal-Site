@@ -152,9 +152,9 @@ $(document).ready(function(){
         var heightOfHobbies = $('.Hobbies-4').offset().top - $('.Hobbies-1').offset().top;
 
 
-        var nav1Tween = new ScrollMagic.Scene({
+        var navEducationTween = new ScrollMagic.Scene({
             triggerElement: ".Education-1",
-            triggerHook: 0.5000000000001,
+            triggerHook: 0.5000,
             duration: heightOfEducation
         })
         .setClassToggle(".navbar-default .navbar-nav > li:nth-child(1)", "active") // add class toggle
@@ -166,9 +166,9 @@ $(document).ready(function(){
         })*/
         .addTo(controller);
 
-        var nav2Tween = new ScrollMagic.Scene({
+        var navLanguagesTween = new ScrollMagic.Scene({
             triggerElement: ".Languages-1",
-            triggerHook: 0.5000000000001,
+            triggerHook: 0.50001,
             duration: heightOfLanguages
         })
         .setClassToggle(".navbar-default .navbar-nav > li:nth-child(2)", "active") // add class toggle
@@ -180,9 +180,9 @@ $(document).ready(function(){
         })*/
         .addTo(controller);
 
-        var nav3Tween = new ScrollMagic.Scene({
+        var navEmploymentTween = new ScrollMagic.Scene({
             triggerElement: ".Employment-1",
-            triggerHook: 0.5000000000001,
+            triggerHook: 0.50002,
             duration: heightOfEmployment
         })
         .setClassToggle(".navbar-default .navbar-nav > li:nth-child(3)", "active") // add class toggle
@@ -194,25 +194,25 @@ $(document).ready(function(){
         })*/
         .addTo(controller);
 
-        var nav4Tween = new ScrollMagic.Scene({
+        var navAdditionalSkillsTween = new ScrollMagic.Scene({
             triggerElement: ".Skills-1",
-            triggerHook: 0.5000000000001,
+            triggerHook: 0.50003,
             duration: heightOfSkills
         })
         .setClassToggle(".navbar-default .navbar-nav > li:nth-child(4)", "active") // add class toggle
         .addTo(controller);
 
-        var nav5Tween = new ScrollMagic.Scene({
+        var navVolunteerWorkTween = new ScrollMagic.Scene({
             triggerElement: ".Volunteer-1",
-            triggerHook: 0.5000000000001,
+            triggerHook: 0.50004,
             duration: heightOfVolunteer
         })
         .setClassToggle(".navbar-default .navbar-nav > li:nth-child(5)", "active") // add class toggle
         .addTo(controller);
 
-        var nav6Tween = new ScrollMagic.Scene({
+        var navHobbiesween = new ScrollMagic.Scene({
             triggerElement: ".Hobbies-1",
-            triggerHook: 0.5000000000001,
+            triggerHook: 0.50005,
             duration: heightOfHobbies
         })
         .setClassToggle(".navbar-default .navbar-nav > li:nth-child(6)", "active") // add class toggle
@@ -220,58 +220,50 @@ $(document).ready(function(){
 
         var navIconShowTween = new ScrollMagic.Scene({
             triggerElement: ".Education-1",
-            triggerHook: 0.5000000000001,
-            duration: "100000%"
+            triggerHook: 0.5000,
+            duration: heightOfEducation
         })
-        .setClassToggle("#nav-icon", "fade-in") // add class toggle
+        .setClassToggle("#nav-icon-education", "fade-in") // add class toggle
         .addTo(controller);
 
-        var navIcon1Tween = new ScrollMagic.Scene({
-            triggerElement: ".Intro-1",
-            triggerHook: 0,
-            duration: heightFromTopToLanguages
-        })
-        .setClassToggle("#nav-icon", "nav-icon-education") // add class toggle
-        .addTo(controller);
-
-        var navIcon2Tween = new ScrollMagic.Scene({
+        var navIconLanguagesTween = new ScrollMagic.Scene({
             triggerElement: ".Languages-1",
-            triggerHook: 0.5000000000001,
+            triggerHook: 0.50001,
             duration: heightOfLanguages
         })
-        .setClassToggle("#nav-icon", "nav-icon-languages") // add class toggle
+        .setClassToggle("#nav-icon-languages", "fade-in") // add class toggle
         .addTo(controller);
 
-        var navIcon3Tween = new ScrollMagic.Scene({
+        var navIconEmploymentTween = new ScrollMagic.Scene({
             triggerElement: ".Employment-1",
-            triggerHook: 0.5000000000001,
+            triggerHook: 0.50002,
             duration: heightOfEmployment
         })
-        .setClassToggle("#nav-icon", "nav-icon-employment") // add class toggle
+        .setClassToggle("#nav-icon-employment", "fade-in") // add class toggle
         .addTo(controller);
 
-        var navIcon4Tween = new ScrollMagic.Scene({
+        var navIconSkillsTween = new ScrollMagic.Scene({
             triggerElement: ".Skills-1",
-            triggerHook: 0.5000000000001,
+            triggerHook: 0.50003,
             duration: heightOfSkills
         })
-        .setClassToggle("#nav-icon", "nav-icon-skills") // add class toggle
+        .setClassToggle("#nav-icon-additional-skills", "fade-in") // add class toggle
         .addTo(controller);
 
-        var navIcon5Tween = new ScrollMagic.Scene({
+        var navIconVolunteerTween = new ScrollMagic.Scene({
             triggerElement: ".Volunteer-1",
-            triggerHook: 0.5000000000001,
+            triggerHook: 0.50004,
             duration: heightOfVolunteer
         })
-        .setClassToggle("#nav-icon", "nav-icon-volunteer-work") // add class toggle
+        .setClassToggle("#nav-icon-volunteer-work", "fade-in") // add class toggle
         .addTo(controller);
 
-        var navIcon6Tween = new ScrollMagic.Scene({
+        var navIconHobbiesTween = new ScrollMagic.Scene({
             triggerElement: ".Hobbies-1",
-            triggerHook: 0.5000000000001,
+            triggerHook: 0.50005,
             duration: heightOfHobbies
         })
-        .setClassToggle("#nav-icon", "nav-icon-hobbies") // add class toggle
+        .setClassToggle("#nav-icon-hobbies", "fade-in") // add class toggle
         .addTo(controller);
 
     }
@@ -763,8 +755,7 @@ $(document).ready(function(){
                'transform' : 'rotateY(90deg)'
           });
          $('#menu').css({
-             'transform' : 'rotateY(0deg)',
-             'opacity' : '1'
+             'transform' : 'rotateY(0deg)'
          })
      });
 
@@ -776,8 +767,7 @@ $(document).ready(function(){
                'opacity' : '1'
           });
          $('#menu').css({
-             'transform' : 'rotateY(90deg)',
-             'opacity' : '0'
+             'transform' : 'rotateY(90deg)'
          })
     });
 })
