@@ -8,13 +8,13 @@ class Hobbies extends Component {
                 <ul className="flex-container">
                     <li className="flex-item">
                         <h1 id="hobbies" className="scrollmagic-fade-in" tabIndex="0">
-                            Ho<span id="hobbies_bb">bb</span>ies & In<span id="hobbies_t">t</span>ere<span id="hobbies_st">st</span>s
+                            Hob<span id="hobbies-b">b</span>ies & In<span id="hobbies-t">t</span>ere<span id="hobbies-s">s</span>ts
                         </h1></li>
                     <li className="flex-item scrollmagic-circle">
                         <div></div>
                         <span className="text-container">
                             <h2>Tennis</h2>
-                            <p>Favorite players:<br/>Rafael Nadal<br/>Stan Wawrinka<br/>Venus Williams<br/>Simona Halep</p>
+                            <p>Favorite players:<br/>Rafael Nadal<br/>Stan Wawrinka<br/>David Ferrer (pictured)<br/>Venus Williams<br/>Simona Halep</p>
                         </span>
                     </li>
                     <li className="flex-item scrollmagic-circle">
@@ -28,7 +28,7 @@ class Hobbies extends Component {
                         <div></div>
                         <span className="text-container">
                             <h2>Travel</h2>
-                            <p>Bucket list:<br/>Croatia<br/>Turkey<br/>Japan<br/>Georgia</p>
+                            <p>Bucket list:<br/>Croatia<br/>Turkey<br/>Japan<br/>Switzerland<br/>Georgia</p>
                         </span>
                     </li>
                     <li className="flex-item scrollmagic-circle">
