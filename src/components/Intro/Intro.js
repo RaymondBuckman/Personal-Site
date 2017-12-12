@@ -19,11 +19,6 @@ class Intro extends Component {
                             <video preload="preload" id="intro-video" autoPlay="autoplay" loop="loop" muted>
                                 <source src={subwayVideo} type="video/mp4"></source>
                             </video> 
-                            {/*
-                            <span className="text-container">
-                                <h2>Concrete Jungle</h2>
-                            </span>
-                            */}
                         </div>
                     </li>
                     <li id="down-arrow-dest" className="flex-item">
