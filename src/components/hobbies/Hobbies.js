@@ -21,7 +21,7 @@ class Hobbies extends Component {
                         <div></div>
                         <span className="text-container">
                             <h2>Trance</h2>
-                            <p>Favorite songs:<br/>Sail - Armin van Buuren<br/>Polygons - Tomac & Mad<br/>Musica - Giuseppe Ottaviani<br/>Ondine - Nhato</p>
+                            <p>What I'm listening to:<br/>Sail - Armin van Buuren<br/>Polygons - Tomac & Mad<br/>Musica - Giuseppe Ottaviani<br/>Ondine - Nhato</p>
                         </span>
                     </li>
                     <li className="flex-item scrollmagic-circle">
@@ -55,8 +55,9 @@ class Hobbies extends Component {
                     <li className="flex-item scrollmagic-circle">
                         <div></div>
                         <span className="text-container">
-                            <h2>Cars & Driving</h2>
-                            <p>Dream car: McLaren 720S</p>
+                            <h2>Cars & Auto Racing</h2>
+                            <p>Favorite brands: Porsche, Audi, Mazda, McLaren</p>
+                            <p>Favorite race: 24 hours of Le Mans</p>
                         </span>
                     </li>
                     <li className="flex-item scrollmagic-circle">
