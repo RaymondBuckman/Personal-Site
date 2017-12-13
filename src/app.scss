@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Akronim|Prosto+One');
+//@import url('https://fonts.googleapis.com/css?family=Akronim|Prosto+One');
 
 //Variables
 $main-font: "Akronim";
@@ -69,15 +69,6 @@ $hobby-list: tennis gaming trance travel foreignlanguages weight-lifting running
     transition: transform 500ms ease-in-out;
 }
 
-@mixin bordersAfter($color: rgb(40,40,40)){
-    display:block;
-    content: '';
-    border-bottom: solid 3px $color;  
-    border-bottom: solid 3px $color;  
-    transform: scaleX(0);  
-    transition: transform 250ms ease-in-out;
-}
-
 @mixin sidebar-transition{
     -webkit-transition: all 0.4s ease;
     -moz-transition: all 0.4s ease;
@@ -138,16 +129,11 @@ $hobby-list: tennis gaming trance travel foreignlanguages weight-lifting running
     20%, 22%, 25%, 27%      {filter: opacity(100%);}   
     21%               {filter: opacity(0%);}
 }
-
-@keyframes occasionalBlur{
-	12%, 28%	{filter: blur(0px); -webkit-filter: blur(0px);}
-	20%		    {filter: blur(1px); -webkit-filter: blur(1px);}
-}
-
+/*
 @keyframes occasionalBlurOnHover{
 	20%, 52%	{-webkit-filter: blur(0px); -moz-filter: blur(0px);}
-	36%		    {-webkit-filter: blur(1px); -moz-filter: blur(1px);}
-}
+	36%		    {-webkit-filter: blur(0.5px); -moz-filter: blur(0.5px);}
+}*/
 
 @keyframes updown{
 	20%, 60%, 100% {transform: translateY(0px);}
@@ -198,7 +184,7 @@ body{
 }
 
 //general rules
-#about-me:hover, #education:hover, #senior-project:hover, #online-courses:hover, #languages:hover, #employment:hover, #additional-skills:hover, #volunteer-work:hover, #hobbies:hover {
+#name:hover, #about-me:hover, #education:hover, #senior-project:hover, #online-courses:hover, #languages:hover, #employment:hover, #additional-skills:hover, #volunteer-work:hover, #hobbies:hover {
 	border-color:  $acid-green !important;
 }
 
@@ -211,6 +197,7 @@ body{
     animation: blink 12s infinite 1.1s;
 }
 
+/*
 #education-list > *:hover,
 .carousel-control:hover,
 #language-list > *:hover,
@@ -221,7 +208,7 @@ body{
 #duolingo:hover,
 #icons8:hover {
 	animation: occasionalBlurOnHover 4s infinite;
-}
+}*/
 
 #page-content-wrapper > div:nth-child(1) > div.scrollmagic-pin-spacer{
     margin-bottom: 0vh !important;
@@ -396,6 +383,7 @@ img:focus, a:focus, header:focus{
     }    
 }    
 
+
 .sidebar-nav  li:nth-child(n+1) a:hover,
 .sidebar-nav  li:nth-child(n+1) a:active,
 .sidebar-nav  li:nth-child(n+1) a:focus,
@@ -404,7 +392,7 @@ img:focus, a:focus, header:focus{
 .sidebar-nav  li:nth-child(n+1).open a:focus{
     background-color: transparent;
     color: #000;
-    animation: occasionalBlurOnHover 4s infinite;
+    //animation: occasionalBlurOnHover 4s infinite;
 }
 
 .sidebar-nav  li:nth-child(n+2) a:visited{
@@ -447,8 +435,7 @@ img:focus, a:focus, header:focus{
 	transition: all 0.3s ease-in-out;
     
     &:hover{
-        opacity: 1;
-	    //animation: occasionalBlurOnHover 4s infinite; 
+        opacity: 1; 
     }
 }
 
@@ -628,6 +615,7 @@ img:focus, a:focus, header:focus{
                 display: inline;
                 text-align: center;
                 width: 500px;
+                padding: 5px 20px;
                 @include main-font;
                 font-size: $subheader-font-size;
                 letter-spacing: 13px;
@@ -696,7 +684,7 @@ img:focus, a:focus, header:focus{
     
     &:hover{
 	   color: $bright-white;
-	   animation: occasionalBlurOnHover 4s infinite;
+	   //animation: occasionalBlurOnHover 4s infinite;
         
         &:after{
 	       transform: scaleX(1);
@@ -709,7 +697,6 @@ img:focus, a:focus, header:focus{
     color: $acid-green;
     margin: 0px 20px;
     transform: scale(1.3);
-    //animation: occasionalBlurOnHover 4s infinite;
     
 }
 
@@ -817,6 +804,10 @@ img:focus, a:focus, header:focus{
         list-style-type: none;
         margin-top: 5vh;
         
+        li *{
+            padding: 10px;
+        }
+        
         li:nth-child(4n+1){
             @include li-odd(rgb(150,150,150));
         }
@@ -834,7 +825,7 @@ img:focus, a:focus, header:focus{
         }
 
         *:hover:after{
-           transform: scaleX(1);
+            transform: scaleX(1);
         }
     }
 }
@@ -1211,6 +1202,7 @@ img:focus, a:focus, header:focus{
         
         &:nth-child(2){
             padding-top: 100px;
+            padding-bottom: 15px;
             
             #employment{
                 position: relative;
@@ -1244,6 +1236,25 @@ img:focus, a:focus, header:focus{
                 opacity: 0;
                 transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
                 transform: translateY(40px);
+                
+                #github-page{
+                    color: $acid-green;
+                    text-decoration: none;
+                    display: inline-block;
+                    transition: all 0.5s ease-in-out;
+
+                    &:hover{
+                        color: $bright-white;    
+                    }
+
+                    &:after{
+                        @include underscore;
+                    }
+
+                    &:hover:after{
+                       transform: scaleX(1);
+                    }
+                }
             }
         }
     }
@@ -1957,7 +1968,7 @@ img:focus, a:focus, header:focus{
     .Education-1{
         position: relative;
         height: auto;
-        background: url("images/books.jpg") $nrs 55% 30%;
+        background: $bright-white;
         background-size: cover;
         @include div-padding;
         padding-left: 5vw;
