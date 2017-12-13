@@ -11,6 +11,8 @@ class AdditionalSkills extends Component {
                 <ul id="skill-list"  className="scrollmagic-fade-in">
                     <li>Webpack3/Grunt</li><br/>
                     <li>Node.js</li><br/>
+                    <li>GreenSock Animation Platform</li><br/>
+                    <li>ScrollMagic</li><br/>
                     <li>Atom/Brackets</li><br/>
                     <li>Notepad++</li><br/>
                     <li>MS Visual Studio</li><br/>
