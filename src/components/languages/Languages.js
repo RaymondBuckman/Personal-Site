@@ -16,7 +16,7 @@ class Languages extends Component {
                     <li>Sass (Scss)</li><br/>
                     <li>React.js</li><br/>
                     <li>Java</li><br/>
-                    <li>mySQL</li>
+                    <li>SQL</li>
                 </ul>
             </div> 
             <div className="Languages-2"></div>

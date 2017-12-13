@@ -166,12 +166,12 @@ $(document).ready(function(){
             duration: heightOfEmployment
         })
         .setClassToggle(".navbar-default .navbar-nav > li:nth-child(3)", "active") // add class toggle
-        
+        /*
         .addIndicators({
             name: 'Employment',
             colorTrigger: 'pink',
             colorStart: '#75C695'
-        })
+        })*/
         .addTo(controller);
 
         var navAdditionalSkillsTween = new ScrollMagic.Scene({
@@ -281,6 +281,20 @@ $(document).ready(function(){
         .setTween(education1Tween)
         .addTo(controller);
         
+        var languages2Tween = TweenMax.to(".Languages-2", 1, { 
+            backgroundPositionX: "-=30%",
+            autoRound:false, 
+            ease:Power0.linear
+        });
+
+        var languages2Scene = new ScrollMagic.Scene({
+            triggerElement: ".Languages-2",
+            triggerHook: 1,
+            duration: "250%"
+        })
+        .setTween(languages2Tween)
+        .addTo(controller);
+        
         if (!(/Firefox/i.test(navigator.userAgent))){
             var employment2Tween = TweenMax.from(".Employment-2", 1, { 
                 backgroundPositionY: "-=50px",
@@ -325,6 +339,48 @@ $(document).ready(function(){
         .setTween(skills3Tween)
         .addTo(controller);
         
+        var volunteer2Tween = TweenMax.from(".Volunteer-2", 1, { 
+            backgroundSize: "+=400px +=266.8px", //changes bg image size without changing proportions
+            autoRound:false, 
+            ease:Power1.easeOut
+        });
+
+        var volunteer2Scene = new ScrollMagic.Scene({
+            triggerElement: ".Volunteer-2",
+            triggerHook: 1,
+            duration: "200%"
+        })
+        .setTween(volunteer2Tween)
+        .addTo(controller);
+
+        var volunteer2BlurredTween = TweenMax.from(".Volunteer-2-blurred", 1, { 
+            backgroundSize: "+=400px +=266.8px", //changes bg image size without changing proportions
+            autoRound:false, 
+            ease:Power1.easeOut
+        });
+
+        var volunteer2BlurredScene = new ScrollMagic.Scene({
+            triggerElement: ".Volunteer-2-blurred",
+            triggerHook: 1,
+            duration: "200%"
+        })
+        .setTween(volunteer2BlurredTween)
+        .addTo(controller);
+
+        var volunteer2DisappearTween = TweenMax.to(".Volunteer-2-blurred", 1, { 
+            opacity: "1",
+            autoRound:false, 
+            ease:Power1.easeOut
+        });
+
+        var volunteer2DisappearScene = new ScrollMagic.Scene({
+            triggerElement: ".Volunteer-2-blurred",
+            triggerHook: 0.3,
+            duration: "50%"
+        })
+        .setTween(volunteer2DisappearTween)
+        .addTo(controller);
+        
         var volunteer3Tween = TweenMax.to(".Volunteer-3", 1, { 
             backgroundPositionX: "+=20%",
             autoRound:false, 
@@ -338,6 +394,20 @@ $(document).ready(function(){
         })
         .setTween(volunteer3Tween)
         .addTo(controller);
+        
+        var hobbies2Tween = TweenMax.from(".Hobbies-2", 1, { 
+            backgroundPositionY: "-=100px",
+            autoRound:false, 
+            ease:Power1.easeOut
+        });
+
+        var hobbies2Scene = new ScrollMagic.Scene({
+            triggerElement: ".Hobbies-2",
+            triggerHook: 1,
+            duration: "200%"
+        })
+        .setTween(hobbies2Tween)
+        .addTo(controller);   
         
         var hobbies3Tween = TweenMax.from(".Hobbies-3", 1, { 
             backgroundPositionX: "-=30%",
@@ -410,20 +480,6 @@ $(document).ready(function(){
         .setTween(intro1BrightestTween)
         .addTo(controller);
         
-        var languages2Tween = TweenMax.to(".Languages-2", 1, { 
-            backgroundPositionX: "-=30%",
-            autoRound:false, 
-            ease:Power0.linear
-        });
-
-        var languages2Scene = new ScrollMagic.Scene({
-            triggerElement: ".Languages-2",
-            triggerHook: 1,
-            duration: "250%"
-        })
-        .setTween(languages2Tween)
-        .addTo(controller);
-        
         var languages2InvertTween = TweenMax.to(".Languages-2", 0.01, {
             filter: "invert(100%)",
             autoRound:false, 
@@ -436,64 +492,7 @@ $(document).ready(function(){
         })
         .setTween(languages2InvertTween)
         .addTo(controller);
-    }  
-    
-    var volunteer2Tween = TweenMax.from(".Volunteer-2", 1, { 
-        backgroundSize: "+=400px +=266.8px", //changes bg image size without changing proportions
-        autoRound:false, 
-        ease:Power1.easeOut
-    });
-
-    var volunteer2Scene = new ScrollMagic.Scene({
-        triggerElement: ".Volunteer-2",
-        triggerHook: 1,
-        duration: "200%"
-    })
-    .setTween(volunteer2Tween)
-    .addTo(controller);
-
-    var volunteer2BlurredTween = TweenMax.from(".Volunteer-2-blurred", 1, { 
-        backgroundSize: "+=400px +=266.8px", //changes bg image size without changing proportions
-        autoRound:false, 
-        ease:Power1.easeOut
-    });
-
-    var volunteer2BlurredScene = new ScrollMagic.Scene({
-        triggerElement: ".Volunteer-2-blurred",
-        triggerHook: 1,
-        duration: "200%"
-    })
-    .setTween(volunteer2BlurredTween)
-    .addTo(controller);
-
-    var volunteer2DisappearTween = TweenMax.to(".Volunteer-2-blurred", 1, { 
-        opacity: "1",
-        autoRound:false, 
-        ease:Power1.easeOut
-    });
-
-    var volunteer2DisappearScene = new ScrollMagic.Scene({
-        triggerElement: ".Volunteer-2-blurred",
-        triggerHook: 0.3,
-        duration: "50%"
-    })
-    .setTween(volunteer2DisappearTween)
-    .addTo(controller);  
-    
-    var hobbies2Tween = TweenMax.from(".Hobbies-2", 1, { 
-        backgroundPositionY: "-=100px",
-        autoRound:false, 
-        ease:Power1.easeOut
-    });
-
-    var hobbies2Scene = new ScrollMagic.Scene({
-        triggerElement: ".Hobbies-2",
-        triggerHook: 1,
-        duration: "200%"
-    })
-    .setTween(hobbies2Tween)
-    .addTo(controller);   
-    
+    }       
     
     /*----- Header fade-in animations -----*/
     $('.scrollmagic-fade-in').each(function(){
