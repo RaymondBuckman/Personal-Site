@@ -15,7 +15,7 @@ class Education extends Component {
                 </h1>
                 <ul id="education-list" className="scrollmagic-fade-in">
                     <li>Operating Systems</li><br/>
-                    <li>Database Systems I</li><br/>
+                    <li>Database Systems</li><br/>
                     <li>Computer Architecture</li><br/>
                     <li>Digital Design I & II</li><br/>
                     <li>Algorithms & Data Structures</li><br/>
