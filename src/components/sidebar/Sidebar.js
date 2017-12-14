@@ -5,7 +5,7 @@ import icons8 from '../../images/icons8-icon.png';
 import pexels from '../../images/pexels-icon.png';
 import $ from "jquery";
 
-class Sidebar extends Component {
+export default class Sidebar extends Component {
     render() {
         return(
         <div>
@@ -42,5 +42,3 @@ class Sidebar extends Component {
         );
     }
 }
-
-export default Sidebar;
