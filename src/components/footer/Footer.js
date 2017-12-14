@@ -1,27 +1,23 @@
 import React, { Component } from 'react';
 
-class Footer extends Component {
+export default class Footer extends Component {
     render() {
         return(
         <div className="Footer-1">
-            <div className="container">
-                <div className="row">
-                    <div className="col-xs-4 text-center">
-                        <header id="thanks">Thanks for visiting!</header>
-                    </div>
-                    <div className="col-xs-4 text-center">
-                        <h1 id="fin" className="scrollmagic-fade-in" tabIndex="0">
-                            <span id="fin-F">F</span><span id="fin-i">i</span>n
-                        </h1>
-                    </div>
-                    <div className="col-xs-4 text-center">
-                        <a id="icons8" href="https://icons8.com" target="_blank">Icon pack By Icons8</a>
-                    </div>
-                </div> 
-            </div> 
+            <ul className="flex-container">
+                <li className="flex-item">
+                    <header id="thanks">Thanks for visiting!</header>
+                </li>
+                <li className="flex-item">
+                    <h1 id="fin" className="scrollmagic-fade-in" tabIndex="0">
+                        <span id="fin-F">F</span><span id="fin-i">i</span>n
+                    </h1>
+                </li>
+                <li className="flex-item">
+                    <a id="icons8" href="https://icons8.com" target="_blank">Icon pack By Icons8</a>
+                </li>
+            </ul> 
         </div>
         );
     }
 }
-
-export default Footer;

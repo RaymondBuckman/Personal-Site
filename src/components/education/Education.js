@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import subwayVideo from '../../images/drone-video.mp4';
 
-class Education extends Component {
+export default class Education extends Component {
     render() {
         return(
         <div>
@@ -110,5 +110,3 @@ class Education extends Component {
         );
     }
 }
-
-export default Education;

@@ -27,9 +27,6 @@ $employment-2-width: 100vw / .75;
 $hobbies-3-width: 60vh / .6668;
 $hobbies-4-width: 100vw / .6668;
 
-/*List for looping background images*/
-$hobby-list: tennis gaming trance travel foreignlanguages weight-lifting running cars pingpong history health pets; 
-
 //mixins
 @mixin li-even{
     opacity: 0;
@@ -184,7 +181,7 @@ body{
 }
 
 //general rules
-#name:hover, #about-me:hover, #education:hover, #senior-project:hover, #online-courses:hover, #languages:hover, #employment:hover, #additional-skills:hover, #volunteer-work:hover, #hobbies:hover {
+#about-me:hover, #education:hover, #senior-project:hover, #online-courses:hover, #languages:hover, #employment:hover, #additional-skills:hover, #volunteer-work:hover, #hobbies:hover {
 	border-color:  $acid-green !important;
 }
 
@@ -1786,7 +1783,7 @@ img:focus, a:focus, header:focus{
 	height: 50vh;
 	background: url("images/break-dancer.jpg") $nrf 60% 60%;
 	background-size: 130vw;
-	z-index:3;
+    transition: filter 0.5s ease-in-out;
 }
 
 
@@ -1797,62 +1794,91 @@ img:focus, a:focus, header:focus{
 	background-size: 100vw $hobbies-4-height;
 }
 
-.Footer-1{
-	position:relative;
-	height: auto;
-	background: $concrete-gray;
-    //@include div-padding(1vh);
-	
-    #thanks{
-        @include secondary-font;
-        position: relative;
-        top:0.5em;
-        font-size:25px;
-        letter-spacing: 2px;
-        color: $bright-white;
-        text-align: center;
-        margin-top: 40px;
-        margin-bottom: 40px;
-        vertical-align: middle;
-        display: inline-block;
-        transition: all .5s ease-in-out;
+.Footer-1 {
+    position: relative;
+    height: auto;
+    width: 100vw;
+    background: $concrete-gray;
+        
+    .flex-container {
+        //padding: 15vh 5vw;
+        margin: 0;
+        list-style: none;
+
+        display: -webkit-box;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+
+        -webkit-flex-flow: row wrap;
+        justify-content: space-around;
     }
 
-    #fin{
-        @include main-font;
-        position: relative;
-        top: 0em;
-        font-size: 90px;
-        letter-spacing: 5px;
-        color: $bright-white;
+    .flex-item {
+        height: 100px;
+        margin-top: 10px;
+        margin-bottom: 30px;
         text-align: center;
-        display: inline-block;
-        transition: all .5s ease-in-out;
-    }
-
-    #icons8{
-        @include secondary-font;
-        position: relative;
-        top:0.5em;
-        font-size:25px;
-        letter-spacing: 2px;
-        text-decoration: none;
-        color: $bright-white;
-        text-align: center;
-        margin-top: 40px;
-        margin-bottom: 40px;
-        display: inline-block;
-        transition: all .5s ease-in-out;
-
-        &:after{
-            @include underscore;
+        transition: all 0.3s ease-in-out;
+        
+        &:nth-child(1){
+            width: 100vw/3;
+            background: transparent;
+            
+            #thanks{
+                @include secondary-font;
+                position: relative;
+                font-size: 1.5em;
+                letter-spacing: 2px;
+                color: $bright-white;
+                text-align: center;
+                margin-top: 40px;
+                margin-bottom: 40px;
+                vertical-align: middle;
+                display: inline-block;
+                transition: all .5s ease-in-out;
+            }
         }
-
-        &:hover:after{
-            transform: scaleX(1);
+        
+        &:nth-child(2){
+            width: 100vw/3;
+            background: transparent;
+            
+            #fin{
+                @include main-font;
+                position: relative;
+                top: 0em;
+                font-size: 5em;
+                letter-spacing: 5px;
+                color: $bright-white;
+                text-align: center;
+                display: inline-block;
+                transition: all .5s ease-in-out;
+            }
+        }
+        
+        &:nth-child(3){
+            width: 100vw/3;
+            background: transparent;
+            
+            #icons8{
+                @include secondary-font;
+                position: relative;
+                font-size: 1.5em;
+                letter-spacing: 2px;
+                color: $bright-white;
+                text-align: center;
+                margin-top: 40px;
+                margin-bottom: 40px;
+                vertical-align: middle;
+                display: inline-block;
+                transition: all .5s ease-in-out;
+            }
         }
     }
 }
+
 
 /*-----Breakpoints-----*/
 @include for-phone-portrait{
@@ -1877,7 +1903,7 @@ img:focus, a:focus, header:focus{
         
         #down-arrow{
             position: absolute;
-            top: 80vh;
+            top: 75vh;
         }
     }
 
@@ -2359,7 +2385,7 @@ img:focus, a:focus, header:focus{
     }
 
     .Skills-1{
-        background: url("images/graffiti-2.jpg") $nrs 50% 0%;
+        background: url("images/graffiti-2.jpg") $nrs 60% 0%;
         background-size: cover;
 
         #additional-skills{
@@ -2730,40 +2756,67 @@ img:focus, a:focus, header:focus{
     }
 
     .Footer-1{
-        #thanks{
-            @include secondary-font;
-            position: relative;
-            font-size: 1em;
-            letter-spacing: 2px;
-            padding-top: 5px;
-            color: $bright-white;
-            text-align: center;
-            display: inline-block;
-            transition: all .5s ease-in-out;
+        .flex-container {
+            padding: 1vh 5vw;
+            margin: 0;
+            list-style: none;
+
+            display: -webkit-box;
+            display: -moz-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex;
+
+            -webkit-flex-flow: row wrap;
+            justify-content: space-around;
         }
 
-        #fin{
-            @include main-font;
-            position: relative;
-            font-size: 3em;
-            letter-spacing: 5px;
-            padding-top: 7vh;
-            color: $bright-white;
+        .flex-item {
+            //padding: 5px;
+            width: 33%;
+            height: 50px;
+            //margin-top: 30px;
+            //margin-bottom: 30px;
             text-align: center;
-            display: inline-block;
-            transition: all .5s ease-in-out;
-        }
+            transition: all 0.3s ease-in-out;
 
-        #icons8{
-            @include secondary-font;
-            position: relative;
-            font-size: 1em;
-            letter-spacing: 2px;
-            padding-top: 5px;
-            text-decoration: none;
-            color: $bright-white;
-            text-align: center;
-            display: inline-block;
+            &:nth-child(1){    
+                #thanks{
+                    @include secondary-font;
+                    position: relative;
+                    font-size: 0.8em;
+                    letter-spacing: 2px;
+                    color: $bright-white;
+                    //margin-top: 40px;
+                    //margin-bottom: 40px;
+                    transition: all .5s ease-in-out;
+                }
+            }
+
+            &:nth-child(2){            
+                #fin{
+                    @include main-font;
+                    position: relative;
+                    top: 5vh;
+                    font-size: 3em;
+                    letter-spacing: 5px;
+                    color: $bright-white;
+                    transition: all .5s ease-in-out;
+                }
+            }
+
+            &:nth-child(3){
+                #icons8{
+                    @include secondary-font;
+                    position: relative;
+                    font-size: 0.8em;
+                    letter-spacing: 2px;
+                    color: $bright-white;
+                    //margin-top: 40px;
+                    //margin-bottom: 40px;
+                    transition: all .5s ease-in-out;
+                }
+            }
         }
     }    
 }
@@ -3477,54 +3530,66 @@ img:focus, a:focus, header:focus{
     }
 
     .Footer-1{
-        position:relative;
-        height: auto;
-        background: $concrete-gray $nrf;
-        
-        #thanks{
-            @include secondary-font;
-            position: relative;
-            top:0.5em;
-            font-size:25px;
-            letter-spacing: 2px;
-            padding-top: 35px;
-            color: $bright-white;
-            text-align: center;
-            display: inline-block;
-            transition: all .5s ease-in-out;
+        .flex-container {
+            padding: 1vh 5vw;
+            margin: 0;
+            list-style: none;
+
+            display: -webkit-box;
+            display: -moz-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex;
+
+            -webkit-flex-flow: row wrap;
+            justify-content: space-around;
         }
 
-        #fin{
-            @include main-font;
-            position: relative;
-            top:0em;
-            font-size: 90px;
-            letter-spacing: 5px;
-            color: $bright-white;
+        .flex-item {
+            //padding: 5px;
+            width: 33%;
+            height: 50px;
+            //margin-top: 30px;
+            //margin-bottom: 30px;
             text-align: center;
-            display: inline-block;
-            transition: all .5s ease-in-out;
-        }
+            transition: all 0.3s ease-in-out;
 
-        #icons8{
-            @include secondary-font;
-            position: relative;
-            top:0.5em;
-            font-size:25px;
-            letter-spacing: 2px;
-            padding-top: 35px;
-            text-decoration: none;
-            color: $bright-white;
-            text-align: center;
-            display: inline-block;
-            transition: all .5s ease-in-out;
-
-            &:after{
-                @include underscore;
+            &:nth-child(1){    
+                #thanks{
+                    @include secondary-font;
+                    position: relative;
+                    font-size: 0.8em;
+                    letter-spacing: 2px;
+                    color: $bright-white;
+                    //margin-top: 40px;
+                    //margin-bottom: 40px;
+                    transition: all .5s ease-in-out;
+                }
             }
 
-            &:hover:after{
-                transform: scaleX(1);
+            &:nth-child(2){            
+                #fin{
+                    @include main-font;
+                    position: relative;
+                    top: 5vh;
+                    font-size: 3em;
+                    letter-spacing: 5px;
+                    color: $bright-white;
+                    transition: all .5s ease-in-out;
+                }
+            }
+
+            &:nth-child(3){
+                #icons8{
+                    @include secondary-font;
+                    position: relative;
+                    font-size: 0.8em;
+                    letter-spacing: 2px;
+                    color: $bright-white;
+                    //margin-top: 40px;
+                    //margin-bottom: 40px;
+                    transition: all .5s ease-in-out;
+                }
             }
         }
     }

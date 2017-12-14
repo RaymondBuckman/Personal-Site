@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class Hobbies extends Component {
+export default class Hobbies extends Component {
     render() {
         return(
         <div>
@@ -146,5 +146,3 @@ class Hobbies extends Component {
         );
     }
 }
-
-export default Hobbies;

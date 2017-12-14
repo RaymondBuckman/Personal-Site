@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import drillVideo from '../../images/drill-video.mp4';
 
-class Employment extends Component {
+export default class Employment extends Component {
     render() {
         return(
         <div>             
@@ -27,5 +27,3 @@ class Employment extends Component {
         );
     }
 }
-
-export default Employment;

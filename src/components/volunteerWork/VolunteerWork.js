@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import cameraVideo from '../../images/camera-video.mp4';
 
-class VolumteerWork extends Component {
+export default class VolumteerWork extends Component {
     render() {
         return(
         <div>
@@ -32,7 +32,5 @@ class VolumteerWork extends Component {
         );
     }
 }
-
-export default VolumteerWork;
 
             

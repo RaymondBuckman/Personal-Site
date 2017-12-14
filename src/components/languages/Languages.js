@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class Languages extends Component {
+export default class Languages extends Component {
     render() {
         return(
         <div>
@@ -24,5 +24,3 @@ class Languages extends Component {
         );
     }
 }
-
-export default Languages;
