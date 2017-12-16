@@ -1863,7 +1863,16 @@ img:focus, a:focus, header:focus{
                 margin-bottom: 40px;
                 vertical-align: middle;
                 display: inline-block;
+                text-decoration: none;
                 transition: all .5s ease-in-out;
+                
+                &:after{
+                    @include underscore;
+                }
+
+                &:hover:after{
+                    transform: scaleX(1);
+                }
             }
         }
     }
