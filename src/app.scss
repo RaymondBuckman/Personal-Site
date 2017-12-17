@@ -1882,7 +1882,7 @@ img:focus, a:focus, header:focus{
 /*-----Breakpoints-----*/
 @include for-phone-portrait{
     .Intro-1{
-        background: url("images/subway.jpg") $nrs 25% 30%;
+        background: url("images/subway-mini.jpg") $nrs 25% 30%;
         background-size: $intro-1-width 100vh;
         padding-top:45vh;
         padding-bottom: 45vh;
@@ -1896,7 +1896,7 @@ img:focus, a:focus, header:focus{
             color: $bright-white;    
             text-align: center;
             display: table;
-            padding: 10px px;
+            padding: 10px;
             margin: auto auto;
         }
         
@@ -1954,7 +1954,7 @@ img:focus, a:focus, header:focus{
             &:nth-child(2){
                 #about-me{
                     position: relative;
-                    top: 3vh;
+                    top: 4vh;
                     //left: 50%;
                     display: inline;
                     text-align: center;
@@ -2112,6 +2112,8 @@ img:focus, a:focus, header:focus{
             }
 
             &:nth-child(3){
+                height: 0vh;
+                display: none;
                 clip-path: circle(50% at 50% 50%);
 
                 div{
@@ -2224,7 +2226,7 @@ img:focus, a:focus, header:focus{
     }
 
     .Education-3{
-        background: url("images/laptop.jpg") $nrs 20% 70%;
+        background: url("images/laptop-mini.jpg") $nrs 20% 70%;
         background-size: cover;
 
         #online-courses{
@@ -2368,13 +2370,12 @@ img:focus, a:focus, header:focus{
     }
 
     .Employment-2{
-        height: 35vh;
-        background: url("images/hammer-mini.jpg") $nrs 20% 0%;
-        background-size: 100vh $employment-2-width;
+        height: 0vh;
+        background: $concrete-gray;
     }
 
     .Skills-1{
-        background: url("images/graffiti-2.jpg") $nrs 60% 0%;
+        background: url("images/graffiti-2-mini.jpg") $nrs 60% 0%;
         background-size: cover;
 
         #additional-skills{
@@ -2727,9 +2728,8 @@ img:focus, a:focus, header:focus{
     }
 
     .Hobbies-2{
-        height: 35vh;
-        background: url("images/graffiti-1-mini.jpg") $nrs 50% 50%;
-        background-size: 130vw;
+        height: 0vh;
+        background: $concrete-gray;
     }
 
     .Hobbies-3{
@@ -2740,7 +2740,7 @@ img:focus, a:focus, header:focus{
 
 
     .Hobbies-4{
-        background: url("images/escalator.jpg") $nrs 10% 60%;
+        background: url("images/escalator-mini.jpg") $nrs 10% 60%;
         background-size: cover;
     }
 
