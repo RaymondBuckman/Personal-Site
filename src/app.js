@@ -58,13 +58,12 @@ $(document).ready(function(){
     var heightOfHobbies = $('.Hobbies-4').offset().top - $('.Hobbies-1').offset().top;
     
     var laptopsAndDesktops = window.matchMedia( "(min-width: 1420px)" );
+    var phonePortrait = window.matchMedia( "(min-width: 599px)" );
     var borderRadius = "30px 15px 30px 15px";
     var menu = document.getElementById("menu");
     var close = document.getElementById("close");
     var downArrow = document.getElementById("down-arrow");
     var navBrowserHeight = 50/$(window).height();
-    
-    
     
     //change button size based on screen
     if(laptopsAndDesktops.matches){
@@ -74,7 +73,11 @@ $(document).ready(function(){
     }else{
         menu.height = "50";
         close.height = "50";
-        downArrow.height = "60";
+        downArrow.height = "60"; 
+    }
+    
+    if(phonePortrait.matches){
+        $('#project-video').remove();
     }
     
     
