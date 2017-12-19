@@ -58,7 +58,7 @@ $(document).ready(function(){
     var heightOfHobbies = $('.Hobbies-4').offset().top - $('.Hobbies-1').offset().top;
     
     var laptopsAndDesktops = window.matchMedia( "(min-width: 1420px)" );
-    var phonePortrait = window.matchMedia( "(min-width: 599px)" );
+    var phonePortrait = window.matchMedia( "(max-width: 599px)" );
     var borderRadius = "30px 15px 30px 15px";
     var menu = document.getElementById("menu");
     var close = document.getElementById("close");
