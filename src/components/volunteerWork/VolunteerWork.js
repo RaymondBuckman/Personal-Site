@@ -19,7 +19,7 @@ export default class VolumteerWork extends Component {
                                 Vol<span id="volunteer-work-u">u</span>nteer <span id="volunteer-work-W">W</span>or<span id="volunteer-work-k">k</span>
                             </h1>
                             <p id="volunteer-paragraph" className="scrollmagic-fade-in">
-                                Since February 2016, I've been volunteering as a cameraman for the media team at a local church. My job is to track the pastor during sermons & to perform panning & zoom transitions during worship. The sermons last an hour & I usually do one to two sermons every other week. Working as part of a camera crew requires teamwork, great communicatoon, & on-the-fly decision-making abilities. I've also done voluneer work as a food packager for the San Diego Food Bank, where I worked four hours/day packaging food for the elderly for two months.
+                                Since February 2016, I've been volunteering as a cameraman for the media team at a local church. My job is to track the pastor during sermons as well as performing panning & zoom transitions during worship. The sermons last about an hour & I usually do one to two sermons every other week. Working as part of a camera crew requires teamwork, great communicatoon, & on-the-fly decision-making abilities. I've also done voluneer work as a food packager for the San Diego Food Bank, where I worked four hours a day packaging food for the elderly for two months.
                             </p>
                         </li>
                     </ul>
