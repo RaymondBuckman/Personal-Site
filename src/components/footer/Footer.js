@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 export default class Footer extends Component {
     render() {
         return(
-        <div className="Footer-1">
+        <div className="footer-1-div">
             <ul className="flex-container">
                 <li className="flex-item">
                     <header id="thanks">Thanks for visiting!</header>

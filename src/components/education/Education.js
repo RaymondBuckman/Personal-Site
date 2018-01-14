@@ -5,7 +5,7 @@ export default class Education extends Component {
     render() {
         return(
         <div>
-            <div id="jump-to-education" className="Education-1">
+            <div id="jump-to-education" className="education-1-div">
                 <h1 id="education" className="scrollmagic-fade-in" tabIndex="0">
                     <span id="education-E">E</span><span id="education-d">d</span>uca<span id="education-t">t</span>ion
                 </h1>
@@ -25,7 +25,7 @@ export default class Education extends Component {
                     <li>Embedded Systems</li>
                 </ul>
             </div>
-            <div className="Education-2">
+            <div className="education-2-div">
                 <ul className="flex-container">
                     <li className="flex-item">
                         <h1 id="senior-project" className="scrollmagic-fade-in" tabIndex="0">
@@ -88,7 +88,7 @@ export default class Education extends Component {
                     </li>
                 </ul>
             </div>
-            <div className="Education-3">
+            <div className="education-3-div">
                 <h1 id="online-courses" className="scrollmagic-fade-in" tabIndex="0">
                     Onli<span id="online-courses-n">n</span>e Co<span id="online-courses-u">u</span>rs<span id="online-courses-e">e</span>s
                 </h1>

@@ -5,14 +5,14 @@ export default class Intro extends Component {
     render() {
         return(
         <div> 
-            <div className="Intro-1" id="top-of-page">
+            <div className="intro-1-div" id="top-of-page">
                         <h1 id="name">
                             <span id="name-R">R</span>ay<span id="name-m">m</span>ond Buc<span id="name-k">k</span>man
                         </h1>
                         <img id="down-arrow" src="https://png.icons8.com/downward-arrow/ios7/73/ffffff"></img>            
             </div>
             
-            <div className="Intro-2" id="arrow-dest">
+            <div className="intro-2-div" id="arrow-dest">
                 <ul className="flex-container">
                     <li className="flex-item">
                         <div id="intro-window" className="scrollmagicWindow">

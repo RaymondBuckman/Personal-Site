@@ -451,7 +451,7 @@ img:focus, a:focus, header:focus{
 }
 
 /*=============== Page Content Wrapper ===============*/
-.Intro-1{
+.intro-1-div{
     position: relative;
     top: 0;
     height:100vh;
@@ -504,7 +504,7 @@ img:focus, a:focus, header:focus{
     }
 }
 
-.Intro-2 {
+.intro-2-div {
     position: relative;
     height: auto;
     background: $concrete-gray;
@@ -746,7 +746,7 @@ img:focus, a:focus, header:focus{
 
 
 
-.Education-1{
+.education-1-div{
 	position: relative;
 	height: 110vh;
 	background: url("images/books.jpg") $nrf 20% 30%;
@@ -825,7 +825,7 @@ img:focus, a:focus, header:focus{
     }
 }
 
-.Education-2 {
+.education-2-div {
     position: relative;
     height: auto;
     width: 100vw;
@@ -1004,7 +1004,7 @@ img:focus, a:focus, header:focus{
     }
 }
 
-.Education-3{
+.education-3-div{
 	position: relative;
 	height: auto;
 	background: url("images/laptop.jpg") $nrf 20% 70%;
@@ -1056,7 +1056,7 @@ img:focus, a:focus, header:focus{
     }
 }
 
-.Languages-1{
+.languages-1-div{
 	position: relative;
 	height: auto;
 	background: $concrete-gray;
@@ -1107,7 +1107,7 @@ img:focus, a:focus, header:focus{
     }
 }
 
-.Languages-2{
+.languages-2-div{
 	position: relative;
 	height: 50vh;
 	background: url("images/code.jpg") $nrf 100% 20%;
@@ -1115,7 +1115,7 @@ img:focus, a:focus, header:focus{
     transition: filter 0.5s ease-in-out;
 }
 
-.Employment-1 {
+.employment-1-div {
     position: relative;
     height: auto;
     background: $concrete-gray;
@@ -1245,14 +1245,14 @@ img:focus, a:focus, header:focus{
     }
 }
 
-.Employment-2{
+.employment-2-div{
 	position: relative;
 	height: 50vh;
 	background: url("images/hammer.jpg") $nrf 50% 0%;
 	background-size: 100vw $employment-2-height;
 }
 
-.Skills-1{
+.skills-1-div{
     position: relative;
 	height: auto;
 	background: url("images/graffiti-2.jpg") $nrf 41% 45%;
@@ -1305,7 +1305,7 @@ img:focus, a:focus, header:focus{
     
 }
 
-.Skills-2{    
+.skills-2-div{    
 	height: 50vh;
 	background: url("images/eiffel.jpg") $nrf 50% 25%;
 	background-size: 100vw $skills-2-height;
@@ -1334,7 +1334,7 @@ img:focus, a:focus, header:focus{
     }
 }
 
-.Skills-3{
+.skills-3-div{
 	height:50vh;
 	background: url("images/brandenburg-gate.jpg") $nrf 100% 40%;
 	background-size: 1950px;
@@ -1361,7 +1361,7 @@ img:focus, a:focus, header:focus{
     }
 }
 
-.Volunteer-1 {
+.volunteer-1-div {
 	position: relative;
     height: auto;
     background: $concrete-gray;
@@ -1472,14 +1472,14 @@ img:focus, a:focus, header:focus{
     }
 }
 
-.Volunteer-2{
+.volunteer-2-div{
 	position: relative;
 	height: 50vh;
 	background: url("images/heart-cross.jpg") $nrf 40% 60%;
 	background-size: 100vw $volunteer-2-height;
 	z-index:1;
     
-    .Volunteer-2-blurred{
+    .volunteer-2-blurred-div{
         position: relative;
         height: 50vh;
         background: url("images/heart-cross-blurred.jpg") $nrf 40% 60%;
@@ -1489,7 +1489,7 @@ img:focus, a:focus, header:focus{
     }
 }
 
-.Volunteer-3{
+.volunteer-3-div{
 	position: relative;
 	height: 50vh;
 	background: url("images/care.jpg") $nrf 0% 50%;
@@ -1497,7 +1497,7 @@ img:focus, a:focus, header:focus{
 	z-index:1;
 }
 
-.Hobbies-1 {
+.hobbies-1-div {
     position: relative;
     height: auto;
     width: 100vw;
@@ -1759,14 +1759,14 @@ img:focus, a:focus, header:focus{
     }
 }
 
-.Hobbies-2{
+.hobbies-2-div{
 	position: relative;
 	height: 50vh;
 	background: url("images/graffiti-1.jpg") $nrf 100% 100%;
 	background-size: cover;
 }
 
-.Hobbies-3{
+.hobbies-3-div{
 	position:relative;
 	height: 50vh;
 	background: url("images/break-dancer.jpg") $nrf 60% 60%;
@@ -1775,14 +1775,14 @@ img:focus, a:focus, header:focus{
 }
 
 
-.Hobbies-4{
+.hobbies-4-div{
 	position:relative;
 	height:85vh;
 	background: url("images/escalator.jpg") $nrf 50% 60%;
 	background-size: 100vw $hobbies-4-height;
 }
 
-.Footer-1 {
+.footer-1-div {
     position: relative;
     height: auto;
     width: 100vw;
@@ -1879,7 +1879,7 @@ img:focus, a:focus, header:focus{
 
 /*-----Breakpoints-----*/
 @include for-phone-portrait{
-    .Intro-1{
+    .intro-1-div{
         background: url("images/subway-mini.jpg") $nrs 25% 30%;
         background-size: $intro-1-width 100vh;
         padding-top:45vh;
@@ -1904,7 +1904,7 @@ img:focus, a:focus, header:focus{
         }
     }
 
-    .Intro-2 {
+    .intro-2-div {
         .flex-item{
             padding: 5px;
             width: 100vw;
@@ -1988,7 +1988,7 @@ img:focus, a:focus, header:focus{
         }
     }
 
-    .Education-1{
+    .education-1-div{
         position: relative;
         height: auto;
         background: $bright-white;
@@ -2042,7 +2042,7 @@ img:focus, a:focus, header:focus{
         }
     }
 
-    .Education-2 {
+    .education-2-div {
         position: relative;
         height: auto;
         width: 100vw;
@@ -2223,7 +2223,7 @@ img:focus, a:focus, header:focus{
         }
     }
 
-    .Education-3{
+    .education-3-div{
         background: url("images/laptop-mini.jpg") $nrs 20% 70%;
         background-size: cover;
 
@@ -2256,7 +2256,7 @@ img:focus, a:focus, header:focus{
         }
     }
 
-    .Languages-1{
+    .languages-1-div{
         #languages{
             position: relative;
             width: 80vw;
@@ -2286,13 +2286,13 @@ img:focus, a:focus, header:focus{
         }
     }
 
-    .Languages-2{
+    .languages-2-div{
         height: 35vh;
         background: url("images/code-mini.jpg") $nrs 100% 20%;
         background-size: 150vw;
     }
 
-    .Employment-1 {
+    .employment-1-div {
         .flex-item{
             padding: 5px;
             width: 100vw;
@@ -2367,12 +2367,12 @@ img:focus, a:focus, header:focus{
         }
     }
 
-    .Employment-2{
+    .employment-2-div{
         height: 0vh;
         background: $concrete-gray;
     }
 
-    .Skills-1{
+    .skills-1-div{
         background: url("images/graffiti-2-mini.jpg") $nrs 60% 0%;
         background-size: cover;
 
@@ -2413,7 +2413,7 @@ img:focus, a:focus, header:focus{
 
     }
 
-    .Skills-2{    
+    .skills-2-div{    
         height: 35vh;
         background: url("images/eiffel-mini.jpg") $nrs 50% 60%;
         background-size: cover;
@@ -2441,7 +2441,7 @@ img:focus, a:focus, header:focus{
         }
     }
 
-    .Skills-3{
+    .skills-3-div{
         height: 35vh;
         background: url("images/brandenburg-gate-mini.jpg") $nrs 50% 40%;
         background-size: cover;
@@ -2468,7 +2468,7 @@ img:focus, a:focus, header:focus{
         }
     }
 
-    .Volunteer-1 {
+    .volunteer-1-div {
         .flex-item{
             padding: 5px;
             width: 100vw;
@@ -2542,25 +2542,25 @@ img:focus, a:focus, header:focus{
         }
     }
 
-    .Volunteer-2{
+    .volunteer-2-div{
         height: 35vh;
         background: url("images/heart-cross-mini.jpg") $nrs 50% 60%;
         background-size: 75vh 50vh;
         
-        .Volunteer-2-blurred{
+        .volunteer-2-blurred-div{
             height: 35vh;
             background: url("images/heart-cross-blurred-mini.jpg") $nrs 50% 60%;
             background-size: 75vh 50vh;
         }
     }
 
-    .Volunteer-3{
+    .volunteer-3-div{
         height: 35vh;
         background: url("images/care-mini.jpg") $nrs 0% 50%;
         background-size: 120vw;
     }
 
-    .Hobbies-1 {
+    .hobbies-1-div {
         .flex-item {
             //padding: 5px;
             margin-top: 10px;
@@ -2725,24 +2725,24 @@ img:focus, a:focus, header:focus{
         }
     }
 
-    .Hobbies-2{
+    .hobbies-2-div{
         height: 0vh;
         background: $concrete-gray;
     }
 
-    .Hobbies-3{
+    .hobbies-3-div{
         height: 35vh;
         background: url("images/break-dancer-mini.jpg") $nrs 80% 40%;
         background-size: cover;
     }
 
 
-    .Hobbies-4{
+    .hobbies-4-div{
         background: url("images/escalator-mini.jpg") $nrs 10% 60%;
         background-size: cover;
     }
 
-    .Footer-1{
+    .footer-1-div{
         .flex-container {
             padding: 1vh 5vw;
             margin: 0;
@@ -2815,7 +2815,7 @@ img:focus, a:focus, header:focus{
         z-index: 1;
     }
     
-    .Intro-1{
+    .intro-1-div{
         background:url("images/subway.jpg") $nrs 20% 30%;
         background-size: cover;
         padding-top: 35vh;
@@ -2833,7 +2833,7 @@ img:focus, a:focus, header:focus{
         }
     }
 
-    .Intro-2 {
+    .intro-2-div {
         .flex-item{
             padding: 5px;
             width: 80vw;
@@ -2907,7 +2907,7 @@ img:focus, a:focus, header:focus{
         }
     }
 
-    .Education-1{
+    .education-1-div{
         position: relative;
         height: auto;
         background: url("images/books.jpg") $nrs 60% 30%;
@@ -2961,7 +2961,7 @@ img:focus, a:focus, header:focus{
         }
     }
 
-    .Education-2 {
+    .education-2-div {
         position: relative;
         height: auto;
         width: 100vw;
@@ -3054,7 +3054,7 @@ img:focus, a:focus, header:focus{
         }
     }
 
-    .Education-3{
+    .education-3-div{
         background: url("images/laptop.jpg") $nrs 20% 70%;
         background-size: cover;
 
@@ -3087,7 +3087,7 @@ img:focus, a:focus, header:focus{
         }
     }
 
-    .Languages-1{
+    .languages-1-div{
         #languages{
             position: relative;
             width: auto;
@@ -3117,13 +3117,13 @@ img:focus, a:focus, header:focus{
         }
     }
 
-    .Languages-2{
+    .languages-2-div{
         height: 50vh;
         background: url("images/code-mini.jpg") $nrs 100% 20%;
         background-size: 2000px;
     }
 
-    .Employment-1 {
+    .employment-1-div {
         .flex-item{
             padding: 5px;
             width: 80vw;
@@ -3198,13 +3198,13 @@ img:focus, a:focus, header:focus{
         }
     }
 
-    .Employment-2{
+    .employment-2-div{
         height: 50vh;
         background: url("images/hammer-mini.jpg") $nrs 50% 0%;
         background-size: cover;
     }
 
-    .Skills-1{
+    .skills-1-div{
         background: url("images/graffiti-2.jpg") $nrs 50% 0%;
         background-size: cover;
 
@@ -3225,19 +3225,19 @@ img:focus, a:focus, header:focus{
 
     }
 
-    .Skills-2{    
+    .skills-2-div{    
         height: 50vh;
         background: url("images/eiffel-mini.jpg") $nrs 50% 60%;
         background-size: cover;
     }
 
-    .Skills-3{
+    .skills-3-div{
         height: 50vh;
         background: url("images/brandenburg-gate-mini.jpg") $nrs 50% 40%;
         background-size: cover;
     }
 
-    .Volunteer-1 {
+    .volunteer-1-div {
         .flex-item{
             padding: 5px;
             width: 80vw;
@@ -3317,25 +3317,25 @@ img:focus, a:focus, header:focus{
         }
     }
 
-    .Volunteer-2{
+    .volunteer-2-div{
         height: 50vh;
         background: url("images/heart-cross-mini.jpg") $nrs 50% 50%;
         background-size: 225vh 150vh;
         
-        .Volunteer-2-blurred{
+        .volunteer-2-blurred-div{
             height: 50vh;
             background: url("images/heart-cross-blurred-mini.jpg") $nrs 50% 50%;
             background-size: 225vh 150vh;
         }
     }
 
-    .Volunteer-3{
+    .volunteer-3-div{
         height: 50vh;
         background: url("images/care-mini.jpg") $nrs 0% 50%;
         background-size: 120vw;
     }
 
-    .Hobbies-1 {
+    .hobbies-1-div {
         .flex-item {
             //padding: 5px;
             width: 300px;
@@ -3491,25 +3491,25 @@ img:focus, a:focus, header:focus{
         }
     }
 
-    .Hobbies-2{
+    .hobbies-2-div{
         height: 50vh;
         background: url("images/graffiti-1-mini.jpg") $nrs 50% 0%;
         background-size: cover;
     }
 
-    .Hobbies-3{
+    .hobbies-3-div{
         height: 50vh;
         background: url("images/break-dancer-mini.jpg") $nrs 50% 20%;
         background-size: cover;
     }
 
 
-    .Hobbies-4{
+    .hobbies-4-div{
         background: url("images/escalator.jpg") $nrs 50% 30%;
         background-size: cover;
     }
 
-    .Footer-1{
+    .footer-1-div{
         .flex-container {
             padding: 1vh 5vw;
             margin: 0;
@@ -3576,7 +3576,7 @@ img:focus, a:focus, header:focus{
 }
 
 @include for-large-tablet-portrait{
-    .Intro-1{
+    .intro-1-div{
         background:url("images/subway.jpg") $nrs 20% 30%;
         background-size: cover;
         padding-top: 45vh;
@@ -3594,7 +3594,7 @@ img:focus, a:focus, header:focus{
         }
     }
 
-    .Intro-2 {
+    .intro-2-div {
         .flex-container{
             padding: 10vh 5vw;
         }
@@ -3672,7 +3672,7 @@ img:focus, a:focus, header:focus{
         }
     }
 
-    .Education-1{
+    .education-1-div{
         position: relative;
         height: auto;
         background: url("images/books.jpg") $nrs 60% 30%;
@@ -3723,7 +3723,7 @@ img:focus, a:focus, header:focus{
         }
     }
 
-    .Education-2 {
+    .education-2-div {
         position: relative;
         height: auto;
         width: 100vw;
@@ -3859,7 +3859,7 @@ img:focus, a:focus, header:focus{
         }
     }
 
-    .Education-3{
+    .education-3-div{
         background: url("images/laptop.jpg") $nrs 20% 70%;
         background-size: cover;
         @include div-padding(10vh);
@@ -3893,7 +3893,7 @@ img:focus, a:focus, header:focus{
         }
     }
 
-    .Languages-1{
+    .languages-1-div{
         @include div-padding(10vh);
         
         #languages{
@@ -3925,13 +3925,13 @@ img:focus, a:focus, header:focus{
         }
     }
 
-    .Languages-2{
+    .languages-2-div{
         height: 35vh;
         background: url("images/code-mini.jpg") $nrs 100% 20%;
         background-size: 2000px;
     }
 
-    .Employment-1 {
+    .employment-1-div {
         .flex-container{
             padding: 10vh 5vw;
         }
@@ -4010,13 +4010,13 @@ img:focus, a:focus, header:focus{
         }
     }
 
-    .Employment-2{
+    .employment-2-div{
         height: 35vh;
         background: url("images/hammer-mini.jpg") $nrs 50% 0%;
         background-size: cover;
     }
 
-    .Skills-1{
+    .skills-1-div{
         background: url("images/graffiti-2.jpg") $nrs 50% 0%;
         background-size: cover;
         padding: 10vh 5vw;
@@ -4038,19 +4038,19 @@ img:focus, a:focus, header:focus{
 
     }
 
-    .Skills-2{    
+    .skills-2-div{    
         height: 35vh;
         background: url("images/eiffel-mini.jpg") $nrs 50% 60%;
         background-size: cover;
     }
 
-    .Skills-3{
+    .skills-3-div{
         height: 35vh;
         background: url("images/brandenburg-gate-mini.jpg") $nrs 50% 40%;
         background-size: cover;
     }
 
-    .Volunteer-1 {
+    .volunteer-1-div {
         .flex-container{
             padding: 10vh 5vw;
         }
@@ -4134,25 +4134,25 @@ img:focus, a:focus, header:focus{
         }
     }
 
-    .Volunteer-2{
+    .volunteer-2-div{
         height: 35vh;
         background: url("images/heart-cross-mini.jpg") $nrs 50% 50%;
         background-size: 150vh 100vh;
         
-        .Volunteer-2-blurred{
+        .volunteer-2-blurred-div{
             height: 35vh;
             background: url("images/heart-cross-blurred-mini.jpg") $nrs 50% 50%;
             background-size: 150vh 100vh;
         }
     }
 
-    .Volunteer-3{
+    .volunteer-3-div{
         height: 35vh;
         background: url("images/care-mini.jpg") $nrs 0% 50%;
         background-size: 120vw;
     }
 
-    .Hobbies-1 {
+    .hobbies-1-div {
         .flex-container{
             padding: 10vh 5vw;
         }
@@ -4349,25 +4349,25 @@ img:focus, a:focus, header:focus{
         }
     }
 
-    .Hobbies-2{
+    .hobbies-2-div{
         height: 35vh;
         background: url("images/graffiti-1-mini.jpg") $nrs 50% 50%;
         background-size: cover;
     }
 
-    .Hobbies-3{
+    .hobbies-3-div{
         height: 35vh;
         background: url("images/break-dancer-mini.jpg") $nrs 50% 20%;
         background-size: cover;
     }
 
 
-    .Hobbies-4{
+    .hobbies-4-div{
         background: url("images/escalator.jpg") $nrs 0% 30%;
         background-size: cover;
     }
 
-    .Footer-1{
+    .footer-1-div{
         position:relative;
         height: auto;
         background: $concrete-gray $nrf;
@@ -4427,7 +4427,7 @@ img:focus, a:focus, header:focus{
 }
 
 @include for-small-desktop-or-large-tablet-landscape{
-    .Intro-1{
+    .intro-1-div {
         background:url("images/subway.jpg") $nrs 20% 30%;
         background-size: cover;
         padding-top: 45vh;
@@ -4445,7 +4445,7 @@ img:focus, a:focus, header:focus{
         }
     }
 
-    .Intro-2 {
+    .intro-2-div {
         .flex-container{
             padding: 10vh 5vw;
         }
@@ -4523,7 +4523,7 @@ img:focus, a:focus, header:focus{
         }
     }
 
-    .Education-1{
+    .education-1-div{
         position: relative;
         height: auto;
         background: url("images/books.jpg") $nrs 60% 30%;
@@ -4574,7 +4574,7 @@ img:focus, a:focus, header:focus{
         }
     }
 
-    .Education-2 {
+    .education-2-div {
         position: relative;
         height: auto;
         width: 100vw;
@@ -4710,7 +4710,7 @@ img:focus, a:focus, header:focus{
         }
     }
 
-    .Education-3{
+    .education-3-div{
         background: url("images/laptop.jpg") $nrs 20% 70%;
         background-size: cover;
         @include div-padding(10vh);
@@ -4744,7 +4744,7 @@ img:focus, a:focus, header:focus{
         }
     }
 
-    .Languages-1{
+    .languages-1-div{
         @include div-padding(10vh);
         
         #languages{
@@ -4776,13 +4776,13 @@ img:focus, a:focus, header:focus{
         }
     }
 
-    .Languages-2{
+    .languages-2-div{
         height: 40vh;
         background: url("images/code-mini.jpg") $nrs 100% 20%;
         background-size: 2000px;
     }
 
-    .Employment-1 {
+    .employment-1-div {
         .flex-container{
             padding: 10vh 5vw;
         }
@@ -4861,13 +4861,13 @@ img:focus, a:focus, header:focus{
         }
     }
 
-    .Employment-2{
+    .employment-2-div{
         height: 40vh;
         background: url("images/hammer-mini.jpg") $nrs 50% 0%;
         background-size: cover;
     }
 
-    .Skills-1{
+    .skills-1-div{
         background: url("images/graffiti-2.jpg") $nrs 50% 0%;
         background-size: cover;
         padding: 10vh 5vw;
@@ -4889,19 +4889,19 @@ img:focus, a:focus, header:focus{
 
     }
 
-    .Skills-2{    
+    .skills-2-div{    
         height: 40vh;
         background: url("images/eiffel-mini.jpg") $nrs 50% 60%;
         background-size: cover;
     }
 
-    .Skills-3{
+    .skills-3-div{
         height: 40vh;
         background: url("images/brandenburg-gate-mini.jpg") $nrs 50% 40%;
         background-size: cover;
     }
 
-    .Volunteer-1 {
+    .volunteer-1-div {
         .flex-container{
             padding: 10vh 5vw;
         }
@@ -4985,25 +4985,25 @@ img:focus, a:focus, header:focus{
         }
     }
 
-    .Volunteer-2{
+    .volunteer-2-div{
         height: 40vh;
         background: url("images/heart-cross-mini.jpg") $nrs 50% 50%;
         background-size: 150vh 100vh;
         
-        .Volunteer-2-blurred{
+        .volunteer-2-blurred-div{
             height: 40vh;
             background: url("images/heart-cross-blurred-mini.jpg") $nrs 50% 50%;
             background-size: 150vh 100vh;
         }
     }
 
-    .Volunteer-3{
+    .volunteer-3-div{
         height: 40vh;
         background: url("images/care-mini.jpg") $nrs 0% 50%;
         background-size: 120vw;
     }
 
-    .Hobbies-1 {
+    .hobbies-1-div {
         .flex-container{
             padding: 10vh 5vw;
         }
@@ -5200,25 +5200,25 @@ img:focus, a:focus, header:focus{
         }
     }
 
-    .Hobbies-2{
+    .hobbies-2-div{
         height: 40vh;
         background: url("images/graffiti-1-mini.jpg") $nrs 50% 50%;
         background-size: cover;
     }
 
-    .Hobbies-3{
+    .hobbies-3-div{
         height: 40vh;
         background: url("images/break-dancer-mini.jpg") $nrs 50% 20%;
         background-size: cover;
     }
 
 
-    .Hobbies-4{
+    .hobbies-4-div{
         background: url("images/escalator.jpg") $nrs 0% 30%;
         background-size: cover;
     }
 
-    .Footer-1{
+    .footer-1-div{
         position:relative;
         height: auto;
         background: $concrete-gray $nrf;
@@ -5274,7 +5274,7 @@ img:focus, a:focus, header:focus{
 }
 
 @include for-2K-and-4K-desktop-landscape{
-    .Intro-1{
+    .intro-1-div {
         background: url("images/subway.jpg") $nrf 20% 30%;
         background-size: 100vw $intro-1-height;
         padding-top: 35vh;
@@ -5292,7 +5292,7 @@ img:focus, a:focus, header:focus{
         }
     }
 
-    .Intro-2 {
+    .intro-2-div {
         height: auto;
         
         .flex-container{
@@ -5372,7 +5372,7 @@ img:focus, a:focus, header:focus{
         }
     }
 
-    .Education-1{
+    .education-1-div{
         position: relative;
         height: auto;
         background: url("images/books.jpg") $nrf 20% 30%;
@@ -5423,7 +5423,7 @@ img:focus, a:focus, header:focus{
         }
     }
 
-    .Education-2 {
+    .education-2-div {
         position: relative;
         height: auto;
         width: 100vw;
@@ -5528,7 +5528,7 @@ img:focus, a:focus, header:focus{
         }
     }
 
-    .Education-3{
+    .education-3-div{
         background: url("images/laptop.jpg") $nrf 20% 70%;
         background-size: cover;
         @include div-padding(15vh);
@@ -5562,7 +5562,7 @@ img:focus, a:focus, header:focus{
         }
     }
 
-    .Languages-1{
+    .languages-1-div{
         @include div-padding(15vh);
         
         #languages{
@@ -5594,13 +5594,13 @@ img:focus, a:focus, header:focus{
         }
     }
 
-    .Languages-2{
+    .languages-2-div{
         height: 50vh;
         background: url("images/code-mini.jpg") $nrf 100% 20%;
         background-size: 150vw;
     }
 
-    .Employment-1 {
+    .employment-1-div {
         .flex-container{
             padding: 10vh 5vw;
         }
@@ -5678,13 +5678,13 @@ img:focus, a:focus, header:focus{
         }
     }
 
-    .Employment-2{
+    .employment-2-div{
         height: 35vh;
         background: url("images/hammer-mini.jpg") $nrf 50% 0%;
         background-size: cover;
     }
 
-    .Skills-1{
+    .skills-1-div{
         background: url("images/graffiti-2.jpg") $nrf 50% 0%;
         background-size: cover;
         padding: 10vh 5vw;
@@ -5706,19 +5706,19 @@ img:focus, a:focus, header:focus{
 
     }
 
-    .Skills-2{    
+    .skills-2-div{    
         height: 50vh;
         background: url("images/eiffel-mini.jpg") $nrf 50% 60%;
         background-size: 100vw $skills-2-height;
     }
 
-    .Skills-3{
+    .skills-3-div{
         height: 50vh;
         background: url("images/brandenburg-gate-mini.jpg") $nrf 90% 35%;
         background-size: 120vw;
     }
 
-    .Volunteer-1 {
+    .volunteer-1-div {
         .flex-container{
             padding: 10vh 5vw;
         }
@@ -5796,25 +5796,25 @@ img:focus, a:focus, header:focus{
         }
     }
 
-    .Volunteer-2{
+    .volunteer-2-div{
         height: 50vh;
         background: url("images/heart-cross-mini.jpg") $nrf 50% 50%;
         background-size: 210vh 140vh;
         
-        .Volunteer-2-blurred{
+        .volunteer-2-blurred-div{
             height: 50vh;
             background: url("images/heart-cross-blurred-mini.jpg") $nrf 50% 50%;
             background-size: 210vh 140vh;
         }
     }
 
-    .Volunteer-3{
+    .volunteer-3-div{
         height: 50vh;
         background: url("images/care-mini.jpg") $nrf 0% 50%;
         background-size: 120vw;
     }
 
-    .Hobbies-1 {
+    .hobbies-1-div {
         .flex-container{
             padding: 10vh 5vw;
         }
@@ -5983,25 +5983,25 @@ img:focus, a:focus, header:focus{
         }
     }
 
-    .Hobbies-2{
+    .hobbies-2-div{
         height: 50vh;
         background: url("images/graffiti-1-mini.jpg") $nrf 50% 50%;
         background-size: cover;
     }
 
-    .Hobbies-3{
+    .hobbies-3-div{
         height: 50vh;
         background: url("images/break-dancer-mini.jpg") $nrf 50% 50%;
         background-size: 110vw;
     }
 
 
-    .Hobbies-4{
+    .hobbies-4-div{
         background: url("images/escalator.jpg") $nrf 0% 30%;
         background-size: cover;
     }
 
-    .Footer-1{
+    .footer-1-div{
         position:relative;
         height: auto;
         background: $concrete-gray $nrf;
@@ -6064,7 +6064,7 @@ img:focus, a:focus, header:focus{
 
 //
 @-moz-document url-prefix() {
-    .Languages-2{
+    .languages-2-div{
         background-attachment: fixed !important;
     }
 }
@@ -6072,27 +6072,27 @@ img:focus, a:focus, header:focus{
 //targets Microsoft Edge
 @supports (-ms-ime-align: auto) {
     //fixes background image scaling problems on divs with parallax background sizes
-    .Intro-1, .Skills-2, .Volunteer-2, .Volunteer-2-blurred, .Hobbies-3{
+    .intro-1-div, .skills-2-div, .volunteer-2-div, .volunteer-2-blurred-div, .hobbies-3-div{
         background-size: cover !important;
     }
     
     #intro-video, #employment-video, #volunteer-video{
         border-radius: 0% !important;
     }
-    .Intro-1{
+    .intro-1-div{
         background-attachment: scroll;
     }
     
     //A fixed div inside another fixed div causes jumping in edge
-    .Volunteer-2, .Volunteer-2-blurred{
+    .volunteer-2-div, .volunteer-2-blurred-div{
         background-attachment: scroll !important;
     }
     
-    .Education-2 .flex-item:nth-child(n+2) > div, .Hobbies-1 .flex-item:nth-child(n+2) > div{
+    .education-2-div .flex-item:nth-child(n+2) > div, .hobbies-1-div .flex-item:nth-child(n+2) > div{
         border-radius: 0% !important;
     }
     
-    .Hobbies-4{
+    .hobbies-4-div{
         background-size: cover !important;
     }
 }

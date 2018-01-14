@@ -50,12 +50,12 @@ ReactDOM.render(
 
 $(document).ready(function(){  
     /*----- Navbar highlight animations -----*/ 
-    var heightOfEducation = $('.Languages-1').offset().top - $('.Education-1').offset().top;
-    var heightOfLanguages = $('.Employment-1').offset().top - $('.Languages-1').offset().top;
-    var heightOfEmployment = $('.Skills-1').offset().top - $('.Employment-1').offset().top;
-    var heightOfSkills = $('.Volunteer-1').offset().top - $('.Skills-1').offset().top;
-    var heightOfVolunteer = $('.Hobbies-1').offset().top - $('.Volunteer-1').offset().top;
-    var heightOfHobbies = $('.Hobbies-4').offset().top - $('.Hobbies-1').offset().top;
+    var heightOfEducation = $('.languages-1-div').offset().top - $('.education-1-div').offset().top;
+    var heightOfLanguages = $('.employment-1-div').offset().top - $('.languages-1-div').offset().top;
+    var heightOfEmployment = $('.skills-1-div').offset().top - $('.employment-1-div').offset().top;
+    var heightOfSkills = $('.volunteer-1-div').offset().top - $('.skills-1-div').offset().top;
+    var heightOfVolunteer = $('.hobbies-1-div').offset().top - $('.volunteer-1-div').offset().top;
+    var heightOfHobbies = $('.hobbies-4-div').offset().top - $('.hobbies-1-div').offset().top;
     
     var laptopsAndDesktops = window.matchMedia( "(min-width: 1420px)" );
     var phonePortrait = window.matchMedia( "(max-width: 599px)" );
@@ -98,7 +98,7 @@ $(document).ready(function(){
         //if not Firefox....
         if (!(/Firefox/i.test(navigator.userAgent))){
             var navItemsAppearScene = new ScrollMagic.Scene({
-                triggerElement: '.Education-1',
+                triggerElement: '.education-1-div',
                 triggerHook: 0.95,
                 offset: 0,
                 reverse: false
@@ -108,7 +108,7 @@ $(document).ready(function(){
         }
 
         var pinTopNavScene = new ScrollMagic.Scene({
-            triggerElement: '.Education-1',
+            triggerElement: '.education-1-div',
             autoRound: false,
             triggerHook: navBrowserHeight 
         })
@@ -116,7 +116,7 @@ $(document).ready(function(){
         .addTo(controller);
 
         var changeTopNavColorScene = new ScrollMagic.Scene({
-            triggerElement: '.Education-1',
+            triggerElement: '.education-1-div',
             autoRound: false,
             triggerHook: navBrowserHeight 
         })
@@ -129,14 +129,14 @@ $(document).ready(function(){
         });
 
         var pushNavUpScene = new ScrollMagic.Scene({
-            triggerElement: '.Hobbies-2',
+            triggerElement: '.hobbies-2-div',
             triggerHook: 0.07
         })
         .setTween(pushNavUpTween)
         .addTo(controller);
 
         var navEducationTween = new ScrollMagic.Scene({
-            triggerElement: ".Education-1",
+            triggerElement: ".education-1-div",
             triggerHook: 0.5000,
             duration: heightOfEducation
         })
@@ -150,7 +150,7 @@ $(document).ready(function(){
         .addTo(controller);
 
         var navLanguagesTween = new ScrollMagic.Scene({
-            triggerElement: ".Languages-1",
+            triggerElement: ".languages-1-div",
             triggerHook: 0.50001,
             duration: heightOfLanguages
         })
@@ -164,7 +164,7 @@ $(document).ready(function(){
         .addTo(controller);
 
         var navEmploymentTween = new ScrollMagic.Scene({
-            triggerElement: ".Employment-1",
+            triggerElement: ".employment-1-div",
             triggerHook: 0.50002,
             duration: heightOfEmployment
         })
@@ -178,7 +178,7 @@ $(document).ready(function(){
         .addTo(controller);
 
         var navAdditionalSkillsTween = new ScrollMagic.Scene({
-            triggerElement: ".Skills-1",
+            triggerElement: ".skills-1-div",
             triggerHook: 0.50003,
             duration: heightOfSkills
         })
@@ -186,7 +186,7 @@ $(document).ready(function(){
         .addTo(controller);
 
         var navVolunteerWorkTween = new ScrollMagic.Scene({
-            triggerElement: ".Volunteer-1",
+            triggerElement: ".volunteer-1-div",
             triggerHook: 0.50004,
             duration: heightOfVolunteer
         })
@@ -194,7 +194,7 @@ $(document).ready(function(){
         .addTo(controller);
 
         var navHobbiesween = new ScrollMagic.Scene({
-            triggerElement: ".Hobbies-1",
+            triggerElement: ".hobbies-1-div",
             triggerHook: 0.50005,
             duration: heightOfHobbies
         })
@@ -202,7 +202,7 @@ $(document).ready(function(){
         .addTo(controller);
 
         var navIconShowTween = new ScrollMagic.Scene({
-            triggerElement: ".Education-1",
+            triggerElement: ".education-1-div",
             triggerHook: 0.5000,
             duration: heightOfEducation
         })
@@ -210,7 +210,7 @@ $(document).ready(function(){
         .addTo(controller);
 
         var navIconLanguagesTween = new ScrollMagic.Scene({
-            triggerElement: ".Languages-1",
+            triggerElement: ".languages-1-div",
             triggerHook: 0.50001,
             duration: heightOfLanguages
         })
@@ -218,7 +218,7 @@ $(document).ready(function(){
         .addTo(controller);
 
         var navIconEmploymentTween = new ScrollMagic.Scene({
-            triggerElement: ".Employment-1",
+            triggerElement: ".employment-1-div",
             triggerHook: 0.50002,
             duration: heightOfEmployment
         })
@@ -226,7 +226,7 @@ $(document).ready(function(){
         .addTo(controller);
 
         var navIconSkillsTween = new ScrollMagic.Scene({
-            triggerElement: ".Skills-1",
+            triggerElement: ".skills-1-div",
             triggerHook: 0.50003,
             duration: heightOfSkills
         })
@@ -234,7 +234,7 @@ $(document).ready(function(){
         .addTo(controller);
 
         var navIconVolunteerTween = new ScrollMagic.Scene({
-            triggerElement: ".Volunteer-1",
+            triggerElement: ".volunteer-1-div",
             triggerHook: 0.50004,
             duration: heightOfVolunteer
         })
@@ -242,7 +242,7 @@ $(document).ready(function(){
         .addTo(controller);
 
         var navIconHobbiesTween = new ScrollMagic.Scene({
-            triggerElement: ".Hobbies-1",
+            triggerElement: ".hobbies-1-div",
             triggerHook: 0.50005,
             duration: heightOfHobbies
         })
@@ -255,7 +255,7 @@ $(document).ready(function(){
     
     //only perform these background tweens on laptops & desktops
     if(laptopsAndDesktops.matches){ 
-        var intro1Tween = TweenMax.to(".Intro-1", 1, {
+        var intro1Tween = TweenMax.to(".intro-1-div", 1, {
             backgroundSize: "+=300px +=199.9999998px",
             backgroundPositionX: "-=10%",
             autoRound:false, 
@@ -263,35 +263,35 @@ $(document).ready(function(){
         });
 
         var intro1Scene = new ScrollMagic.Scene({
-            triggerElement: ".Intro-1", 
+            triggerElement: ".intro-1-div", 
             duration: "100%",
             triggerHook:0
         })
         .setTween(intro1Tween)
         .addTo(controller);
         
-        var education1Tween = TweenMax.to(".Education-1", 1, { 
+        var education1Tween = TweenMax.to(".education-1-div", 1, { 
             backgroundPositionX: "+=80%",
             autoRound:false, 
             ease:Power1.easeIn
         });
 
         var education1Scene = new ScrollMagic.Scene({
-            triggerElement: ".Education-1",
+            triggerElement: ".education-1-div",
             triggerHook: 1,
             duration: "200%"
         })
         .setTween(education1Tween)
         .addTo(controller);
         
-        var languages2Tween = TweenMax.to(".Languages-2", 1, { 
+        var languages2Tween = TweenMax.to(".languages-2-div", 1, { 
             backgroundPositionX: "-=30%",
             autoRound:false, 
             ease:Power0.linear
         });
 
         var languages2Scene = new ScrollMagic.Scene({
-            triggerElement: ".Languages-2",
+            triggerElement: ".languages-2-div",
             triggerHook: 1,
             duration: "250%"
         })
@@ -299,14 +299,14 @@ $(document).ready(function(){
         .addTo(controller);
         
         if (!(/Firefox/i.test(navigator.userAgent))){
-            var employment2Tween = TweenMax.from(".Employment-2", 1, { 
+            var employment2Tween = TweenMax.from(".employment-2-div", 1, { 
                 backgroundPositionY: "-=50px",
                 autoRound:false, 
                 ease:Power1.easeOut
             });
 
             var employment2Scene = new ScrollMagic.Scene({
-                triggerElement: ".Employment-2",
+                triggerElement: ".employment-2-div",
                 triggerHook: 1,
                 duration: "200%"
             })
@@ -314,126 +314,126 @@ $(document).ready(function(){
             .addTo(controller);
         }
 
-        var skills2Tween = TweenMax.to(".Skills-2", 1, { 
+        var skills2Tween = TweenMax.to(".skills-2-div", 1, { 
             backgroundSize: "+=300px +=199.35px", //changes bg image size without changing proportions
             autoRound:false, 
             ease:Power0.easeOut
         });
 
         var skills2Scene = new ScrollMagic.Scene({
-            triggerElement: ".Skills-2",
+            triggerElement: ".skills-2-div",
             triggerHook: 1,
             duration: "200%"
         })
         .setTween(skills2Tween)
         .addTo(controller);
 
-        var skills3Tween = TweenMax.to(".Skills-3", 1, { 
+        var skills3Tween = TweenMax.to(".skills-3-div", 1, { 
             backgroundPositionX: "-=100%",
             autoRound:false, 
             ease:Power0.easeOut
         });
 
         var skills3Scene = new ScrollMagic.Scene({
-            triggerElement: ".Skills-3",
+            triggerElement: ".skills-3-div",
             triggerHook: 1,
             duration: "200%"
         })
         .setTween(skills3Tween)
         .addTo(controller);
         
-        var volunteer2Tween = TweenMax.from(".Volunteer-2", 1, { 
+        var volunteer2Tween = TweenMax.from(".volunteer-2-div", 1, { 
             backgroundSize: "+=400px +=266.8px", //changes bg image size without changing proportions
             autoRound:false, 
             ease:Power1.easeOut
         });
 
         var volunteer2Scene = new ScrollMagic.Scene({
-            triggerElement: ".Volunteer-2",
+            triggerElement: ".volunteer-2-div",
             triggerHook: 1,
             duration: "200%"
         })
         .setTween(volunteer2Tween)
         .addTo(controller);
 
-        var volunteer2BlurredTween = TweenMax.from(".Volunteer-2-blurred", 1, { 
+        var volunteer2BlurredTween = TweenMax.from(".volunteer-2-blurred-div", 1, { 
             backgroundSize: "+=400px +=266.8px", //changes bg image size without changing proportions
             autoRound:false, 
             ease:Power1.easeOut
         });
 
         var volunteer2BlurredScene = new ScrollMagic.Scene({
-            triggerElement: ".Volunteer-2-blurred",
+            triggerElement: ".volunteer-2-blurred-div",
             triggerHook: 1,
             duration: "200%"
         })
         .setTween(volunteer2BlurredTween)
         .addTo(controller);
 
-        var volunteer2DisappearTween = TweenMax.to(".Volunteer-2-blurred", 1, { 
+        var volunteer2DisappearTween = TweenMax.to(".volunteer-2-blurred-div", 1, { 
             opacity: "1",
             autoRound:false, 
             ease:Power1.easeOut
         });
 
         var volunteer2DisappearScene = new ScrollMagic.Scene({
-            triggerElement: ".Volunteer-2-blurred",
+            triggerElement: ".volunteer-2-blurred-div",
             triggerHook: 0.3,
             duration: "50%"
         })
         .setTween(volunteer2DisappearTween)
         .addTo(controller);
         
-        var volunteer3Tween = TweenMax.to(".Volunteer-3", 1, { 
+        var volunteer3Tween = TweenMax.to(".volunteer-3-div", 1, { 
             backgroundPositionX: "+=20%",
             autoRound:false, 
             ease:Power0.linear
         });
 
         var volunteer3Scene = new ScrollMagic.Scene({
-            triggerElement: ".Volunteer-3",
+            triggerElement: ".volunteer-3-div",
             triggerHook: 1,
             duration: "250%"
         })
         .setTween(volunteer3Tween)
         .addTo(controller);
         
-        var hobbies2Tween = TweenMax.from(".Hobbies-2", 1, { 
+        var hobbies2Tween = TweenMax.from(".hobbies-2-div", 1, { 
             backgroundPositionY: "-=100px",
             autoRound:false, 
             ease:Power1.easeOut
         });
 
         var hobbies2Scene = new ScrollMagic.Scene({
-            triggerElement: ".Hobbies-2",
+            triggerElement: ".hobbies-2-div",
             triggerHook: 1,
             duration: "200%"
         })
         .setTween(hobbies2Tween)
         .addTo(controller);   
         
-        var hobbies3Tween = TweenMax.from(".Hobbies-3", 1, { 
+        var hobbies3Tween = TweenMax.from(".hobbies-3-div", 1, { 
             backgroundPositionX: "-=30%",
             autoRound:false, 
             ease:Power1.easeOut
         });
 
         var hobbies3Scene = new ScrollMagic.Scene({
-            triggerElement: ".Hobbies-3",
+            triggerElement: ".hobbies-3-div",
             triggerHook: 1,
             duration: "200%"
         })
         .setTween(hobbies3Tween)
         .addTo(controller);     
         
-        var hobbies4Tween = TweenMax.from(".Hobbies-4", 1, { 
+        var hobbies4Tween = TweenMax.from(".hobbies-4-div", 1, { 
             backgroundSize: "+=200px +=133.6px",
             autoRound:false, 
             ease:Power1.easeOut
         });
 
         var hobbies4Scene = new ScrollMagic.Scene({
-            triggerElement: ".Hobbies-4",
+            triggerElement: ".hobbies-4-div",
             triggerHook: 1,
             duration: "200%"
         })
@@ -444,53 +444,53 @@ $(document).ready(function(){
     
     //Do for all browsers except Firefox
     if (!(/Firefox/i.test(navigator.userAgent))){
-        var intro1BrighterTween = TweenMax.to(".Intro-1", 0.01, {
+        var intro1BrighterTween = TweenMax.to(".intro-1-div", 0.01, {
             filter: "brightness(133%)",
             autoRound:false, 
             ease:Power0.linear
         });
         
         var intro1BrighterScene = new ScrollMagic.Scene({
-            triggerElement: ".Intro-2",
+            triggerElement: ".intro-2-div",
             triggerHook: 0.9
         })
         .setTween(intro1BrighterTween)
         .addTo(controller);
 
-        var intro1EvenBrighterTween = TweenMax.to(".Intro-1", 0.01, {
+        var intro1EvenBrighterTween = TweenMax.to(".intro-1-div", 0.01, {
             filter: "brightness(167%)",
             autoRound:false, 
             ease:Power0.linear
         });
 
         var intro1EvenBrighterScene = new ScrollMagic.Scene({
-            triggerElement: ".Intro-2",
+            triggerElement: ".intro-2-div",
             triggerHook: 0.7
         })
         .setTween(intro1EvenBrighterTween)
         .addTo(controller);
 
-        var intro1BrightestTween = TweenMax.to(".Intro-1", 0.01, {
+        var intro1BrightestTween = TweenMax.to(".intro-1-div", 0.01, {
             filter: "brightness(200%)",
             autoRound:false, 
             ease:Power0.linear
         });
         
         var intro1BrightestScene = new ScrollMagic.Scene({
-            triggerElement: ".Intro-2",
+            triggerElement: ".intro-2-div",
             triggerHook: 0.4,
         })
         .setTween(intro1BrightestTween)
         .addTo(controller);
         
-        var languages2InvertTween = TweenMax.to(".Languages-2", 0.01, {
+        var languages2InvertTween = TweenMax.to(".languages-2-div", 0.01, {
             filter: "invert(100%)",
             autoRound:false, 
             ease:Power0.linear
         });
 
         var languages2InvertScene = new ScrollMagic.Scene({
-            triggerElement: ".Languages-2",
+            triggerElement: ".languages-2-div",
             triggerHook: 0.25,
         })
         .setTween(languages2InvertTween)
