@@ -4,7 +4,7 @@ export default class Hobbies extends Component {
     render() {
         return(
         <div>
-            <div id="jump-to-hobbies" className="Hobbies-1">
+            <div id="jump-to-hobbies" className="hobbies-1-div">
                 <ul className="flex-container">
                     <li className="flex-item">
                         <h1 id="hobbies" className="scrollmagic-fade-in" tabIndex="0">
@@ -139,9 +139,9 @@ export default class Hobbies extends Component {
                     </li>
                 </ul>
             </div>
-            <div className="Hobbies-2"></div>
-            <div className="Hobbies-3"></div>
-            <div className="Hobbies-4"></div>
+            <div className="hobbies-2-div"></div>
+            <div className="hobbies-3-div"></div>
+            <div className="hobbies-4-div"></div>
         </div>
         );
     }
