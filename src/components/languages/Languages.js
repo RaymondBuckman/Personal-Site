@@ -4,7 +4,7 @@ export default class Languages extends Component {
     render() {
         return(
         <div>
-            <div id="jump-to-languages" className="Languages-1">
+            <div id="jump-to-languages" className="languages-1-div">
                 <h1 id="languages" className="scrollmagic-fade-in" tabIndex="0">
                     Lan<span id="languages-g">g</span>uag<span id="languages-e">e</span>s & Li<span id="languages-b">b</span>ra<span id="languages-r">r</span>ies
                 </h1>
@@ -19,7 +19,7 @@ export default class Languages extends Component {
                     <li>SQL</li>
                 </ul>
             </div> 
-            <div className="Languages-2"></div>
+            <div className="languages-2-div"></div>
         </div>
         );
     }
