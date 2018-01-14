@@ -4,7 +4,7 @@ export default class AdditionalSkills extends Component {
     render() {
         return(
         <div>
-            <div id="jump-to-additional-skills" className="Skills-1">
+            <div id="jump-to-additional-skills" className="skills-1-div">
                 <h1 id="additional-skills" className="scrollmagic-fade-in" tabIndex="0">
                     A<span id="additional-skills-d">d</span>ditional <span id="additional-skills-S">S</span>ki<span id="additional-skills-l">l</span>ls
                 </h1>
@@ -24,8 +24,8 @@ export default class AdditionalSkills extends Component {
                     <li>Deutch (Anfänger)</li>
                 </ul>
             </div>
-            <div className="Skills-2"></div>
-            <div className="Skills-3"></div>
+            <div className="skills-2-div"></div>
+            <div className="skills-3-div"></div>
         </div>
         );
     }
