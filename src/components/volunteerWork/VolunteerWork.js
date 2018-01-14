@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import cameraVideo from '../../images/camera-video.mp4';
 
-export default class VolumteerWork extends Component {
+export default class VolunteerWork extends Component {
     render() {
         return(
         <div>
-            <div className="Volunteer-1">
+            <div className="volunteer-1-div">
                     <ul className="flex-container">
                         <li className="flex-item">
                             <div id="volunteer-window" className="scrollmagicWindow">
@@ -24,10 +24,10 @@ export default class VolumteerWork extends Component {
                         </li>
                     </ul>
             </div>
-            <div className="Volunteer-2">
-                <div className="Volunteer-2-blurred"></div>
+            <div className="volunteer-2-div">
+                <div className="volunteer-2-blurred-div"></div>
             </div>
-            <div className="Volunteer-3"></div>
+            <div className="volunteer-3-div"></div>
         </div>         
         );
     }
