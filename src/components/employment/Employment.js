@@ -5,7 +5,7 @@ export default class Employment extends Component {
     render() {
         return(
         <div>             
-            <div className="Employment-1">
+            <div className="employment-1-div">
                 <ul className="flex-container">
                     <li className="flex-item">
                         <div id="employment-window" className="scrollmagicWindow">
@@ -22,7 +22,7 @@ export default class Employment extends Component {
                     </li>
                 </ul>
             </div>
-            <div className="Employment-2"></div>
+            <div className="employment-2-div"></div>
         </div>           
         );
     }
