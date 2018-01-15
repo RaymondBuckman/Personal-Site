@@ -49,6 +49,13 @@ ReactDOM.render(
 
 
 $(document).ready(function(){  
+    // Microsoft Edge doesn't like circular videos..
+    // If Microsoft Edge, remove all video divs
+    if (/Edge\/\d./i.test(navigator.userAgent)){
+        $('#intro-video,  #employment-video, #volunteer-video').remove();
+    }
+    
+    
     /*----- Navbar highlight animations -----*/ 
     var heightOfEducation = $('.languages-1-div').offset().top - $('.education-1-div').offset().top;
     var heightOfLanguages = $('.employment-1-div').offset().top - $('.languages-1-div').offset().top;
@@ -751,7 +758,16 @@ $(document).ready(function(){
          $('#menu').css({
              'transform' : 'rotateY(90deg)'
          })
-    });
+    });    
+    
+    if(navigator.userAgent.match(/MSIE 10/i) || navigator.userAgent.match(/Trident\/7\./) || navigator.userAgent.match(/Edge\/12\./)) {
+        $('body').on("mousewheel", function () {
+            event.preventDefault();
+            var wd = event.wheelDelta;
+            var csp = window.pageYOffset;
+            window.scrollTo(0, csp - wd);
+        });
+    }
 })
 
 
