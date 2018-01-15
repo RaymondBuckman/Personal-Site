@@ -6077,10 +6077,40 @@ img:focus, a:focus, header:focus{
     }
     
     #intro-video, #employment-video, #volunteer-video{
-        border-radius: 0% !important;
+        //border-radius: 0% !important;
     }
+    
+    #intro-window{
+        background: url("images/city.jpg") $nrs center center;
+        background-size: cover;
+    }
+    
     .intro-1-div{
         background-attachment: scroll;
+    }
+    
+    #project-video{
+        opacity: 0 !important;
+    }    
+    
+    #page-content-wrapper > div:nth-child(2) > div.education-2-div > ul > li:nth-child(3) > div{
+        width: 100%;
+        background: url("images/drone-4-mini.jpg") $nrs center center;
+        background-size: cover;
+        
+        &:hover{
+           filter: brightness(20%); 
+        }
+    }
+    
+    #employment-window{
+        background: url("images/paint-roller.jpg") $nrs 80% center;
+        background-size: cover;
+    }
+    
+    #volunteer-window{
+        background: url("images/volunteer.jpg") $nrs center center;
+        background-size: cover;
     }
     
     //A fixed div inside another fixed div causes jumping in edge
@@ -6089,7 +6119,7 @@ img:focus, a:focus, header:focus{
     }
     
     .education-2-div .flex-item:nth-child(n+2) > div, .hobbies-1-div .flex-item:nth-child(n+2) > div{
-        border-radius: 0% !important;
+        //border-radius: 0% !important;
     }
     
     .hobbies-4-div{
