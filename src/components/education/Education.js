@@ -1,5 +1,11 @@
 import React, { Component } from 'react';
 import subwayVideo from '../../images/drone-video.mp4';
+import board1Smudge from '../../images/board-1-smudge.jpg';
+import board2 from '../../images/board-2.jpg';
+import drone1 from '../../images/drone-1.jpg';
+import drone2 from '../../images/drone-2.jpg';
+import drone3 from '../../images/drone-3.jpg';
+
 
 export default class Education extends Component {
     render() {
@@ -32,7 +38,7 @@ export default class Education extends Component {
                             S<span id="senior-project-e">e</span>nior Pro<span id="senior-project-j">j</span>ec<span id="senior-project-t">t</span>
                         </h1></li>
                     <li className="flex-item scrollmagic-circle">
-                        <div></div>
+                        <img src={board1Smudge} alt="Senior project display board with detailed info"></img>
                         <span className="text-container">
                             <h2>RC Over IP</h2>
                             <p>Our project, named RC Over IP, was to build a drone controlled via a smartphone app.</p>
@@ -50,28 +56,28 @@ export default class Education extends Component {
                         </span>
                     </li>
                     <li className="flex-item scrollmagic-circle">
-                        <div></div>
+                        <img src={drone2} alt="Drone Propellors & brusshless motors"></img>
                         <span className="text-container">
                             <h2>The App</h2>
                             <p>The app consists of two on-screen joysticks. Each joystick moves in two axes (x and y) for a total of 4 position values:  roll, pitch, yaw and throttle. Those inputs affect the RPM of each of the drone's propellors.</p>
                         </span>
                     </li>
                     <li className="flex-item scrollmagic-circle">
-                        <div></div>
+                        <img src={drone1} alt="Drone frame with propellors detached"></img>
                         <span className="text-container">
                             <h2>The Frame</h2>
                             <p>The frame is made completely out of aluminum to minimize both weight & damage in case of a crash. Weight distrubtion was key to ensure predictable flight behavior. </p>
                         </span>
                     </li>
                     <li className="flex-item scrollmagic-circle">
-                        <div></div>
+                        <img src={drone3} alt="Flight controller board"></img>
                         <span className="text-container">
                             <h2>The Flight Controller Board</h2>
                             <p>The board contains a 32-bit ARM processor & several sensors. It takes in the user's directional control data, reads the data, then outputs PWM signals to the motors.</p>
                         </span>
                     </li>
                     <li className="flex-item scrollmagic-circle">
-                        <div></div>
+                        <img src={board2} alt="Display booth with drone, project board, & a Macbook"></img>
                         <span className="text-container">
                             <h2>Parts List</h2>
                             <p> &#8226; ST450 Kit Drone Frame<br/>
