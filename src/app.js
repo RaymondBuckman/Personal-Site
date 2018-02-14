@@ -22,6 +22,30 @@ import $ from "jquery";
 import 'imports-loader?define=>false!scrollmagic/scrollmagic/uncompressed/plugins/animation.gsap.js';
 import 'imports-loader?define=>false!scrollmagic/scrollmagic/uncompressed/plugins/debug.addIndicators.js';
 
+function openSidebar(){
+    $('#wrapper').addClass('menuDisplayed');
+    $('#page-content-wrapper *').addClass('disabled');
+    $('#close').css({
+        'transform' : 'translateX(30px)',
+        'opacity' : '1'
+    });
+    $('#menu').css({
+        'transform' : 'rotateY(90deg)'
+    })
+}
+
+function closeSidebar(){
+    $('#wrapper').removeClass('menuDisplayed');
+    $('#page-content-wrapper *').removeClass('disabled');
+    $('#close').css({
+        'opacity' : "0",
+        'transform' : 'translateX(0px)',
+        'transform' : 'rotateY(90deg)'
+    });
+    $('#menu').css({
+        'transform' : 'rotateY(0deg)'
+    })
+}
 
 ReactDOM.render(
     <div className="App">
@@ -29,9 +53,9 @@ ReactDOM.render(
             <div id="sidebar-wrapper">
                 <Sidebar />
             </div>
-            <img id="menu" src="https://png.icons8.com/xbox-menu/ios7/73/ffffff" tabIndex="0"></img>
-            <img id="close" src="https://png.icons8.com/cancel/ios7/73/ffffff" height="40px"></img>
-            <div id="page-content-wrapper">
+            <img id="menu" src="https://png.icons8.com/xbox-menu/ios7/73/ffffff" tabIndex="0" onClick={openSidebar}></img>
+            <img id="close" src="https://png.icons8.com/cancel/ios7/73/ffffff" height="40px" onClick={closeSidebar}></img>
+            <div id="page-content-wrapper" onClick={closeSidebar}>
                 <Intro />
                 <Education />
                 <Languages />
@@ -86,13 +110,6 @@ $(document).ready(function(){
     if(phonePortrait.matches){
         $('#project-video').remove();
     }
-    
-    
-    $("#down-arrow").click(function() {
-        $('html, body').animate({
-            scrollTop: $("#down-arrow-dest").offset().top
-        }, 2000);
-    });
     
     var controller = new ScrollMagic.Controller();
     
@@ -735,30 +752,6 @@ $(document).ready(function(){
     .setClassToggle('#skill-list li:nth-child(even)', 'fade-in')
     .addTo(controller);
 
-     $('#page-content-wrapper, #close').click(function(){
-          $('#wrapper').removeClass('menuDisplayed');
-          $('#page-content-wrapper *').removeClass('disabled');
-          $('#close').css({
-               'opacity' : "0",
-               'transform' : 'translateX(0px)',
-               'transform' : 'rotateY(90deg)'
-          });
-         $('#menu').css({
-             'transform' : 'rotateY(0deg)'
-         })
-     });
-
-     $('#menu').click(function(){
-          $('#wrapper').addClass('menuDisplayed');
-          $('#page-content-wrapper *').addClass('disabled');
-          $('#close').css({
-               'transform' : 'translateX(30px)',
-               'opacity' : '1'
-          });
-         $('#menu').css({
-             'transform' : 'rotateY(90deg)'
-         })
-    });    
     
     if(navigator.userAgent.match(/MSIE 10/i) || navigator.userAgent.match(/Trident\/7\./) || navigator.userAgent.match(/Edge\/12\./)) {
         $('body').on("mousewheel", function () {

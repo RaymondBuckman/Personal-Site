@@ -13,6 +13,7 @@ export default class AdditionalSkills extends Component {
                     <li>Node.js</li><br/>
                     <li>GreenSock Animation Platform</li><br/>
                     <li>ScrollMagic</li><br/>
+                    <li>Particles.js</li><br/>
                     <li>Atom/Brackets</li><br/>
                     <li>Notepad++</li><br/>
                     <li>MS Visual Studio</li><br/>
