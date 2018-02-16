@@ -2,22 +2,50 @@ import React, { Component } from 'react';
 import subwayVideo from '../../images/subway-video.mp4';
 import $ from 'jquery';
 
+var styles = {
+    transparentDownArrow: {
+        opacity: '0.5'
+    },
+    opaqueDownArrow: {
+        opacity: '1'
+    }, 
+};
+
 export default class Intro extends Component {
-    render() {
-        function scrollDown(e){
-            e.preventDefault;
-            $('html, body').animate({
-                scrollTop: $("#down-arrow-dest").offset().top
-            }, 2000);
-        }        
-        
+    constructor(props) {
+        super(props);
+        this.state = {
+            down_arrow_state: 'transparentDownArrow'
+        };
+    }
+    
+    scrollDown(e){
+    e.preventDefault;
+        $('html, body').animate({
+            scrollTop: $("#down-arrow-dest").offset().top
+        }, 2000);
+    } 
+    
+    opaqueDownArrow(){
+        this.setState({
+            down_arrow_state: 'opaqueDownArrow'
+        });
+    }
+    
+    transparentDownArrow(){
+        this.setState({
+            down_arrow_state: 'transparentDownArrow'
+        });  
+    }
+    
+    render() {     
         return(
         <div> 
             <div className="intro-1-div" id="top-of-page">
-                        <h1 id="name">
-                            <span id="name-R">R</span>ay<span id="name-m">m</span>ond Buc<span id="name-k">k</span>man
-                        </h1>
-                        <img id="down-arrow" src="https://png.icons8.com/downward-arrow/ios7/73/ffffff" onClick={scrollDown}></img>            
+                <h1 id="name">
+                    <span id="name-R">R</span>ay<span id="name-m">m</span>ond Buc<span id="name-k">k</span>man
+                </h1>
+                <img id="down-arrow" src="https://png.icons8.com/downward-arrow/ios7/73/ffffff" style={styles[this.state.down_arrow_state]} onClick={this.scrollDown} onMouseEnter={this.opaqueDownArrow.bind(this)} onMouseLeave={this.transparentDownArrow.bind(this)}></img>            
             </div>
             
             <div className="intro-2-div" id="arrow-dest">
