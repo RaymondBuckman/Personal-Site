@@ -5,9 +5,60 @@ import board2 from '../../images/board-2.jpg';
 import drone1 from '../../images/drone-1.jpg';
 import drone2 from '../../images/drone-2.jpg';
 import drone3 from '../../images/drone-3.jpg';
-
+import $ from 'jquery';
+/*
+var styles = {
+    normal: {
+        filter: 'brightness(100%)'
+    },
+    darken: {
+        filter: 'brightness(30%)'
+    },
+    invisibleH2: {
+        opacity: 0,
+        transform: 'rotateY(90deg)'
+    },
+    visibleH2: {
+        opacity: 1,
+        transform: 'rotateY(0deg)'
+    },
+    invisibleParagraph: {
+        opacity: 0,
+        transform: 'rotateX(90deg)'
+    },
+    visibleParagraph: {
+        opacity: 1,
+        transform: 'rotateX(0deg)'
+    }
+};*/
 
 export default class Education extends Component {
+    /*
+    constructor(props) {
+        super(props);
+        this.state = {
+            img_state: 'normal',
+            img_h2_state: 'invisibleH2',
+            img_paragraph_state: 'invisibleParagraph'
+        };
+    }
+    
+    darken() {
+        this.setState({
+            img_state: 'darken',
+            img_h2_state: 'visibleH2',
+            img_paragraph_state: 'visibleParagraph'
+        });
+    }
+    
+    lighten() {
+        this.setState({
+            img_state: 'normal',
+            img_h2_state: 'invisibleH2',
+            img_paragraph_state: 'invisibleParagraph'
+        });
+    } */   
+    
     render() {
         return(
         <div>
