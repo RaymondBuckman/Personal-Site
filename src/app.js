@@ -4,68 +4,17 @@ import ScrollMagic from 'scrollmagic';
 
 const css = require('./app.scss');
 require('./images/favicon.ico');
-import React from 'react';
+import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import Sidebar from './components/sidebar/Sidebar';
-import Intro from'./components/intro/Intro';
-import Education from './components/education/Education';
-import Languages from './components/languages/Languages';
-import Employment from './components/employment/Employment';
-import AdditionalSkills from './components/additionalSkills/additionalSkills';
-import VolunteerWork from './components/volunteerWork/VolunteerWork';
-import Hobbies from './components/hobbies/Hobbies';
-import Footer from './components/footer/Footer';
+import Wrapper from './components/wrapper/Wrapper';
 import $ from "jquery";
-
-
 
 import 'imports-loader?define=>false!scrollmagic/scrollmagic/uncompressed/plugins/animation.gsap.js';
 import 'imports-loader?define=>false!scrollmagic/scrollmagic/uncompressed/plugins/debug.addIndicators.js';
 
-function openSidebar(){
-    $('#wrapper').addClass('menuDisplayed');
-    $('#page-content-wrapper *').addClass('disabled');
-    $('#close').css({
-        'transform' : 'translateX(30px)',
-        'opacity' : '1'
-    });
-    $('#menu').css({
-        'transform' : 'rotateY(90deg)'
-    })
-}
-
-function closeSidebar(){
-    $('#wrapper').removeClass('menuDisplayed');
-    $('#page-content-wrapper *').removeClass('disabled');
-    $('#close').css({
-        'opacity' : "0",
-        'transform' : 'translateX(0px)',
-        'transform' : 'rotateY(90deg)'
-    });
-    $('#menu').css({
-        'transform' : 'rotateY(0deg)'
-    })
-}
-
 ReactDOM.render(
     <div className="App">
-        <div id="wrapper">
-            <div id="sidebar-wrapper">
-                <Sidebar />
-            </div>
-            <img id="menu" src="https://png.icons8.com/xbox-menu/ios7/73/ffffff" tabIndex="0" onClick={openSidebar}></img>
-            <img id="close" src="https://png.icons8.com/cancel/ios7/73/ffffff" height="40px" onClick={closeSidebar}></img>
-            <div id="page-content-wrapper" onClick={closeSidebar}>
-                <Intro />
-                <Education />
-                <Languages />
-                <Employment />
-                <AdditionalSkills />
-                <VolunteerWork />
-                <Hobbies />
-                <Footer />
-            </div>
-        </div>
+        <Wrapper />
     </div>,
     document.getElementById('root')
 );
@@ -80,6 +29,30 @@ $(document).ready(function(){
     }
     
     
+    /*----- GSAP animations -----*/
+    var downArrow = $('#down-arrow');
+    var blinkingText = $('#name-R, #name-k, #about-me-o, #about-me-e, #education-E, #education-t, #senior-project-e, #senior-project-t, #online-courses-n, #online-courses-u, #languages-e, #languages-r, #employment-E, #employment-n, #additional-skills-d, #additional-skills-S, #volunteer-work-u, #volunteer-work-W, #hobbies-b, #hobbies-s, #fin-F');
+    var darkeningText = $('#name-m, #about-me-u, #education-d, #senior-project-j, #online-courses-e, #languages-g, #employment-y, #additional-skills-t, #additional-skills-l, #volunteer-work-k, #hobbies-t, #fin-i');
+    
+    
+    var downArrowTimeline = new TimelineMax({delay:0.5, repeat:-1, repeatDelay:0.5});
+    
+    downArrowTimeline.to(downArrow, 0.5, {y: '15px', ease: Power2.easeIn})
+    downArrowTimeline.to(downArrow, 0.5, {y: '0px', ease: Power2.easeOut})
+    downArrowTimeline.to(downArrow, 0.5, {y: '15px', ease: Power2.easeIn})
+    downArrowTimeline.to(downArrow, 0.5, {y: '0px', ease: Power2.easeOut})
+    
+    var blinkingTextTimeline = new TimelineMax({repeat: -1});
+    
+    blinkingTextTimeline.to(blinkingText, 0.1, {opacity: '0', ease: Power4.easeOut, delay: 7})
+    blinkingTextTimeline.to(blinkingText, 0.8, {opacity: '1', ease: SteppedEase.config(2)})
+    
+    var darkeningTextTimeline = new TimelineMax({repeat: -1});
+    
+    darkeningTextTimeline.from(darkeningText, 5, {webkitFilter: 'invert(0%)', filter: 'invert(0%)', ease: Power0.noEase})    
+    darkeningTextTimeline.to(darkeningText, 0.1, {webkitFilter: 'invert(100%)', filter: 'invert(100%)', ease: Power2.easeIn})
+    darkeningTextTimeline.to(darkeningText, 9, {webkitFilter: 'invert(0%)', filter: 'invert(0%)', ease: Power2.easeOut})
+        
     /*----- Navbar highlight animations -----*/ 
     var heightOfEducation = $('.languages-1-div').offset().top - $('.education-1-div').offset().top;
     var heightOfLanguages = $('.employment-1-div').offset().top - $('.languages-1-div').offset().top;
