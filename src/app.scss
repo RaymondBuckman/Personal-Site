@@ -40,7 +40,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#727272', end
         padding-left: 400px;
         transition: filter 0.2s ease-in;
     }
-
+    
     &:hover img{
         filter: brightness(30%);
     }    
@@ -141,27 +141,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#727272', end
     @media (min-width: 1921px){ @content; }
 }
 
-/*================== Main Keyframes ==================*/
-@keyframes lightenDarken{
-		29%, 100% 	  {filter:  invert(0%);}
-		30%	          {filter: invert(100%);}
-}
-
-@keyframes blink{
-    20%, 22%, 25%, 27%      {filter: opacity(100%);}   
-    21%               {filter: opacity(0%);}
-}
-/*
-@keyframes occasionalBlurOnHover{
-	20%, 52%	{-webkit-filter: blur(0px); -moz-filter: blur(0px);}
-	36%		    {-webkit-filter: blur(0.5px); -moz-filter: blur(0.5px);}
-}*/
-
-@keyframes updown{
-	20%, 60%, 100% {transform: translateY(0px);}
-	40% , 80%			{transform: translateY(15px);}
-}
-
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -210,29 +189,7 @@ body{
 	border-color:  $acid-green !important;
 }
 
-
-#name-m, #about-me-u, #education-d, #senior-project-j, #online-courses-e, #languages-g, #employment-y, #additional-skills-t, #additional-skills-l, #volunteer-work-k, #hobbies-t, #fin-i{
-	animation: lightenDarken 12s infinite 1.1s;
-}
-
-#name-R, #name-k, #about-me-o, #about-me-e, #education-E, #education-t, #senior-project-e, #senior-project-t, #online-courses-n, #online-courses-u, #languages-e, #languages-r, #employment-E, #employment-n, #additional-skills-d, #additional-skills-S, #volunteer-work-u, #volunteer-work-W, #hobbies-b, #hobbies-s, #fin-F{
-    animation: blink 12s infinite 1.1s;
-}
-
-/*
-#education-list > *:hover,
-.carousel-control:hover,
-#language-list > *:hover,
-#online-list > *:hover,
-#skill-list > *:hover,
-#french:hover,
-#german:hover,
-#duolingo:hover,
-#icons8:hover {
-	animation: occasionalBlurOnHover 4s infinite;
-}*/
-
-#page-content-wrapper > div:nth-child(1) > div.scrollmagic-pin-spacer{
+#main-content-wrapper > div:nth-child(1) > div.scrollmagic-pin-spacer{
     margin-bottom: 0vh !important;
 }
 
@@ -272,24 +229,16 @@ img:focus, a:focus, header:focus{
 	@include sidebar-transition;
 }
 
-#page-content-wrapper{
+#main-content-wrapper{
     height: 100%;
 	position: relative;
 	overflow-x: hidden;
 	@include sidebar-transition;
 }
-
+/*
 .disabled {
     pointer-events: none;
-}
-
-#wrapper.menuDisplayed #sidebar-wrapper{
-	transform: translateX(170px);
-}
-
-#wrapper.menuDisplayed #page-content-wrapper{
-    opacity: 0.1; /*darkens page-content-wrapper when sidebar is active*/
-}
+}*/
 
 .sidebar-nav {
     position: absolute;
@@ -450,9 +399,7 @@ img:focus, a:focus, header:focus{
 	position:fixed;
 	top: 6px;
 	left: 15px;
-    cursor: pointer;
-	opacity: 0.5;
-    
+    cursor: pointer;    
 	z-index:98; 
 	transition: all 0.3s ease-in-out;
     
@@ -472,8 +419,8 @@ img:focus, a:focus, header:focus{
 	font-size: 25px;
 	color: $bright-white;
     cursor: pointer;
-    opacity: 0;
-	z-index: 70;
+    //opacity: 0;
+	z-index: 98;
 	transition: all .4s ease-in-out;
 }
 
@@ -520,9 +467,8 @@ img:focus, a:focus, header:focus{
         display: inline-block;
         cursor: pointer;
         z-index: 1;
-        opacity: 0.5;
 
-        animation: updown 2s infinite 1.1s;
+        //animation: updown 2s infinite 1.1s;
         transition: opacity 0.3s ease-in-out;
 
         &:hover{
@@ -5066,7 +5012,7 @@ img:focus, a:focus, header:focus{
         opacity: 0 !important;
     }    
     
-    #page-content-wrapper > div:nth-child(2) > div.education-2-div > ul > li:nth-child(3) > div{
+    #main-content-wrapper > div:nth-child(2) > div.education-2-div > ul > li:nth-child(3) > div{
         width: 100%;
         background: url("images/drone-4-mini.jpg") $nrs center center;
         background-size: cover;
