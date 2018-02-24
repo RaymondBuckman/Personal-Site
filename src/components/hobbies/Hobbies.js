@@ -1,22 +1,22 @@
 import React, { Component } from 'react';
-import tennis from "../../images/tennis.jpg";
-import trance from "../../images/trance.jpg";
-import travel from "../../images/travel.jpg";
-import foreignLanguages from "../../images/foreign-languages.jpg";
-import weightLifting from "../../images/weight-lifting.jpg";
-import running from "../../images/running.jpg";
-import cars from "../../images/cars.jpg";
-import pingPong from "../../images/pingpong.jpg";
-import geography from "../../images/geography.jpg";
-import health from "../../images/health.jpg";
-import pets from "../../images/pets.jpg";
-import gaming from "../../images/gaming.jpg";
-import musicProduction from "../../images/music-production.jpg";
-import history from "../../images/history.jpg";
-import technology from "../../images/technology.jpg";
-import modernDesign from "../../images/modern-design.jpg";
-import reading from "../../images/reading.jpg";
-import dubstep from "../../images/dubstep.jpg";
+import tennis from "../../images/tennis-mini.jpg";
+import trance from "../../images/trance-mini.jpg";
+import travel from "../../images/travel-mini.jpg";
+import foreignLanguages from "../../images/foreign-languages-mini.jpg";
+import weightLifting from "../../images/weight-lifting-mini.jpg";
+import running from "../../images/running-mini.jpg";
+import cars from "../../images/cars-mini.jpg";
+import pingPong from "../../images/pingpong-mini.jpg";
+import geography from "../../images/geography-mini.jpg";
+import health from "../../images/health-mini.jpg";
+import pets from "../../images/pets-mini.jpg";
+import gaming from "../../images/gaming-mini.jpg";
+import musicProduction from "../../images/music-production-mini.jpg";
+import history from "../../images/history-mini.jpg";
+import technology from "../../images/technology-mini.jpg";
+import modernDesign from "../../images/modern-design-mini.jpg";
+import reading from "../../images/reading-mini.jpg";
+import dubstep from "../../images/dubstep-mini.jpg";
 
 export default class Hobbies extends Component {
     render() {
