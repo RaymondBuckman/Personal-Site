@@ -22,7 +22,7 @@ export default class AdditionalSkills extends Component {
                     <li>Microsoft Office</li><br/>
                     <li>Adobe Photoshop</li><br/>
                     <li>Français (intermediare)</li><br/>
-                    <li>Deutch (Anfänger)</li>
+                    <li>Deutsch (Anfänger)</li>
                 </ul>
             </div>
             <div className="skills-2-div"></div>

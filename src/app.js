@@ -137,7 +137,7 @@ $(document).ready(function(){
             triggerHook: 0.5000,
             duration: heightOfEducation
         })
-        .setClassToggle(".navbar-default .navbar-nav > li:nth-child(1)", "active") // add class toggle
+        .setClassToggle(".navbar-default .navbar-nav > li:nth-child(1)", "active")
         /*
         .addIndicators({
             name: 'Education',
@@ -326,7 +326,7 @@ $(document).ready(function(){
         .addTo(controller);
 
         var skills3Tween = TweenMax.to(".skills-3-div", 1, { 
-            backgroundPositionX: "-=100%",
+            backgroundPositionX: "-=50%",
             autoRound:false, 
             ease:Power0.easeOut
         });
@@ -498,7 +498,7 @@ $(document).ready(function(){
     $('.scrollmagic-fade-in').each(function(){
         var headerScene = new ScrollMagic.Scene({
             triggerElement: this,
-            triggerHook: 0.85,
+            triggerHook: 0.9,
             reverse: false
         })
         .setClassToggle(this, 'fade-in')
@@ -515,7 +515,7 @@ $(document).ready(function(){
     $('.scrollmagic-circle').each(function(){
         var headerScene = new ScrollMagic.Scene({
             triggerElement: this,
-            triggerHook: 0.85,
+            triggerHook: 0.9,
             reverse: false
         })
         .setClassToggle(this, 'fade-in')

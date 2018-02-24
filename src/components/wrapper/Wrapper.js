@@ -33,11 +33,9 @@ var styles = {
     },
     brightMainContentWrapper: {
         opacity: "1",
-        //pointerEvents: "auto"
     },
     darkenedMainContentWrapper: {
         opacity: "0.1",
-        //pointerEvents: "none"
     },
     transparentMenu: {
         opacity: '0.5'

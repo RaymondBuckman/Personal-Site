@@ -663,7 +663,7 @@ img:focus, a:focus, header:focus{
 .navbar-default .navbar-nav>.active > a,
 .navbar-default .navbar-nav>.active > a:focus {
     color: $acid-green;
-    margin: 0px 20px;
+    margin: 0 20px;
     transform: scale(1.3);
     
 }
@@ -1250,7 +1250,7 @@ img:focus, a:focus, header:focus{
 
 .skills-3-div{
 	height:50vh;
-	background: url("images/brandenburg-gate.jpg") $nrf 100% 40%;
+	background: url("images/brandenburg-gate.jpg") $nrf 70% 40%;
 	background-size: 1950px;
     
     #german {

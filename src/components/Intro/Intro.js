@@ -60,7 +60,7 @@ export default class Intro extends Component {
                     <li id="down-arrow-dest" className="flex-item">
                         <h1 id="about-me" className="scrollmagic-fade-in" tabIndex="0">Ab<span id="about-me-o">o</span><span id="about-me-u">u</span>t M<span id="about-me-e">e</span>
                         </h1><br/>
-                        <p id="about-me-paragraph" className="scrollmagic-fade-in">I am an enthusiastic, driven college graduate looking for a rewarding entry-level position in tech. Currently, I am seeking employment opportunities that will both challenge me &
+                        <p id="about-me-paragraph" className="scrollmagic-fade-in">I am an enthusiastic, driven freelancer looking for a rewarding entry-level position in tech. Currently, I am seeking employment opportunities that will both challenge me &
                         allow me to grow within the company. Specific fields that are of interest to me are front-end web development, UX design and QA. The phrase "learn something new every day" is something that I truly take to heart. I have a passion for acquiring new knowledge both relating to my career path & about the world around me. I consider myself a citizen of the world & would be completely open to opportunities abroad. People who know me would say that I am a pleasure to work with. I am a great team-player who can meet deadlines & exceed expectations. I am also keeping my skill set up-to-date, as well as learning new languages, both coding & spoken. Feel free to reach out if you're interested! </p>
                     </li>
                 </ul>
