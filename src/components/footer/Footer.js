@@ -14,7 +14,7 @@ export default class Footer extends Component {
                     </h1>
                 </li>
                 <li className="flex-item">
-                    <a id="icons8" href="https://icons8.com" target="_blank">Icon pack By Icons8</a>
+                    <a id="icons8" href="https://icons8.com" target="_blank" rel="noopener">Icon pack By Icons8</a>
                 </li>
             </ul> 
         </div>

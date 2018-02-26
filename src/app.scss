@@ -240,8 +240,59 @@ img:focus, a:focus, header:focus{
     pointer-events: none;
 }*/
 
+.sidebar-window{
+    position: relative;
+    border: transparent solid 2px;
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    margin-top: 35px;
+    margin-left: 9px;
+    margin-bottom: 35px;
+    text-align: center;
+    transition: border 0.5s ease-in-out;
+
+    div{
+        background: url("images/me.jpg") $nrs 50% 40%;
+        background-size: 155px;
+        width: 100%;
+        height: 0;
+        padding: 50% 0;
+        border-radius: 50%;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .text-container{
+        position: absolute;
+        width: 80%;
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%);
+
+        h2{
+            position: relative;        
+            @include main-font;
+            color: $acid-green;
+            font-size: 1.8em;
+            opacity: 0;
+            transform: rotateY(90deg); 
+            //transform-origin: left;
+            transition: all 0.5s ease-in-out;
+        }
+    } 
+    
+    &:hover h2{
+        opacity: 1;
+        transform: rotateY(0deg); 
+    }
+
+    &:hover div{
+        filter: brightness(20%);
+    }
+}
+
 .sidebar-nav {
-    position: absolute;
+    position: relative;
     top: 0;
     width: 170px;
     margin: 0;
@@ -256,7 +307,7 @@ img:focus, a:focus, header:focus{
         display: inline-block;
         width: 100%;
         
-        &:nth-child(n+2):before {
+        &:nth-child(n+1):before {
             content: '';
             position: absolute;
             background-color: $bright-white;
@@ -269,57 +320,6 @@ img:focus, a:focus, header:focus{
             -moz-transition:  width .3s ease-in;
             -ms-transition:  width .3s ease-in;
             transition: width .3s ease-in;
-        }
-    }
-    
-    .sidebar-window{
-        position: relative;
-        border: transparent solid 2px;
-        border-radius: 50%;
-        width: 150px;
-        height: 150px;
-        margin-top: 35px;
-        margin-left: 9px;
-        margin-bottom: 35px;
-        text-align: center;
-        transition: border 0.5s ease-in-out;
-
-        div{
-            background: url("images/me.jpg") $nrs 50% 40%;
-            background-size: 155px;
-            width: 100%;
-            height: 0;
-            padding: 50% 0;
-            border-radius: 50%;
-            transition: all 0.3s ease-in-out;
-        }
-
-        .text-container{
-            position: absolute;
-            width: 80%;
-            top: 50%;
-            left: 50%;
-            transform: translateX(-50%) translateY(-50%);
-
-            h2{
-                position: relative;        
-                @include main-font;
-                color: $acid-green;
-                font-size: 1.8em;
-                opacity: 0;
-                transform: rotateY(90deg); 
-                //transform-origin: left;
-                transition: all 0.5s ease-in-out;
-            }
-        }
-
-        &:hover h2{
-            opacity: 1;
-            transform: rotateY(0deg); 
-        }
-
-        &:hover div{
-            filter: brightness(20%);
         }
     }
 }
@@ -336,7 +336,7 @@ img:focus, a:focus, header:focus{
        transition: width .2s ease-in;
 }
 
-.sidebar-nav li a, .sidebar-nav li:first-child {
+.sidebar-nav li a {
     display: block;
     color: $bright-white;
     text-decoration: none;
@@ -355,18 +355,18 @@ img:focus, a:focus, header:focus{
 }    
 
 
-.sidebar-nav  li:nth-child(n+1) a:hover,
-.sidebar-nav  li:nth-child(n+1) a:active,
-.sidebar-nav  li:nth-child(n+1) a:focus,
-.sidebar-nav  li:nth-child(n+1).open a:hover,
-.sidebar-nav  li:nth-child(n+1).open a:active,
-.sidebar-nav  li:nth-child(n+1).open a:focus{
+.sidebar-nav  li:nth-child(n) a:hover,
+.sidebar-nav  li:nth-child(n) a:active,
+.sidebar-nav  li:nth-child(n) a:focus,
+.sidebar-nav  li:nth-child(n).open a:hover,
+.sidebar-nav  li:nth-child(n).open a:active,
+.sidebar-nav  li:nth-child(n).open a:focus{
     background-color: transparent;
     color: #000;
     //animation: occasionalBlurOnHover 4s infinite;
 }
 
-.sidebar-nav  li:nth-child(n+2) a:visited{
+.sidebar-nav  li:nth-child(n+1) a:visited{
     color: $bright-white;
     
     &:hover{
@@ -374,13 +374,13 @@ img:focus, a:focus, header:focus{
     }
 }
 
-#github-logo, #icons8-logo{
+#github-logo, #icons8-logo, #pexels-logo{
     filter: invert(100%);
     transition: filter 0.3s ease-in;
 }
 
 .sidebar-nav li:hover{
-    #github-logo, #icons8-logo{
+    #github-logo, #icons8-logo, #pexels-logo{
         filter: invert(0%); 
     }
 }

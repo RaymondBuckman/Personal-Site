@@ -99,8 +99,8 @@ export default class Wrapper extends Component {
             <div id="sidebar-wrapper" style={styles[this.state.sidebar_state]}>
                 <Sidebar />
             </div>
-            <img id="menu" src="https://png.icons8.com/xbox-menu/ios7/73/ffffff" tabIndex="0" style={styles[this.state.menu_state, this.state.menu_opacity]} onClick={this.openSidebar.bind(this)} onMouseEnter={this.opaqueMenu.bind(this)} onMouseLeave={this.transparentMenu.bind(this)}></img>
-            <img id="close" src="https://png.icons8.com/cancel/ios7/73/ffffff" height="40px" style={styles[this.state.close_state]} onClick={this.closeSidebar.bind(this)}></img>
+            <img id="menu" src="https://png.icons8.com/xbox-menu/ios7/73/ffffff" alt="open the sidebar" tabIndex="0" style={styles[this.state.menu_state, this.state.menu_opacity]} onClick={this.openSidebar.bind(this)} onMouseEnter={this.opaqueMenu.bind(this)} onMouseLeave={this.transparentMenu.bind(this)}></img>
+            <img id="close" src="https://png.icons8.com/cancel/ios7/73/ffffff" alt="close the sidebar" height="40px" style={styles[this.state.close_state]} onClick={this.closeSidebar.bind(this)}></img>
             <div id="main-content-wrapper" style={styles[this.state.main_content_wrapper_state]} onClick={this.closeSidebar.bind(this)}>
                 <Intro />
                 <Education />

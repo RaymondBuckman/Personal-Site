@@ -53,7 +53,7 @@ export default class Hobbies extends Component {
                         <img src={foreignLanguages} alt="Black Chinese script written on white wooden planks"></img>
                         <span className="text-container">
                             <h2>Foreign Languages</h2>
-                            <p>Вы можете читать это? Я могу! Check out my <a id="duolingo" href="https://www.duolingo.com/xKrankenhausx" target="_blank" tabIndex="0">Duolingo</a> account</p>
+                            <p>Вы можете читать это? Я могу! Check out my <a id="duolingo" href="https://www.duolingo.com/xKrankenhausx" target="_blank" rel="noopener" tabIndex="0">Duolingo</a> account</p>
                         </span>
                     </li>
                     <li className="flex-item scrollmagic-circle">
