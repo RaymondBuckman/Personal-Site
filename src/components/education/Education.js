@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import subwayVideo from '../../images/drone-video.mp4';
-import board1Smudge from '../../images/board-1-smudge.jpg';
+import board1Smudge from '../../images/board-1-smudge-mini.jpg';
 import board2 from '../../images/board-2-mini.jpg';
 import drone1 from '../../images/drone-1-mini.jpg';
 import drone2 from '../../images/drone-2-mini.jpg';
