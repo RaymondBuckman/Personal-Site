@@ -159,7 +159,6 @@ export default class Hobbies extends Component {
             </div>
             <div className="hobbies-2-div"></div>
             <div className="hobbies-3-div"></div>
-            <div className="hobbies-4-div"></div>
         </div>
         );
     }

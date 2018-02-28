@@ -38,6 +38,7 @@ $(document).ready(function(){
     
     /*----- GSAP animations -----*/
     var downArrow = $('#down-arrow');
+    var sidebarDownArrow = $('#sidebar-down-arrow');
     var blinkingText = $('#name-R, #name-k, #about-me-o, #about-me-e, #education-E, #education-t, #senior-project-e, #senior-project-t, #online-courses-n, #online-courses-u, #languages-e, #languages-r, #employment-E, #employment-n, #additional-skills-d, #additional-skills-S, #volunteer-work-u, #volunteer-work-W, #hobbies-b, #hobbies-s, #fin-F');
     var darkeningText = $('#name-m, #about-me-u, #education-d, #senior-project-j, #online-courses-e, #languages-g, #employment-y, #additional-skills-t, #additional-skills-l, #volunteer-work-k, #hobbies-t, #fin-i');
     
@@ -48,6 +49,13 @@ $(document).ready(function(){
     downArrowTimeline.to(downArrow, 0.5, {y: '0px', ease: Power2.easeOut})
     downArrowTimeline.to(downArrow, 0.5, {y: '15px', ease: Power2.easeIn})
     downArrowTimeline.to(downArrow, 0.5, {y: '0px', ease: Power2.easeOut})
+    
+    var sidebarDownArrowTimeline = new TimelineMax({delay:0.5, repeat:-1, repeatDelay:0.5});
+    
+    downArrowTimeline.to(sidebarDownArrow, 0.5, {y: '5px', ease: Power2.easeIn})
+    downArrowTimeline.to(sidebarDownArrow, 0.5, {y: '0px', ease: Power2.easeOut})
+    downArrowTimeline.to(sidebarDownArrow, 0.5, {y: '5px', ease: Power2.easeIn})
+    downArrowTimeline.to(sidebarDownArrow, 0.5, {y: '0px', ease: Power2.easeOut})
     
     var blinkingTextTimeline = new TimelineMax({repeat: -1});
     
@@ -66,7 +74,7 @@ $(document).ready(function(){
     var heightOfEmployment = $('.skills-1-div').offset().top - $('.employment-1-div').offset().top;
     var heightOfSkills = $('.volunteer-1-div').offset().top - $('.skills-1-div').offset().top;
     var heightOfVolunteer = $('.hobbies-1-div').offset().top - $('.volunteer-1-div').offset().top;
-    var heightOfHobbies = $('.hobbies-4-div').offset().top - $('.hobbies-1-div').offset().top;
+    var heightOfHobbies = $('.hobbies-3-div').offset().top - $('.hobbies-1-div').offset().top;
     
     var laptopsAndDesktops = window.matchMedia( "(min-width: 1420px)" );
     var phonePortrait = window.matchMedia( "(max-width: 599px)" );
@@ -78,13 +86,12 @@ $(document).ready(function(){
     
     //change button size based on screen
     if(laptopsAndDesktops.matches){
-        menu.height = "40";
-        close.height = "40";
         downArrow.height = "60";
     }else{
         menu.height = "50";
         close.height = "50";
         downArrow.height = "60"; 
+        
     }
     
     if(phonePortrait.matches){
@@ -400,10 +407,10 @@ $(document).ready(function(){
             duration: "250%"
         })
         .setTween(volunteer3Tween)
-        .addTo(controller);
+        .addTo(controller);  
         
         var hobbies2Tween = TweenMax.from(".hobbies-2-div", 1, { 
-            backgroundPositionY: "-=100px",
+            backgroundPositionX: "-=30%",
             autoRound:false, 
             ease:Power1.easeOut
         });
@@ -414,10 +421,10 @@ $(document).ready(function(){
             duration: "200%"
         })
         .setTween(hobbies2Tween)
-        .addTo(controller);   
+        .addTo(controller);     
         
         var hobbies3Tween = TweenMax.from(".hobbies-3-div", 1, { 
-            backgroundPositionX: "-=30%",
+            backgroundSize: "+=200px +=133.6px",
             autoRound:false, 
             ease:Power1.easeOut
         });
@@ -428,20 +435,6 @@ $(document).ready(function(){
             duration: "200%"
         })
         .setTween(hobbies3Tween)
-        .addTo(controller);     
-        
-        var hobbies4Tween = TweenMax.from(".hobbies-4-div", 1, { 
-            backgroundSize: "+=200px +=133.6px",
-            autoRound:false, 
-            ease:Power1.easeOut
-        });
-
-        var hobbies4Scene = new ScrollMagic.Scene({
-            triggerElement: ".hobbies-4-div",
-            triggerHook: 1,
-            duration: "200%"
-        })
-        .setTween(hobbies4Tween)
         .addTo(controller); 
     }
      

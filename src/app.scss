@@ -16,14 +16,14 @@ $intro-1-height: 100vw * .6665;
 $skills-2-height: 100vw * .6645;
 $employment-2-height: 100vw * .75;
 $volunteer-2-height: 100vw * .667;
+$hobbies-2-height: 100vw * .6668;
 $hobbies-3-height: 100vw * .6668;
-$hobbies-4-height: 100vw * .6668;
 
 //These variables help replicate background-size: cover on portrait screens
 $intro-1-width: 100vh / .6665;
 $employment-2-width: 100vw / .75;
-$hobbies-3-width: 60vh / .6668;
-$hobbies-4-width: 100vw / .6668;
+$hobbies-2-width: 60vh / .6668;
+$hobbies-3-width: 100vw / .6668;
 
 //mixins
 @mixin gray-gradient-background{
@@ -183,6 +183,10 @@ body{
     color: $bright-white;
     background: $acid-green !important; /* WebKit/Blink Browsers */
 }
+    
+a{
+    text-decoration: none !important;
+}
 
 //general rules
 #about-me:hover, #education:hover, #senior-project:hover, #online-courses:hover, #languages:hover, #employment:hover, #additional-skills:hover, #volunteer-work:hover, #hobbies:hover {
@@ -300,35 +304,36 @@ img:focus, a:focus, header:focus{
     list-style: none;
     display: inline-block;
     
-    
     li {
         position: relative;
         line-height: 20px;
         display: inline-block;
         width: 100%;
-        
-        &:nth-child(n+1):before {
-            content: '';
-            position: absolute;
-            background-color: $bright-white;
-            top: 0;
-            left: -1px;
-            z-index: -1;
-            height: 100%;
-            width: 1px;
-            -webkit-transition: width .3s ease-in;
-            -moz-transition:  width .3s ease-in;
-            -ms-transition:  width .3s ease-in;
-            transition: width .3s ease-in;
-        }
+        text-decoration: none;
     }
 }
 
+.sidebar-nav > li:nth-child(1):before,
+//.sidebar-nav > li:nth-child(2):before,
+.sidebar-nav > li:nth-child(n+3):before,
+#github-projects > li:nth-child(n):before{
+    content: '';
+    position: absolute;
+    background-color: $bright-white;
+    top: 0;
+    left: -1px;
+    z-index: -1;
+    height: 100%;
+    width: 0px;
+    -webkit-transition: width .3s ease-in;
+    -moz-transition:  width .3s ease-in;
+    -ms-transition:  width .3s ease-in;
+    transition: width .3s ease-in;
+}
 
-
-
-.sidebar-nav li:hover:before,
-.sidebar-nav li.open:hover:before {
+.sidebar-nav >li:hover:before,
+.sidebar-nav > li.open:hover:before,
+#github-projects >li:hover:before,{
     width: 100%;
     -webkit-transition: width .2s ease-in;
       -moz-transition:  width .2s ease-in;
@@ -336,51 +341,89 @@ img:focus, a:focus, header:focus{
        transition: width .2s ease-in;
 }
 
-.sidebar-nav li a {
+.main-sidebar-links {
     display: block;
     color: $bright-white;
     text-decoration: none;
     padding: 10px 15px 10px 30px;
-    transition: color .5s ease;
-}
-
-.sidebar-nav li a{
     @include secondary-font;
+    cursor: pointer;
+    transition: color .5s ease;
     
     &:first-letter{
         @include main-font;
         font-size: 2em;
         letter-spacing: 3px;
-    }    
-}    
+    }  
+    /*
+    #down-caret{
+        transition: color 0.5s ease-in-out;
+    }
+    
+    &:nth-child(2):hover{
+        #down-caret{
+            color: $acid-green;
+        }
+    }*/
+    
+    
+    &:nth-child(n+3):hover{
+        color: #000;
+        
+        ul li a{
+            color: #000;
+        }
+    }
+    
+}
 
+#github-projects{
+    font-size: 0.8em;
+    padding: 0 0 0 5px;
+    //display: none;
+}
 
-.sidebar-nav  li:nth-child(n) a:hover,
-.sidebar-nav  li:nth-child(n) a:active,
-.sidebar-nav  li:nth-child(n) a:focus,
-.sidebar-nav  li:nth-child(n).open a:hover,
-.sidebar-nav  li:nth-child(n).open a:active,
-.sidebar-nav  li:nth-child(n).open a:focus{
+.toggle-sidebar-links{
+    display: block;
+    color: $bright-white;
+    text-decoration: none;
+    padding: 10px 15px 10px 10px;
+    @include secondary-font;
+    font-size: 0.9em;
+    transition: color .5s ease;
+    
+    &:first-letter{
+        @include main-font;
+        font-size: 1.5em;
+        letter-spacing: 3px;
+    } 
+}
+
+.sidebar-nav > li:nth-child(n) a:hover,
+.sidebar-nav >  li:nth-child(n) a:active,
+.sidebar-nav >  li:nth-child(n) a:focus,
+.sidebar-nav >  li:nth-child(n).open a:hover,
+.sidebar-nav >  li:nth-child(n).open a:active,
+.sidebar-nav >  li:nth-child(n).open a:focus{
     background-color: transparent;
     color: #000;
-    //animation: occasionalBlurOnHover 4s infinite;
 }
 
 .sidebar-nav  li:nth-child(n+1) a:visited{
     color: $bright-white;
     
     &:hover{
-        color:#000;
+        color: #000;
     }
 }
 
-#github-logo, #icons8-logo, #pexels-logo{
+#icons8-logo, #pexels-logo, #github-logo{
     filter: invert(100%);
     transition: filter 0.3s ease-in;
 }
 
 .sidebar-nav li:hover{
-    #github-logo, #icons8-logo, #pexels-logo{
+    #icons8-logo, #pexels-logo{
         filter: invert(0%); 
     }
 }
@@ -388,7 +431,7 @@ img:focus, a:focus, header:focus{
 #bottom-sidebar-image{
     position:absolute;
     bottom: 0;
-    height: 30vh;
+    height: 20vh;
     width: 90%;
     background: url("images/smile.png") $nrs 50% 50%;
     background-size: contain;
@@ -399,6 +442,7 @@ img:focus, a:focus, header:focus{
 	position:fixed;
 	top: 6px;
 	left: 15px;
+    height: 40px;
     cursor: pointer;    
 	z-index:98; 
 	transition: all 0.3s ease-in-out;
@@ -416,12 +460,22 @@ img:focus, a:focus, header:focus{
 	position: fixed;
 	top: 15px;
 	left: 155px;
+    height: 40px;
 	font-size: 25px;
 	color: $bright-white;
     cursor: pointer;
     //opacity: 0;
 	z-index: 98;
 	transition: all .4s ease-in-out;
+}
+
+#m2-preview, #turkey-preview, #djokovic-preview, #the-winter-war-preview{
+    position: fixed;
+    top: 30vh;
+    left: 30vh;
+    height: 400px;
+    display: none;
+    z-index: 99;
 }
 
 /*=============== Page Content Wrapper ===============*/
@@ -1169,8 +1223,7 @@ img:focus, a:focus, header:focus{
 .skills-1-div{
     position: relative;
 	height: auto;
-	background: url("images/graffiti-2.jpg") $nrf 41% 45%;
-    background-size:1900px;
+	background: $concrete-gray;
     @include div-padding;
     
     #additional-skills{
@@ -1540,13 +1593,6 @@ img:focus, a:focus, header:focus{
 }
 
 .hobbies-2-div{
-	position: relative;
-	height: 50vh;
-	background: url("images/graffiti-1.jpg") $nrf 100% 100%;
-	background-size: cover;
-}
-
-.hobbies-3-div{
 	position:relative;
 	height: 50vh;
 	background: url("images/break-dancer.jpg") $nrf 60% 60%;
@@ -1555,11 +1601,11 @@ img:focus, a:focus, header:focus{
 }
 
 
-.hobbies-4-div{
+.hobbies-3-div{
 	position:relative;
 	height:85vh;
 	background: url("images/escalator.jpg") $nrf 50% 60%;
-	background-size: 100vw $hobbies-4-height;
+	background-size: 100vw $hobbies-3-height;
 }
 
 .footer-1-div {
@@ -2087,13 +2133,13 @@ img:focus, a:focus, header:focus{
     }
 
     .employment-2-div{
-        height: 0vh;
-        background: $concrete-gray;
+        height: 50vh;
+        background: url("images/hammer-mini.jpg") $nrs 50% 0%;
+        background-size: cover;
     }
 
     .skills-1-div{
-        background: url("images/graffiti-2-mini.jpg") $nrs 60% 0%;
-        background-size: cover;
+        background: $concrete-gray;
 
         #additional-skills{
             width: 80vw;
@@ -2319,18 +2365,13 @@ img:focus, a:focus, header:focus{
     }
 
     .hobbies-2-div{
-        height: 0vh;
-        background: $concrete-gray;
-    }
-
-    .hobbies-3-div{
         height: 35vh;
         background: url("images/break-dancer-mini.jpg") $nrs 80% 40%;
         background-size: cover;
     }
 
 
-    .hobbies-4-div{
+    .hobbies-3-div{
         background: url("images/escalator-mini.jpg") $nrs 10% 60%;
         background-size: cover;
     }
@@ -2763,8 +2804,7 @@ img:focus, a:focus, header:focus{
     }
 
     .skills-1-div{
-        background: url("images/graffiti-2.jpg") $nrs 50% 0%;
-        background-size: cover;
+        background: $concrete-gray;
 
         #additional-skills{
             font-size: 4em;
@@ -2925,18 +2965,12 @@ img:focus, a:focus, header:focus{
 
     .hobbies-2-div{
         height: 50vh;
-        background: url("images/graffiti-1-mini.jpg") $nrs 50% 0%;
-        background-size: cover;
-    }
-
-    .hobbies-3-div{
-        height: 50vh;
         background: url("images/break-dancer-mini.jpg") $nrs 50% 20%;
         background-size: cover;
     }
 
 
-    .hobbies-4-div{
+    .hobbies-3-div{
         background: url("images/escalator.jpg") $nrs 50% 30%;
         background-size: cover;
     }
@@ -3404,8 +3438,7 @@ img:focus, a:focus, header:focus{
     }
 
     .skills-1-div{
-        background: url("images/graffiti-2.jpg") $nrs 50% 0%;
-        background-size: cover;
+        background: $concrete-gray;
         padding: 10vh 5vw;
 
         #additional-skills{
@@ -3603,18 +3636,12 @@ img:focus, a:focus, header:focus{
 
     .hobbies-2-div{
         height: 35vh;
-        background: url("images/graffiti-1-mini.jpg") $nrs 50% 50%;
-        background-size: cover;
-    }
-
-    .hobbies-3-div{
-        height: 35vh;
         background: url("images/break-dancer-mini.jpg") $nrs 50% 20%;
         background-size: cover;
     }
 
 
-    .hobbies-4-div{
+    .hobbies-3-div{
         background: url("images/escalator.jpg") $nrs 0% 30%;
         background-size: cover;
     }
@@ -4076,8 +4103,7 @@ img:focus, a:focus, header:focus{
     }
 
     .skills-1-div{
-        background: url("images/graffiti-2.jpg") $nrs 50% 0%;
-        background-size: cover;
+        background: $concrete-gray;
         padding: 10vh 5vw;
 
         #additional-skills{
@@ -4280,18 +4306,12 @@ img:focus, a:focus, header:focus{
 
     .hobbies-2-div{
         height: 40vh;
-        background: url("images/graffiti-1-mini.jpg") $nrs 50% 50%;
-        background-size: cover;
-    }
-
-    .hobbies-3-div{
-        height: 40vh;
         background: url("images/break-dancer-mini.jpg") $nrs 50% 20%;
         background-size: cover;
     }
 
 
-    .hobbies-4-div{
+    .hobbies-3-div{
         background: url("images/escalator.jpg") $nrs 0% 30%;
         background-size: cover;
     }
@@ -4727,8 +4747,7 @@ img:focus, a:focus, header:focus{
     }
 
     .skills-1-div{
-        background: url("images/graffiti-2.jpg") $nrf 50% 0%;
-        background-size: cover;
+        background: $concrete-gray;
         padding: 10vh 5vw;
 
         #additional-skills{
@@ -4901,18 +4920,12 @@ img:focus, a:focus, header:focus{
 
     .hobbies-2-div{
         height: 50vh;
-        background: url("images/graffiti-1-mini.jpg") $nrf 50% 50%;
-        background-size: cover;
-    }
-
-    .hobbies-3-div{
-        height: 50vh;
         background: url("images/break-dancer-mini.jpg") $nrf 50% 50%;
         background-size: 110vw;
     }
 
 
-    .hobbies-4-div{
+    .hobbies-3-div{
         background: url("images/escalator.jpg") $nrf 0% 30%;
         background-size: cover;
     }
@@ -4991,7 +5004,7 @@ img:focus, a:focus, header:focus{
 //targets Microsoft Edge
 @supports (-ms-ime-align: auto) {
     //fixes background image scaling problems on divs with parallax background sizes
-    .intro-1-div, .skills-2-div, .volunteer-2-div, .volunteer-2-blurred-div, .hobbies-3-div{
+    .intro-1-div, .skills-2-div, .volunteer-2-div, .volunteer-2-blurred-div, .hobbies-2-div{
         background-size: cover !important;
     }
     
@@ -5041,7 +5054,7 @@ img:focus, a:focus, header:focus{
         //border-radius: 0% !important;
     }
     
-    .hobbies-4-div{
+    .hobbies-3-div{
         background-size: cover !important;
     }
 }
