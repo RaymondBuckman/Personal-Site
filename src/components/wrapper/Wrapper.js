@@ -10,6 +10,11 @@ import Hobbies from '../hobbies/Hobbies';
 import Footer from '../footer/Footer';
 import $ from 'jquery';
 
+import djokovicPreview from '../../images/djokovic-preview.jpg';
+import m2Preview from '../../images/m2-preview.jpg';
+import theWinterWarPreview from '../../images/the-winter-war-preview.jpg';
+import turkeyPreview from '../../images/turkey-preview.jpg';
+
 var styles = {
     visibleSidebar: {
         transform: 'translateX(170px)'
@@ -101,6 +106,10 @@ export default class Wrapper extends Component {
             </div>
             <img id="menu" src="https://png.icons8.com/xbox-menu/ios7/73/ffffff" alt="open the sidebar" tabIndex="0" style={styles[this.state.menu_state, this.state.menu_opacity]} onClick={this.openSidebar.bind(this)} onMouseEnter={this.opaqueMenu.bind(this)} onMouseLeave={this.transparentMenu.bind(this)}></img>
             <img id="close" src="https://png.icons8.com/cancel/ios7/73/ffffff" alt="close the sidebar" height="40px" style={styles[this.state.close_state]} onClick={this.closeSidebar.bind(this)}></img>
+            <img id="djokovic-preview" src={djokovicPreview}></img>
+            <img id="m2-preview" src={m2Preview}></img>
+            <img id="the-winter-war-preview" src={theWinterWarPreview}></img>
+            <img id="turkey-preview" src={turkeyPreview}></img>
             <div id="main-content-wrapper" style={styles[this.state.main_content_wrapper_state]} onClick={this.closeSidebar.bind(this)}>
                 <Intro />
                 <Education />
