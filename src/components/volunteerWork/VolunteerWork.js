@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import cameraVideo from '../../images/camera-video.mp4';
 
-export default class VolunteerWork extends Component {
+export default class VolunteerWork extends React.Component {
     render() {
         return(
         <div>
@@ -9,9 +8,6 @@ export default class VolunteerWork extends Component {
                     <ul className="flex-container">
                         <li className="flex-item">
                             <div id="volunteer-window" className="scrollmagicWindow">
-                                <video preload="preload" id="volunteer-video" autoPlay="autoplay" loop="loop" muted>
-                                    <source src={cameraVideo} type="video/mp4"></source>
-                                </video>
                             </div>
                         </li>
                         <li id="jump-to-volunteer-work" className="flex-item">

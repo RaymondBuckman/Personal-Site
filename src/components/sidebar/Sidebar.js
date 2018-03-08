@@ -8,7 +8,7 @@ import $ from "jquery";
 
 var laptopsAndDesktops = window.matchMedia( "(min-width: 1420px)" );
 
-export default class Sidebar extends Component {
+export default class Sidebar extends React.Component {
     render() {
         function toggleGithubProjects(e){
             e.stopPropagation();

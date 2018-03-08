@@ -19,16 +19,8 @@ ReactDOM.render(
     document.getElementById('root')
 );
 
-
-
+//Passive event listeners that improve scrolling performance, as recommended by Google
 $(document).ready(function(){  
-    //Passive event listeners that improve scrolling performance, as recommended by Google
-    /*
-    document.addEventListener('wheel', onTouchStart, {passive: true});
-    document.addEventListener('mousewheel', onTouchStart, {passive: true});
-    document.addEventListener('touchstart', onTouchStart, {passive: true});
-    document.addEventListener('touchmove', onTouchStart, {passive: true});*/
-    
     // Microsoft Edge doesn't like circular videos..
     // If Microsoft Edge, remove all video divs
     if (/Edge\/\d./i.test(navigator.userAgent)){
@@ -93,10 +85,10 @@ $(document).ready(function(){
         downArrow.height = "60"; 
         
     }
-    
+    /*
     if(phonePortrait.matches){
         $('#project-video').remove();
-    }
+    }*/
     
     var controller = new ScrollMagic.Controller();
     

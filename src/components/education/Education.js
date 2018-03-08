@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import subwayVideo from '../../images/drone-video.mp4';
+import droneVideo from '../../images/drone-video.mp4';
 import board1Smudge from '../../images/board-1-smudge-mini.jpg';
 import board2 from '../../images/board-2-mini.jpg';
 import drone1 from '../../images/drone-1-mini.jpg';
@@ -7,7 +7,7 @@ import drone2 from '../../images/drone-2-mini.jpg';
 import drone3 from '../../images/drone-3-mini.jpg';
 import $ from 'jquery';
 
-export default class Education extends Component {
+export default class Education extends React.Component {
     render() {
         return(
         <div>
@@ -47,7 +47,7 @@ export default class Education extends Component {
                     <li className="flex-item scrollmagic-circle">
                         <div>
                             <video preload="preload" id="project-video" autoPlay="autoplay" loop="loop" muted>
-                                <source src={subwayVideo} type="video/mp4"></source>
+                                <source src={droneVideo} type="video/mp4"></source>
                             </video> 
                         </div>
                         <span className="text-container">

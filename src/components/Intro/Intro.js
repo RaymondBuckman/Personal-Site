@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import subwayVideo from '../../images/subway-video.mp4';
 import $ from 'jquery';
 
 var styles = {
@@ -11,7 +10,7 @@ var styles = {
     }, 
 };
 
-export default class Intro extends Component {
+export default class Intro extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -51,11 +50,7 @@ export default class Intro extends Component {
             <div className="intro-2-div" id="arrow-dest">
                 <ul className="flex-container">
                     <li className="flex-item">
-                        <div id="intro-window" className="scrollmagicWindow">
-                            <video preload="preload" id="intro-video" autoPlay="autoplay" loop="loop" muted>
-                                <source src={subwayVideo} type="video/mp4"></source>
-                            </video> 
-                        </div>
+                        <div id="intro-window" className="scrollmagicWindow"></div>
                     </li>
                     <li id="down-arrow-dest" className="flex-item">
                         <h1 id="about-me" className="scrollmagic-fade-in" tabIndex="0">Ab<span id="about-me-o">o</span><span id="about-me-u">u</span>t M<span id="about-me-e">e</span>

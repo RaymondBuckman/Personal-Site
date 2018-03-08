@@ -17,7 +17,8 @@ import turkeyPreview from '../../images/turkey-preview.jpg';
 
 var styles = {
     visibleSidebar: {
-        transform: 'translateX(170px)'
+        transform: 'translateX(170px)',
+        boxShadow: '0 0 20px 0 #000'
     },
     hiddenSidebar: {
         transtorm: 'translateX(0px)'
@@ -56,7 +57,7 @@ var styles = {
     }    
 };
 
-export default class Wrapper extends Component {
+export default class Wrapper extends React.Component {
     constructor(props) {
         super(props);
         this.state = {

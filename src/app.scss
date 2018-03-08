@@ -26,13 +26,15 @@ $hobbies-2-width: 60vh / .6668;
 $hobbies-3-width: 100vw / .6668;
 
 //mixins
-@mixin gray-gradient-background{
-/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#727272+0,2d2d2d+11,262626+100 */
-background: rgb(114,114,114); /* Old browsers */
-background: -moz-linear-gradient(-45deg, rgba(114,114,114,1) 0%, rgba(45,45,45,1) 11%, rgba(38,38,38,1) 100%); /* FF3.6-15 */
-background: -webkit-linear-gradient(-45deg, rgba(114,114,114,1) 0%,rgba(45,45,45,1) 11%,rgba(38,38,38,1) 100%); /* Chrome10-25,Safari5.1-6 */
-background: linear-gradient(135deg, rgba(114,114,114,1) 0%,rgba(45,45,45,1) 11%,rgba(38,38,38,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#727272', endColorstr='#262626',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+@mixin background-pattern{
+    background:
+    radial-gradient(black 15%, transparent 16%) 0 0,
+    radial-gradient(black 15%, transparent 16%) 8px 8px,
+    radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 0 1px,
+    radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 8px 9px;
+    background-color:#282828;
+    background-size:16px 16px; 
+    background-attachment: fixed;
 }
 
 @mixin image-hover{
@@ -172,7 +174,8 @@ time, mark, audio, video {
 body{
     overflow: auto;
     height: 100%;
-	background: $concrete-gray; /*helps create darkening effect when sidebar is active*/
+	//background: $concrete-gray; /*helps create darkening effect when sidebar is active*/
+    @include background-pattern;
 	user-drag: none;
 	//user-select: none;
 	cursor: default;
@@ -228,7 +231,7 @@ img:focus, a:focus, header:focus{
     height: 100%;
 	width: 170px;	
 	overflow-x: hidden;
-	background: $concrete-gray;
+    @include background-pattern;
     z-index: 99;
 	@include sidebar-transition;
 }
@@ -417,8 +420,9 @@ img:focus, a:focus, header:focus{
     }
 }
 
-#icons8-logo, #pexels-logo, #github-logo{
+#icons8-logo, #github-logo{
     filter: invert(100%);
+    //transform: rotateX(180deg);
     transition: filter 0.3s ease-in;
 }
 
@@ -475,6 +479,7 @@ img:focus, a:focus, header:focus{
     left: 30vh;
     height: 400px;
     display: none;
+    border-radius: 5px;
     z-index: 99;
 }
 
@@ -534,7 +539,8 @@ img:focus, a:focus, header:focus{
 .intro-2-div {
     position: relative;
     height: auto;
-    background: $concrete-gray;
+    //@include background-pattern;
+    background: transparent;
     font-size: large;
     color: $acid-green;
     z-index: 19;
@@ -585,8 +591,8 @@ img:focus, a:focus, header:focus{
                 margin: 5vh auto 0vh auto;
                 height: 600px;
                 width: 600px;
-                //background: url("images/road2.jpg") $nrf 55% 20%;
-                //background-size: 1200px;
+                background: url("images/city-1.jpg") $nrf 55% 20%;
+                background-size: cover;
                 
                 border-radius: 50%;
                 //filter: invert(100%);
@@ -673,7 +679,7 @@ img:focus, a:focus, header:focus{
 	left: 0%;
 	height: 50px;
     width: 100%;
-	background: $concrete-gray;
+	@include background-pattern;
 	border: none;
 	border-radius: 0px;
     z-index: 97;
@@ -775,7 +781,7 @@ img:focus, a:focus, header:focus{
 
 .education-1-div{
 	position: relative;
-	height: 110vh;
+	height: auto;
 	background: url("images/books.jpg") $nrf 20% 30%;
 	background-size: 130vw;
     @include div-padding;
@@ -856,7 +862,8 @@ img:focus, a:focus, header:focus{
     position: relative;
     height: auto;
     width: 100vw;
-    background: $concrete-gray;
+    background: transparent;
+    //@include background-pattern;
         
     .flex-container {
         padding: 15vh 5vw;
@@ -1027,7 +1034,8 @@ img:focus, a:focus, header:focus{
 .languages-1-div{
 	position: relative;
 	height: auto;
-	background: $concrete-gray;
+	//@include background-pattern;
+    background: transparent;
     @include div-padding;
     
     #languages{
@@ -1086,7 +1094,8 @@ img:focus, a:focus, header:focus{
 .employment-1-div {
     position: relative;
     height: auto;
-    background: $concrete-gray;
+    //@include background-pattern;
+    background: transparent;
     font-size: large;
     color: $acid-green;
     z-index: 19;
@@ -1136,8 +1145,8 @@ img:focus, a:focus, header:focus{
                 margin: 5vh auto 0vh auto;
                 height: 600px;
                 width: 600px;
-                //background: url("images/road2.jpg") $nrf 55% 20%;
-                //background-size: 1200px;
+                background: url("images/roller-1.jpg") $nrf center;
+                background-size: 100vh;
                 
                 border-radius: 50%;
                 //filter: invert(100%);
@@ -1223,7 +1232,8 @@ img:focus, a:focus, header:focus{
 .skills-1-div{
     position: relative;
 	height: auto;
-	background: $concrete-gray;
+	//@include background-pattern;
+    background: transparent;
     @include div-padding;
     
     #additional-skills{
@@ -1331,7 +1341,8 @@ img:focus, a:focus, header:focus{
 .volunteer-1-div {
 	position: relative;
     height: auto;
-    background: $concrete-gray;
+    background: transparent;
+    //@include background-pattern;
     font-size: large;
     color: $acid-green;
     z-index: 19;
@@ -1382,8 +1393,8 @@ img:focus, a:focus, header:focus{
                 margin: 5vh auto 0vh auto;
                 height: 600px;
                 width: 600px;
-                //background: url("images/road2.jpg") $nrf 55% 20%;
-                //background-size: 1200px;
+                background: url("images/hands-1.jpg") $nrf center;
+                background-size: 100vh;
                 border: transparent solid 3px;
                 border-radius: 50%;
                 
@@ -1468,7 +1479,8 @@ img:focus, a:focus, header:focus{
     position: relative;
     height: auto;
     width: 100vw;
-    background: $concrete-gray;
+    //@include background-pattern;
+    background: transparent;
         
     .flex-container {
           padding: 15vh 5vw;
@@ -1612,7 +1624,7 @@ img:focus, a:focus, header:focus{
     position: relative;
     height: auto;
     width: 100vw;
-    background: $concrete-gray;
+    background: transparent;
         
     .flex-container {
         //padding: 15vh 5vw;
@@ -1872,7 +1884,7 @@ img:focus, a:focus, header:focus{
         position: relative;
         height: auto;
         width: 100vw;
-        background: $concrete-gray;
+        background: transparent;
 
         .flex-container {
             padding: 15vh 5vw;
@@ -1924,8 +1936,6 @@ img:focus, a:focus, header:focus{
             }
 
             &:nth-child(3){
-                height: 0vh;
-                display: none;
                 clip-path: circle(50% at 50% 50%);
 
                 div{
@@ -2085,8 +2095,8 @@ img:focus, a:focus, header:focus{
                     margin: 5vh auto 0vh auto;
                     height: 330px;
                     width: 330px;
-                    //background: url("images/road2.jpg") $nrf 55% 20%;
-                    //background-size: 1200px;
+                    background: url("images/hands-1.jpg") $nrf center;
+                    background-size: 100vh;
 
                     border-radius: 50%;
                     //filter: invert(100%);
@@ -2139,7 +2149,7 @@ img:focus, a:focus, header:focus{
     }
 
     .skills-1-div{
-        background: $concrete-gray;
+        background: transparent;
 
         #additional-skills{
             width: 80vw;
@@ -2418,7 +2428,7 @@ img:focus, a:focus, header:focus{
                 #fin{
                     @include main-font;
                     position: relative;
-                    top: 5vh;
+                    top: 20px;
                     font-size: 3em;
                     letter-spacing: 5px;
                     color: $bright-white;
@@ -5019,11 +5029,7 @@ img:focus, a:focus, header:focus{
     
     .intro-1-div{
         background-attachment: scroll;
-    }
-    
-    #project-video{
-        opacity: 0 !important;
-    }    
+    }  
     
     #main-content-wrapper > div:nth-child(2) > div.education-2-div > ul > li:nth-child(3) > div{
         width: 100%;

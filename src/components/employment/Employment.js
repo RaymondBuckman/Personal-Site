@@ -1,18 +1,13 @@
 import React, { Component } from 'react';
-import drillVideo from '../../images/drill-video.mp4';
 
-export default class Employment extends Component {
+export default class Employment extends React.Component {
     render() {
         return(
         <div>             
             <div className="employment-1-div">
                 <ul className="flex-container">
                     <li className="flex-item">
-                        <div id="employment-window" className="scrollmagicWindow">
-                            <video preload="preload" id="employment-video" autoPlay="autoplay" loop="loop" muted>
-                                <source src={drillVideo} type="video/mp4"></source>
-                            </video> 
-                        </div>
+                        <div id="employment-window" className="scrollmagicWindow"></div>
                     </li>
                     <li id="jump-to-employment" className="flex-item">
                         <h1 id="employment" className="scrollmagic-fade-in" tabIndex="0">
