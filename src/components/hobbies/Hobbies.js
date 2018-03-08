@@ -18,7 +18,7 @@ import modernDesign from "../../images/modern-design-mini.jpg";
 import reading from "../../images/reading-mini.jpg";
 import dubstep from "../../images/dubstep-mini.jpg";
 
-export default class Hobbies extends Component {
+export default class Hobbies extends React.Component {
     render() {
         return(
         <div>
